@@ -7,7 +7,7 @@ This repository holds the source for both self-hosted editions:
 - **Desktop** — one user, one computer. Fully featured and free, with no trial period, no ads, and no registration.
 - **Server** — your own private accounting website. It runs on one computer you control, and your whole team works on the same records from a browser.
 
-Both editions share the same data format, so you can move between them without losing anything. A **[Cloud edition](https://www.manager.io/cloud-edition)** is also available — identical to Server in features, but hosted by us.
+Both editions share the same data format, so you can move between them without losing anything. A **[Cloud edition](https://www.manager.cloud)** is also available — identical to Server in features, but hosted by us.
 
 ## What you can do with it
 
