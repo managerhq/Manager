@@ -50,7 +50,7 @@ jobs:
         dotnet-version: 10.0.x
 
     - name: Publish ${{ matrix.runtime }}
-      run: dotnet publish ManagerServer.csproj --configuration Release --runtime ${{ matrix.runtime }} --self-contained true /p:PublishSingleFile=true /p:DebugType=embedded /p:AssemblyVersion="$VERSION" --output out/${{ matrix.runtime }}
+      run: dotnet publish ManagerServer.csproj --configuration Release --runtime ${{ matrix.runtime }} --self-contained true -p:PublishSingleFile=true -p:DebugType=embedded -p:AssemblyVersion="$VERSION" --output out/${{ matrix.runtime }}
 
     - name: Archive ${{ matrix.runtime }}
       run: |
@@ -96,7 +96,7 @@ jobs:
     # have to wait for the server job to finish.
     - name: Publish the server
       run: |
-        dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime linux-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=embedded /p:AssemblyVersion="$VERSION" --output ManagerServer
+        dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime linux-x64 --self-contained true -p:PublishSingleFile=true -p:DebugType=embedded -p:AssemblyVersion="$VERSION" --output ManagerServer
         chmod a+x ManagerServer/ManagerServer
 
     - run: npm ci
@@ -131,7 +131,7 @@ jobs:
         cache-dependency-path: ManagerDesktop/package-lock.json
 
     - name: Publish the server
-      run: dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=embedded /p:AssemblyVersion="$VERSION" --output ManagerServer
+      run: dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime win-x64 --self-contained true -p:PublishSingleFile=true -p:DebugType=embedded -p:AssemblyVersion="$VERSION" --output ManagerServer
 
     - run: npm ci
     - run: npm version "$VERSION" --no-git-tag-version
@@ -164,7 +164,7 @@ jobs:
 
     - name: Publish the server
       run: |
-        dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime osx-${{ matrix.arch }} --self-contained true /p:PublishSingleFile=true /p:DebugType=embedded /p:AssemblyVersion="$VERSION" --output ManagerServer
+        dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime osx-${{ matrix.arch }} --self-contained true -p:PublishSingleFile=true -p:DebugType=embedded -p:AssemblyVersion="$VERSION" --output ManagerServer
         chmod a+x ManagerServer/ManagerServer
 
     - run: npm ci
