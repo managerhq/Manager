@@ -12,7 +12,7 @@ const runtime = process.argv[2] || `${PLATFORMS[process.platform]}-${process.arc
 
 const ext = runtime.startsWith('linux-') ? 'tar.gz' : 'zip';
 const asset = `ManagerServer-${runtime}.${ext}`;
-const url = `https://github.com/managerhq/ManagerServer/releases/latest/download/${asset}`;
+const url = `https://github.com/managerhq/Manager/releases/latest/download/${asset}`;
 const targetDir = path.join(__dirname, 'ManagerServer');
 const archivePath = path.join(__dirname, asset);
 
