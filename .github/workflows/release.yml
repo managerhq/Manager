@@ -68,20 +68,12 @@ jobs:
             ;;
         esac
 
-    # Hand the freshly built server to the desktop jobs instead of downloading a
-    # previously released one.
-    - uses: actions/upload-artifact@v4
-      with:
-        name: ManagerServer-${{ matrix.runtime }}
-        path: ManagerServer/ManagerServer-${{ matrix.runtime }}.*
-        retention-days: 1
-
     - name: Upload to the release
       run: gh release upload "$VERSION" ManagerServer-${{ matrix.runtime }}.* --repo ${{ github.repository }} --clobber
 
   desktop-linux:
-    needs: server
-    timeout-minutes: 10
+    needs: create-release
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -90,22 +82,21 @@ jobs:
     steps:
     - uses: actions/checkout@v5
 
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
     - uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: npm
         cache-dependency-path: ManagerDesktop/package-lock.json
 
-    - uses: actions/download-artifact@v4
-      with:
-        name: ManagerServer-linux-x64
-        path: ManagerDesktop
-
-    - name: Unpack the server
+    # Build the server straight into the packaging folder so this job does not
+    # have to wait for the server job to finish.
+    - name: Publish the server
       run: |
-        mkdir -p ManagerServer
-        tar -xf ManagerServer-linux-x64.tar.gz -C ManagerServer
-        rm ManagerServer-linux-x64.tar.gz
+        dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime linux-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=embedded /p:AssemblyVersion="$VERSION" --output ManagerServer
         chmod a+x ManagerServer/ManagerServer
 
     - run: npm ci
@@ -114,8 +105,8 @@ jobs:
     - run: gh release upload "$VERSION" dist/*.AppImage --repo ${{ github.repository }} --clobber
 
   desktop-windows:
-    needs: server
-    timeout-minutes: 10
+    needs: create-release
+    timeout-minutes: 20
     runs-on: windows-latest
     env:
       AZURE_CLIENT_ID: 4e7f81f9-175d-46fc-b5f0-e4f1601bd881
@@ -129,22 +120,18 @@ jobs:
     steps:
     - uses: actions/checkout@v5
 
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
     - uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: npm
         cache-dependency-path: ManagerDesktop/package-lock.json
 
-    - uses: actions/download-artifact@v4
-      with:
-        name: ManagerServer-win-x64
-        path: ManagerDesktop
-
-    - name: Unpack the server
-      run: |
-        mkdir -p ManagerServer
-        tar -xf ManagerServer-win-x64.zip -C ManagerServer
-        rm ManagerServer-win-x64.zip
+    - name: Publish the server
+      run: dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime win-x64 --self-contained true /p:PublishSingleFile=true /p:DebugType=embedded /p:AssemblyVersion="$VERSION" --output ManagerServer
 
     - run: npm ci
     - run: npm version "$VERSION" --no-git-tag-version
@@ -152,8 +139,8 @@ jobs:
     - run: gh release upload "$VERSION" dist/*.appx --repo ${{ github.repository }} --clobber
 
   desktop-mac:
-    needs: server
-    timeout-minutes: 20
+    needs: create-release
+    timeout-minutes: 30
     runs-on: macos-latest
     strategy:
       matrix:
@@ -165,22 +152,19 @@ jobs:
     steps:
     - uses: actions/checkout@v5
 
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
     - uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: npm
         cache-dependency-path: ManagerDesktop/package-lock.json
 
-    - uses: actions/download-artifact@v4
-      with:
-        name: ManagerServer-osx-${{ matrix.arch }}
-        path: ManagerDesktop
-
-    - name: Unpack the server
+    - name: Publish the server
       run: |
-        mkdir -p ManagerServer
-        tar -xf ManagerServer-osx-${{ matrix.arch }}.zip -C ManagerServer
-        rm ManagerServer-osx-${{ matrix.arch }}.zip
+        dotnet publish ../ManagerServer/ManagerServer.csproj --configuration Release --runtime osx-${{ matrix.arch }} --self-contained true /p:PublishSingleFile=true /p:DebugType=embedded /p:AssemblyVersion="$VERSION" --output ManagerServer
         chmod a+x ManagerServer/ManagerServer
 
     - run: npm ci
