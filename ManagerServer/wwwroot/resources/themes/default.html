@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>View</title>
+<style>
+:root { --color: #171717; --muted: #525252; --rule: #171717; --bg: #f5f5f5; --paper: #fff; --link: #0369a1; }
+body { background-color: var(--bg); display: flex; margin: 0; padding: 0; font-size: 0.875rem; line-height: 1.5rem; font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; color: var(--color); }
+main { background-color: var(--paper); margin: 1rem 1.5rem; border: 1px solid #e5e5e5; border-radius: 5px; box-shadow: 0px 4px 6px rgb(0 0 0 / 0.05); padding: 2rem; min-width: 80ch; }
+
+table.page { border-collapse: collapse; }
+table.page > thead > tr > td, table.page > tbody > tr > td { padding: 0; }
+table.page > thead > tr > td { padding-bottom: 1rem; }
+table.page > tbody > tr > td > * + * { margin-top: 1rem; }
+
+header.letterhead { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
+header.letterhead .titles { flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+header.letterhead .titles h1 { font-size: 1.5rem; font-weight: bold; margin: 0; }
+header.letterhead .titles .subject { font-size: 1rem; font-weight: bold; margin: 0; color: var(--muted); }
+header.letterhead .titles .subtitle { font-size: 1rem; font-weight: bold; margin: 0; }
+header.letterhead img.logo { max-height: 150px; max-width: 300px; display: inline; }
+header.letterhead.no-logo .titles { text-align: center; }
+header.letterhead.no-logo .titles h1,
+header.letterhead.no-logo .titles .subject,
+header.letterhead.no-logo .titles .subtitle { color: #000; }
+
+section.parties { display: flex; align-items: flex-start; gap: 20px; }
+section.parties address { font-style: normal; line-height: 1.5em; flex: 1; }
+section.parties address.business { flex: 0 1 auto; max-width: 40ch; }
+section.parties .divider { width: 1px; border-left: 1px solid var(--rule); align-self: stretch; }
+section.parties dl { display: block; margin: 0; text-align: end; }
+section.parties dt { margin: 0 0 2px 0; font-weight: bold; }
+section.parties dd { margin: 0 0 16px 0; }
+
+p.table-description { font-weight: bold; margin: 0; max-width: 80ch; }
+
+table.body { min-width: 80ch; border-collapse: collapse; }
+table.body th, table.body td { padding: 0.25rem 0.5rem; vertical-align: top; }
+table.body thead th { vertical-align: bottom; border-bottom: 1px solid var(--rule); font-weight: bold; }
+table.body thead .group-headers th { text-align: center; }
+table.body tr.spacer td { padding: 0; height: 1.5rem; }
+table.body tbody tr.group-header td { font-weight: bold; padding-top: 0.5rem; }
+table.body tbody tr.subtotal td { font-weight: bold; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+table.body tbody tr.group-total td { font-weight: bold; }
+table.body tbody tr.group-total td:not(:first-child) { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+table.body tbody tr.total td.label { text-align: end; border: none; }
+table.body tbody tr.total td.value { border: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+table.body tbody tr.total.emphasis td { font-weight: bold; }
+/* Separate borders: collapsed 1px borders on the table's outer right edge get rounded
+   away at fractional zoom/DPI, so each border is assigned to exactly one cell side. */
+table.body.with-totals { border-collapse: separate; border-spacing: 0; }
+table.body.with-totals thead th { border: 1px solid var(--rule); border-right: none; }
+table.body.with-totals thead th:last-child { border-right: 1px solid var(--rule); }
+table.body.with-totals thead tr + tr th { border-top: none; }
+table.body.with-totals tbody td { border-left: 1px solid var(--rule); }
+table.body.with-totals tbody td:last-child { border-right: 1px solid var(--rule); }
+table.body.with-totals tbody tr.spacer td { border-bottom: 1px solid var(--rule); }
+table.body.with-totals tbody tr.total td.label { border: none; }
+table.body.with-totals tbody tr.subtotal:first-child td,
+table.body.with-totals tbody tr.spacer + tr.subtotal td,
+table.body.with-totals tbody tr.subtotal + tr.subtotal td,
+table.body.with-totals tbody tr.group-total + tr.group-total td,
+table.body.with-totals tbody tr.spacer + tr.total td.value,
+table.body.with-totals tbody tr.subtotal + tr.total td.value,
+table.body.with-totals tbody tr.total + tr.total td.value { border-top: none; }
+
+dl.fields { display: grid; grid-template-columns: fit-content(50%) 1fr; gap: 0.375rem 1rem; margin: 0; }
+dl.fields dt { font-weight: bold; overflow-wrap: break-word; }
+dl.fields dt.group { grid-column: 1 / -1; }
+dl.fields dd { margin: 0; white-space: pre-line; }
+
+/* Change view: a dt of "−" marks the value before a change, "+" the value after. Tint the whole
+   row so the pair reads as a removal/addition at a glance. The negative inline margins close the
+   grid's 1rem column gap so the dt and dd tints join into a single band. */
+dl.fields dt.diff, dl.fields dd.diff { padding-block: 2px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+dl.fields dt.diff { padding-inline-end: 0.5rem; margin-inline-end: -0.5rem; }
+dl.fields dd.diff { padding-inline-start: 0.5rem; margin-inline-start: -0.5rem; }
+dl.fields .diff-removed { background-color: #fee2e2; color: #b91c1c; }
+dl.fields .diff-added { background-color: #dcfce7; color: #15803d; }
+dl.fields dd.diff-removed { text-decoration: line-through; text-decoration-color: color-mix(in oklab, currentColor 45%, transparent); }
+
+.emphasis-banner { display: flex; justify-content: center; }
+.emphasis-banner > div { border-width: 5px; border-style: solid; padding: 10px; font-size: 20px; text-transform: uppercase; border-color: currentColor; }
+.emphasis-banner > div.tone-positive { color: #15803d; }
+.emphasis-banner > div.tone-negative { color: #b91c1c; }
+
+#amount-in-words { white-space: pre-line; }
+a { color: color-mix(in oklab, var(--link) 75%, transparent); text-decoration: none; }
+a:hover { color: var(--link); }
+
+#spinner { position: fixed; top: 50%; left: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border: 3px solid rgba(23, 23, 23, 0.15); border-top-color: #171717; border-radius: 50%; opacity: 0; animation: fadein 200ms linear 200ms forwards, spin 800ms linear infinite; }
+@keyframes fadein { to { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media screen and (prefers-color-scheme: dark) {
+  :root { --color: #d6d3d1; --muted: #a3a3a3; --rule: #d6d3d1; --bg: #292524; --paper: #1c1917; --link: #fde68a; }
+  main { border: 1px solid #0c0a09; box-shadow: 0px 4px 6px rgb(0 0 0 / 0.50); }
+  #spinner { border-color: rgba(214, 211, 209, 0.15); border-top-color: #d6d3d1; }
+  header.letterhead.no-logo .titles h1,
+  header.letterhead.no-logo .titles .subtitle { color: var(--color); }
+  header.letterhead.no-logo .titles .subject { color: var(--muted); }
+  img { filter: sepia(45%) hue-rotate(160deg) invert(90%) grayscale(100%); }
+  .emphasis-banner > div.tone-positive { color: #4ade80; }
+  .emphasis-banner > div.tone-negative { color: #f87171; }
+  dl.fields .diff-removed { background-color: rgb(248 113 113 / 0.15); color: #f87171; }
+  dl.fields .diff-added { background-color: rgb(74 222 128 / 0.15); color: #4ade80; }
+}
+
+@page { margin: 10mm; }
+@media print {
+  :root { --rule: #000; --link: #000; }
+  body { background-color: initial; display: initial; }
+  main { padding: 0; border: initial; box-shadow: initial; border-radius: initial; margin: 0; min-width: initial; }
+  #spinner { display: none; }
+  a { pointer-events: none; cursor: default; }
+  table.page, table.body { width: 100%; }
+  /* At 100% the bordered table's right edge coincides with the page clip boundary, and at
+     some PDF raster zooms the 1px border rounds outside it. Reserve one pixel of clearance. */
+  table.body.with-totals { width: calc(100% - 1px); }
+  p.table-description { max-width: none; }
+  table.page > thead { display: table-header-group; }
+  table.body > thead { display: table-header-group; }
+}
+</style>
+</head>
+<body>
+<div id="spinner"></div>
+<main id="root" style="display: none"></main>
+<script>
+document.currentScript.remove();
+(async function () {
+  const root = document.getElementById('root');
+  try {
+    const response = await fetch('/api4/view-v1' + window.location.search, {
+      headers: { 'Accept': 'application/json' },
+      credentials: 'same-origin',
+    });
+    if (!response.ok) {
+      const body = await response.text();
+      root.textContent = 'Error ' + response.status + ': ' + body;
+      return;
+    }
+    const model = await response.json();
+    if (!model) {
+      root.textContent = 'No data.';
+      return;
+    }
+    let pageTitle = model.title || 'View';
+    if (model.reference) pageTitle += ' ' + model.reference;
+    if (model.recipient && model.recipient.name) pageTitle += ' — ' + model.recipient.name;
+    document.title = pageTitle;
+    if (model.direction) document.documentElement.dir = model.direction;
+    render(root, model);
+  } catch (err) {
+    root.textContent = 'Failed to load: ' + err;
+  } finally {
+    const spinner = document.getElementById('spinner');
+    if (spinner) spinner.remove();
+    root.style.display = '';
+  }
+})();
+
+function el(tag, attrs, ...children) {
+  const node = document.createElement(tag);
+  if (attrs) {
+    for (const k in attrs) {
+      if (attrs[k] == null) continue;
+      if (k === 'style') node.setAttribute('style', attrs[k]);
+      else if (k === 'class') node.className = attrs[k];
+      else node.setAttribute(k, attrs[k]);
+    }
+  }
+  for (const c of children) {
+    if (c == null) continue;
+    if (typeof c === 'string') node.appendChild(document.createTextNode(c));
+    else node.appendChild(c);
+  }
+  return node;
+}
+
+function multiline(text) {
+  const frag = document.createDocumentFragment();
+  if (text == null) return frag;
+  const lines = String(text).split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    if (i > 0) frag.appendChild(document.createElement('br'));
+    frag.appendChild(document.createTextNode(lines[i]));
+  }
+  return frag;
+}
+
+// In the change view a field whose label is just "−" holds the value before the change and "+" the
+// value after. Any other label is an ordinary field.
+function diffClass(label) {
+  if (label === '−' || label === '-') return 'diff diff-removed';
+  if (label === '+') return 'diff diff-added';
+  return null;
+}
+
+function appendFieldsToDl(dl, fields, depth) {
+  depth = depth || 0;
+  const indent = depth > 0 ? 'padding-inline-start: ' + (depth * 1) + 'rem' : null;
+  for (const f of fields) {
+    const hasLeaf = (f.text != null && f.text !== '') || !!(f.image && f.image.url);
+    const hasChildren = !!(f.fields && f.fields.length);
+    const emphasis = f.emphasis ? 'font-weight: bold' : null;
+    const diff = diffClass(f.label);
+
+    if (hasChildren && !hasLeaf) {
+      const dtStyle = [indent, emphasis].filter(Boolean).join('; ') || null;
+      dl.appendChild(el('dt', { class: 'group', 'data-key': f.key || '', style: dtStyle }, multiline(f.label || '')));
+    } else {
+      const dtStyle = [indent, emphasis].filter(Boolean).join('; ') || null;
+      dl.appendChild(el('dt', { class: diff, 'data-key': f.key || '', style: dtStyle }, multiline(f.label || '')));
+      const dd = el('dd', { class: diff, style: emphasis });
+      appendFieldValue(dd, f);
+      dl.appendChild(dd);
+    }
+
+    if (hasChildren) {
+      appendFieldsToDl(dl, f.fields, depth + 1);
+    }
+  }
+}
+
+function appendFieldValue(parent, f) {
+  let value;
+  if (f.image && f.image.url) {
+    const attrs = { src: f.image.url, alt: f.text || '' };
+    if (f.image.width != null) attrs.width = String(f.image.width);
+    if (f.image.height != null) attrs.height = String(f.image.height);
+    value = el('img', attrs);
+  } else {
+    value = multiline(f.text || '');
+  }
+  const href = f.link && f.link.url;
+  if (href) {
+    const a = el('a', { href, target: '_top' });
+    a.appendChild(value);
+    parent.appendChild(a);
+  } else {
+    parent.appendChild(value);
+  }
+}
+
+function render(root, m) {
+  root.textContent = '';
+
+  const pageTable = el('table', { class: 'page' });
+  const headerTd = el('td');
+  headerTd.appendChild(renderLetterhead(m));
+  pageTable.appendChild(el('thead', null, el('tr', null, headerTd)));
+  const body = el('td');
+  pageTable.appendChild(el('tbody', null, el('tr', null, body)));
+  root.appendChild(pageTable);
+
+  // Recipient + top-of-page fields + business address
+  const topFields = (m.fields || []).filter(f => f.displayAtTheTop === true);
+  const hasParties = !!m.recipient || topFields.length > 0 || hasBusinessBlock(m.business);
+  if (hasParties) body.appendChild(renderParties(m, topFields));
+
+  // Table description (prose attached to the table)
+  if (m.table && m.table.description) {
+    body.appendChild(el('p', { class: 'table-description' }, m.table.description));
+  }
+
+  // Body table — bordered when document-level totals are present, borderless otherwise.
+  if (m.table && hasTableContent(m.table)) {
+    body.appendChild(m.totals != null ? renderBorderedTable(m.table, m.totals) : renderBorderlessTable(m.table));
+  }
+
+  // Bottom fields (anything not flagged for the header)
+  const bottomFields = (m.fields || []).filter(f => f.displayAtTheTop !== true);
+  if (bottomFields.length) {
+    const dl = el('dl', { class: 'fields' });
+    appendFieldsToDl(dl, bottomFields);
+    body.appendChild(dl);
+  }
+
+  // Pre-rendered HTML footers
+  if (m.footers && m.footers.length) {
+    for (const footer of m.footers) {
+      const div = document.createElement('div');
+      div.className = 'footer';
+      div.innerHTML = footer;
+      body.appendChild(div);
+    }
+  }
+
+  // Status banner
+  if (m.status && m.status.text) {
+    const banner = el('div', { class: 'emphasis-banner' });
+    let toneClass = null;
+    if (m.status.tone === 'positive') toneClass = 'tone-positive';
+    else if (m.status.tone === 'negative') toneClass = 'tone-negative';
+    banner.appendChild(el('div', { class: toneClass }, m.status.text));
+    body.appendChild(banner);
+  }
+}
+
+function hasBusinessBlock(business) {
+  if (!business) return false;
+  return !!(business.name || business.address || (business.fields && business.fields.length));
+}
+
+function hasTableContent(t) {
+  if (!t) return false;
+  if (t.columns && t.columns.length) return true;
+  if (t.rows && t.rows.length) return true;
+  return false;
+}
+
+function renderLetterhead(m) {
+  const hasLogo = !!(m.business && m.business.logo);
+  const hasTable = hasTableContent(m.table);
+  const centered = !hasLogo && hasTable && m.totals == null;
+  const header = el('header', { class: 'letterhead' + (centered ? ' no-logo' : '') });
+  const titles = el('div', { class: 'titles' });
+
+  // BusinessName surfaces above Title only when there is no Business block
+  // (when Business is non-null the name is rendered inside the parties section).
+  if (!m.business && m.businessName) {
+    titles.appendChild(el('div', { class: 'subject' }, m.businessName));
+  }
+  if (m.title) titles.appendChild(el('h1', null, m.title));
+  for (const s of m.subtitles || []) {
+    titles.appendChild(el('div', { class: 'subtitle' }, s || ''));
+  }
+  header.appendChild(titles);
+
+  if (hasLogo) {
+    header.appendChild(el('img', { class: 'logo', src: m.business.logo, alt: '' }));
+  }
+
+  return header;
+}
+
+function renderParties(m, topFields) {
+  const section = el('section', { class: 'parties' });
+
+  // Recipient (left)
+  if (m.recipient) {
+    const recipient = el('address', { class: 'recipient' });
+    if (m.recipient.name) recipient.appendChild(el('div', null, el('strong', null, m.recipient.name)));
+    if (m.recipient.address) {
+      const div = document.createElement('div');
+      div.appendChild(multiline(m.recipient.address));
+      recipient.appendChild(div);
+    }
+    section.appendChild(recipient);
+  } else {
+    section.appendChild(el('div', { class: 'recipient-spacer', style: 'flex: 1' }));
+  }
+
+  // Top fields (middle/right)
+  if (topFields.length) {
+    const dl = el('dl');
+    appendFieldsToDl(dl, topFields);
+    section.appendChild(dl);
+  }
+
+  section.appendChild(el('div', { class: 'divider' }));
+
+  // Business block (right)
+  const business = m.business || {};
+  const businessAddr = el('address', { class: 'business' });
+  if (business.name) businessAddr.appendChild(el('div', null, el('strong', null, business.name)));
+  if (business.address) {
+    const div = document.createElement('div');
+    div.appendChild(multiline(business.address));
+    businessAddr.appendChild(div);
+  }
+  for (const f of business.fields || []) {
+    businessAddr.appendChild(el('div', { 'data-key': f.key || '' }, (f.label ? f.label + ': ' : '') + (f.text || '')));
+  }
+  section.appendChild(businessAddr);
+
+  return section;
+}
+
+function colStyle(col) {
+  let s = 'text-align: ' + (col.align || 'start');
+  if (col.shrinkToFit) s += '; white-space: nowrap; width: 1px';
+  else if (col.nowrap) s += '; white-space: nowrap';
+  if (col.emphasis) s += '; font-weight: bold';
+  return s;
+}
+
+function flattenColumns(columns) {
+  const leaves = [];
+  const groups = [];
+  let hasSubcolumns = false;
+  for (const c of columns) {
+    if (c.subcolumns && c.subcolumns.length) {
+      hasSubcolumns = true;
+      groups.push({ label: c.label, span: c.subcolumns.length });
+      for (const sc of c.subcolumns) leaves.push(sc);
+    } else {
+      groups.push({ label: null, span: 1 });
+      leaves.push(c);
+    }
+  }
+  return { leaves, groups, hasSubcolumns };
+}
+
+function isHierarchical(rows) {
+  if (!rows || !rows.length) return false;
+  for (const row of rows) {
+    if (row.rows) return true;
+  }
+  return false;
+}
+
+function renderBorderlessTable(t) {
+  const { leaves, groups, hasSubcolumns } = flattenColumns(t.columns || []);
+  const hierarchical = isHierarchical(t.rows);
+
+  const table = el('table', { class: 'body' });
+
+  const thead = el('thead');
+  if (hasSubcolumns) thead.appendChild(buildGroupHeaderRow(groups));
+  thead.appendChild(buildColumnHeaderRow(leaves));
+  thead.appendChild(spacerRow(leaves.length));
+  table.appendChild(thead);
+
+  const tbody = el('tbody');
+  if (hierarchical) renderRowList(t.rows, 0, leaves, tbody, true);
+  else renderFlatRows(t.rows, leaves, tbody);
+  table.appendChild(tbody);
+
+  return table;
+}
+
+function renderBorderedTable(t, totals) {
+  const { leaves, groups, hasSubcolumns } = flattenColumns(t.columns || []);
+  const hierarchical = isHierarchical(t.rows);
+  const totalCols = leaves.length;
+
+  const table = el('table', { class: 'body with-totals' });
+
+  const thead = el('thead');
+  if (hasSubcolumns) thead.appendChild(buildGroupHeaderRow(groups));
+  thead.appendChild(buildColumnHeaderRow(leaves));
+  table.appendChild(thead);
+
+  const tbody = el('tbody');
+  if (hierarchical) renderRowList(t.rows, 0, leaves, tbody, true);
+  else renderFlatRows(t.rows, leaves, tbody);
+
+  // Bordered tables always carry one spacer row separating the data rows from the totals stack.
+  // When a tr.subtotal is the last body row it acts as part of the totals stack visually, so the
+  // spacer is hoisted above it; otherwise the spacer sits directly before the totals stack.
+  const lastRow = tbody.lastElementChild;
+  const trailingSubtotal = lastRow && lastRow.classList.contains('subtotal');
+  const spacer = spacerRow(totalCols);
+  if (trailingSubtotal) tbody.insertBefore(spacer, lastRow);
+  else tbody.appendChild(spacer);
+  const labelColspan = Math.max(totalCols - 1, 1);
+  for (const t of totals) {
+    const tr = el('tr', { class: 'total' + (t.emphasis ? ' emphasis' : '') });
+    if (t.key) tr.setAttribute('data-key', t.key);
+    tr.appendChild(el('td', { class: 'label', colspan: String(labelColspan) }, multiline(t.label || '')));
+    const valueTd = el('td', { class: 'value' });
+    if (t.number != null) valueTd.setAttribute('data-value', String(t.number));
+    valueTd.appendChild(document.createTextNode(t.text || ''));
+    tr.appendChild(valueTd);
+    tbody.appendChild(tr);
+  }
+
+  table.appendChild(tbody);
+  return table;
+}
+
+function buildGroupHeaderRow(groups) {
+  const tr = el('tr', { class: 'group-headers' });
+  for (const g of groups) {
+    if (g.label) tr.appendChild(el('th', { colspan: String(g.span) }, multiline(g.label)));
+    else for (let i = 0; i < g.span; i++) tr.appendChild(el('th'));
+  }
+  return tr;
+}
+
+function buildColumnHeaderRow(leaves) {
+  const tr = el('tr', { class: 'columns' });
+  for (const c of leaves) {
+    tr.appendChild(el('th', { 'data-key': c.key || '', style: colStyle(c) }, multiline(c.label || '')));
+  }
+  return tr;
+}
+
+function renderFlatRows(rows, leaves, tbody) {
+  if (!rows) return;
+  for (const row of rows) {
+    if (row.isTotalRow) {
+      const tr = el('tr', { class: 'subtotal' });
+      for (let i = 0; i < leaves.length; i++) {
+        const col = leaves[i];
+        const cell = (row.cells || [])[i] || {};
+        const td = el('td', { style: colStyle(col) });
+        appendCellContent(td, cell);
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+      continue;
+    }
+    const tr = el('tr');
+    for (let i = 0; i < leaves.length; i++) {
+      const col = leaves[i];
+      const cell = (row.cells || [])[i] || {};
+      const td = el('td', { style: colStyle(col) });
+      appendCellContent(td, cell);
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  }
+}
+
+function spacerRow(cellCount) {
+  const tr = el('tr', { class: 'spacer' });
+  for (let i = 0; i < cellCount; i++) tr.appendChild(el('td', null, ' '));
+  return tr;
+}
+
+function renderRowList(rows, level, leaves, tbody, topLevel) {
+  if (!rows) return;
+  for (const row of rows) {
+    if (row.isTotalRow) {
+      if (topLevel) tbody.appendChild(spacerRow(leaves.length));
+      tbody.appendChild(subtotalRow(row.cells, leaves, level, topLevel ? 'subtotal' : 'group-total'));
+      if (topLevel) tbody.appendChild(spacerRow(leaves.length));
+      continue;
+    }
+    if (row.rows) {
+      const hasHeader = row.cells && row.cells.length;
+      if (hasHeader) {
+        const tr = el('tr', { class: 'group-header' });
+        const labelText = (row.cells[0] && row.cells[0].text) || '';
+        tr.appendChild(el('td', { colspan: String(leaves.length), style: 'padding-inline-start: ' + ((level * 20) + 5) + 'px' }, labelText));
+        tbody.appendChild(tr);
+      }
+      const innerLevel = hasHeader ? level + 1 : level;
+      renderRowList(row.rows, innerLevel, leaves, tbody, false);
+    } else if (row.cells) {
+      renderHierarchicalLeaf(row, level, leaves, tbody);
+    }
+  }
+}
+
+function renderHierarchicalLeaf(row, level, leaves, tbody) {
+  const tr = el('tr');
+  for (let i = 0; i < leaves.length; i++) {
+    const col = leaves[i];
+    const cell = row.cells && row.cells[i];
+    let style;
+    if (i === 0) {
+      style = 'padding-inline-start: ' + ((level * 20) + 5) + 'px';
+    } else {
+      style = 'text-align: ' + (col.align || 'start') + '; font-variant-numeric: tabular-nums; white-space: nowrap';
+      if (col.emphasis) style += '; font-weight: bold';
+    }
+    const td = el('td', { style });
+    if (cell) appendCellContent(td, cell);
+    tr.appendChild(td);
+  }
+  tbody.appendChild(tr);
+}
+
+function subtotalRow(cells, leaves, level, className) {
+  const tr = el('tr', { class: className });
+  for (let i = 0; i < leaves.length; i++) {
+    const col = leaves[i];
+    const cell = cells && cells[i];
+    let style;
+    if (i === 0) {
+      style = 'padding-inline-start: ' + ((level * 20) + 5) + 'px';
+    } else {
+      style = 'text-align: ' + (col.align || 'start') + '; font-variant-numeric: tabular-nums; white-space: nowrap';
+    }
+    const td = el('td', { style });
+    if (cell) appendCellContent(td, cell);
+    tr.appendChild(td);
+  }
+  return tr;
+}
+
+function appendCellContent(td, cell) {
+  if (!cell) return;
+  let content;
+  if (cell.image && cell.image.url) {
+    const attrs = { src: cell.image.url, alt: cell.text || '' };
+    if (cell.image.width != null) attrs.width = String(cell.image.width);
+    if (cell.image.height != null) attrs.height = String(cell.image.height);
+    content = el('img', attrs);
+  } else if (cell.text != null) {
+    content = multiline(cell.text);
+  } else {
+    return;
+  }
+  const href = cell.link && cell.link.url;
+  if (href) {
+    const a = el('a', { href, target: '_top' });
+    a.appendChild(content);
+    td.appendChild(a);
+  } else {
+    td.appendChild(content);
+  }
+}
+
+</script>
+</body>
+</html>

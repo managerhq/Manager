@@ -1,0 +1,71 @@
+:root {
+  --color-scheme: light;
+  --background: var(--color-neutral-200);
+  --foreground: var(--color-neutral-700);
+  --border: var(--color-neutral-300);
+  --shadow: color-mix(in oklab, var(--color-black) 5%, transparent);
+  --inset: rgba(255, 255, 255, 0.75);
+  
+  --primary-foreground: var(--color-sky-700);
+  
+  --accent: color-mix(in oklab, var(--color-yellow-50), var(--color-white));
+  --accent-foreground: var(--color-neutral-900);
+  
+  --selection: var(--color-blue-700);
+  --selection-foreground: var(--color-white);
+  
+  --card: var(--color-white);
+  --card-border: var(--color-neutral-200);
+  --card-foreground: var(--color-neutral-900);
+  
+  --muted: var(--color-neutral-100);
+  --muted-border: var(--color-neutral-200);
+  --muted-inset: rgba(255, 255, 255, 0.75);
+  --muted-shadow: color-mix(in oklab, var(--color-black) 5%, transparent);
+  --muted-foreground: var(--color-neutral-600);
+  --muted-foreground-shadow: 1px 1px 0px #fff;
+  
+  --input: var(--color-white);  
+  --input-border: var(--color-neutral-200);
+  --input-foreground: var(--color-neutral-900);
+}
+
+:root.dark {
+  --color-scheme: dark;
+  --background: var(--color-stone-700);
+  --foreground: var(--color-stone-300);
+  --border: var(--color-stone-950);
+  --inset: rgba(255, 255, 255, 0.15);
+  
+  --primary-foreground: var(--color-amber-200);
+  
+  --accent: var(--color-indigo-950);
+  --accent-foreground: var(--color-stone-300);
+  
+  --selection: var(--color-amber-800);
+  --selection-foreground: var(--color-white);
+  
+  --card: var(--color-stone-900);
+  --card-border: var(--color-stone-950);
+  --card-foreground: var(--color-stone-300);
+  
+  --muted: var(--color-stone-800);
+  --muted-border: var(--color-stone-950);  
+  --muted-inset: rgba(255, 255, 255, 0.15);
+  --muted-shadow: color-mix(in oklab, var(--color-black) 50%, transparent);
+  --muted-foreground: var(--color-stone-300);
+  --muted-foreground-shadow: 1px 1px 0px #000;
+  
+  --input: var(--color-stone-900);
+  --input-border: var(--color-stone-600);
+  --input-foreground: var(--color-stone-100);
+
+  --text-link: color-mix(in oklab, var(--color-amber-200) 75%, transparent);
+  --text-link-hover: var(--color-amber-200);
+        
+  --color-panel-bg: var(--color-stone-800);
+  --color-panel-border: var(--color-stone-950);
+  --color-panel-accent-bg: color-mix(in oklab, var(--color-amber-950) 25%, var(--color-stone-900));
+  --color-panel-subtle-bg: var(--color-stone-800);
+  --color-panel-inset-shadow: color-mix(in oklab, var(--color-white) 15%, transparent);
+}

@@ -1,0 +1,73 @@
+<table style="padding: 0px 30px; print-color-adjust: exact; -webkit-print-color-adjust: exact">
+    <thead>
+        <tr>
+            <td colspan="99">
+                <table style="margin-bottom: 20px"><tr>                    
+                    {% if business.logo != null %}<td style="width: 300px"><img src="{{ business.logo }}" style="max-height: 150px; max-width: 300px; display: inline" /></td>{% endif %}
+                    <td style="font-weight: bold; font-size: 32px; background-color: #ED7D31; border-color: #F7CAAC; border-bottom-width: 5px; padding: 20px; vertical-align: bottom; color: #fff; text-align: right">{{ title }}</td>
+                </tr></table>
+                
+                <table style="margin-bottom: 20px"><tr>
+                    <td>
+                        <div style="font-weight: bold">{{ recipient.name }}</div>
+                        <div>{{ recipient.address | newline_to_br }}</div>
+                        <div>{{ recipient.identifier }}</div>
+                    </td>
+                    <td style="padding-right: 20px; text-align: right">
+                        {% for field in fields %}
+                        <div style="font-weight: bold">{{ field.label }}</div>
+                        <div style="margin-bottom: 10px">{{ field.text }}</div>
+                        {% endfor %}
+                    </td>
+                </tr></table>
+
+                <div style="font-size: 14px; font-weight: bold; margin-bottom: 20px">{{ description }}</div>
+            </td>
+        </tr>
+        <tr>
+            {% for column in table.columns %}            
+            <td style="font-weight: bold; padding: 5px 10px; color: #fff; border-color: #fff; border-right-width: 2px; border-bottom-width: 2px; text-align: {{ column.align }}; background-color: #ED7D31{% if column.nowrap %}; width: 80px{% endif %}">{{ column.label }}</td>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in table.rows %}
+        <tr>
+            {% for cell in row.cells %}
+            <td style="padding: 5px 10px; background-color: #FBE4D5; border-color: #fff; border-right-width: 2px; border-bottom-width: 2px; text-align: {{ table.columns[forloop.index0].align }}{% if table.columns[forloop.index0].nowrap %}; white-space: nowrap; width: 80px{% endif %}{% if forloop.last == true %}; background-color: #ED7D31; color: #fff{% endif %}">{{ cell.text | newline_to_br }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        <tr>
+            {% for column in table.columns %}
+            <td style="background-color: #ED7D31; border-color: #fff; border-right-width: 2px; border-bottom-width: 2px; font-size: 1px">&nbsp;</td>
+            {% endfor %}
+        </tr>
+        {% for total in table.totals %}
+        <tr>
+            <td colspan="{{ table.columns | size | minus:1 }}" style="padding: 5px 10px; border-color: #fff; border-right-width: 2px; border-bottom-width: 2px; background-color: #fff; text-align: right{% if total.emphasis == true %}; font-weight: bold{% endif %}">{{ total.label }}</td>
+            <td style="white-space: nowrap; border-color: #fff; background-color: #ED7D31; border-right-width: 2px; border-bottom-width: 2px; padding: 5px 10px; color: #fff; text-align: right{% if total.emphasis == true %}; font-weight: bold{% endif %}">{{ total.text }}</td>
+        </tr>
+        {% endfor %}
+
+        {% for field in custom_fields %}
+        <tr>
+            <td colspan="99">                
+                <div style="font-weight: bold; padding-top: 20px">{{ field.label }}</div>
+                <div>{{ field.text | newline_to_br }}</div>                
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr><td colspan="99" style="padding-top: 20px">
+            <div style="border-top-width: 3px; border-color: #F7CAAC; font-size: 11px; padding: 10px 20px; background-color: #ED7D31; color: #fff">
+                <div style="font-weight: bold">{{ business.name }}</div>
+                <div>{{ business.address | replace: "\n", " " }}</div>
+                {% for field in business.custom_fields %}
+                <div>{{ field.label }} {{ field.text }}</div>
+                {% endfor %}
+            </div>
+        </td></tr>
+    </tfoot>
+</table>

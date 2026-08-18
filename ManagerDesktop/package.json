@@ -1,0 +1,71 @@
+{
+  "name": "Manager",
+  "version": "1.0.0",
+  "description": "Free Accounting Software",
+  "author": "Lubos Hasko",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "download-server": "node download-server.js",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "^26.15.6"
+  },
+  "build": {
+    "appId": "io.manager",
+    "publish": null,
+    "productName": "Manager",
+    "icon": "build/icon.png",
+    "files": [
+      "*.js",
+      "*.svg",
+      "*.html",
+      "package.json",
+      "!ManagerServer/**"
+    ],
+    "extraResources": [
+      {
+        "from": "ManagerServer",
+        "to": "ManagerServer"
+      }
+    ],
+    "asar": true,
+    "win": {
+      "target": "appx",
+      "artifactName": "Manager-${arch}.${ext}",
+      "azureSignOptions": {
+        "codeSigningAccountName": "Manager-io",
+        "certificateProfileName": "manager-io",
+        "endpoint": "https://eus.codesigning.azure.net/",
+        "publisherName": "CN=NGSoftware Pty Ltd, O=NGSoftware Pty Ltd, L=Sydney, S=New South Wales, C=AU"
+      }
+    },
+    "appx": {
+      "identityName": "Manager",
+      "publisher": "CN=NGSoftware Pty Ltd, O=NGSoftware Pty Ltd, L=Sydney, S=New South Wales, C=AU",
+      "setBuildNumber": true
+    },
+    "mac": {
+      "target": "dmg",
+      "bundleVersion": "${version}",
+      "hardenedRuntime": true,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "artifactName": "Manager-${arch}.${ext}",
+      "extendInfo": {
+        "NSDesktopFolderUsageDescription": "Manager needs access to your Desktop folder to manage accounting data files stored there.",
+        "NSDocumentsFolderUsageDescription": "Manager needs access to your Documents folder to manage accounting data files stored there.",
+        "NSDownloadsFolderUsageDescription": "Manager needs access to your Downloads folder to manage accounting data files stored there.",
+        "NSRemovableVolumesUsageDescription": "Manager needs access to removable volumes to manage accounting data files stored there.",
+        "NSNetworkVolumesUsageDescription": "Manager needs access to network volumes to manage accounting data files stored there."
+      }
+    },
+    "linux": {
+      "target": "AppImage",
+      "artifactName": "Manager-${arch}.${ext}"
+    }
+  }
+}

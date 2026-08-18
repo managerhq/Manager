@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Australia — PAYG payment summary — individual non-business</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .payg-form {
+    max-width: 820px;
+    margin: 0 auto;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .payg-banner {
+    background: #2b3e64;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 4px 4px 0 0;
+  }
+  .payg-banner .payg-title { font-size: 20px; font-weight: 700; letter-spacing: 0.01em; }
+  .payg-banner .payg-subtitle { font-size: 13px; margin-top: 4px; opacity: 0.85; }
+  .payg-notice {
+    font-size: 11px;
+    color: #444;
+    padding: 8px 14px;
+    border: 1px solid #cbd5e1;
+    border-top: 0;
+    background: #f8fafc;
+    line-height: 1.45;
+  }
+  .payg-section { margin-top: 14px; border: 1px solid #cbd5e1; border-radius: 4px; background: #fff; }
+  .payg-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    background: #e2e8f0;
+    padding: 6px 12px;
+    border-bottom: 1px solid #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .payg-section-body { padding: 12px; display: grid; gap: 10px; }
+  .payg-row { display: grid; gap: 10px; }
+  .payg-row.cols-1 { grid-template-columns: 1fr; }
+  .payg-row.cols-2 { grid-template-columns: 1fr 1fr; }
+  .payg-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .payg-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .payg-field { display: flex; flex-direction: column; }
+  .payg-field > label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 3px;
+  }
+  .payg-value {
+    border: 1px solid #94a3b8;
+    background: #f8fafc;
+    padding: 7px 10px;
+    min-height: 30px;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  .payg-value.num { text-align: right; }
+  .payg-value.empty { color: #94a3b8; }
+  .payg-totalbox {
+    border: 2px solid #1e293b;
+    background: #fff;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .payg-totalbox .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .payg-totalbox .amount { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .payg-subhead { font-size: 12px; font-weight: 700; margin: 4px 0 -2px; color: #1e293b; }
+
+  @media print {
+    body { padding: 0; }
+    .payg-form { max-width: none; }
+    .payg-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .payg-section-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .payg-value { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-nav"><a href="index.html">← Australia</a></div>
+<h1>PAYG payment summary — individual non-business</h1>
+
+<div class="business-bar">
+  <label>Business
+    <select id="business" required></select>
+  </label>
+</div>
+
+<form id="reportControls">
+  <label>Financial year
+    <select id="financialYear" required></select>
+  </label>
+  <label>Employee
+    <select id="employee" required></select>
+  </label>
+  <button type="submit" class="primary">Generate</button>
+</form>
+
+<div id="reportOutput"></div>
+
+<script>const REPORT_ID = "92b38154-38fc-479a-a296-2019f656d1e2";</script>
+<script src="reports.js"></script>
+<script src="app.js"></script>
+<script src="custom-fields.js"></script>
+<script>
+// Form-style renderer for PAYG payment summary — individual non-business.
+// Mirrors the layout of the official ATO paper form (NAT 0046) rather than the
+// generic table the shared renderer produces. Called by app.js renderReport()
+// when window.RENDER_REPORT is set.
+window.RENDER_REPORT = function (report, data, business, period) {
+  // The API returns rows in source order; rebuild sections by walking until we
+  // hit a header. "Name" appears once in each section, so a flat map by row name
+  // would clobber the payee name with the payer name.
+  const sections = {};
+  let currentSection = null;
+  for (const row of data.rows || []) {
+    if (row.isHeader) {
+      currentSection = (row.name || "").trim();
+      sections[currentSection] = {};
+    } else if (currentSection) {
+      sections[currentSection][row.name] = (row.cells && row.cells[0]) || null;
+    }
+  }
+  const payee = sections["Payee details"] || {};
+  const payer = sections["Payer details"] || {};
+  const decimals = data.decimals != null ? data.decimals : 2;
+
+  const cellText = (cell) => (cell && cell.text) ? cell.text : "";
+  const cellAmount = (cell, dp) => {
+    if (!cell || cell.number == null) return "";
+    const d = dp != null ? dp : decimals;
+    return Number(cell.number).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+  };
+
+  // ATO form formats dates as DD/MM/YYYY in three boxes; we use a single value.
+  const fmtFormDate = (iso) => {
+    if (!iso) return "";
+    const parts = iso.split("-");
+    return parts.length === 3 ? `${parts[2]} / ${parts[1]} / ${parts[0]}` : iso;
+  };
+  // "Payment summary for year ending 30 June YYYY" uses the FY end year.
+  const endYear = (period.to || "").substring(0, 4);
+
+  const textField = (label, value) => `
+    <div class="payg-field">
+      <label>${escapeText(label)}</label>
+      <div class="payg-value${value ? "" : " empty"}">${value ? escapeText(value) : "&nbsp;"}</div>
+    </div>`;
+  const amountField = (label, amount) => `
+    <div class="payg-field">
+      <label>${escapeText(label)}</label>
+      <div class="payg-value num${amount ? "" : " empty"}">${amount ? "$ " + escapeText(amount) : "&nbsp;"}</div>
+    </div>`;
+
+  const totalTax = cellAmount(payee["Total tax withheld"], 0);
+
+  const html = `
+    <div class="report-actions"><button type="button" class="primary" id="printReport">Print</button></div>
+    <div id="printable-content" class="payg-form">
+
+      <div class="payg-banner">
+        <div class="payg-title">PAYG payment summary &ndash; individual non-business</div>
+        <div class="payg-subtitle">Payment summary for year ending 30 June ${escapeText(endYear)}</div>
+      </div>
+      <div class="payg-notice">
+        Section 16-170 of Schedule 1 to the <em>Taxation Administration Act 1953</em>.
+        This summary shows payments and tax withheld for the period stated. Keep this for your records.
+      </div>
+
+      <div class="payg-section">
+        <div class="payg-section-title">Section A &mdash; Payee details</div>
+        <div class="payg-section-body">
+          <div class="payg-row cols-2">
+            ${textField("Payee's tax file number", cellText(payee["TFN"]))}
+            ${textField("Payee's name", cellText(payee["Name"]))}
+          </div>
+          <div class="payg-row cols-2">
+            ${textField("Period of payment &mdash; day / month / year (from)", fmtFormDate(period.from))}
+            ${textField("Period of payment &mdash; day / month / year (to)", fmtFormDate(period.to))}
+          </div>
+        </div>
+      </div>
+
+      <div class="payg-section">
+        <div class="payg-section-title">Section B &mdash; Payment details</div>
+        <div class="payg-section-body">
+          <div class="payg-totalbox">
+            <div class="label">Total tax withheld &mdash; do not show cents</div>
+            <div class="amount">$ ${totalTax || "0"}</div>
+          </div>
+          <div class="payg-row cols-2">
+            ${amountField("Gross payments", cellAmount(payee["Gross Payments"]))}
+            ${amountField("CDEP payments", cellAmount(payee["CDEP payments"]))}
+          </div>
+          <div class="payg-row cols-2">
+            ${amountField("Reportable employer superannuation contributions", cellAmount(payee["Reportable employer superannuation contributions"]))}
+            ${amountField("Total allowances", cellAmount(payee["Total allowances"]))}
+          </div>
+          <div class="payg-subhead">Lump sum payments</div>
+          <div class="payg-row cols-4">
+            ${amountField("A", cellAmount(payee["Lump Sum Payment A"]))}
+            ${amountField("B", cellAmount(payee["Lump Sum Payment B"]))}
+            ${amountField("D", cellAmount(payee["Lump Sum Payment D"]))}
+            ${amountField("E", cellAmount(payee["Lump Sum Payment E"]))}
+          </div>
+          <div class="payg-row cols-2">
+            ${amountField("W &mdash; return to work payment", cellAmount(payee["Lump Sum Payment W"]))}
+          </div>
+        </div>
+      </div>
+
+      <div class="payg-section">
+        <div class="payg-section-title">Section C &mdash; Payer details</div>
+        <div class="payg-section-body">
+          <div class="payg-row cols-2">
+            ${textField("Payer's ABN or withholding payer number", cellText(payer["ABN"]))}
+            ${textField("Payer's name", cellText(payer["Name"]))}
+          </div>
+          <div class="payg-row cols-2">
+            ${textField("Signature of authorised person", "")}
+            ${textField("Date", "")}
+          </div>
+        </div>
+      </div>
+
+    </div>`;
+
+  const output = document.getElementById("reportOutput");
+  output.innerHTML = html;
+  output.querySelector("#printReport").addEventListener("click", () => window.print());
+};
+</script>
+</body>
+</html>

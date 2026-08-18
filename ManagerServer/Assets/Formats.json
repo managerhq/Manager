@@ -1,0 +1,32 @@
+[
+   {
+      "DecimalSeparator":".",
+      "GroupSeparator":",",
+      "GroupSizes":[ 3 ]
+   },
+   {
+      "DecimalSeparator":",",
+      "GroupSeparator":".",
+      "GroupSizes":[ 3 ]
+   },
+   {
+      "DecimalSeparator":",",
+      "GroupSeparator":" ",
+      "GroupSizes":[ 3 ]
+   },
+   {
+      "DecimalSeparator":".",
+      "GroupSeparator":",",
+      "GroupSizes":[ 3, 2 ]
+   },
+   {
+      "DecimalSeparator":"/",
+      "GroupSeparator":",",
+      "GroupSizes":[ 3 ]
+   },
+   {
+      "DecimalSeparator":".",
+      "GroupSeparator":",",
+      "GroupSizes":[ 3, 0 ]
+   }
+]

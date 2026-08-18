@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>الإمارات العربية المتحدة</title>
+<script>
+  // ar-ae/ was merged into ae/ — this shim preserves stored URLs (extensions.json,
+  // CustomButton rows installed by Upgrade.418.cs) by redirecting to ae/ with ?lang=ar.
+  const p = new URLSearchParams(location.search);
+  p.set("lang", "ar");
+  location.replace("../ae/index.html?" + p.toString());
+</script>

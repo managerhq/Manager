@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nederland</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Nederland</h1>
+
+<div class="tabs">
+  <button type="button" class="tab active" data-view="welcome">Welkom</button>
+  <button type="button" class="tab" data-view="reports">Rapporten</button>
+  <button type="button" class="tab" data-view="setup">Btw-codes</button>
+</div>
+
+<div class="business-bar">
+  <label>Bedrijf
+    <select id="business" required></select>
+  </label>
+</div>
+
+  <div id="welcome-view">
+    <p>Deze extensie helpt Nederlandse bedrijven met de nalevingsrapporten van het land en de btw-codes waarvan die rapporten afhankelijk zijn.</p>
+    <h2>Rapporten</h2>
+    <p>Installeer landspecifieke rapporten (btw-aangiften, loonadministratie, enzovoort) in een bedrijf. Eenmaal geïnstalleerd verschijnt elk rapport als een knop op het tabblad <strong>Rapporten</strong> van dat bedrijf.</p>
+    <h2>Btw-codes</h2>
+    <p>Het land wordt geleverd met een standaardset btw-codes die vooraf zijn gekoppeld aan de rapportagecategorieën die de rapporten gebruiken. Vanaf het tabblad <strong>Btw-codes</strong> kunt u ontbrekende codes in een bedrijf met één klik aanmaken, of een bestaande code bijwerken om de juiste rapportagecategorieën te koppelen.</p>
+    <p class="muted">Selecteer hierboven een bedrijf en ga vervolgens naar <strong>Rapporten</strong> of <strong>Btw-codes</strong> om te beginnen.</p>
+  </div>
+
+  <div id="reports-view" hidden>
+    <p class="muted">Installeer een rapport voor een specifiek bedrijf om het beschikbaar te maken onder het tabblad <strong>Rapporten</strong> van dat bedrijf.</p>
+    <div id="report-install-list" data-country-slug="nl"></div>
+  </div>
+
+<div id="setup-view" hidden>
+  <div class="setup-actions">
+    <button type="button" id="refreshSetup" class="primary">Status laden</button>
+    <span class="muted">Knoppen per rij maken of werken één btw-code per keer bij.</span>
+  </div>
+  <div id="setupOutput"></div>
+</div>
+
+<script src="reports.js"></script>
+<script src="tax-codes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

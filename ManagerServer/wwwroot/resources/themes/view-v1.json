@@ -1,0 +1,623 @@
+﻿{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ManagerServer | get-view-v1",
+    "version": "1.0.0+c6d1f1e3306702a9f3c52e59bee7a51638b30e7c"
+  },
+  "paths": {
+    "/api4/view-v1": {
+      "get": {
+        "parameters": [
+          {
+            "name": "Key",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Referrer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Language",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Handler",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Business",
+            "in": "query",
+            "description": "Name of business. If you are calling API from an extension running within IFRAME, then business does not have to be provided. Manager will automatically inject current business. This is useful when extension doesn't know business name which is typically the case.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/View"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Align": {
+        "enum": [
+          "start",
+          "center",
+          "end",
+          "right"
+        ]
+      },
+      "BusinessInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Business name. Themes render this inside the Business section. Mirrors the top-level View.BusinessName so the section can be rendered as a self-contained block."
+          },
+          "logo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "URL to the business logo image."
+          },
+          "address": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Business postal address."
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldInfo"
+            },
+            "description": "Labeled key/value rows displayed alongside the business address (e.g. ABN, registration number)."
+          }
+        },
+        "description": "Issuing business shown in the document header — name, address, logo, and labeled custom fields."
+      },
+      "CellInfo": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Pre-formatted display text. Themes render this verbatim — no client-side rounding or reformatting. When Image is set, this serves as the image's accessible label / alt text."
+          },
+          "image": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Optional inline image rendered in place of text within the cell; Text becomes the image's accessible label. May be combined with Link to make the image clickable.",
+                "$ref": "#/components/schemas/ImageInfo"
+              }
+            ]
+          },
+          "link": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Optional hyperlink wrapping the cell content. Combine with Image for a clickable image, or with Text for a clickable label.",
+                "$ref": "#/components/schemas/LinkInfo"
+              }
+            ]
+          }
+        },
+        "description": "Single cell in a row. Carries pre-formatted display text and may optionally include an inline image and a hyperlink — they may co-exist (e.g. a clickable image)."
+      },
+      "ColumnInfo": {
+        "required": [
+          "label"
+        ],
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Column header label."
+          },
+          "key": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Stable key for the column (used by themes for selectors)."
+          },
+          "align": {
+            "description": "Text alignment. Use Start/End for direction-aware alignment that flips under RTL; use Right when the column must always align right regardless of document direction (e.g. monetary values).",
+            "$ref": "#/components/schemas/Align"
+          },
+          "nowrap": {
+            "type": "boolean",
+            "description": "True if cell content should not wrap."
+          },
+          "emphasis": {
+            "type": "boolean",
+            "description": "True if the column should be visually emphasized."
+          },
+          "shrinkToFit": {
+            "type": "boolean",
+            "description": "True if the column should hug its content rather than expand."
+          },
+          "subcolumns": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ColumnInfo"
+            },
+            "description": "Optional nested columns for grouped report headers."
+          }
+        },
+        "description": "Column definition for the body table — header label, alignment, formatting flags, computed sum, and optional nested sub-columns for grouped headers."
+      },
+      "Direction": {
+        "enum": [
+          "ltr",
+          "rtl"
+        ]
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "message": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "FieldInfo": {
+        "required": [
+          "label"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Stable identifier for the field, when one exists (e.g. 'DueDate'). Null when the field has no canonical identifier (e.g. ad-hoc custom fields)."
+          },
+          "label": {
+            "type": "string",
+            "description": "Display label."
+          },
+          "text": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Display-formatted text."
+          },
+          "image": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Optional inline image rendered in place of text.",
+                "$ref": "#/components/schemas/ImageInfo"
+              }
+            ]
+          },
+          "displayAtTheTop": {
+            "type": "boolean",
+            "description": "True if the field should appear in the header area rather than within the body."
+          },
+          "emphasis": {
+            "type": "boolean",
+            "description": "True if the field should be visually emphasized."
+          },
+          "link": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Optional hyperlink attached to the field.",
+                "$ref": "#/components/schemas/LinkInfo"
+              }
+            ]
+          },
+          "fields": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FieldInfo"
+            },
+            "description": "Optional nested sub-fields. May be combined with Text/Image on the same field."
+          }
+        },
+        "description": "Labeled key/value entry. May carry leaf content (Text or Image), nested sub-fields, or both."
+      },
+      "ImageInfo": {
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the image asset."
+          },
+          "width": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "description": "Optional natural width in pixels.",
+            "format": "int32"
+          },
+          "height": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "description": "Optional natural height in pixels.",
+            "format": "int32"
+          }
+        },
+        "description": "Inline image reference with optional natural dimensions."
+      },
+      "LinkInfo": {
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Destination URL. Anchors built from this value must include target=\"_top\" so the link navigates the top frame instead of the embedding iframe."
+          }
+        },
+        "description": "Hyperlink target attached to a field or cell. When rendered as an <a href=...> anchor, the theme must set target=\"_top\" so navigation replaces the top-level page rather than loading inside the iframe the report is hosted in."
+      },
+      "RecipientInfo": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Recipient short code (customer code, supplier code, employee code)."
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Recipient name."
+          },
+          "address": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Recipient postal address."
+          },
+          "email": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Recipient email address."
+          }
+        },
+        "description": "Recipient party for the document (customer, supplier, employee). Null for non-document views like reports."
+      },
+      "RowInfo": {
+        "type": "object",
+        "properties": {
+          "cells": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CellInfo"
+            },
+            "description": "Cells aligned 1:1 with leaf columns. For group container rows (with nested Rows), Cells contains a single header cell which themes render as a full-width row spanning all columns."
+          },
+          "rows": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/RowInfo"
+            },
+            "description": "Optional nested sub-rows; null for leaf and total rows."
+          },
+          "isTotalRow": {
+            "type": "boolean",
+            "description": "True if this row is a total (running subtotal between leaves, or closing total at the end of a group). Total rows carry Cells but never nested Rows, and are visually emphasized."
+          }
+        },
+        "description": "Single row in the body table. May be a leaf (with Cells), a group container (with nested Rows), or a total row (IsTotalRow)."
+      },
+      "StatusInfo": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Status text."
+          },
+          "tone": {
+            "description": "Visual tone of the status — positive (e.g. paid in full), negative (e.g. overdue), or neutral (e.g. draft).",
+            "$ref": "#/components/schemas/Tone"
+          }
+        },
+        "description": "Document status badge (e.g. 'Paid in Full', 'Overdue', 'Draft') with an associated visual tone."
+      },
+      "TableInfo": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Free-form prose attached to the table (e.g. transaction description above the line items)."
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ColumnInfo"
+            },
+            "description": "Column definitions, in display order."
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RowInfo"
+            },
+            "description": "Row data. Items may nest into sub-groups for hierarchical reports. Total rows appear as regular rows with IsTotalRow set."
+          }
+        },
+        "description": "The single body table — columns and rows (flat or hierarchical). Total rows are regular rows with IsTotalRow set."
+      },
+      "Tone": {
+        "enum": [
+          "neutral",
+          "positive",
+          "negative"
+        ]
+      },
+      "TotalInfo": {
+        "required": [
+          "label",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Stable identifier for the total, when one exists (e.g. 'Total'). Null when the total has no canonical identifier."
+          },
+          "class": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Classification or type of the total, when applicable. Null when the total does not belong to a predefined class."
+          },
+          "label": {
+            "type": "string",
+            "description": "Display label (e.g. 'Subtotal', 'Tax', 'Total')."
+          },
+          "text": {
+            "type": "string",
+            "description": "Pre-formatted display text. Themes render this verbatim."
+          },
+          "number": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "description": "Numeric value of the total. Exposed alongside Text for non-rendering consumers (exports, integrations); themes should render Text.",
+            "format": "double"
+          },
+          "emphasis": {
+            "type": "boolean",
+            "description": "True if the total should be visually emphasized (e.g. the grand total)."
+          }
+        },
+        "description": "Labeled total displayed beneath the table (e.g. Subtotal, Tax, Total)."
+      },
+      "View": {
+        "required": [
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "direction": {
+            "description": "Text direction.",
+            "$ref": "#/components/schemas/Direction"
+          },
+          "language": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Language code the document was rendered in (e.g. 'en', 'ar', 'zh-hk'). Defaults to 'en' when no override is provided."
+          },
+          "businessName": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Issuing business name surfaced at the top level so it can be used as the document's PDF/email subject. Themes display this above the Title only when Business is null; when Business is non-null, the same value is mirrored as BusinessInfo.Name and themes render it from there."
+          },
+          "title": {
+            "type": "string",
+            "description": "Primary heading for the document."
+          },
+          "subtitles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sub-heading lines beneath the title (e.g. period range, comparison period)."
+          },
+          "reference": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Document reference / identifier (e.g. invoice number)."
+          },
+          "business": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Issuing business — name, address, logo, custom fields.",
+                "$ref": "#/components/schemas/BusinessInfo"
+              }
+            ]
+          },
+          "recipient": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Recipient party (customer, supplier, employee). Null for non-document views like reports.",
+                "$ref": "#/components/schemas/RecipientInfo"
+              }
+            ]
+          },
+          "status": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Optional status for the document (e.g. 'Paid in Full', 'Overdue', 'Draft').",
+                "$ref": "#/components/schemas/StatusInfo"
+              }
+            ]
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldInfo"
+            },
+            "description": "Labeled key/value rows attached to the document (e.g. Date, Due Date, user-defined custom fields)."
+          },
+          "table": {
+            "description": "The single body table. Rows can be flat (transactions) or hierarchical (reports).",
+            "$ref": "#/components/schemas/TableInfo"
+          },
+          "totals": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TotalInfo"
+            },
+            "description": "Stacked totals beneath the table (e.g. Subtotal, Tax, Total). Each entry has its own label."
+          },
+          "footers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Pre-rendered HTML footer blocks shown beneath the table."
+          }
+        },
+        "description": "Top-level document view returned by view endpoints. The shape is pre-formatted for theme rendering: all Text values are server-formatted strings that the client renders verbatim — no client-side rounding, currency formatting, or date formatting."
+      }
+    }
+  }
+}

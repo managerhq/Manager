@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+  Skeleton for a printable document view.
+
+  This file is a starting point, not a finished page. Hand it to an AI
+  along with instructions describing what you want to build — for example,
+  "make a bold-looking invoice for a consulting firm", or a quote, order,
+  receipt, statement, etc. The AI fills in the layout and styling around
+  the existing scaffold; nobody is expected to author these by hand.
+
+  The scaffold already wires up the data source: it fetches a document
+  from the /api4/view-v1 endpoint (using the query string from the current
+  URL) and is meant to render the response inside the <main> element.
+  Styling should cover both on-screen display and print output, since the
+  same page is sent straight to the printer.
+
+  IMPORTANT — never render raw JSON in the output. The result must look
+  like a finished document (invoice, quote, order, receipt, statement,
+  report, etc.), not a styled JSON dump. If a field is missing, leave it
+  blank or omit the section; do not fall back to JSON.stringify, do not
+  emit <pre> blocks of the response, and do not write a generic
+  key-sniffing renderer "just in case". The OpenAPI spec for the response
+  is embedded in the OPENAPI SPEC comment block further down (look for the
+  marker right above the <main> element) — read it so you know the exact
+  shape of the response, then DELETE that whole comment block before
+  saving the theme. It's design-time reference material and should not
+  ship in the rendered output.
+
+  IMPORTANT — always return the COMPLETE HTML document, starting with
+  <!DOCTYPE html> and ending with </html>. Do not return just a <body>
+  fragment, just CSS, or just the <script> contents. Manager renders the
+  saved theme directly in an iframe; anything less than a full HTML
+  document will fail to load. Keep <head>, <style>, <body>, the fetch
+  call, and the renderDocument function all in the same file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<!-- The <title> doubles as the default filename when the user prints this
+     iframe to a file (e.g. "Save as PDF"). Set it from the fetched data so
+     it reads as something meaningful like "Invoice 1042 — Acme Pty Ltd"
+     rather than a generic "View". Update document.title once the data has
+     loaded. -->
+<title>View</title>
+<style>
+:root { --bg: #f5f5f5; --paper: #fff; }
+/* Do not change the body background-color: this page is loaded inside an
+   iframe whose parent uses the same --bg, so they blend seamlessly. A
+   different color here would expose the iframe as a visible panel. */
+body { background-color: var(--bg); display: flex; margin: 0; padding: 0; }
+main { background-color: var(--paper); margin: 1rem 1.5rem; border: 1px solid #e5e5e5; border-radius: 5px; box-shadow: 0px 4px 6px rgb(0 0 0 / 0.05); padding: 2rem; min-width: 80ch; }
+
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #292524; --paper: #1c1917; }
+  main { border: 1px solid #0c0a09; box-shadow: 0px 4px 6px rgb(0 0 0 / 0.50); }
+}
+
+@page { margin: 10mm; }
+@media print {
+  body { background-color: initial; display: initial; }
+  main { padding: 0; border: initial; box-shadow: initial; border-radius: initial; margin: 0; min-width: initial; }
+}
+</style>
+</head>
+<body>
+<!-- OPENAPI SPEC (design-time reference — DELETE this entire comment before saving the theme):
+{{OPENAPI_SPEC}}
+-->
+<main></main>
+<script>
+// Request parameters in the OpenAPI spec above should be ignored — they
+// are automatically supplied via window.location.search.
+// Show the results of the fetch call inside the <main> tag.
+fetch('/api4/view-v1' + window.location.search, {
+  headers: { 'Accept': 'application/json' },
+  credentials: 'same-origin',
+})
+  .then(response => response.json())
+  .then(data => {
+    // TODO: render `data` as a finished, print-ready document.
+    // Do NOT dump JSON — the output must look like a real
+    // invoice / quote / order / receipt / statement / report.
+    renderDocument(data);
+  });
+
+function renderDocument(data) {
+  // implement me
+}
+</script>
+</body>
+</html>

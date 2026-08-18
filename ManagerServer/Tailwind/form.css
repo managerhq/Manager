@@ -1,0 +1,146 @@
+@layer components {
+    .form-group
+    {
+        @apply mb-3;
+    }
+
+    .form-control {
+        @apply block w-full px-2 py-1.5 text-sm font-normal leading-normal bg-clip-padding border inset-shadow-sm rounded-md;
+        @apply focus:border-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500/25;
+        @apply placeholder:text-[var(--input-foreground)]/50 placeholder:opacity-100;
+        background-color: var(--input);
+        border-color: var(--input-border);
+        color: var(--input-foreground);
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    .form-control[type=file] {
+        @apply overflow-hidden;
+    }
+
+    .form-file {
+        @apply file:text-sm file:me-2 file:leading-normal file:cursor-pointer file:select-none file:whitespace-nowrap file:px-4 file:py-1.5 file:rounded-md;
+        @apply file:bg-[var(--input)] file:text-[var(--input-foreground)] file:border file:border-[var(--input-border)];
+        @apply hover:file:bg-[color-mix(in_oklab,var(--input),var(--input-border))];
+        @apply focus:file:outline-none focus:file:ring-4 focus:file:ring-neutral-300/25;
+        @apply active:file:shadow-inner;
+        color: var(--input-foreground);
+    }
+    
+    .input-group {
+        @apply relative flex;
+    }
+
+    .input-group > .form-control,
+    .input-group > .form-select {
+        @apply relative flex-auto;
+    }
+
+    .input-group > .form-control:focus,
+    .input-group > .form-select:focus {
+        @apply z-[5];
+    }
+
+    .input-group .btn {
+        @apply relative z-[2];
+    }
+
+    .input-group .btn:focus {
+        @apply z-[5];
+    }
+
+    .input-group-text {
+        @apply px-2 py-1.5 text-sm font-normal leading-normal text-center whitespace-nowrap border rounded-md;
+        background-color: var(--muted);
+        border-color: var(--input-border);
+    }
+
+    .input-group > :not(:first-child) {
+        @apply -ms-px rounded-s-none;
+    }
+
+    .input-group > :not(:last-child) {
+        @apply rounded-e-none;
+    }
+    
+    .form-select {
+        @apply block w-full px-2 pe-8 py-1.5 text-sm font-normal leading-normal border rounded-md;
+        @apply focus:border-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500/25;
+        background-color: var(--input, --background);
+        border-color: var(--input-border);
+    }
+
+    .form-select[multiple],
+    .form-select[size]:not([size="1"]) {
+        @apply pr-3;
+        background-image: none;
+    }
+
+    .form-select-sm {
+        @apply py-1 pl-2 text-sm rounded;
+    }
+
+    .form-select-lg {
+        @apply py-2 pl-4 text-xl rounded-lg;
+    }
+
+    .form-check-input {
+        @apply w-4 h-4 mt-1 align-top border flex-shrink-0;
+        background-color: var(--input);
+        border-color: var(--input-border);
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .form-check-input[type=checkbox] {
+        @apply rounded;
+    }
+
+    .form-check-input[type=radio] {
+        @apply rounded-full;
+    }
+
+    .form-check-input:checked {
+        @apply bg-blue-600 border-blue-600;
+    }
+
+    .form-check-input:checked[type=checkbox] {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+    }
+
+    .form-check-input:checked[type=radio] {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+    }
+
+    .form-check-input[type=checkbox]:indeterminate {
+        @apply bg-blue-600 border-blue-600;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
+    }
+
+    .form-check-input:focus {
+        @apply border-blue-400 outline-none ring-4 ring-blue-500/25;
+    }
+
+    .form-check-input:active {
+        filter: brightness(90%);
+    }
+
+    .form-check-input:disabled {
+        @apply pointer-events-none opacity-50;
+    }
+
+    .form-check-input:disabled ~ .form-check-label,
+    .form-check-input[disabled] ~ .form-check-label {
+        @apply cursor-default opacity-50;
+    }
+
+}

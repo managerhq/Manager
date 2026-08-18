@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>United Kingdom</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>United Kingdom</h1>
+
+<div class="tabs">
+  <button type="button" class="tab active" data-view="welcome">Welcome</button>
+  <button type="button" class="tab" data-view="reports">Reports</button>
+  <button type="button" class="tab" data-view="setup">Tax codes</button>
+</div>
+
+<div class="business-bar">
+  <label>Business
+    <select id="business" required></select>
+  </label>
+</div>
+
+  <div id="welcome-view">
+    <p>This extension helps United Kingdom businesses with the country's compliance reports and the tax codes those reports depend on.</p>
+    <h2>Reports</h2>
+    <p>Install country-specific reports (VAT/GST returns, payroll worksheets, and so on) into a business. Once installed, each report appears as a button on that business's <strong>Reports</strong> tab.</p>
+    <h2>Tax codes</h2>
+    <p>The country ships with a standard set of tax codes pre-linked to the reporting categories the reports use. From the <strong>Tax codes</strong> tab you can create any missing codes in a business with a single click, or update an existing code to attach the right reporting categories.</p>
+    <p class="muted">Pick a business above, then switch to <strong>Reports</strong> or <strong>Tax codes</strong> to get started.</p>
+  </div>
+
+  <div id="reports-view" hidden>
+    <p class="muted">Install a report for a specific business to make it available under that business's <strong>Reports</strong> tab.</p>
+    <div id="report-install-list" data-country-slug="gb"></div>
+  </div>
+
+<div id="setup-view" hidden>
+  <div class="setup-actions">
+    <button type="button" id="refreshSetup" class="primary">Load status</button>
+    <span class="muted">Per-row buttons create or update one tax code at a time.</span>
+  </div>
+  <div id="setupOutput"></div>
+</div>
+
+<script src="reports.js"></script>
+<script src="tax-codes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+@layer components {
+
+/* Icon arrows */
+.mx-icon-left:before,
+.mx-icon-right:before,
+.mx-icon-double-left:before,
+.mx-icon-double-right:before,
+.mx-icon-double-left:after,
+.mx-icon-double-right:after {
+  content: "";
+  @apply relative inline-block align-middle box-border rounded-sm;
+  top: -1px;
+  width: 10px;
+  height: 10px;
+  border-style: solid;
+  border-color: currentColor;
+  border-width: 2px 0 0 2px;
+  transform-origin: center;
+  transform: rotate(-45deg) scale(0.7);
+}
+.mx-icon-double-left:after { left: -4px; }
+.mx-icon-double-right:before { left: 4px; }
+.mx-icon-right:before,
+.mx-icon-double-right:before,
+.mx-icon-double-right:after {
+  transform: rotate(135deg) scale(0.7);
+}
+
+/* Buttons */
+.mx-btn {
+  @apply box-border leading-none text-[14px] font-medium px-[15px] py-[7px] m-0 cursor-pointer bg-transparent outline-none border rounded whitespace-nowrap;
+  border-color: var(--border);
+  color: var(--foreground);
+  box-shadow: none;
+}
+.mx-btn:hover {
+  @apply border-[#1284e7] text-[#1284e7];
+}
+.mx-btn-text { @apply border-0 px-1 text-left leading-[inherit]; }
+
+/* Scrollbar */
+.mx-scrollbar { @apply h-full; }
+.mx-scrollbar:hover .mx-scrollbar-track { @apply opacity-100; }
+.mx-scrollbar-wrap { @apply h-full overflow-x-hidden overflow-y-auto; }
+.mx-scrollbar-track {
+  @apply absolute top-[2px] right-[2px] bottom-[2px] w-[6px] z-[1] rounded opacity-0;
+  transition: opacity .24s ease-out;
+}
+.mx-scrollbar-track .mx-scrollbar-thumb {
+  @apply absolute w-full cursor-pointer rounded-[inherit];
+  height: 0;
+  background-color: color-mix(in oklab, var(--foreground) 30%, transparent);
+  transition: background-color .3s;
+}
+
+/* Zoom in down transition */
+.mx-zoom-in-down-enter-active,
+.mx-zoom-in-down-leave-active {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: opacity .3s cubic-bezier(0.23,1,0.32,1), transform .3s cubic-bezier(0.23,1,0.32,1);
+  transform-origin: center top;
+}
+.mx-zoom-in-down-enter,
+.mx-zoom-in-down-enter-from,
+.mx-zoom-in-down-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+/* Datepicker shell */
+.mx-datepicker { @apply relative w-[120px] flex items-stretch; }
+.mx-datepicker svg { @apply w-[1em] h-[1em] align-middle fill-current overflow-hidden; }
+.mx-datepicker-range { @apply w-[320px]; }
+.mx-datepicker-inline { @apply w-auto; }
+
+/* Input */
+.mx-input-wrapper { @apply relative flex items-stretch; }
+.mx-input-wrapper .mx-icon-clear { @apply hidden; }
+.mx-input-wrapper:hover .mx-icon-clear { @apply block; }
+.mx-input-wrapper:hover .mx-icon-clear + .mx-icon-calendar { @apply hidden; }
+
+.mx-input {
+  @apply inline-block box-border border inset-shadow-xs w-full py-1.5 leading-normal rounded pr-[30px] pl-[10px];
+  @apply focus:border-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500/25;
+  background-color: var(--input);
+  border-color: var(--input-border);
+  color: var(--foreground);
+}
+.mx-input:disabled,
+.mx-input.disabled {
+  @apply cursor-not-allowed;
+  background-color: var(--muted);
+  border-color: var(--muted-border);
+  color: var(--muted-foreground);
+}
+.mx-input:focus { @apply outline-none; }
+.mx-input::-ms-clear { display: none; }
+
+/* Input icons */
+.mx-icon-calendar,
+.mx-icon-clear {
+  @apply absolute top-1/2 right-2 text-[16px] leading-none align-middle;
+  color: color-mix(in oklab, var(--foreground) 50%, transparent);
+  transform: translateY(-50%);
+}
+.mx-icon-clear { @apply cursor-pointer; }
+.mx-icon-clear:hover {
+  color: color-mix(in oklab, var(--foreground) 80%, transparent);
+}
+
+/* Popup and main */
+.mx-datepicker-main {
+  @apply text-[14px] leading-[1.5] font-sans border;
+  background-color: var(--card);
+  border-color: var(--card-border);
+  color: var(--foreground);
+}
+.mx-datepicker-popup {
+  @apply absolute my-[5px] z-[2001];
+  box-shadow: 0 6px 12px var(--shadow);
+}
+.mx-datepicker-sidebar {
+  @apply hidden;
+}
+.mx-datepicker-body {
+  @apply relative select-none;
+}
+
+/* Shortcuts */
+.mx-btn-shortcut { @apply block px-[6px] leading-[24px]; }
+
+/* Range wrapper */
+.mx-range-wrapper { @apply flex; }
+@media (max-width: 750px) {
+  .mx-range-wrapper { @apply flex-col; }
+}
+
+/* Header and footer */
+.mx-datepicker-header {
+  @apply px-[8px] py-[6px] border-b;
+  border-color: var(--card-border);
+}
+.mx-datepicker-footer {
+  @apply px-[8px] py-[6px] text-right border-t;
+  border-color: var(--card-border);
+}
+
+/* Calendar containers */
+.mx-calendar { @apply box-border w-[248px] px-[12px] py-[6px]; }
+.mx-calendar + .mx-calendar {
+  @apply border-l;
+  border-color: var(--card-border);
+}
+
+/* Calendar header/time header */
+.mx-calendar-header,
+.mx-time-header {
+  @apply box-border h-[34px] leading-[34px] text-center overflow-hidden;
+}
+.mx-btn-icon-left,
+.mx-btn-icon-double-left { @apply float-left; }
+.mx-btn-icon-right,
+.mx-btn-icon-double-right { @apply float-right; }
+.mx-calendar-header-label { @apply text-[14px]; }
+.mx-calendar-decade-separator { @apply mx-[2px]; }
+.mx-calendar-decade-separator:after { content: "~"; }
+
+/* Calendar content and cells */
+.mx-calendar-content { @apply relative h-[224px] box-border; }
+.mx-calendar-content .cell { @apply cursor-pointer; }
+.mx-calendar-content .cell:hover {
+  color: var(--foreground);
+  background-color: var(--muted);
+}
+.mx-calendar-content .cell.active {
+  @apply text-white bg-[#1284e7];
+}
+.mx-calendar-content .cell.in-range,
+.mx-calendar-content .cell.hover-in-range {
+  color: var(--foreground);
+  background-color: color-mix(in oklab, var(--muted) 50%, transparent);
+}
+.mx-calendar-content .cell.disabled {
+  @apply cursor-not-allowed;
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}
+
+/* Week mode */
+.mx-calendar-week-mode .mx-date-row { @apply cursor-pointer; }
+.mx-calendar-week-mode .mx-date-row:hover {
+  background-color: var(--muted);
+}
+.mx-calendar-week-mode .mx-date-row.mx-active-week {
+  background-color: color-mix(in oklab, var(--muted) 50%, transparent);
+}
+.mx-calendar-week-mode .mx-date-row .cell:hover { @apply text-[inherit] bg-transparent; }
+.mx-calendar-week-mode .mx-date-row .cell.active { @apply text-[inherit] bg-transparent; }
+.mx-week-number { @apply opacity-50; }
+
+/* Table */
+.mx-table {
+  @apply table-fixed border-separate w-full h-full box-border text-center;
+  border-spacing: 0;
+}
+.mx-table th { @apply p-0 font-medium align-middle; }
+.mx-table td { @apply p-0 align-middle; }
+.mx-table-date td,
+.mx-table-date th { @apply h-[32px] text-[12px]; }
+.mx-table-date .today {
+  @apply text-[#2a90e9];
+}
+.mx-table-date .cell.not-current-month {
+  color: var(--muted-foreground);
+  background: none;
+}
+
+/* Time picker layout */
+.mx-time {
+  @apply flex-1 w-[224px];
+  background-color: var(--card);
+}
+.mx-time + .mx-time {
+  @apply border-l;
+  border-color: var(--card-border);
+}
+.mx-calendar-time { @apply absolute inset-0; }
+.mx-time-header {
+  @apply border-b;
+  border-color: var(--card-border);
+}
+.mx-time-content { @apply h-[224px] box-border overflow-hidden; }
+.mx-time-columns { @apply flex w-full h-full overflow-hidden; }
+.mx-time-column {
+  @apply flex-1 relative text-center border-l;
+  border-color: var(--card-border);
+}
+.mx-time-column:first-child { @apply border-l-0; }
+.mx-time-column .mx-time-list { @apply m-0 p-0 list-none; }
+.mx-time-column .mx-time-list::after {
+  content: "";
+  @apply block;
+  height: 192px;
+}
+
+/* Time items and options */
+.mx-time-column .mx-time-item { @apply cursor-pointer text-[12px] h-[32px] leading-[32px]; }
+.mx-time-column .mx-time-item:hover {
+  color: var(--foreground);
+  background-color: var(--muted);
+}
+.mx-time-column .mx-time-item.active {
+  @apply text-[#1284e7] bg-transparent font-bold;
+}
+.mx-time-column .mx-time-item.disabled {
+  @apply cursor-not-allowed;
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}
+
+.mx-time-option { @apply cursor-pointer px-[10px] py-[8px] text-[14px] leading-[20px]; }
+.mx-time-option:hover {
+  color: var(--foreground);
+  background-color: var(--muted);
+}
+.mx-time-option.active {
+  @apply text-[#1284e7] bg-transparent font-bold;
+}
+.mx-time-option.disabled {
+  @apply cursor-not-allowed;
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}
+
+}

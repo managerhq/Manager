@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slovensko — Daňové priznanie DPH</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* DPH return — formal tlačivo (paper-form) aesthetic. Scoped to this page only;
+     overrides the generic report styling in styles.css to match what
+     Slovak accountants are used to seeing on the official DPH tlačivo (vzor DPHv25). */
+
+  body { background: #ececec; }
+  h1 { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+
+  #reportOutput {
+    max-width: 920px;
+    margin: 0 auto 24px;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+  }
+
+  /* The Print / Download XML buttons are moved OUT of #reportOutput by the customScript
+     (see reports.js) so they sit above the green form panel, not inside it. The bar
+     here gets minimal spacing — the buttons supply their own colour via .primary. */
+  .report-actions {
+    max-width: 920px;
+    margin: 0 auto 8px;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+  }
+
+  #reportOutput .report-header {
+    text-align: center;
+    padding: 14px 20px 12px;
+    border-bottom: 2px solid #000;
+    margin: 0;
+    /* Medium tlačivo green — visually anchors the form's title banner and matches
+       the I./II./III./IV. časť section dividers below. */
+    background: #b8d180;
+  }
+  #reportOutput .report-header .business-name {
+    font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #000;
+  }
+  #reportOutput .report-header .report-title {
+    font-size: 17px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+    margin-bottom: 6px; color: #000;
+  }
+  #reportOutput .report-header .report-period,
+  #reportOutput .report-header .report-basis {
+    font-size: 12px; color: #000;
+  }
+
+  #reportOutput table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #reportOutput th, #reportOutput td {
+    border: 1px solid #000;
+    padding: 6px 10px;
+    vertical-align: middle;
+    color: #000;
+    /* Pale tlačivo green — the characteristic colour of Slovak paper tax forms. */
+    background: #eaf2d0;
+  }
+
+  /* Section divider rows (rendered by app.js as <tr><th colspan>) — bold uppercase
+     on a medium-green bar, just like the I./II./III./IV. časť bars on the tlačivo. */
+  #reportOutput tbody tr th[colspan] {
+    background: #b8d180;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-align: left;
+    padding: 7px 10px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    color: #000;
+  }
+
+  /* Description column — left, smaller font, normal weight */
+  #reportOutput tbody td:first-child {
+    width: 72%;
+    font-size: 12px;
+    line-height: 1.35;
+    white-space: normal;
+    padding-right: 16px;
+  }
+
+  /* Numeric value column — larger tabular-numeric font, right-aligned, slightly
+     deeper green fill so each cell reads like a stamped value box on the paper form. */
+  #reportOutput tbody td.num {
+    width: 28%;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    font-family: "Consolas", "Courier New", monospace;
+    background: #dde9b4;
+    padding: 6px 14px;
+    white-space: nowrap;
+    border-left: 2px solid #000;
+  }
+  #reportOutput tbody td.num span,
+  #reportOutput tbody td.num a {
+    color: #000;
+    text-decoration: none;
+  }
+  #reportOutput tbody td.num a:hover { text-decoration: underline; }
+
+  /* Highlight the last two body rows (R25 daňová povinnosť, R26 vlastná d.p. /
+     nadmerný odpočet) — the "Výsledok" boxes that anchor the bottom of the form. */
+  #reportOutput tbody tr:nth-last-child(-n+2) td {
+    background: #c4d990;
+    font-weight: 700;
+  }
+  #reportOutput tbody tr:nth-last-child(-n+2) td.num {
+    background: #a5c372;
+    font-size: 16px;
+    border-left-width: 2px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    #reportOutput { max-width: none; border-width: 2px; }
+    /* Keep the green tint on print — the tlačivo is recognisable by colour. */
+  }
+</style>
+</head>
+<body>
+
+<div class="page-nav"><a href="index.html">← Slovensko — účtovná lokalizácia</a></div>
+<h1>Daňové priznanie — Daň z pridanej hodnoty</h1>
+
+<div class="business-bar">
+  <label>Podnik
+    <select id="business" required></select>
+  </label>
+</div>
+
+<form id="reportControls">
+  <label>Obdobie
+    <select id="periodType">
+      <option value="month">Mesiac</option>
+      <option value="quarter">Štvrťrok</option>
+      <option value="custom">Vlastný rozsah</option>
+    </select>
+  </label>
+  <label class="period-control" data-types="month">Mesiac
+    <select id="month">
+      <option value="0">Január</option>
+      <option value="1">Február</option>
+      <option value="2">Marec</option>
+      <option value="3">Apríl</option>
+      <option value="4">Máj</option>
+      <option value="5">Jún</option>
+      <option value="6">Júl</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">Október</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+  </label>
+  <label class="period-control" data-types="quarter" hidden>Štvrťrok
+    <select id="quarter">
+      <option value="0">Q1 (Jan–Mar)</option>
+      <option value="1">Q2 (Apr–Jún)</option>
+      <option value="2">Q3 (Júl–Sep)</option>
+      <option value="3">Q4 (Okt–Dec)</option>
+    </select>
+  </label>
+  <label class="period-control" data-types="month quarter">Rok
+    <select id="year"></select>
+  </label>
+  <label class="period-control" data-types="custom" hidden>Od
+    <input type="date" id="fromDate">
+  </label>
+  <label class="period-control" data-types="custom" hidden>Do
+    <input type="date" id="toDate">
+  </label>
+  <label>Spôsob účtovania
+    <select id="accounting">
+      <option value="0">Akruálne</option>
+      <option value="1">Hotovostné</option>
+    </select>
+  </label>
+  <button type="submit" class="primary">Vygenerovať</button>
+</form>
+
+<div id="reportOutput"></div>
+
+<script>const REPORT_ID = "b16afdac-1570-4f6d-9bd1-09feaeb966ed";</script>
+<script src="reports.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+using ManagerServer.Globalization;
+using ManagerServer.Helpers;
+using System;
+using System.Linq;
+
+namespace ManagerServer.Api.Businesses.Business.Reports.CustomerSummary
+{
+    [ProtoContract]
+    internal sealed class GetCustomerSummaryView : GetReportView<Model.CustomerSummary>
+    {
+        protected override string DefaultTitle => Strings.CustomerSummary;
+
+        protected override ReportModel Build(Database business, Model.CustomerSummary report)
+        {
+            var model = new ReportModel();
+            model.Subtitle = string.Format(Strings.For_the_period_from_XXX_to_XXX, report.FromDate.ToLocalShortDisplayString(), report.ToDate.ToLocalShortDisplayString());
+
+            var totals = new ManagerServer.Query.GeneralLedger.GeneralLedger(Business)
+                .Where(x => x.GeneralLedgerAccount.IsAccountsReceivable)
+                .Where(x => x.Date >= report.FromDate && x.Date <= report.ToDate)
+                .GroupBy(x => new { x.Customer, TransactionType = x.Transaction.GetType() })
+                .Select(x => new { x.Key.Customer, x.Key.TransactionType, Amount = x.Sum(y => y.AccountAmount), Currency = x.First().AccountCurrency })
+                .ToList();
+
+            totals.AddRange(new ManagerServer.Query.GeneralLedger.GeneralLedger(Business)
+                .Where(x => x.GeneralLedgerAccount.IsAccountsReceivable)
+                .Where(x => x.Date < report.FromDate)
+                .GroupBy(x => x.Customer)
+                .Select(x => new { Customer = x.Key, TransactionType = default(Type), Amount = x.Sum(y => y.AccountAmount), Currency = x.First().AccountCurrency }));
+
+            var types = totals.Where(x => x.TransactionType != null).GroupBy(x => x.TransactionType).OrderByDescending(x => x.Key == typeof(ManagerServer.Model.SalesInvoice)).ThenByDescending(x => x.Count()).Select(x => x.Key).ToArray();
+
+            model.Columns.Add(new Column() { Name = Strings.OpeningBalance });
+            foreach (var e in types)
+            {
+                if (e == typeof(ManagerServer.Model.Receipt)) model.Columns.Add(new Column() { Name = Strings.Receipts });
+                else if (e == typeof(ManagerServer.Model.Payment)) model.Columns.Add(new Column() { Name = Strings.Refunds });
+                else if (e == typeof(ManagerServer.Model.SalesInvoice)) model.Columns.Add(new Column() { Name = Strings.Invoices });
+                else if (e == typeof(ManagerServer.Model.CreditNote)) model.Columns.Add(new Column() { Name = Strings.CreditNotes });
+                else if (e == typeof(ManagerServer.Model.JournalEntry)) model.Columns.Add(new Column() { Name = Strings.JournalEntries });
+                else if (e == typeof(ManagerServer.Model.LatePaymentFee)) model.Columns.Add(new Column() { Name = Strings.LatePaymentFees });
+                else model.Columns.Add(new Column() { Name = e.Name });
+            }
+            model.Columns.Add(new Column() { Name = Strings.ClosingBalance, IsBold = true });
+
+            Cell Make(decimal? v) => ReportNumberFormat.Cell(v, NumberStyle.Currency, model.WholeNumbers);
+
+            if (report.Division.HasValue)
+            {
+                totals = totals.Where(x => x.Customer.Division == report.Division.Value).ToList();
+                model.Subtitle2 = business.SingleOrDefault<ManagerServer.Model.Division>(report.Division)?.Name;
+            }
+
+            var multipleCurrencies = totals.Select(x => x.Currency).Distinct().Count() > 1;
+
+            foreach (var e in totals.GroupBy(x => x.Currency).OrderByDescending(x => x.Key is ManagerServer.Model.BaseCurrency).ThenBy(x => x.Key.GetCode()))
+            {
+                var groupItems = new System.Collections.Generic.List<Row>();
+                foreach (var e2 in e.GroupBy(x => x.Customer).OrderBy(x => x.Key.Name))
+                {
+                    var closingBalance = 0m;
+                    var openingBalance = e2.Where(x => x.TransactionType == null).Sum(x => x.Amount);
+                    closingBalance += openingBalance;
+
+                    var cells = new System.Collections.Generic.List<Cell>();
+                    cells.Add(Make(openingBalance));
+
+                    foreach (var e3 in types)
+                    {
+                        var amount = e2.SingleOrDefault(x => x.TransactionType == e3)?.Amount;
+                        cells.Add(Make(amount));
+                        if (amount.HasValue) closingBalance += amount.Value;
+                    }
+                    cells.Add(Make(closingBalance));
+
+                    // ExcludeIfZero: skip row when closing balance is zero and all cells are zero
+                    if (cells.All(c => (c.Value ?? 0m) == 0m)) continue;
+
+                    var row = new Row { Name = e2.Key.NameWithCode, Cells = cells };
+
+                    if (multipleCurrencies) groupItems.Add(row);
+                    else model.Rows.Items.Add(row);
+                }
+                if (multipleCurrencies)
+                {
+                    model.Rows.Items.Add(new Row
+                    {
+                        Name = e.Key.GetCode(),
+                        Rows = new Rows { Items = groupItems },
+                    });
+                }
+            }
+
+            if (!multipleCurrencies) model.Rows.Items.Add(new Row { IsTotalRow = true });
+
+            return model;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "en": {
+    "page.title": "United Arab Emirates",
+    "page.heading": "United Arab Emirates",
+    "tab.welcome": "Welcome",
+    "tab.reports": "Reports",
+    "tab.setup": "Tax codes",
+    "businessBar.label": "Business",
+    "welcome.intro": "This extension helps United Arab Emirates businesses with the country's compliance reports and the tax codes those reports depend on.",
+    "welcome.reports.heading": "Reports",
+    "welcome.reports.body": "Install country-specific reports (VAT/GST returns, payroll worksheets, and so on) into a business. Once installed, each report appears as a button on that business's <strong>Reports</strong> tab.",
+    "welcome.setup.heading": "Tax codes",
+    "welcome.setup.body": "The country ships with a standard set of tax codes pre-linked to the reporting categories the reports use. From the <strong>Tax codes</strong> tab you can create any missing codes in a business with a single click, or update an existing code to attach the right reporting categories.",
+    "welcome.hint": "Pick a business above, then switch to <strong>Reports</strong> or <strong>Tax codes</strong> to get started.",
+    "reports.hint": "Install a report for a specific business to make it available under that business's <strong>Reports</strong> tab.",
+    "setup.loadStatus": "Load status",
+    "setup.actionsHint": "Per-row buttons create or update one tax code at a time."
+  },
+  "ar": {
+    "page.title": "الإمارات العربية المتحدة",
+    "page.heading": "الإمارات العربية المتحدة",
+    "tab.welcome": "الرئيسية",
+    "tab.reports": "التقارير",
+    "tab.setup": "رموز الضريبة",
+    "businessBar.label": "النشاط التجاري",
+    "welcome.intro": "يساعد هذا الامتداد منشآت الإمارات العربية المتحدة على إعداد تقارير الامتثال الخاصة بالدولة ورموز الضريبة التي تعتمد عليها هذه التقارير.",
+    "welcome.reports.heading": "التقارير",
+    "welcome.reports.body": "ثبّت التقارير الخاصة بالدولة (إقرارات ضريبة القيمة المضافة، وكشوف الرواتب، وما إلى ذلك) داخل النشاط التجاري. وبمجرد التثبيت، يظهر كل تقرير كزر في علامة التبويب <strong>التقارير</strong> لهذا النشاط.",
+    "welcome.setup.heading": "رموز الضريبة",
+    "welcome.setup.body": "تتضمن الدولة مجموعة قياسية من رموز الضريبة المرتبطة مسبقاً بفئات التقارير التي تستخدمها التقارير. من علامة التبويب <strong>رموز الضريبة</strong>، يمكنك إنشاء أي رموز مفقودة في النشاط التجاري بنقرة واحدة، أو تحديث رمز قائم لربطه بفئات التقارير الصحيحة.",
+    "welcome.hint": "اختر نشاطاً تجارياً أعلاه، ثم انتقل إلى <strong>التقارير</strong> أو <strong>رموز الضريبة</strong> للبدء.",
+    "reports.hint": "ثبّت تقريراً لنشاط تجاري محدد ليصبح متاحاً ضمن علامة التبويب <strong>التقارير</strong> لذلك النشاط.",
+    "setup.loadStatus": "تحميل الحالة",
+    "setup.actionsHint": "تنشئ الأزرار في كل صف أو تحدّث رمز ضريبة واحداً في كل مرة."
+  }
+}

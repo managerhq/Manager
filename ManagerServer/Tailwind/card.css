@@ -1,0 +1,104 @@
+@layer components {
+    .card {
+        @apply flex flex-col border border-t-0 lg:border-t rounded-lg;
+        @apply divide-y divide-[var(--card-border)];
+        color: var(--card-foreground);
+        border-color: var(--card-border);
+        background-color: var(--card);
+        @apply print:border-0 print:bg-transparent print:text-black;
+    }
+    
+    .card-container {
+        @apply flex flex-col;
+        @apply divide-y divide-[var(--card-border)];
+        border-top: 1px solid var(--card-border);
+    }
+    
+    .card-shadow {
+        @apply shadow-[0_4px_6px_-1px_var(--muted-shadow)];
+    }
+    
+    .card > * {
+        @apply lg:first:rounded-t-lg;
+        @apply lg:last:rounded-b-lg;
+    }
+    
+    .card-header {
+      @apply px-6 py-4;
+      box-shadow: inset 0 1px var(--muted-inset);
+      background-color: var(--muted);
+      color: var(--muted-foreground);
+    }
+    
+    .card-accent {
+      @apply px-6 py-4;
+      box-shadow: inset 0 1px var(--muted-inset);
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+    }
+    
+    .card-title {
+      @apply text-base font-semibold text-[var(--muted-foreground)] opacity-25;
+      text-shadow: var(--muted-foreground-shadow);
+    }
+    
+    .card-inset {
+      @apply px-6 py-4;
+      @apply shadow-[inset_0_2px_4px_var(--muted-shadow)];
+      @apply print:p-0;
+      background-color: var(--muted);
+      color: var(--muted-foreground);
+      @apply print:bg-transparent print:shadow-none
+    }
+    
+    .card-body {
+      @apply px-6 py-2;
+      box-shadow: inset 0 1px var(--muted-inset);
+      @apply print:p-0 print:shadow-none;
+    }
+    
+    .card-form {
+      @apply px-6 py-4;
+      box-shadow: inset 0 1px var(--muted-inset);
+      background-color: color-mix(in oklab, var(--card), var(--muted));
+      color: var(--muted-foreground);
+    }
+    
+    .card-table {
+        @apply text-sm border-separate border-spacing-0 w-full;
+    }
+    
+    .card-table thead {
+        @apply lg:sticky lg:top-[-1px] z-40;
+    }
+    
+    .card-table tr th {
+        @apply text-start font-semibold p-3 border-t border-e last:border-e-0 text-[var(--muted-foreground)]/75;
+        background-color: var(--muted);
+        border-color: var(--card-border);
+        box-shadow: inset 0 1px var(--muted-inset);
+    }
+    
+    .card-table thead tr:first-child th {
+        @apply border-t-0;
+    }
+    
+    .card-table th a {
+        @apply text-[var(--muted-foreground)]/75 hover:text-[var(--primary-foreground)];
+    }
+    
+    .card-table th i {
+        @apply text-base text-[var(--muted-foreground)] opacity-25;
+        text-shadow: var(--muted-foreground-shadow);
+    }
+    
+    .card-table td {
+        @apply p-3 border-t border-e last:border-e-0;
+        border-color: var(--card-border);
+        box-shadow: inset 0 1px var(--muted-inset);
+    }
+    
+    .card-table tr:nth-child(odd) {
+        background-color: color-mix(in oklab, var(--card), var(--muted));
+    }
+}

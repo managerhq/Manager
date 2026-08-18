@@ -1,0 +1,67 @@
+<table style="print-color-adjust: exact; -webkit-print-color-adjust: exact">
+    <thead>
+        <tr>
+            <td colspan="99">
+                <div style="font-weight: bold; font-size: 32px; padding: 20px; background-color: #ED7D31; color: #fff; margin-bottom: 20px; border-bottom-width: 3px; border-color: #F7CAAC">{{ title }}</div>
+                
+                <table style="margin-bottom: 20px"><tr>
+                    <td style="padding-left: 30px">
+                        <div style="font-weight: bold">{{ recipient.name }}</div>
+                        <div>{{ recipient.address | newline_to_br }}</div>
+                        <div>{{ recipient.identifier }}</div>
+                    </td>
+                    <td style="padding-right: 30px">
+                        {% for field in fields %}
+                        <div style="font-weight: bold">{{ field.label }}</div>
+                        <div style="margin-bottom: 10px">{{ field.text }}</div>
+                        {% endfor %}
+                    </td>
+                    {% if business.logo != null %}<td style="text-align: right; width: 300px"><img src="{{ business.logo }}" style="max-height: 150px; max-width: 300px; display: inline" /></td>{% endif %}
+                </tr></table>
+
+                <div style="font-size: 14px; font-weight: bold; margin-bottom: 20px; padding: 0px 30px">{{ description }}</div>
+            </td>
+        </tr>
+        <tr>
+            {% for column in table.columns %}            
+            <td style="font-weight: bold; color: #ffffff; background-color: #ED7D31; border-bottom-width: 5px; border-color: #F7CAAC; padding: 10px; text-align: {{ column.align }}{% if forloop.first %}; padding-left: 30px{% endif %}{% if forloop.last %}; padding-right: 30px{% endif %}{% if column.nowrap %}; width: 80px{% endif %}">{{ column.label }}</td>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in table.rows %}
+        <tr>
+            {% for cell in row.cells %}
+            <td style="padding: 10px; text-align: {{ table.columns[forloop.index0].align }}; border-color: #F7CAAC; border-bottom-width: 1px{% if forloop.first %}; padding-left: 30px{% endif %}{% if forloop.last %}; padding-right: 30px{% endif %}{% if table.columns[forloop.index0].nowrap %}; white-space: nowrap; width: 80px{% endif %}">{{ cell.text | newline_to_br }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% for total in table.totals %}
+        <tr>
+            <td colspan="{{ table.columns | size | minus:1 }}" style="padding: 10px; text-align: right{% if total.emphasis == true %}; font-weight: bold; font-size: 16px{% endif %}">{{ total.label }}</td>
+            <td style="border-bottom-width: 1px; border-color: #F7CAAC; white-space: nowrap; padding: 10px; padding-left: 30px; text-align: right; padding-right: 30px{% if total.emphasis == true %}; font-weight: bold; color: #ffffff; background-color: #ED7D31; font-size: 16px{% endif %}">{{ total.text }}</td>
+        </tr>
+        {% endfor %}
+        
+        {% for field in custom_fields %}
+        <tr>
+            <td colspan="99" style="padding-left: 30px; padding-right: 30px">                
+                <div style="font-weight: bold">{{ field.label }}</div>
+                <div style="padding-bottom: 20px">{{ field.text | newline_to_br }}</div>                
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+    <tfoot>
+        <tr><td colspan="99" style="padding-top: 20px">
+            <div style="border-top-width: 3px; border-color: #F7CAAC; font-size: 11px; padding: 10px 20px; background-color: #ED7D31; color: #fff">
+                <div style="font-weight: bold">{{ business.name }}</div>
+                <div>{{ business.address | replace: "\n", " " }}</div>
+                {% for field in business.custom_fields %}
+                <div>{{ field.label }} {{ field.text }}</div>
+                {% endfor %}
+            </div>
+        </td></tr>
+    </tfoot>
+</table>

@@ -1,0 +1,125 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using ManagerServer.Model.Enums;
+using ManagerServer.Globalization;
+using System.Text;
+using System.IO;
+using ManagerServer.Model;
+using System.Reflection;
+using ManagerServer.Model.Attributes;
+using ManagerServer.Model.Obsolete;
+using System.Threading.Tasks;
+
+namespace ManagerServer
+{
+    public static partial class Upgrade
+    {
+        private static async Task<IEnumerable<Model.Object>> Upgrade272(Orm.SQLiteConnection objects, IProgress<Tuple<int, int>> progress)
+        {
+            await Task.CompletedTask;
+            var list = new List<ManagerServer.Model.Object>();
+            foreach (var e in objects.OfType<ManagerServer.Model.ExpenseClaim>())
+            {
+                if (e.Lines == null && e.Obsolete_Lines2 != null)
+                {
+                    var lines = new List<ExpenseClaim.Line>();
+                    foreach (var e2 in e.Obsolete_Lines2)
+                    {
+                        Guid? customer = null;
+                        Guid? supplier = null;
+                        Guid? employee = null;
+                        Guid? capitalAccount = null;
+                        Guid? specialAccount = null;
+                        Guid? inventoryItem = null;
+                        Guid? fixedAsset = null;
+                        Guid? intangibleAsset = null;
+                        Guid? salesInvoice = null;
+                        Guid? purchaseInvoice = null;
+
+                        Guid? account = e2.Account;
+                        if (account.HasValue)
+                        {
+                            var account2 = objects.SingleOrDefault(account.Value);
+                            if (account2 != null)
+                            {
+                                if (account2 is Customer)
+                                {
+                                    customer = account;
+                                    salesInvoice = e2.Invoice;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetAccountsReceivableAccount));
+                                }
+                                else if (account2 is Supplier)
+                                {
+                                    supplier = account;
+                                    purchaseInvoice = e2.Invoice;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetAccountsPayableAccount));
+                                }
+                                else if (account2 is Employee)
+                                {
+                                    employee = account;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetEmployeeClearingAccount));
+                                }
+                                else if (account2 is CapitalAccount)
+                                {
+                                    capitalAccount = account;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetCapitalAccountsAccount));
+                                }
+                                else if (account2 is SpecialAccount)
+                                {
+                                    specialAccount = account;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetSpecialAccountsAccount));
+                                }
+                                else if (account2 is InventoryItem)
+                                {
+                                    inventoryItem = account;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetInventoryOnHandAccount));
+                                }
+                                else if (account2 is FixedAsset)
+                                {
+                                    fixedAsset = account;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetFixedAssetsAtCostAccount));
+                                }
+                                else if (account2 is IntangibleAsset)
+                                {
+                                    intangibleAsset = account;
+                                    account = ManagerServer.Model.Object.GetGuidByType(typeof(BalanceSheetIntangibleAssetsAtCostAccount));
+                                }
+                            }
+                        }
+
+                        lines.Add(new ExpenseClaim.Line()
+                        {
+                            Item = e2.Item,
+                            Account = account,
+                            AccountsReceivableCustomer = customer,
+                            BillableExpenseCustomer = e2.BillableExpenseCustomer,
+                            BillableExpenseSalesInvoice = e2.BillableExpenseSalesInvoice,
+                            AccountsPayableSupplier = supplier,
+                            Employee = employee,
+                            CapitalAccount = capitalAccount,
+                            SpecialAccount = specialAccount,
+                            FixedAsset = fixedAsset,
+                            IntangibleAsset = intangibleAsset,
+                            AccountsReceivableSalesInvoice = salesInvoice,
+                            PurchaseInvoice = purchaseInvoice,
+                            LineDescription = e2.Description,
+                            TaxCode = e2.TaxCode,
+                            Division = e2.TrackingCode,
+                            CurrencyAmount = e2.ProposedAccountAmount ?? 0m,
+                            Qty = e2.Qty,
+                            SubAccount = e2.MemberAccount,
+                            PurchaseUnitPrice = e2.Amount ?? 0m
+                        });
+                    }
+                    e.Lines = lines.ToArray();
+
+                    e.HasLineDescription = e.Lines.Any(x => !string.IsNullOrWhiteSpace(x.LineDescription));
+                    list.Add(e);
+                }
+            }
+
+            return list;
+        }
+    }
+}

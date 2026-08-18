@@ -1,0 +1,128 @@
+@layer components {
+    .btn {
+        @apply font-semibold text-sm leading-normal cursor-pointer select-none whitespace-nowrap px-4 py-1.5 rounded-md border;
+        @apply focus:outline-none focus:ring-4 focus:ring-neutral-300/25;
+        @apply active:shadow-inner;
+        @apply disabled:opacity-65 disabled:pointer-events-none;
+        background-color: var(--input);
+        color: var(--input-foreground);
+        border-color: var(--input-border);
+        text-decoration: none;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+    .btn:hover {
+        background-color: color-mix(in oklab, var(--input), var(--input-border));
+    }
+
+    .btn-primary {
+        @apply text-white bg-[#428bca] border-[#357ebd];
+        @apply hover:bg-[#3276b1] hover:border-[#285e8e] hover:text-white;
+        @apply focus:ring-blue-500/25;
+        box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
+    }
+
+    .btn-success {
+        @apply text-white bg-[#5cb85c] border-[#4cae4c];
+        @apply hover:bg-[#47a447] hover:border-[#398439] hover:text-white;
+        @apply focus:ring-green-500/25;
+        box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
+    }
+
+    .btn-danger {
+        @apply text-white bg-[#d9534f] border-[#d43f3a];
+        @apply hover:bg-[#d2322d] hover:border-[#ac2925] hover:text-white;
+        @apply focus:ring-red-500/25;
+        box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
+    }
+
+    .btn.active {
+        @apply shadow-inner;
+    }
+
+    .btn-primary.active {
+        @apply bg-[#3276b1] border-[#285e8e] shadow-inner;
+    }
+
+    .btn-success.active {
+        @apply bg-[#47a447] border-[#398439] shadow-inner;
+    }
+
+    .btn-danger.active {
+        @apply bg-[#d2322d] border-[#ac2925] shadow-inner;
+    }
+
+    .btn-outline {
+        @apply bg-transparent;
+        @apply focus:ring-neutral-300/25;
+        border-color: var(--input-border);
+    }
+    
+    .btn-outline:hover {
+        background-color: color-mix(in oklab, var(--input), var(--input-border));
+    }
+
+    .btn-outline.active {
+        @apply shadow-inner;
+    }
+
+    .btn-sm {
+        @apply px-3 py-0.5 text-sm rounded font-normal;
+    }
+
+    .btn-xs {
+        @apply px-3 py-0.5 text-sm rounded font-normal text-[var(--card-foreground)]/50 hover:text-[var(--card-foreground)]/75;
+    }
+    
+    .btn-xs.disabled {
+        @apply opacity-50 hover:opacity-50
+    }
+    
+    .dropdown {
+        @apply relative;
+    }
+    
+    .dropdown > .btn {
+        @apply list-item;
+    }
+    
+    .dropdown-menu {
+        @apply absolute start-0 mt-2 py-2 rounded-md shadow-lg border focus:outline-none flex flex-col z-50;
+        color: var(--card-foreground);
+        background-color: var(--card);
+        border-color: var(--border);
+    }
+    
+    .dropdown-menu-divider {
+        @apply my-2
+    }
+    
+    .dropdown-item {
+        @apply text-start px-8 py-2 text-(--card-foreground) hover:bg-(--selection) hover:text-(--selection-foreground) whitespace-nowrap hover:no-underline;
+    }
+    
+    .btn-group {
+        @apply relative inline-flex;
+    }
+
+    .btn-group > .btn {
+        @apply relative flex-auto;
+    }
+
+    .btn-group > .btn:hover,
+    .btn-group > .btn:focus,
+    .btn-group > .btn:active {
+        @apply z-[2];
+    }
+
+    .btn-group > .btn:not(:first-child) {
+        @apply -ms-px rounded-s-none;
+    }
+
+    .btn-group > .btn:not(:last-child) {
+        @apply rounded-e-none;
+    }
+}

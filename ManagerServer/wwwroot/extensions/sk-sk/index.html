@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slovensko — účtovná lokalizácia</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Slovensko — účtovná lokalizácia</h1>
+
+<div class="tabs">
+  <button type="button" class="tab active" data-view="welcome">Úvod</button>
+  <button type="button" class="tab" data-view="reports">Výkazy</button>
+  <button type="button" class="tab" data-view="setup">Daňové kódy</button>
+  <button type="button" class="tab" data-view="coa">Účtovná osnova</button>
+</div>
+
+<div class="business-bar">
+  <label>Podnik
+    <select id="business" required></select>
+  </label>
+</div>
+
+  <div id="welcome-view">
+    <p>Toto rozšírenie pomáha slovenským podnikom s výkazmi pre dodržiavanie predpisov v krajine a s daňovými kódmi, na ktorých sú tieto výkazy závislé.</p>
+    <h2>Výkazy</h2>
+    <p>Pre Slovensko je k dispozícii výkaz <strong>Priznanie k DPH</strong>. Vygeneruje hodnoty po riadkoch podľa štruktúry oficiálneho tlačiva (II.–IV. časť) a ponúkne export do XML kompatibilného so schémou eDane (dph2025.xsd).</p>
+    <p>Na karte <strong>Výkazy</strong> vyberte podnik a kliknutím na <em>Install</em> nainštalujte výkaz do toho podniku — potom sa objaví na štandardnej karte <strong>Reports</strong> v Manageri.</p>
+    <p>Aby výkaz produkoval správne čísla, na karte <strong>Daňové kódy</strong> najprv kliknite na <em>Vytvoriť</em> pri jednotlivých kódoch DPH (23 %, 19 %, 5 %, nadobudnutie z EÚ, tuzemský prenos, dovoz, vývoz atď.) a potom tieto kódy používajte na faktúrach a pokladničných dokladoch. Ak v podniku už máte historické kódy DPH 20 % alebo 10 %, sú v zozname ponechané pre staršie obdobia, ale do priznania DPH za rok 2025 sa nezapočítavajú.</p>
+    <h2>Daňové kódy</h2>
+    <p>Krajina obsahuje štandardnú sadu daňových kódov vopred prepojených s kategóriami výkazov, ktoré výkazy používajú. Na karte <strong>Daňové kódy</strong> môžete jediným kliknutím vytvoriť chýbajúce kódy v podniku alebo aktualizovať existujúci kód a priradiť k nemu správne kategórie výkazov.</p>
+    <h2>Účtovná osnova</h2>
+    <p>Karta <strong>Účtovná osnova</strong> obsahuje rámcovú účtovú osnovu pre podnikateľov (Príloha č. 1 k Postupom účtovania, MF SR). Pre vybraný podnik môžete jediným kliknutím vytvoriť chýbajúce syntetické účty so správnym kódom a názvom.</p>
+    <p class="muted">Vyberte podnik vyššie a prepnite sa na kartu <strong>Výkazy</strong>, <strong>Daňové kódy</strong> alebo <strong>Účtovná osnova</strong>.</p>
+  </div>
+
+  <div id="reports-view" hidden>
+    <p class="muted">Nainštalujte výkaz pre konkrétny podnik, aby sa objavil na karte <strong>Reports</strong> v danom podniku.</p>
+    <div id="report-install-list" data-country-slug="sk-sk"></div>
+  </div>
+
+<div id="setup-view" hidden>
+  <div class="setup-actions">
+    <button type="button" id="refreshSetup" class="primary">Načítať stav</button>
+    <span class="muted">Tlačidlá v jednotlivých riadkoch vytvoria alebo aktualizujú vždy jeden daňový kód.</span>
+  </div>
+  <div id="setupOutput"></div>
+</div>
+
+<div id="coa-view" hidden>
+  <div class="setup-actions">
+    <button type="button" id="refreshCoa" class="primary">Načítať stav</button>
+    <button type="button" id="installAllCoa" class="secondary">Vytvoriť všetky chýbajúce</button>
+    <span class="muted">Štandardná účtová osnova pre podnikateľov (Príloha č. 1 k Postupom účtovania, MF SR). Účty sa zhodujú podľa kódu a priraďujú pod Aktíva, Pasíva alebo Vlastné imanie.</span>
+  </div>
+  <div id="coaOutput"></div>
+</div>
+
+<script src="reports.js"></script>
+<script src="tax-codes.js"></script>
+<script src="app.js"></script>
+<script src="chart-of-accounts.js"></script>
+</body>
+</html>

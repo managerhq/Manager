@@ -1,0 +1,73 @@
+@import "tailwindcss" source(none);
+
+/* Tell Tailwind where to scan. Paths are relative to this file. */
+@source "../HttpHandlers/**/*.cs";
+@source "../Attributes/**/*.cs";
+@source "../Components/**/*.cs";
+
+@custom-variant compact (&:where(:root.compact, :root.compact *));
+@custom-variant observer (&:where(:root.observer, :root.observer *));
+
+@import "./themes.css";
+@import "./base.css";
+@import "./ace-editor.css";
+@import "./btn.css";
+@import "./card.css";
+@import "./form.css";
+@import "./mx-datepicker.css";
+@import "./vue-select.css";
+@import "./select2.css";
+
+@plugin "@tailwindcss/typography";
+
+@layer components {
+    .fas {
+        @apply text-base rtl:scale-x-[-1];
+    }
+
+    .navbar-item {
+        @apply px-4 py-1 rounded-lg hover:bg-[var(--card)] whitespace-nowrap text-[var(--card-foreground)]/50 hover:text-[var(--card-foreground)]/75;
+    }
+    
+    .navbar-item.active {
+        @apply inset-shadow-sm text-[var(--card-foreground)]/75 border;
+        background-color: var(--card);
+        border-color: var(--border);
+    }
+    
+    .vertical-divider {
+        @apply border-l self-stretch;
+        width: 2px;
+        background-color: var(--muted-inset);
+        border-color: var(--border);
+    }
+    
+    .badge {
+        @apply inline-block px-2 py-1 text-xs font-semibold rounded;
+        @apply bg-neutral-200 text-neutral-800;
+    }
+}
+
+/*
+    https://github.com/tailwindlabs/tailwindcss/discussions/2394
+    https://github.com/tailwindlabs/tailwindcss/pull/5732
+*/
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .htmx-request .htmx-indicator {
+        @apply !inline-block opacity-40; /* This allows htmx-indicator to be hidden too */
+    }
+
+    .htmx-request .anti-htmx-indicator {
+        @apply hidden;
+    }
+}

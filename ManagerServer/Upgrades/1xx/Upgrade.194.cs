@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using ManagerServer.Model.Enums;
+using ManagerServer.Globalization;
+using System.Text;
+using System.IO;
+using ManagerServer.Model;
+using System.Reflection;
+using ManagerServer.Model.Attributes;
+using ManagerServer.Model.Obsolete;
+using System.Threading.Tasks;
+
+namespace ManagerServer
+{
+    public static partial class Upgrade
+    {
+        private static async Task<IEnumerable<Model.Object>> Upgrade194(Orm.SQLiteConnection objects, IProgress<Tuple<int, int>> progress)
+        {
+            await Task.CompletedTask;
+            var list = new List<Model.Object>();
+            foreach (var e in objects.OfType<ManagerServer.Model.Obsolete.Obsolete67.BankRule>())
+            {
+                e.Obsolete_Lines = new Model.Obsolete.Obsolete76.TransactionLine[] { new Model.Obsolete.Obsolete76.TransactionLine()
+                {
+                    Account = e.Obsolete_GeneralLedgerAccount,
+                    TaxCode = e.Obsolete_TaxCode,
+                    TrackingCode = e.Obsolete_TrackingCode,
+                    MemberAccount = e.Obsolete_CapitalSubAccount
+                }};
+                list.Add(e);
+            }
+            return list;
+        }
+    }
+}

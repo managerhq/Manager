@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-size: 12px;
+      background: #e5e5e5;
+      height: 44px;
+      overflow: hidden;
+      padding: 4px 8px;
+      border-bottom: 1px solid #a3a3a3;
+      visibility: hidden; /* Start hidden to prevent flicker */
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+    }
+    
+    body.ready {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .topbar-container {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 36px;
+    }
+    
+    .nav-button {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.1s;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #4a4a4a;
+      flex-shrink: 0;
+    }
+    
+    .nav-button:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 0.06);
+    }
+    
+    .nav-button:disabled {
+      cursor: default;
+      opacity: 0.3;
+    }
+    
+    .nav-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    
+    #tabs-container {
+      display: flex;
+      flex: 1;
+      gap: 4px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    #tabs-container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .tab {
+      min-width: 120px;
+      max-width: 240px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.1s;
+      flex-shrink: 0;
+    }
+    
+    
+    .tab:hover:not(.active) {
+      background: rgba(0, 0, 0, 0.06);
+    }
+    
+    .tab.active {
+      background: #fff;
+      border-color: #d4d4d4;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+    
+    .tab.active:hover {
+      background: #f5f5f5;
+    }
+    
+    .tab-title {
+      flex: 1;
+      overflow: hidden;
+      padding: 0 6px;
+      color: #4a4a4a;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.2;
+    }
+    
+    .tab.active .tab-title {
+      color: #000;
+    }
+    
+    .tab-business {
+      font-size: 10px;
+      color: #999;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .tab.active .tab-business {
+      color: #666;
+    }
+    
+    .tab-screen {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    /* Single line layout when no business name */
+    .tab-title.single-line {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .tab-close {
+      width: 26px;
+      height: 26px;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.15s, background-color 0.15s;
+      margin-left: 2px;
+      flex-shrink: 0;
+    }
+    
+    .tab:hover .tab-close {
+      opacity: 0.7;
+    }
+    
+    .tab.active .tab-close {
+      opacity: 0.5;
+    }
+    
+    .tab-close:hover {
+      opacity: 1 !important;
+      background: rgba(0, 0, 0, 0.08);
+    }
+    
+    .tab-close::before {
+      content: '✕';
+      font-size: 14px;
+      color: #4a4a4a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .tab-spinner {
+      width: 8px;
+      height: 8px;
+      margin-right: 6px;
+      display: none;
+      background: #4a4a4a;
+      border-radius: 50%;
+    }
+    
+    .tab.loading .tab-spinner {
+      display: block;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .tab.loading .tab-favicon {
+      display: none;
+    }
+    
+    .tab-favicon {
+      width: 16px;
+      height: 16px;
+      margin-right: 2px;
+      display: none;
+    }
+    
+    .scroll-button {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.1s;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #4a4a4a;
+    }
+    
+    .scroll-button:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 0.06);
+    }
+    
+    .scroll-button:disabled {
+      cursor: default;
+      opacity: 0.3;
+    }
+    
+    .scroll-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    
+    /* RTL Support */
+    [dir="rtl"] .topbar-container {
+      direction: rtl;
+    }
+    
+    [dir="rtl"] .nav-button svg {
+      transform: scaleX(-1);
+    }
+    
+    /* Hide RTL scroll buttons by default in LTR mode */
+    .scroll-button-rtl {
+      display: none;
+    }
+    
+    [dir="rtl"] .tab {
+      direction: rtl;
+    }
+    
+    [dir="rtl"] .tab-close {
+      margin-left: 0;
+      margin-right: 2px;
+    }
+    
+    [dir="rtl"] .tab-spinner {
+      margin-right: 0;
+      margin-left: 6px;
+    }
+    
+    [dir="rtl"] .tab-favicon {
+      margin-right: 0;
+      margin-left: 2px;
+    }
+    
+    [dir="rtl"] .tab-title {
+      text-align: right;
+    }
+    
+    /* Dark Mode Styles */
+    .dark body {
+      background: #44403c;
+      border-bottom-color: #0c0a09;
+    }
+    
+    .dark .nav-button {
+      color: #b0b0b0;
+      background: transparent;
+      border-color: transparent;
+    }
+    
+    .dark .nav-button:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    
+    .dark .nav-button:disabled {
+      opacity: 0.3;
+    }
+    
+    .dark .tab {
+      background: transparent;
+    }
+    
+    .dark .tab:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    
+    .dark .tab.active {
+      background: #1c1917;
+      border-color: #0c0a09;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .dark .tab.active:hover {
+      background: #292524;
+    }
+    
+    .dark .tab-title {
+      color: #b0b0b0;
+    }
+    
+    .dark .tab.active .tab-title {
+      color: #e0e0e0;
+    }
+    
+    .dark .tab-business {
+      color: #808080;
+    }
+    
+    .dark .tab.active .tab-business {
+      color: #a0a0a0;
+    }
+    
+    .dark .tab-close:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    .dark .tab-close::before {
+      color: #b0b0b0;
+    }
+    
+    .dark .tab-spinner {
+      background: #b0b0b0;
+    }
+    
+    .dark .scroll-button {
+      color: #b0b0b0;
+    }
+    
+    .dark .scroll-button:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.06);
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar-container">
+    <button id="back-button" class="nav-button" title="Go back" disabled>
+      <svg viewBox="0 0 24 24">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+      </svg>
+    </button>
+    <button id="forward-button" class="nav-button" title="Go forward" disabled>
+      <svg viewBox="0 0 24 24">
+        <path d="M4 11v2h12.17l-5.59 5.59L12 20l8-8-8-8-1.41 1.41L16.17 11H4z"/>
+      </svg>
+    </button>
+    <button id="refresh-button" class="nav-button" title="Refresh">
+      <svg viewBox="0 0 24 24">
+        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+      </svg>
+    </button>
+    <div id="tabs-container"></div>
+    <button id="new-tab-button" class="nav-button" title="New Tab">
+      <svg viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+    </button>
+    <!-- LTR scroll buttons -->
+    <button id="scroll-left-button" class="scroll-button scroll-button-ltr" title="Scroll left" style="display: none;">
+      <svg viewBox="0 0 24 24">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button id="scroll-right-button" class="scroll-button scroll-button-ltr" title="Scroll right" style="display: none;">
+      <svg viewBox="0 0 24 24">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+    <!-- RTL scroll buttons (arrows point in opposite direction) -->
+    <button id="scroll-start-button" class="scroll-button scroll-button-rtl" title="Scroll to start" style="display: none;">
+      <svg viewBox="0 0 24 24">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+    <button id="scroll-end-button" class="scroll-button scroll-button-rtl" title="Scroll to end" style="display: none;">
+      <svg viewBox="0 0 24 24">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+  </div>
+  
+  <script>
+    const tabsContainer = document.getElementById('tabs-container');
+    const newTabButton = document.getElementById('new-tab-button');
+    const backButton = document.getElementById('back-button');
+    const forwardButton = document.getElementById('forward-button');
+    const refreshButton = document.getElementById('refresh-button');
+    const scrollLeftButton = document.getElementById('scroll-left-button');
+    const scrollRightButton = document.getElementById('scroll-right-button');
+    const scrollStartButton = document.getElementById('scroll-start-button');
+    const scrollEndButton = document.getElementById('scroll-end-button');
+    
+    // Navigation button handlers
+    backButton.addEventListener('click', () => {
+      if (!backButton.disabled) {
+        window.api.goBack();
+      }
+    });
+    
+    forwardButton.addEventListener('click', () => {
+      if (!forwardButton.disabled) {
+        window.api.goForward();
+      }
+    });
+    
+    refreshButton.addEventListener('click', () => {
+      if (!refreshButton.disabled) {
+        window.api.refresh();
+      }
+    });
+    
+    // Track if this is the first update
+    let isFirstUpdate = true;
+    
+    // Handle navigation state updates
+    window.api.onNavigationStateUpdate((canGoBack, canGoForward) => {
+      backButton.disabled = !canGoBack;
+      forwardButton.disabled = !canGoForward;
+    });
+    
+    // Handle tab updates from main process
+    window.api.onUpdateTabs((tabs, isRTL, isDark) => {
+      // Update RTL direction based on active tab
+      document.body.dir = isRTL ? 'rtl' : 'ltr';
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+      
+      // Update dark mode class based on active tab
+      if (isDark) {
+        document.body.classList.add('dark');
+        document.documentElement.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+        document.documentElement.classList.remove('dark');
+      }
+      
+      // Show the tab bar after first update (with correct dark/RTL mode applied)
+      if (isFirstUpdate) {
+        isFirstUpdate = false;
+        // Use requestAnimationFrame to ensure styles are applied before showing
+        requestAnimationFrame(() => {
+          document.body.classList.add('ready');
+        });
+      }
+      
+      tabsContainer.innerHTML = '';
+      
+      tabs.forEach(tab => {
+        const tabElement = document.createElement('div');
+        tabElement.className = 'tab';
+        if (tab.isActive) {
+          tabElement.classList.add('active');
+        }
+        if (tab.isLoading) {
+          tabElement.classList.add('loading');
+        }
+        tabElement.dataset.tabId = tab.id;
+        
+        const spinner = document.createElement('div');
+        spinner.className = 'tab-spinner';
+        
+        const favicon = document.createElement('img');
+        favicon.className = 'tab-favicon';
+        favicon.style.display = 'none';
+        
+        const title = document.createElement('div');
+        title.className = 'tab-title';
+        
+        // Check if we have a business name to show
+        if (tab.businessName) {
+          // Two-line layout with business name and screen name
+          const businessSpan = document.createElement('div');
+          businessSpan.className = 'tab-business';
+          businessSpan.textContent = tab.businessName;
+          
+          const screenSpan = document.createElement('div');
+          screenSpan.className = 'tab-screen';
+          screenSpan.textContent = tab.screenName;
+          
+          title.appendChild(businessSpan);
+          title.appendChild(screenSpan);
+        } else {
+          // Single line layout
+          title.classList.add('single-line');
+          title.textContent = tab.screenName || 'New Tab';
+        }
+        
+        // Use full title for tooltip
+        title.title = tab.title || 'New Tab';
+        
+        const closeButton = document.createElement('div');
+        closeButton.className = 'tab-close';
+        closeButton.title = 'Close Tab';
+        
+        tabElement.appendChild(spinner);
+        tabElement.appendChild(favicon);
+        tabElement.appendChild(title);
+        tabElement.appendChild(closeButton);
+        
+        // Close tab handler
+        closeButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          window.api.closeTab(tab.id);
+        });
+        
+        // Click to switch tabs
+        tabElement.addEventListener('click', (e) => {
+          if (!e.target.classList.contains('tab-close')) {
+            window.api.switchTab(tab.id);
+          }
+        });
+        
+        // Right-click context menu for tabs
+        tabElement.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+          window.api.showTabContextMenu(tab.id);
+        });
+        
+        tabsContainer.appendChild(tabElement);
+      });
+      
+      // Update scroll buttons after tabs are rendered
+      setTimeout(updateScrollButtons, 0);
+    });
+    
+    // New tab button
+    newTabButton.addEventListener('click', () => {
+      window.api.newTab();
+    });
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        if (e.key === 't') {
+          e.preventDefault();
+          window.api.newTab();
+        } else if (e.key === 'w') {
+          e.preventDefault();
+          const activeTab = tabsContainer.querySelector('.tab.active');
+          if (activeTab) {
+            window.api.closeTab(activeTab.dataset.tabId);
+          }
+        }
+      }
+    });
+    
+    // Scroll button functionality
+    function updateScrollButtons() {
+      const container = tabsContainer;
+      const hasOverflow = container.scrollWidth > container.clientWidth;
+      const scrollLeft = container.scrollLeft;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      const isRTL = document.body.dir === 'rtl';
+      
+      if (hasOverflow) {
+        if (!isRTL) {
+          // LTR mode - show LTR buttons
+          scrollLeftButton.style.display = 'flex';
+          scrollRightButton.style.display = 'flex';
+          scrollLeftButton.disabled = scrollLeft <= 0;
+          scrollRightButton.disabled = scrollLeft >= maxScroll - 1;
+          
+          // Hide RTL buttons (use empty string to remove inline style)
+          scrollStartButton.style.display = '';
+          scrollEndButton.style.display = '';
+        } else {
+          // RTL mode - show RTL buttons
+          scrollStartButton.style.display = 'flex';
+          scrollEndButton.style.display = 'flex';
+          
+          // RTL in Chromium uses NEGATIVE scrollLeft values!
+          // At scrollLeft=0, we're at START (showing first tabs)
+          // At scrollLeft=-maxScroll, we're at END (showing last tabs)
+          // Start button disabled when at START (scrollLeft >= 0)
+          // End button disabled when at END (scrollLeft <= -maxScroll)
+          scrollStartButton.disabled = scrollLeft >= 0;
+          scrollEndButton.disabled = scrollLeft <= -maxScroll + 1;
+          
+          // Hide LTR buttons explicitly
+          scrollLeftButton.style.display = 'none';
+          scrollRightButton.style.display = 'none';
+        }
+      } else {
+        // No overflow - hide all scroll buttons
+        // For LTR buttons, set display to none
+        scrollLeftButton.style.display = 'none';
+        scrollRightButton.style.display = 'none';
+        
+        // For RTL buttons, remove inline style to let CSS rule take effect (which hides them by default)
+        scrollStartButton.style.display = '';
+        scrollEndButton.style.display = '';
+      }
+    }
+    
+    // Scroll button click handlers - LTR buttons
+    scrollLeftButton.addEventListener('click', () => {
+      if (!scrollLeftButton.disabled) {
+        const scrollAmount = 200;
+        tabsContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      }
+    });
+    
+    scrollRightButton.addEventListener('click', () => {
+      if (!scrollRightButton.disabled) {
+        const scrollAmount = 200;
+        tabsContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    });
+    
+    // Scroll button click handlers - RTL buttons
+    scrollStartButton.addEventListener('click', () => {
+      if (!scrollStartButton.disabled) {
+        const scrollAmount = 200;
+        // In RTL: Start button increases scrollLeft to scroll to start
+        tabsContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    });
+    
+    scrollEndButton.addEventListener('click', () => {
+      if (!scrollEndButton.disabled) {
+        const scrollAmount = 200;
+        // In RTL: End button decreases scrollLeft to scroll to end
+        tabsContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      }
+    });
+    
+    // Update scroll buttons on scroll
+    tabsContainer.addEventListener('scroll', updateScrollButtons);
+    
+    // Update scroll buttons on resize
+    window.addEventListener('resize', updateScrollButtons);
+    
+    // Initial check
+    setTimeout(updateScrollButtons, 100);
+  </script>
+</body>
+</html>

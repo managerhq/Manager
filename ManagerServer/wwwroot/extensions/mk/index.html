@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Северна Македонија</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Северна Македонија</h1>
+
+<div class="tabs">
+  <button type="button" class="tab active" data-view="welcome">Почетна</button>
+  <button type="button" class="tab" data-view="reports">Извештаи</button>
+  <button type="button" class="tab" data-view="setup">Даночни кодови</button>
+</div>
+
+<div class="business-bar">
+  <label>Бизнис
+    <select id="business" required></select>
+  </label>
+</div>
+
+  <div id="welcome-view">
+    <p>Оваа екстензија им помага на бизнисите од Северна Македонија со извештаите за усогласеност на земјата и даночните кодови од кои зависат тие извештаи.</p>
+    <h2>Извештаи</h2>
+    <p>Инсталирајте извештаи специфични за земјата (ДДВ пријави, платни листови и слично) во бизнис. Откако ќе се инсталираат, секој извештај се појавува како копче на табот <strong>Извештаи</strong> на тој бизнис.</p>
+    <h2>Даночни кодови</h2>
+    <p>Земјата има стандарден сет даночни кодови претходно поврзани со категориите за известување што ги користат извештаите. Од табот <strong>Даночни кодови</strong> можете со едно кликнување да ги креирате сите што недостасуваат во бизнис, или да ажурирате постоечки код за да ги прикачите вистинските категории за известување.</p>
+    <p class="muted">Изберете бизнис погоре, потоа префрлете се на <strong>Извештаи</strong> или <strong>Даночни кодови</strong> за да започнете.</p>
+  </div>
+
+  <div id="reports-view" hidden>
+    <p class="muted">Инсталирајте извештај за специфичен бизнис за да биде достапен под табот <strong>Извештаи</strong> на тој бизнис.</p>
+    <div id="report-install-list" data-country-slug="mk"></div>
+  </div>
+
+<div id="setup-view" hidden>
+  <div class="setup-actions">
+    <button type="button" id="refreshSetup" class="primary">Вчитај статус</button>
+    <span class="muted">Копчињата во секој ред креираат или ажурираат еден даночен код во даден момент.</span>
+  </div>
+  <div id="setupOutput"></div>
+</div>
+
+<script src="reports.js"></script>
+<script src="tax-codes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+@layer components {
+
+	.v-select {
+		@apply relative grow flex items-stretch;
+		@apply inset-shadow-sm rounded-md border;
+		background-color: var(--input);
+		border-color: var(--input-border);
+	}
+	
+	.vs--open {
+    @apply border-blue-400 outline-none ring-4 ring-blue-500/25;
+	}
+
+	@keyframes vSelectSpinner {
+		0% {
+			transform: rotate(0deg)
+		}
+
+		to {
+			transform: rotate(1turn)
+		}
+	}
+
+	.vs__fade-enter-active,
+	.vs__fade-leave-active {
+		@apply pointer-events-none;
+		transition: opacity 0.15s cubic-bezier(1, 0.5, 0.8, 1)
+	}
+
+	.vs__fade-enter,
+	.vs__fade-leave-to {
+		@apply opacity-0;
+	}
+
+	.v-select[dir=rtl] .vs__actions {
+		padding: 0 3px 0 6px
+	}
+
+	.v-select[dir=rtl] .vs__clear {
+		@apply ml-1.5 mr-0;
+	}
+
+	.v-select[dir=rtl] .vs__deselect {
+		@apply ml-0 mr-0.5;
+	}
+
+	.v-select[dir=rtl] .vs__dropdown-menu {
+		@apply text-right;
+	}
+
+	.vs__dropdown-toggle {
+		@apply grow appearance-none flex;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.vs__selected-options {
+		@apply flex flex-wrap flex-grow relative p-1 gap-1;
+		flex-basis: 100%;
+	}
+
+	.vs__actions {
+		@apply flex items-center;
+		padding: 4px 6px 0 3px
+	}
+
+	.vs--searchable .vs__dropdown-toggle {
+		@apply cursor-text;
+	}
+
+	.vs--unsearchable .vs__dropdown-toggle {
+		@apply cursor-pointer;
+	}
+
+	.vs--open .vs__dropdown-toggle {
+		@apply border-b-transparent;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0
+	}
+
+	.vs__open-indicator {
+		fill: color-mix(in oklab, var(--foreground) 50%, transparent);
+	}
+
+	.vs--open .vs__open-indicator {
+		transform: rotate(180deg) scale(1)
+	}
+
+	.vs--loading .vs__open-indicator {
+		@apply opacity-0;
+	}
+
+	.vs__clear {
+		@apply bg-transparent border-0 cursor-pointer mr-2 p-0;
+		fill: color-mix(in oklab, var(--foreground) 50%, transparent);
+	}
+
+	.vs__dropdown-menu {
+		@apply block absolute left-0 list-none m-0 w-full text-left overflow-y-auto;
+		@apply shadow p-2 rounded border;
+		background-color: var(--card);
+		border-color: var(--card-border);
+		max-height: 350px;
+		min-width: 160px;
+		padding: 5px 0;
+		top: calc(100% - 1px);
+		z-index: 1000
+	}
+
+	.vs__no-options {
+		@apply text-center;
+	}
+
+	.vs__dropdown-option {
+		@apply clear-both cursor-pointer block whitespace-nowrap;
+		color: inherit;
+		line-height: 1.42857143;
+		padding: 3px 20px;
+	}
+
+	.vs__dropdown-option--highlight {
+		@apply bg-[#5897fb] text-white;
+	}
+
+	.vs__dropdown-option--deselect {
+		@apply bg-[#fb5858] text-white;
+	}
+
+	.vs__dropdown-option--disabled {
+		@apply cursor-not-allowed;
+		background-color: var(--muted);
+		color: var(--muted-foreground);
+	}
+
+	.vs__selected {
+		@apply flex items-center gap-2 z-0;
+		@apply px-2 py-0.5 leading-normal cursor-default rounded border select-none;
+		background-color: var(--muted);
+		border-color: var(--muted-border);
+		box-shadow: var(--muted-inset);
+	}
+
+	.vs__deselect {
+		@apply appearance-none bg-none border-0 cursor-pointer;
+		fill: var(--muted-foreground);
+	}
+
+	.vs--single .vs__selected {
+		@apply bg-transparent py-0 inset-shadow-none border-0;
+	}
+
+	.vs--single.vs--loading .vs__selected,
+	.vs--single.vs--open .vs__selected {
+		@apply absolute;
+		opacity: .4;
+	}
+
+	.vs--single.vs--searching .vs__selected {
+		@apply hidden;
+	}
+
+	.vs__search::-webkit-search-cancel-button {
+		@apply hidden;
+	}
+
+	.vs__search::-ms-clear,
+	.vs__search::-webkit-search-decoration,
+	.vs__search::-webkit-search-results-button,
+	.vs__search::-webkit-search-results-decoration {
+		@apply hidden;
+	}
+
+	.vs__search,
+	.vs__search:focus {
+		@apply appearance-none bg-none border border-transparent border-l-0 shadow-none flex-grow text-base max-w-full outline-none w-0 z-[1];
+		color: inherit;
+		line-height: 1.4;
+		margin: 4px 0 0;
+		padding: 0 7px;
+	}
+	.vs__search::placeholder {
+		color: inherit
+	}
+
+	.vs--unsearchable .vs__search {
+		@apply opacity-100;
+	}
+
+	.vs--unsearchable:not(.vs--disabled) .vs__search {
+		@apply cursor-pointer;
+	}
+
+	.vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {
+		opacity: .2
+	}
+
+	.vs__spinner {
+		@apply self-center overflow-hidden;
+		animation: vSelectSpinner 1.1s linear infinite;
+		border: .9em solid color-mix(in oklab, var(--foreground) 10%, transparent);
+		border-left-color: color-mix(in oklab, var(--foreground) 45%, transparent);
+		font-size: 5px;
+		opacity: 0;
+		text-indent: -9999em;
+		transform: translateZ(0) scale(1);
+		transition: opacity .1s
+	}
+
+	.vs__spinner,
+	.vs__spinner:after {
+		@apply rounded-full;
+		height: 5em;
+		transform: scale(1);
+		width: 5em
+	}
+
+	.vs--loading .vs__spinner {
+		@apply opacity-100;
+	}
+
+}

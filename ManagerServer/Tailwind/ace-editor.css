@@ -1,0 +1,47 @@
+@layer components {
+    .ace-tm {
+        @apply !border !inset-shadow-sm !rounded-md w-full;
+        height: 500px;
+        background-color: var(--input) !important;
+        border-color: var(--input-border) !important;
+        color: var(--input-foreground) !important;
+    }
+    
+    .ace_focus {
+        @apply !border-blue-400 !outline-none !ring-4 !ring-blue-500/25;
+    }
+    
+    .ace_gutter {
+        background-color: var(--muted) !important;
+        color: var(--input-foreground) !important;
+    }
+    
+    .ace_gutter-active-line {
+        background-color: var(--muted) !important;
+        color: var(--input-foreground) !important;
+    }
+    
+    .ace_meta.ace_tag {
+      color: #66B2FF !important;
+    }
+    
+    .ace_keyword {
+      color: #40E0D0 !important;
+    }
+    
+    .ace_constant.ace_numeric {
+      color: #3399FF !important;
+    }
+    
+    .ace_cursor {
+      color: var(--input-foreground) !important;
+    }
+    
+    .ace_gutter-active-line {
+      background-color: var(--muted) !important;
+    }
+    
+    .ace_print-margin {
+      @apply !hidden;
+    }
+}

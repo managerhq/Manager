@@ -1,0 +1,6 @@
+namespace ManagerServer.Api.Businesses.Business.Settings.ChartOfAccounts
+{
+    internal sealed class PostSubtotal : PostObjectEndpoint<Model.Subtotal>
+    {
+    }
+}

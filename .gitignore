@@ -1,0 +1,11 @@
+ManagerServer/bin/
+ManagerServer/obj/
+ManagerServer/out/
+ManagerServer/.vs/
+ManagerServer/*.suo
+ManagerServer/*.user
+ManagerServer/*.csproj.user
+
+ManagerDestkop/node_modules/
+ManagerDestkop/dist/
+ManagerDestkop/ManagerServer/

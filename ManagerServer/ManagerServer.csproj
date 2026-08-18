@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Product>Manager</Product>
+    <Company>Manager.io</Company>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <PublishIISAssets>false</PublishIISAssets>
+    <LangVersion>13</LangVersion><!-- https://github.com/praeclarum/sqlite-net/issues/1295 -->
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>1701;1702;0649;1591</NoWarn>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="HttpHandlers\Businesses\Businesses.js" />
+    <None Remove="HttpHandlers\Businesses\Business\BusinessTemplate.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\0a10a302-bbf2-4087-a428-a7d16e97381c.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\2ef6944c-24d1-44d9-b401-c0f1ba11d598.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\3684bbf2-e0a7-400c-954d-61842530a53b.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\41a126c5-592f-4af5-b9a8-57cd48426e8e.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\4d3d6b1d-8d7d-494d-b661-72f4e0ab873b.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\5335a9a3-cc7d-49a6-9ed5-3ebac96ddfaa.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\8533b45b-f061-4d57-a234-84cfe644dd17.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\b847cce5-f9a4-41e3-acf9-b6a03861dcf2.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\c8c5e179-a521-48b8-98e4-edb8a2234761.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\d1b2e219-181c-4ce4-a47d-acc188522072.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\d1b905bd-f27d-4c1d-9d67-56d35fb39657.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\d336666e-eb43-4ef8-980a-4fe684362dfa.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\d448fc80-cffd-48a5-bc0b-5b255dff89ea.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\d4dbd29d-aa1f-461a-848b-4dff6cfce205.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\d795b8eb-cbab-463d-8b5f-ef37e069ee33.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\e415e946-f3d6-4e76-babc-6c812a998894.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\e5ca3981-fffe-41e4-91b8-ddeffacd136b.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\e72866c8-df0f-4a9f-a37d-37cb04cf3d38.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\f31748cd-9bb1-4dfb-9f2b-f372f7909212.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\f7e53b2d-9f20-4f50-af29-7399f081a825.html" />
+    <EmbeddedResource Include="Model\Obsolete\Obsolete77\ff81dd4f-7961-408c-9c87-88fbe18b2140.html" />
+    <EmbeddedResource Include="HttpHandlers\Businesses\Businesses.js" />
+    <EmbeddedResource Include="HttpHandlers\Businesses\Business\BusinessTemplate.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.100.2" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+    <PackageReference Include="FastMember" Version="1.5.0" />
+    <PackageReference Include="GoogleAuthenticator" Version="3.2.0" />
+    <PackageReference Include="MailKit" Version="4.17.0" />
+    <PackageReference Include="Markdig" Version="1.3.2" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="10.0.9" />
+    <PackageReference Include="PuppeteerSharp" Version="25.3.1" />
+    <PackageReference Include="Sentry.AspNetCore" Version="6.6.0" />
+    <PackageReference Include="SharpMt940Lib.Core" Version="1.0.2" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.3" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.100.2" />
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="10.0.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="protobuf-net" Version="3.2.56" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.16.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

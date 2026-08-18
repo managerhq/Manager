@@ -1,0 +1,49 @@
+@layer base {
+    :root {
+        color-scheme: var(--color-scheme);
+    }
+
+    iframe {
+        color-scheme: var(--color-scheme);
+    }
+    
+    body {
+        @apply bg-[var(--background)] text-[var(--foreground)];
+        @apply text-sm print:bg-transparent;
+    }
+
+    a {
+        color: color-mix(in oklab, var(--primary-foreground) 75%, transparent);
+        @apply print:text-black;
+    }
+    
+    a:hover {
+        @apply text-[var(--primary-foreground)]
+    }
+    
+    label {
+        @apply block mb-2 font-semibold text-[var(--muted-foreground)];
+    }
+    
+    fieldset {
+        @apply border border-[var(--border)] rounded-md p-4 mt-8;
+    }
+    
+    legend {
+        @apply px-2 font-semibold text-[var(--muted-foreground)]/75;
+    }
+    
+    hr {
+        height: 2px;
+        border-color: var(--border);
+        box-shadow: inset 0 1px var(--inset);
+    }
+    
+    del {
+      color: red
+    }
+    
+    ins {
+      color: green; text-decoration: none;
+    }
+}

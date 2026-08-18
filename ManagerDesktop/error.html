@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Backend failed to start</h2>
+    <pre id="error"></pre>
+
+    <script>
+      const params = new URLSearchParams(location.search);
+      document.getElementById('error').textContent = params.get('msg') || 'No details';
+    </script>
+  </body>
+</html>

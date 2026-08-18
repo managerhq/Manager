@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saudi Arabia — إقرار ضريبة القيمة المضافة</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-nav"><a href="index.html">← Saudi Arabia</a></div>
+<h1>إقرار ضريبة القيمة المضافة</h1>
+
+<div class="business-bar">
+  <label>Business
+    <select id="business" required></select>
+  </label>
+</div>
+
+<form id="reportControls">
+  <label>Period
+    <select id="periodType">
+      <option value="quarter">Quarter</option>
+      <option value="month">Month</option>
+      <option value="custom">Custom range</option>
+    </select>
+  </label>
+  <label class="period-control" data-types="quarter">Quarter
+    <select id="quarter">
+      <option value="0">Q1 (Jan–Mar)</option>
+      <option value="1">Q2 (Apr–Jun)</option>
+      <option value="2">Q3 (Jul–Sep)</option>
+      <option value="3">Q4 (Oct–Dec)</option>
+    </select>
+  </label>
+  <label class="period-control" data-types="month" hidden>Month
+    <select id="month">
+      <option value="0">January</option>
+      <option value="1">February</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">October</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+  </label>
+  <label class="period-control" data-types="quarter month">Year
+    <select id="year"></select>
+  </label>
+  <label class="period-control" data-types="custom" hidden>From date
+    <input type="date" id="fromDate">
+  </label>
+  <label class="period-control" data-types="custom" hidden>To date
+    <input type="date" id="toDate">
+  </label>
+  <label>Accounting basis
+    <select id="accounting">
+      <option value="0">Accrual</option>
+      <option value="1">Cash</option>
+    </select>
+  </label>
+  <button type="submit" class="primary">Generate</button>
+</form>
+
+<div id="reportOutput"></div>
+
+<script>const REPORT_ID = "6ba84ca4-cf00-48ef-9dc3-1c1e59bd7f8f";</script>
+<script src="reports.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

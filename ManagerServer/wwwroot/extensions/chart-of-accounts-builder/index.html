@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chart of Accounts Builder</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Chart of Accounts Builder</h1>
+
+<div class="tabs">
+  <button type="button" class="tab active" data-view="welcome">Welcome</button>
+  <button type="button" class="tab" data-view="builder">Chart of accounts</button>
+</div>
+
+<div class="business-bar">
+  <label>Business
+    <select id="business" required></select>
+  </label>
+</div>
+
+<div id="welcome-view">
+  <p>This extension builds a profit &amp; loss chart of accounts inside a business. Pick a business above, switch to the <strong>Chart of accounts</strong> tab, choose a structure, review the preview, and create the groups and accounts with a single click.</p>
+  <h2>Structures</h2>
+  <p><strong>Simple</strong> — two top-level groups, Income and Expenses, with a flat list of common accounts under each. Best for sole traders and small businesses.</p>
+  <p><strong>Detailed</strong> — separate groups for Income, Cost of sales, Operating expenses, Other income and Finance costs, with <strong>Gross profit</strong> and <strong>Operating profit</strong> subtotals and expense subgroups, for a full profit &amp; loss statement. (The final <em>Net profit (loss)</em> total is built into every statement.)</p>
+  <p class="muted">The builder only creates what's missing — groups, subtotals and accounts that already exist (matched by name) are left untouched, so it is safe to run more than once.</p>
+</div>
+
+<div id="builder-view" hidden>
+  <div class="builder-controls">
+    <label>Structure
+      <select id="preset">
+        <option value="simple">Simple — Income / Expenses</option>
+        <option value="detailed">Detailed — with subtotals &amp; subgroups</option>
+      </select>
+    </label>
+  </div>
+  <p id="presetDescription" class="muted"></p>
+  <div class="builder-actions">
+    <button type="button" id="buildBtn" class="primary" disabled>Build chart of accounts</button>
+    <span id="summary" class="muted"></span>
+  </div>
+  <div id="preview"></div>
+</div>
+
+<script src="presets.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

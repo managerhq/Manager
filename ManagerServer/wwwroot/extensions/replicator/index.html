@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Replicator</title>
+    <style>
+        :root {
+            --fg: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --ok: #16a34a;
+            --err: #dc2626;
+            --bg: #f9fafb;
+            --card: #ffffff;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: var(--fg);
+            background: var(--bg);
+        }
+        h1 { margin: 0 0 4px; font-size: 20px; }
+        .subtitle { color: var(--muted); margin: 0 0 20px; }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+        .card h2 {
+            margin: 0 0 12px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .card .step-number {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+        label.entity {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+        }
+        label.entity:last-child { border-bottom: none; }
+        label.entity input { margin-right: 10px; }
+        .business-row {
+            display: flex;
+            gap: 16px;
+        }
+        .business-col {
+            flex: 1;
+        }
+        .business-col label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        select, button {
+            font: inherit;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+        }
+        select {
+            width: 100%;
+        }
+        select:disabled { background: #f3f4f6; color: var(--muted); }
+        button {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        button:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .warning {
+            color: var(--err);
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        .hidden { display: none !important; }
+
+        /* Progress visualization */
+        #progress { margin-top: 16px; }
+        .overall {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .overall-bar {
+            flex: 1;
+            height: 10px;
+            background: #e5e7eb;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .overall-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--accent);
+            border-radius: 999px;
+            transition: width 0.3s ease;
+        }
+        .overall-fill.done { background: var(--ok); }
+        .overall-fill.failed { background: var(--err); }
+        .overall-text {
+            font-size: 13px;
+            color: var(--muted);
+            white-space: nowrap;
+            min-width: 110px;
+            text-align: right;
+        }
+        .entity-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .entity-row:last-child { border-bottom: none; }
+        .entity-row .name {
+            font-weight: 600;
+            min-width: 160px;
+        }
+        .entity-row .status-text {
+            color: var(--muted);
+            font-size: 13px;
+            flex: 1;
+        }
+        .entity-row .status-text.err { color: var(--err); }
+        .entity-row .status-text.ok { color: var(--ok); }
+        .status-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+        .status-icon.pending {
+            background: transparent;
+            border: 2px solid #d1d5db;
+        }
+        .status-icon.active {
+            border: 2px solid #dbeafe;
+            border-top-color: var(--accent);
+            background: transparent;
+            animation: spin 0.9s linear infinite;
+        }
+        .status-icon.done { background: var(--ok); }
+        .status-icon.failed { background: var(--err); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .summary {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .summary.ok { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+        .summary.err { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    </style>
+</head>
+<body>
+    <h1>Replicator</h1>
+    <p class="subtitle">Copy data from one Manager.io business to another.</p>
+
+    <div class="card">
+        <h2><span class="step-number">1</span>What do you want to copy?</h2>
+        <div id="entities">
+            <label class="entity"><input type="checkbox" value="customer"> Customers</label>
+            <label class="entity"><input type="checkbox" value="supplier"> Suppliers</label>
+            <label class="entity"><input type="checkbox" value="employee"> Employees</label>
+            <label class="entity"><input type="checkbox" value="inventory-item"> Inventory items</label>
+            <label class="entity"><input type="checkbox" value="non-inventory-item"> Non-inventory items</label>
+            <label class="entity"><input type="checkbox" value="chart-of-accounts"> Chart of accounts</label>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">2</span>Select businesses</h2>
+        <div class="business-row">
+            <div class="business-col">
+                <label for="source">Source</label>
+                <select id="source" disabled><option>Loading businesses...</option></select>
+            </div>
+            <div class="business-col">
+                <label for="destination">Destination</label>
+                <select id="destination" disabled><option>Loading businesses...</option></select>
+            </div>
+        </div>
+        <div id="sameBusinessWarning" class="warning hidden">Source and destination are the same business. Pick different businesses.</div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">3</span>Replicate</h2>
+        <button id="runBtn" disabled>Start replication</button>
+        <div id="progress" class="hidden">
+            <div class="overall">
+                <div class="overall-bar"><div class="overall-fill" id="overallFill"></div></div>
+                <div class="overall-text" id="overallText">0%</div>
+            </div>
+            <div id="entityList"></div>
+            <div id="summary" class="summary hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        // Helper per CLAUDE.md - tags every postMessage with a requestId and resolves when Manager replies.
+        async function postMessageWithResponse(message) {
+            return new Promise((resolve) => {
+                const requestId = crypto.randomUUID();
+                function onMessage(event) {
+                    if (event.data?.type?.endsWith('-response') && event.data?.requestId === requestId) {
+                        window.removeEventListener('message', onMessage);
+                        resolve(event.data.body);
+                    }
+                }
+                window.addEventListener('message', onMessage);
+                window.parent.postMessage({ ...message, requestId }, '*');
+            });
+        }
+
+        // GET {batchPath}?Business=<name> lists items; PUT {batchPath} with { values, business } writes them.
+        // batchPaths is a list so one logical entity can span several endpoints - the chart of
+        // accounts is really five separate collections. They are copied in listed order, so the
+        // groups a subtotal/account references already exist by the time it is written.
+        const ENTITY_DEFS = {
+            'customer':           { label: 'customers',           batchPaths: ['/api4/customer-batch'] },
+            'supplier':           { label: 'suppliers',           batchPaths: ['/api4/supplier-batch'] },
+            'employee':           { label: 'employees',           batchPaths: ['/api4/employee-batch'] },
+            'inventory-item':     { label: 'inventory items',     batchPaths: ['/api4/inventory-item-batch'] },
+            'non-inventory-item': { label: 'non-inventory items', batchPaths: ['/api4/non-inventory-item-batch'] },
+            'chart-of-accounts':  { label: 'chart of accounts',   batchPaths: [
+                '/api4/balance-sheet-group-batch',
+                '/api4/profit-and-loss-statement-group-batch',
+                '/api4/subtotal-batch',
+                '/api4/balance-sheet-account-batch',
+                '/api4/profit-and-loss-statement-account-batch',
+            ] },
+        };
+
+        const PAGE_SIZE = 50;
+
+        const sourceSel = document.getElementById('source');
+        const destSel = document.getElementById('destination');
+        const runBtn = document.getElementById('runBtn');
+        const progressEl = document.getElementById('progress');
+        const entityListEl = document.getElementById('entityList');
+        const overallFillEl = document.getElementById('overallFill');
+        const overallTextEl = document.getElementById('overallText');
+        const summaryEl = document.getElementById('summary');
+        const warnEl = document.getElementById('sameBusinessWarning');
+        const entityBoxes = Array.from(document.querySelectorAll('#entities input[type=checkbox]'));
+
+        const entityRows = {};
+
+        function resetProgress(selected) {
+            entityListEl.innerHTML = '';
+            summaryEl.className = 'summary hidden';
+            summaryEl.textContent = '';
+            overallFillEl.className = 'overall-fill';
+            overallFillEl.style.width = '0%';
+            overallTextEl.textContent = `0 of ${selected.length} done`;
+            progressEl.classList.remove('hidden');
+            for (const entity of selected) {
+                const def = ENTITY_DEFS[entity];
+                const row = document.createElement('div');
+                row.className = 'entity-row';
+                row.innerHTML = `
+                    <span class="status-icon pending"></span>
+                    <span class="name"></span>
+                    <span class="status-text">Waiting...</span>
+                `;
+                row.querySelector('.name').textContent = capitalize(def.label);
+                entityListEl.appendChild(row);
+                entityRows[entity] = row;
+            }
+        }
+
+        function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+        function setEntityStatus(entity, state, text) {
+            const row = entityRows[entity];
+            if (!row) return;
+            const icon = row.querySelector('.status-icon');
+            const txt = row.querySelector('.status-text');
+            icon.className = 'status-icon ' + state;
+            icon.textContent = state === 'done' ? '✓' : state === 'failed' ? '✗' : '';
+            txt.className = 'status-text' + (state === 'failed' ? ' err' : state === 'done' ? ' ok' : '');
+            txt.textContent = text;
+        }
+
+        function updateOverall(done, total) {
+            const pct = total ? Math.round((done / total) * 100) : 0;
+            overallFillEl.style.width = pct + '%';
+            overallTextEl.textContent = `${done} of ${total} done`;
+        }
+
+        function setSummary(text, ok) {
+            summaryEl.className = 'summary ' + (ok ? 'ok' : 'err');
+            summaryEl.textContent = text;
+            overallFillEl.classList.add(ok ? 'done' : 'failed');
+        }
+
+        function refreshRunButton() {
+            const src = sourceSel.value;
+            const dst = destSel.value;
+            const anyChecked = entityBoxes.some(cb => cb.checked);
+            const same = src && dst && src === dst;
+            warnEl.classList.toggle('hidden', !same);
+            runBtn.disabled = !(src && dst && !same && anyChecked);
+        }
+
+        entityBoxes.forEach(cb => cb.addEventListener('change', refreshRunButton));
+        sourceSel.addEventListener('change', refreshRunButton);
+        destSel.addEventListener('change', refreshRunButton);
+
+        async function loadBusinesses() {
+            const res = await postMessageWithResponse({
+                type: 'api-request',
+                method: 'GET',
+                path: '/api4/businesses'
+            });
+            const businesses = res?.businesses || [];
+            if (!businesses.length) {
+                sourceSel.innerHTML = '<option>No businesses found</option>';
+                destSel.innerHTML = '<option>No businesses found</option>';
+                return;
+            }
+            const names = businesses.map(b => b.name).filter(Boolean).sort((a, b) => a.localeCompare(b));
+            const opts = ['<option value="">-- Select --</option>']
+                .concat(names.map(n => `<option value="${encodeHtml(n)}">${encodeHtml(n)}</option>`))
+                .join('');
+            sourceSel.innerHTML = opts;
+            destSel.innerHTML = opts;
+            sourceSel.disabled = false;
+            destSel.disabled = false;
+        }
+
+        function encodeHtml(s) {
+            return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+
+        async function fetchAllItems(batchPath, businessName, onProgress) {
+            const all = [];
+            let skip = 0;
+            while (true) {
+                const qs = new URLSearchParams({
+                    Business: businessName,
+                    Skip: String(skip),
+                    PageSize: String(PAGE_SIZE),
+                }).toString();
+                const res = await postMessageWithResponse({
+                    type: 'api-request',
+                    method: 'GET',
+                    path: `${batchPath}?${qs}`
+                });
+                const items = res?.items || [];
+                all.push(...items);
+                if (onProgress) onProgress(all.length);
+                if (items.length < PAGE_SIZE) break;
+                skip += PAGE_SIZE;
+            }
+            return all;
+        }
+
+        async function putBatch(batchPath, values, destinationBusiness) {
+            return await postMessageWithResponse({
+                type: 'api-request',
+                method: 'PUT',
+                path: batchPath,
+                body: { business: destinationBusiness, values }
+            });
+        }
+
+        // Reads every batchPath of an entity from the source and writes each back to the
+        // destination, in order. Returns { ok, total, error } for the whole entity.
+        async function replicateEntity(entity, source, destination) {
+            const def = ENTITY_DEFS[entity];
+
+            // Read all collections first so a write only starts once the full source is in hand.
+            const collections = [];
+            let loaded = 0;
+            for (const batchPath of def.batchPaths) {
+                const items = await fetchAllItems(batchPath, source, (n) => {
+                    setEntityStatus(entity, 'active', `Reading from "${source}"... (${loaded + n} loaded)`);
+                });
+                loaded += items.length;
+                collections.push({ batchPath, items });
+            }
+
+            const total = collections.reduce((sum, c) => sum + c.items.length, 0);
+            if (!total) return { ok: 0, total: 0, error: null };
+
+            setEntityStatus(entity, 'active', `Writing ${total} to "${destination}"...`);
+
+            let ok = 0;
+            for (const { batchPath, items } of collections) {
+                if (!items.length) continue;
+                // GET batch returns { key, item }; PUT batch expects { key, value }.
+                const values = items.map(it => ({ key: it.key, value: it.item }));
+                const result = await putBatch(batchPath, values, destination);
+                if (result === true || result === 'true') {
+                    ok += values.length;
+                } else {
+                    return { ok, total, error: result?.message || 'Unknown error.' };
+                }
+            }
+            return { ok, total, error: null };
+        }
+
+        async function replicate() {
+            runBtn.disabled = true;
+            const source = sourceSel.value;
+            const destination = destSel.value;
+            const selected = entityBoxes.filter(cb => cb.checked).map(cb => cb.value);
+
+            resetProgress(selected);
+
+            let totalOk = 0, totalFail = 0, doneCount = 0, anyFailed = false;
+
+            for (const entity of selected) {
+                setEntityStatus(entity, 'active', `Reading from "${source}"...`);
+
+                let result;
+                try {
+                    result = await replicateEntity(entity, source, destination);
+                } catch (e) {
+                    anyFailed = true;
+                    setEntityStatus(entity, 'failed', `Failed: ${e?.message || e}`);
+                    doneCount++;
+                    updateOverall(doneCount, selected.length);
+                    continue;
+                }
+
+                if (result.total === 0) {
+                    setEntityStatus(entity, 'done', `Nothing to copy.`);
+                } else if (result.error) {
+                    anyFailed = true;
+                    totalOk += result.ok;
+                    totalFail += result.total - result.ok;
+                    setEntityStatus(entity, 'failed', `Failed: ${result.error}`);
+                } else {
+                    totalOk += result.ok;
+                    setEntityStatus(entity, 'done', `Copied ${result.ok} record${result.ok === 1 ? '' : 's'}.`);
+                }
+
+                doneCount++;
+                updateOverall(doneCount, selected.length);
+            }
+
+            const summary = anyFailed
+                ? `Finished with errors. ${totalOk} copied, ${totalFail} failed.`
+                : `All done. ${totalOk} record${totalOk === 1 ? '' : 's'} copied.`;
+            setSummary(summary, !anyFailed);
+            refreshRunButton();
+        }
+
+        runBtn.addEventListener('click', () => {
+            replicate().catch(e => {
+                progressEl.classList.remove('hidden');
+                setSummary(`Something went wrong: ${e?.message || e}`, false);
+                refreshRunButton();
+            });
+        });
+
+        loadBusinesses().catch(() => {
+            sourceSel.innerHTML = '<option>Error loading</option>';
+            destSel.innerHTML = '<option>Error loading</option>';
+        });
+    </script>
+</body>
+</html>

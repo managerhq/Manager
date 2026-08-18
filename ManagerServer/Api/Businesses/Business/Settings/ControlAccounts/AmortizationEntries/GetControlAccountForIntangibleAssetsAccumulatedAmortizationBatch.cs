@@ -1,0 +1,7 @@
+namespace ManagerServer.Api.Businesses.Business.Settings.ControlAccounts.AmortizationEntries
+{
+    [ProtoContract]
+    internal sealed class GetControlAccountForIntangibleAssetsAccumulatedAmortizationBatch : GetObjectBatchEndpoint<Model.ControlAccountForIntangibleAssetsAccumulatedAmortization, GetControlAccountForIntangibleAssetsAccumulatedAmortization, PostControlAccountForIntangibleAssetsAccumulatedAmortization, PutControlAccountForIntangibleAssetsAccumulatedAmortization, DeleteControlAccountForIntangibleAssetsAccumulatedAmortization>
+    {
+    }
+}
