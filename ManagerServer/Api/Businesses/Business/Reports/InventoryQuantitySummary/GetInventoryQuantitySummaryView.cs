@@ -60,8 +60,13 @@ namespace ManagerServer.Api.Businesses.Business.Reports.InventoryQuantitySummary
                 var creditNotes = movements.Where(x => x.InventoryItem == e && x.TransactionType == typeof(ManagerServer.Model.CreditNote)).Sum(x => x.Qty);
                 var closingBalance = openingBalance + movements.Where(x => x.InventoryItem == e).Sum(x => x.Qty);
 
-                if (openingBalance == 0m && purchases == 0m && productionOrders == 0m && inventoryWriteOffs == 0m && journalEntries == 0m && sales == 0m) continue;
-                if (report.ExcludeItemsWithNoMovement && purchases == 0m && productionOrders == 0m && inventoryWriteOffs == 0m && journalEntries == 0m && sales == 0m) continue;
+                //                if (openingBalance == 0m && purchases == 0m && productionOrders == 0m && inventoryWriteOffs == 0m && journalEntries == 0m && sales == 0m) continue;
+                //                if (report.ExcludeItemsWithNoMovement && purchases == 0m && productionOrders == 0m && inventoryWriteOffs == 0m && journalEntries == 0m && sales == 0m) continue;
+
+                //  MOD - 19.08.2026
+                if (openingBalance == 0m && purchases == 0m && debitNotes == 0m && productionOrders == 0m && inventoryWriteOffs == 0m && journalEntries == 0m && sales == 0m && creditNotes == 0m) continue;
+                if (report.ExcludeItemsWithNoMovement && purchases == 0m && debitNotes == 0m && productionOrders == 0m && inventoryWriteOffs == 0m && journalEntries == 0m && sales == 0m && creditNotes == 0m) continue;
+                //
 
                 var cells = new System.Collections.Generic.List<Cell>();
                 cells.Add(Make(openingBalance));
