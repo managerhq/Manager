@@ -15,7 +15,7 @@ namespace ManagerServer.Model
     [ProtoContract]
     [Guid("3be38758-7bf2-46f1-84a5-34e8748cade0")]
     [Currency(nameof(Supplier))]
-    public sealed class RecurringPurchaseOrder : Object, IRecurringTransactionFor<PurchaseOrder>, ICustomFields
+    public sealed class RecurringPurchaseOrder : Object, IRecurringTransactionFor<PurchaseOrder>, ICustomFields, IHasCustomTheme
     {
         [Guide("The date when the next purchase order will be automatically created. This date advances automatically based on the interval and period type after each order is generated.")]
         [ProtoMember(1), NoWrap] public DateTime? NextIssueDate { get; set; }
@@ -66,5 +66,8 @@ namespace ManagerServer.Model
         CustomFields ICustomFields.CustomFields => CustomFields2;
 
         MonthDay IRecurringTransaction.MonthDay => MonthDay;
+
+        bool IHasCustomTheme.CustomTheme { get => HasPurchaseOrderCustomTheme; set => HasPurchaseOrderCustomTheme = value; }
+        Guid? IHasCustomTheme.CustomThemeId { get => PurchaseOrderCustomTheme; set => PurchaseOrderCustomTheme = value; }
     }
 }

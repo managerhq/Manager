@@ -16,7 +16,7 @@ namespace ManagerServer.Model
     [ProtoContract]
     [Guid("81385989-81e5-48c7-a819-c344324c1c01")]
     [Currency(nameof(Customer))]
-    public sealed class RecurringSalesInvoice : Object, IRecurringTransactionFor<SalesInvoice>, ICustomFields
+    public sealed class RecurringSalesInvoice : Object, IRecurringTransactionFor<SalesInvoice>, ICustomFields, IHasCustomTheme
     {
         [Guide("The date when the next sales invoice will be automatically created. This date advances automatically based on your frequency settings.")]
         [Guide("The system checks daily for recurring transactions due to be created. Set this to today or earlier to create the first invoice immediately.")]
@@ -95,6 +95,9 @@ namespace ManagerServer.Model
         CustomFields ICustomFields.CustomFields => CustomFields2;
 
         MonthDay IRecurringTransaction.MonthDay => MonthDay;
+
+        bool IHasCustomTheme.CustomTheme { get => HasSalesInvoiceCustomTheme; set => HasSalesInvoiceCustomTheme = value; }
+        Guid? IHasCustomTheme.CustomThemeId { get => SalesInvoiceCustomTheme; set => SalesInvoiceCustomTheme = value; }
 
         /*
         [ProtoContract]
