@@ -21,6 +21,14 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.Settings.RecurringTrans
             if (source is ManagerServer.Model.SalesQuote salesQuote)
             {
                 Copy(salesQuote, form);
+
+                // Copy() only matches members by name; SalesQuote exposes CustomTheme/CustomThemeId
+                // while this form exposes its own uniquely-named fields, so bridge via IHasCustomTheme.
+                if (salesQuote is ManagerServer.Model.IHasCustomTheme sourceCustomTheme)
+                {
+                    form.HasSalesQuoteCustomTheme = sourceCustomTheme.CustomTheme;
+                    form.SalesQuoteCustomTheme = sourceCustomTheme.CustomThemeId;
+                }
             }
         }
     }
