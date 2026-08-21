@@ -17,6 +17,14 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.Settings.RecurringTrans
             if (source is SalesInvoice salesInvoice)
             {
                 Copy(salesInvoice, form);
+
+                // Copy() only matches members by name; SalesInvoice exposes CustomTheme/CustomThemeId
+                // while this form exposes its own uniquely-named fields, so bridge via IHasCustomTheme.
+                if (salesInvoice is IHasCustomTheme sourceCustomTheme)
+                {
+                    form.HasSalesInvoiceCustomTheme = sourceCustomTheme.CustomTheme;
+                    form.SalesInvoiceCustomTheme = sourceCustomTheme.CustomThemeId;
+                }
             }
         }
     }

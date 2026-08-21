@@ -16,6 +16,14 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.Settings.RecurringTrans
             if (source is ManagerServer.Model.PurchaseOrder purchaseOrder)
             {
                 Copy(purchaseOrder, form);
+
+                // Copy() only matches members by name; PurchaseOrder exposes CustomTheme/CustomThemeId
+                // while this form exposes its own uniquely-named fields, so bridge via IHasCustomTheme.
+                if (purchaseOrder is ManagerServer.Model.IHasCustomTheme sourceCustomTheme)
+                {
+                    form.HasPurchaseOrderCustomTheme = sourceCustomTheme.CustomTheme;
+                    form.PurchaseOrderCustomTheme = sourceCustomTheme.CustomThemeId;
+                }
             }
         }
     }

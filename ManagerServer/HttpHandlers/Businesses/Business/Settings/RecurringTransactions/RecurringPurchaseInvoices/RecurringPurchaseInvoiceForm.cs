@@ -17,6 +17,14 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.Settings.RecurringTrans
             if (source is PurchaseInvoice purchaseInvoice)
             {
                 Copy(purchaseInvoice, form);
+
+                // Copy() only matches members by name; PurchaseInvoice exposes CustomTheme/CustomThemeId
+                // while this form exposes its own uniquely-named fields, so bridge via IHasCustomTheme.
+                if (purchaseInvoice is IHasCustomTheme sourceCustomTheme)
+                {
+                    form.HasPurchaseInvoiceCustomTheme = sourceCustomTheme.CustomTheme;
+                    form.PurchaseInvoiceCustomTheme = sourceCustomTheme.CustomThemeId;
+                }
             }
         }
     }

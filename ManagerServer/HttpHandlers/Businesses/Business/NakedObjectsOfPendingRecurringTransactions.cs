@@ -65,6 +65,15 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
                             Copy(recurringTransaction, transaction);
                             transaction.Date = recurringTransaction.NextIssueDate.Value;
 
+                            // Copy() only matches members by name, but each recurring transaction type exposes its own
+                            // uniquely-named custom theme fields (e.g. HasPurchaseInvoiceCustomTheme), so this must be
+                            // bridged explicitly via the shared IHasCustomTheme interface.
+                            if (recurringTransaction is ManagerServer.Model.IHasCustomTheme recurringCustomTheme && transaction is ManagerServer.Model.IHasCustomTheme transactionCustomTheme)
+                            {
+                                transactionCustomTheme.CustomTheme = recurringCustomTheme.CustomTheme;
+                                transactionCustomTheme.CustomThemeId = recurringCustomTheme.CustomThemeId;
+                            }
+
                             ((ManagerServer.Model.Object)transaction).Key = Guid.CreateVersion7();
                             list.Add((ManagerServer.Model.Object)transaction);
 

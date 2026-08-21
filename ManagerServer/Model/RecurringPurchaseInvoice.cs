@@ -15,7 +15,7 @@ namespace ManagerServer.Model
     [ProtoContract]
     [Guid("11de04ac-c448-4665-b206-8aa631e63532")]
     [Currency(nameof(Supplier))]
-    public sealed class RecurringPurchaseInvoice : Object, IRecurringTransactionFor<PurchaseInvoice>, ICustomFields
+    public sealed class RecurringPurchaseInvoice : Object, IRecurringTransactionFor<PurchaseInvoice>, ICustomFields, IHasCustomTheme
     {
         [Guide("The date when the next purchase invoice will be automatically created. This date advances automatically based on your frequency settings.")]
         [Guide("Set this to match when you expect to receive the supplier's invoice. The system checks daily for invoices due to be created.")]
@@ -79,6 +79,9 @@ namespace ManagerServer.Model
         CustomFields ICustomFields.CustomFields => CustomFields2;
 
         MonthDay IRecurringTransaction.MonthDay => MonthDay;
+
+        bool IHasCustomTheme.CustomTheme { get => HasPurchaseInvoiceCustomTheme; set => HasPurchaseInvoiceCustomTheme = value; }
+        Guid? IHasCustomTheme.CustomThemeId { get => PurchaseInvoiceCustomTheme; set => PurchaseInvoiceCustomTheme = value; }
 
         /*
         [ProtoContract]
