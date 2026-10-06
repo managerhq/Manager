@@ -3,7 +3,6 @@ using ManagerServer.Globalization;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace ManagerServer.HttpHandlers
@@ -13,7 +12,6 @@ namespace ManagerServer.HttpHandlers
     {
         [ProtoMember(1)] public string Username;
         [ProtoMember(2)] public bool InvalidUsername;
-        [ProtoMember(3)] public bool EmailSent;
         [ProtoMember(4)] public bool NoEmailAddress;
 
         protected override void InnerInnerGet()
@@ -22,17 +20,6 @@ namespace ManagerServer.HttpHandlers
             if (smtp == null)
             {
                 Response.Redirect(new Login().ToUrl());
-                return;
-            }
-
-            if (EmailSent)
-            {
-                using (Div(@class: "text-green-600 font-bold")) Write(Strings.PasswordResetEmailSent);
-
-                using (Div(@class: "flex gap-4 items-center"))
-                {
-                    using (DefaultLink(new Login().ToUrl())) Write(Strings.ReturnToLogin);
-                }
                 return;
             }
 
@@ -52,25 +39,20 @@ namespace ManagerServer.HttpHandlers
                 using (Div(@class: "text-red-600 font-bold")) Write(Strings.NoEmailAddress);
             }
 
-            InputHidden(name: nameof(FormData.Origin), id: "origin");
-
             using (Div(@class: "flex gap-4 items-center"))
             {
                 using (PrimaryButton())
                 {
                     I(@class: "htmx-indicator me-2 fas fa-circle-notch fa-spin !hidden");
-                    Write(Strings.SendResetLink);
+                    Write(Strings.SendResetCode);
                 }
                 using (DefaultLink(new Login().ToUrl())) Write(Strings.Cancel);
             }
-
-            using (Script()) Write("document.getElementById('origin').value = window.location.origin;");
         }
 
         public sealed class FormData
         {
             public string Username;
-            public string Origin;
         }
 
         protected override async Task InnerPost()
@@ -86,7 +68,6 @@ namespace ManagerServer.HttpHandlers
 
             var form = await Request.ReadFormAsync();
             var username = form[nameof(FormData.Username)].ToString().Trim().ToLowerInvariant();
-            var origin = form[nameof(FormData.Origin)].ToString().Trim();
 
             if (string.IsNullOrWhiteSpace(username))
             {
@@ -108,22 +89,21 @@ namespace ManagerServer.HttpHandlers
                 return;
             }
 
-            var token = new byte[32];
-            RandomNumberGenerator.Fill(token);
+            // The email carries a code the user types back in, not a link. The server has no reliable way to
+            // know its own public address — behind a reverse proxy Request.Host is the proxy-to-Kestrel hop,
+            // and anything the client tells us can be forged — so there is no trustworthy URL to email.
+            var code = Helpers.PasswordResetCode.Generate();
 
-            userRecord.PasswordResetToken = token;
+            userRecord.PasswordResetToken = Helpers.PasswordResetCode.Normalize(code);
             userRecord.PasswordResetTokenExpiry = DateTime.UtcNow.AddHours(1);
             await ApplicationData.Users.Save(userRecord);
 
-            var baseUrl = !string.IsNullOrWhiteSpace(origin) ? origin : $"{Request.Scheme}://{Request.Host}";
-            var resetUrl = $"{baseUrl}{new ResetPassword { Username = username, Token = token }.ToUrl()}";
+            await SendResetEmail(smtp, userRecord.EmailAddress, userRecord.Username, code);
 
-            await SendResetEmail(smtp, userRecord.EmailAddress, userRecord.Username, baseUrl, resetUrl);
-
-            Response.Redirect(new ForgotPassword { EmailSent = true }.ToUrl());
+            Response.Redirect(new ResetPassword { Username = username, CodeSent = true }.ToUrl());
         }
 
-        private async Task SendResetEmail(Services.SmtpSettings smtp, string toEmail, string username, string origin, string resetUrl)
+        private async Task SendResetEmail(Services.SmtpSettings smtp, string toEmail, string username, string code)
         {
             var message = new MimeKit.MimeMessage();
             message.From.Add(new MimeKit.MailboxAddress("Manager", smtp.FromAddress));
@@ -131,13 +111,15 @@ namespace ManagerServer.HttpHandlers
             message.Subject = Strings.ResetPassword;
 
             var bodyBuilder = new MimeKit.BodyBuilder();
-            bodyBuilder.HtmlBody = $"<p>A password reset was requested for username <b>{System.Net.WebUtility.HtmlEncode(username)}</b> on <b>{System.Net.WebUtility.HtmlEncode(origin)}</b>.</p>"
-                + $"<p>Click the link below to reset your password. This link will expire in 1 hour.</p>"
-                + $"<p><a href=\"{resetUrl}\">{Strings.ResetPassword}</a></p>"
+            bodyBuilder.HtmlBody = $"<p>A password reset was requested for username <b>{System.Net.WebUtility.HtmlEncode(username)}</b>.</p>"
+                + $"<p>Enter this code on the password reset screen:</p>"
+                + $"<p style=\"font-size: 24px; font-family: monospace; letter-spacing: 2px\"><b>{System.Net.WebUtility.HtmlEncode(code)}</b></p>"
+                + $"<p>The code will expire in 1 hour.</p>"
                 + $"<p>If you did not request this, you can safely ignore this email.</p>";
-            bodyBuilder.TextBody = $"A password reset was requested for username \"{username}\" on {origin}.\n\n"
-                + $"Click the link below to reset your password. This link will expire in 1 hour.\n\n"
-                + $"{resetUrl}\n\n"
+            bodyBuilder.TextBody = $"A password reset was requested for username \"{username}\".\n\n"
+                + $"Enter this code on the password reset screen:\n\n"
+                + $"    {code}\n\n"
+                + $"The code will expire in 1 hour.\n\n"
                 + $"If you did not request this, you can safely ignore this email.";
             message.Body = bodyBuilder.ToMessageBody();
 

@@ -49,14 +49,16 @@ namespace ManagerServer.Globalization
 
         public static string ForgotPassword => Get(nameof(ForgotPassword)) ?? "Forgot password?";
         public static string ResetPassword => Get(nameof(ResetPassword)) ?? "Reset Password";
-        public static string SendResetLink => Get(nameof(SendResetLink)) ?? "Send Reset Link";
-        public static string PasswordResetEmailSent => Get(nameof(PasswordResetEmailSent)) ?? "A password reset link has been sent.";
+        public static string SendResetCode => Get(nameof(SendResetCode)) ?? "Send Reset Code";
+        public static string PasswordResetCodeSent => Get(nameof(PasswordResetCodeSent)) ?? "We have emailed you a password reset code. Enter it below along with your new password. The code expires in 1 hour.";
+        public static string ResetCode => Get(nameof(ResetCode)) ?? "Reset Code";
         public static string NewPassword => Get(nameof(NewPassword)) ?? "New Password";
         public static string ConfirmPassword => Get(nameof(ConfirmPassword)) ?? "Confirm Password";
         public static string PasswordsDoNotMatch => Get(nameof(PasswordsDoNotMatch)) ?? "Passwords do not match.";
         public static string PasswordRequired => Get(nameof(PasswordRequired)) ?? "Password is required.";
         public static string NoEmailAddress => Get(nameof(NoEmailAddress)) ?? "This user does not have an email address. Please contact your administrator.";
-        public static string InvalidOrExpiredResetLink => Get(nameof(InvalidOrExpiredResetLink)) ?? "This password reset link is invalid or has expired.";
+        public static string InvalidOrExpiredResetCode => Get(nameof(InvalidOrExpiredResetCode)) ?? "This password reset code is invalid or has expired.";
+        public static string TooManyResetAttempts => Get(nameof(TooManyResetAttempts)) ?? "Too many password reset attempts are being processed. Please wait a moment and try again.";
         public static string PasswordHasBeenReset => Get(nameof(PasswordHasBeenReset)) ?? "Your password has been reset. You can now log in with your new password.";
         public static string ReturnToLogin => Get(nameof(ReturnToLogin)) ?? "Return to login";
         public static string CreatePassword => Get(nameof(CreatePassword)) ?? "Create Password";
