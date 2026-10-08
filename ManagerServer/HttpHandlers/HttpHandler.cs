@@ -7,6 +7,7 @@ using ManagerServer.Model;
 using ManagerComponents;
 using ManagerServer.Authentication;
 using ManagerServer.HttpHandlers.Businesses;
+using ManagerServer.HttpHandlers.Businesses.Business;
 using ManagerServer.HttpHandlers.Businesses.Business.Settings.BusinessDetails;
 
 namespace ManagerServer.HttpHandlers
@@ -79,6 +80,15 @@ namespace ManagerServer.HttpHandlers
                     else
                     {
                         Response.Redirect("/");
+                        return Task.CompletedTask;
+                    }
+                }
+
+                if (this is BusinessHandler businessHandler && user.Type != ManagerServer.Model.UserType.Administrator)
+                {
+                    if (string.IsNullOrWhiteSpace(businessHandler.Business) || user.Businesses == null || !user.Businesses.Contains(businessHandler.Business))
+                    {
+                        Response.StatusCode = 403;
                         return Task.CompletedTask;
                     }
                 }
