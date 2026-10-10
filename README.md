@@ -106,6 +106,24 @@ Manager Server works out of the box, but you can adjust it by starting it with e
 
 On Windows, these options can be added to a shortcut so the server always starts the same way.
 
+## Running in Docker
+
+A Docker image of the Server edition is published to Amazon ECR Public with every release:
+
+> public.ecr.aws/manager/manager
+
+Each release is tagged with its version number, and `latest` always points at the newest one. The image is built for 64-bit ARM (`linux/arm64`).
+
+```
+docker run -d -p 5000:8080 -v manager-data:/data public.ecr.aws/manager/manager
+```
+
+Manager is then available at http://localhost:5000, and signing in for the first time works exactly as described above.
+
+Your data is kept in `/data` inside the container, so mount a volume there — without it, everything is lost when the container is replaced. **Back up that volume regularly**, the same way you would back up the data folder.
+
+The optional settings are passed as environment variables rather than command-line options — for example `-e smtp=smtp://user:pass@host:587?from=noreply@example.com` to let users reset their own passwords by email. The server listens on port 8080 inside the container; change the host side of `-p` to serve it on a different port.
+
 ---
 
 # How it is built
