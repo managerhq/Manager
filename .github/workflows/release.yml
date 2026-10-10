@@ -189,6 +189,34 @@ jobs:
 
     - run: gh release upload "$VERSION" dist/*.dmg --repo ${{ github.repository }} --clobber
 
+  docker:
+    timeout-minutes: 30
+    runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
+      id-token: write # Required to assume the AWS role through OIDC.
+    env:
+      IMAGE: public.ecr.aws/manager/manager
+    defaults:
+      run:
+        shell: bash
+        working-directory: ManagerServer
+    steps:
+    - uses: actions/checkout@v7
+    - uses: actions/setup-dotnet@v6
+      with:
+        dotnet-version: 10.0.x
+    - run: dotnet publish ManagerServer.csproj --configuration Release --runtime linux-arm64 --self-contained true -p:PublishSingleFile=true -p:DebugType=embedded -p:AssemblyVersion="$VERSION" --output out
+    - run: chmod a+x out/ManagerServer
+    - run: docker build -t "$IMAGE:$VERSION" -t "$IMAGE:latest" .
+    - uses: aws-actions/configure-aws-credentials@v6
+      with:
+        aws-region: us-east-1
+        role-to-assume: arn:aws:iam::131018248009:role/GithubOIDC
+    # Public ECR is one global registry and only issues tokens from us-east-1.
+    - run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+    - run: docker push --all-tags "$IMAGE"
+
   publish-release:
     timeout-minutes: 5
     needs:

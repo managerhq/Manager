@@ -1,0 +1,3 @@
+# Only the published binaries belong in the build context.
+*
+!out
