@@ -6,6 +6,8 @@ using ManagerServer.Model.Obsolete.Obsolete86;
 using Markdig;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Text.RegularExpressions;
 
 namespace ManagerServer.Api.Businesses.Business
 {
@@ -148,6 +150,23 @@ namespace ManagerServer.Api.Businesses.Business
                 if (!customFields.TryGetValue(e.Key, out var text)) continue;
                 if (string.IsNullOrWhiteSpace(text)) continue;
 
+                if (e.Type == Model.Enums.CustomFieldStyle.Image)
+                {
+                    var image = GetClassicImage(text);
+                    if (image != null)
+                    {
+                        output.Add(new TransactionView.CustomField
+                        {
+                            key = e.Key.ToString(),
+                            label = e.Name,
+                            value = text,
+                            image = image,
+                            displayAtTheTop = e.ShowAtTheTop
+                        });
+                        continue;
+                    }
+                }
+
                 if (e.Type == Model.Enums.CustomFieldStyle.Date)
                 {
                     var parts = text.Split('-');
@@ -158,7 +177,7 @@ namespace ManagerServer.Api.Businesses.Business
                         && year > 0 && month > 0 && day > 0
                         && year < 10000 && month <= 12 && day <= 31)
                     {
-                        var date = new DateTime(year, month, day);
+                        var date = new System.DateTime(year, month, day);
                         output.Add(new TransactionView.CustomField { key = e.Key.ToString(), label = e.Name, text = date.ToLocalShortDisplayString(), value = date, displayAtTheTop = e.ShowAtTheTop });
                     }
                 }
@@ -175,6 +194,26 @@ namespace ManagerServer.Api.Businesses.Business
                 }
             }
             return output;
+        }
+
+        private static TransactionView.Image GetClassicImage(string html)
+        {
+            var match = Regex.Match(html, @"<img\b[^>]*\bsrc\s*=\s*(['""])(?<src>.*?)\1[^>]*>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            if (!match.Success) return null;
+
+            var source = WebUtility.HtmlDecode(match.Groups["src"].Value);
+            if (string.IsNullOrWhiteSpace(source)) return null;
+
+            int? width = GetImageDimension(html, "width");
+            int? height = GetImageDimension(html, "height");
+
+            return new TransactionView.Image { url = source, width = width, height = height };
+        }
+
+        private static int? GetImageDimension(string html, string name)
+        {
+            var match = Regex.Match(html, $@"\b{name}\s*=\s*['\""]?(?<value>\d+)", RegexOptions.IgnoreCase);
+            return match.Success && int.TryParse(match.Groups["value"].Value, out var value) ? value : null;
         }
 
         protected List<TransactionView.CustomField> GetCustomFields2(Type type, Model.CustomFields customFields)
