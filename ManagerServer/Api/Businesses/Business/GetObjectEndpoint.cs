@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ManagerServer.Api.Businesses.Business
 {
+    [ProtoContract]
     internal abstract class GetObjectEndpoint<T> : AuthorizedEndpoint<T> where T : Model.Object, new()
     {
         [ProtoMember(1)] public Guid Key { get; set; }

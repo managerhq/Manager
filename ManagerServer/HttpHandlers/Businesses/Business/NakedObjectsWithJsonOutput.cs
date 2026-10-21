@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ManagerServer.HttpHandlers.Businesses.Business
 {
+    [ProtoContract]
     internal abstract class NakedObjectsWithJsonOutput : NakedObjectsWithObscureMode
     {
         [ProtoMember(200)] public bool JsonOutput;

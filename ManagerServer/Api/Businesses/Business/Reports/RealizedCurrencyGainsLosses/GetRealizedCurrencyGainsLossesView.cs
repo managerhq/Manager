@@ -1,5 +1,6 @@
 using ManagerServer.Globalization;
 using ManagerServer.Helpers;
+using ManagerServer.HttpHandlers.Businesses.Business.Reports.Currencies.RealizedCurrencyGainsLosses;
 using ManagerServer.Model;
 using ManagerServer.Query.GeneralLedger;
 using System;
@@ -24,74 +25,33 @@ namespace ManagerServer.Api.Businesses.Business.Reports.RealizedCurrencyGainsLos
 
             Cell Make(decimal? v, Link link = null) => ReportNumberFormat.Cell(v, NumberStyle.Currency, model.WholeNumbers, link);
 
-            var baseCurrency = business.Single<BaseCurrency>();
-            var transactions = new GeneralLedger(Business).Where(x => x.Date <= report.ToDate).ToArray();
-            foreach (var e in transactions.Where(x => x.AccountCurrency is ForeignCurrency).GroupBy(x => x.AccountCurrency))
+            foreach (var step in RealizedCurrencyGains.Replay(business, Business, report.ToDate))
             {
-                var foreignCurrencyBalance = 0m;
-                var baseCurrencyBalance = 0m;
+                if (!step.IsRealization) continue;
+                if (step.Date < report.FromDate) continue;
 
-                foreach (var e2 in e.GroupBy(x => x.Date).OrderBy(x => x.Key))
+                var viewHandler = ManagerServer.HttpHandlers.Businesses.Business.TransactionViewer.GetViewHandler(Business, step.Entry.Transaction, Referrer);
+                var settlementLink = viewHandler != null ? new Link(viewHandler.ToUrl()) : null;
+
+                var acquisitionCostLink = new Link(new RealizedCurrencyGainsLossesAcquisitionCost
                 {
-                    var foreignCurrencyMovement = e2.Sum(x => x.AccountAmount);
+                    Business = Business,
+                    Referrer = Referrer,
+                    Currency = step.Currency.Key,
+                    ToDate = report.ToDate,
+                    Realization = step.RealizationIndex
+                }.ToUrl());
 
-                    if (foreignCurrencyBalance != 0m && foreignCurrencyMovement != 0m && Math.Sign(foreignCurrencyBalance) != Math.Sign(foreignCurrencyMovement))
+                model.Rows.Items.Add(new Row
+                {
+                    Name = step.Date.ToLocalShortDisplayString() + " — " + step.Currency.GetCode() + (step.Entry.Transaction != null ? " — " + step.Entry.Transaction.GetTransactionName() : null),
+                    Cells = new List<Cell>
                     {
-                        foreach (var e3 in e2.OrderByDescending(x => x.Transaction.CanBeRealizedCurrencyTransaction(business)).ThenByDescending(x => Math.Sign(x.AccountAmount) == Math.Sign(foreignCurrencyBalance)))
-                        {
-                            if (Math.Sign(e3.AccountAmount) == Math.Sign(foreignCurrencyBalance))
-                            {
-                                baseCurrencyBalance += e3.BaseAmount;
-                                foreignCurrencyBalance += e3.AccountAmount;
-                            }
-                            else if (foreignCurrencyBalance == 0m)
-                            {
-                                baseCurrencyBalance += e3.BaseAmount;
-                                foreignCurrencyBalance += e3.AccountAmount;
-                            }
-                            else if (!e3.Transaction.CanBeRealizedCurrencyTransaction(business))
-                            {
-                                baseCurrencyBalance += e3.BaseAmount;
-                                foreignCurrencyBalance += e3.AccountAmount;
-                            }
-                            else if (e3.AccountAmount == 0m)
-                            {
-                                baseCurrencyBalance += e3.BaseAmount;
-                            }
-                            else
-                            {
-                                var unrealizedExchangeRate = baseCurrencyBalance / foreignCurrencyBalance;
-                                var cost = baseCurrency.Round(e3.AccountAmount * unrealizedExchangeRate);
-                                var gain = cost - e3.BaseAmount;
-
-                                baseCurrencyBalance += cost;
-                                foreignCurrencyBalance += e3.AccountAmount;
-
-                                if (e2.Key >= report.FromDate)
-                                {
-                                    var viewHandler = ManagerServer.HttpHandlers.Businesses.Business.TransactionViewer.GetViewHandler(Business, e3.Transaction, Referrer);
-                                    var link = viewHandler != null ? new Link(viewHandler.ToUrl()) : null;
-
-                                    model.Rows.Items.Add(new Row
-                                    {
-                                        Name = e2.Key.ToLocalShortDisplayString() + " — " + e.Key.GetCode() + (e3.Transaction != null ? " — " + e3.Transaction.GetTransactionName() : null),
-                                        Cells = new List<Cell>
-                                        {
-                                            Make(Math.Abs(cost)),
-                                            Make(Math.Abs(e3.BaseAmount), link),
-                                            Make(gain)
-                                        }
-                                    });
-                                }
-                            }
-                        }
+                        Make(Math.Abs(step.Cost), acquisitionCostLink),
+                        Make(Math.Abs(step.Entry.BaseAmount), settlementLink),
+                        Make(step.Gain)
                     }
-                    else
-                    {
-                        baseCurrencyBalance += e2.Sum(x => x.BaseAmount);
-                        foreignCurrencyBalance += foreignCurrencyMovement;
-                    }
-                }
+                });
             }
 
             model.Rows.Items.Add(new Row { IsTotalRow = true });

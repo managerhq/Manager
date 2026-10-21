@@ -7,7 +7,6 @@ using ProtoBuf;
 
 namespace ManagerServer.Query.GeneralLedger
 {
-    [ProtoContract]
     public sealed class GeneralLedgerTransaction : ICustomFields
     {
         public readonly Transaction Transaction;
@@ -42,15 +41,15 @@ namespace ManagerServer.Query.GeneralLedger
         public readonly GeneralLedgerTransaction[] ContraTransactions;
         public readonly SalesOrder SalesOrder;
         public readonly PurchaseOrder PurchaseOrder;
-        [ProtoMember(1)] public readonly decimal? Qty;
-        [ProtoMember(2)] public readonly decimal BaseAmount;
-        [ProtoMember(3)] public readonly decimal TransactionAmount;
-        [ProtoMember(4)] public readonly decimal Discount;
+        public readonly decimal? Qty;
+        public readonly decimal BaseAmount;
+        public readonly decimal TransactionAmount;
+        public readonly decimal Discount;
         public readonly Currency TransactionCurrency;
-        [ProtoMember(5)] public readonly decimal AccountAmount;
+        public readonly decimal AccountAmount;
         public readonly Currency AccountCurrency;
-        [ProtoMember(6)] public readonly bool IsBalancing;
-        [ProtoMember(7)] public readonly bool IsTaxTransaction;
+        public readonly bool IsBalancing;
+        public readonly bool IsTaxTransaction;
         public readonly bool IsReversedTaxTransaction;
         public readonly bool IsCostOfGoodsSold;
         public readonly bool IsBillableExpense;
