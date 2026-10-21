@@ -69,13 +69,16 @@ namespace ManagerServer.Api.Businesses.Business.Reports.RealizedCurrencyGainsLos
 
                                 if (e2.Key >= report.FromDate)
                                 {
+                                    var viewHandler = ManagerServer.HttpHandlers.Businesses.Business.TransactionViewer.GetViewHandler(Business, e3.Transaction, Referrer);
+                                    var link = viewHandler != null ? new Link(viewHandler.ToUrl()) : null;
+
                                     model.Rows.Items.Add(new Row
                                     {
-                                        Name = e2.Key.ToLocalShortDisplayString(),
+                                        Name = e2.Key.ToLocalShortDisplayString() + " — " + e.Key.GetCode() + (e3.Transaction != null ? " — " + e3.Transaction.GetTransactionName() : null),
                                         Cells = new List<Cell>
                                         {
                                             Make(Math.Abs(cost)),
-                                            Make(Math.Abs(e3.BaseAmount)),
+                                            Make(Math.Abs(e3.BaseAmount), link),
                                             Make(gain)
                                         }
                                     });
