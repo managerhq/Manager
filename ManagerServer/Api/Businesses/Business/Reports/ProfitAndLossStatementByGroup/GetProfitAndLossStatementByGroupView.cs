@@ -15,15 +15,13 @@ namespace ManagerServer.Api.Businesses.Business.Reports.ProfitAndLossStatementBy
 
         protected override V2.ReportModel2 Build(Database business, Model.ProfitAndLossStatementByGroup report)
         {
-            if (!report.Group.HasValue) return null;
-
             var chartOfAccounts = new ManagerServer.Query.GeneralLedger.ChartOfAccountsModel(Business);
-            var selectedGroup = FindGroup(chartOfAccounts.ProfitAndLossStatement, report.Group.Value);
-            if (selectedGroup == null) return null;
+            var selectedGroup = report.Group.HasValue ? FindGroup(chartOfAccounts.ProfitAndLossStatement, report.Group.Value) : null;
+            if (report.Group.HasValue && selectedGroup == null) return null;
 
             var wholeNumbers = report.Rounding == Rounding.On;
             var model = new V2.ReportModel2();
-            model.Title = selectedGroup.Name;
+            if (selectedGroup != null) model.Title = selectedGroup.Name;
             model.Subtitles.Add(string.Format(Strings.For_the_period_from_XXX_to_XXX, report.Periods[0].FromDate.ToLocalShortDisplayString(), report.Periods[0].ToDate.ToLocalShortDisplayString()));
 
             var accountingMethods = business.OfType<Model.SalesInvoice>().Any() || business.OfType<Model.PurchaseInvoice>().Any();
@@ -66,22 +64,17 @@ namespace ManagerServer.Api.Businesses.Business.Reports.ProfitAndLossStatementBy
                 baseBalances[i] = periodTransactions.GroupBy(x => x.ProfitAndLossAccount.Key).ToDictionary(x => x.Key, x => x.Sum(y => y.BaseAmount));
             }
 
-            var row = BuildRow(selectedGroup, report, baseBalances, wholeNumbers);
-            if (row != null)
+            if (selectedGroup != null)
             {
-                var negate = IsUnderExpenseGroup(selectedGroup);
-
-                var totalRow = V2.Row.Combine(row);
-                totalRow.IsBold = true;
-
-                if (negate)
+                AddGroupRows(model, selectedGroup, report, baseBalances, wholeNumbers);
+            }
+            else
+            {
+                foreach (var group in chartOfAccounts.ProfitAndLossStatement)
                 {
-                    row.Negate();
-                    totalRow.Negate();
+                    if (group.IsSubtotal) continue;
+                    AddGroupRows(model, group, report, baseBalances, wholeNumbers);
                 }
-
-                model.Rows.Add(row);
-                model.Rows.Add(totalRow);
             }
 
             model.Footer = report.Footer;
@@ -93,6 +86,26 @@ namespace ManagerServer.Api.Businesses.Business.Reports.ProfitAndLossStatementBy
             model.Prune(report.ExcludeZeroBalances);
             model.Format();
             return model;
+        }
+
+        private void AddGroupRows(V2.ReportModel2 model, ManagerServer.Query.GeneralLedger.ChartOfAccountsModel.Group group, Model.ProfitAndLossStatementByGroup report, Dictionary<Guid, decimal>[] baseBalances, bool wholeNumbers)
+        {
+            var row = BuildRow(group, report, baseBalances, wholeNumbers);
+            if (row == null) return;
+
+            var negate = IsUnderExpenseGroup(group);
+
+            var totalRow = V2.Row.Combine(row);
+            totalRow.IsBold = true;
+
+            if (negate)
+            {
+                row.Negate();
+                totalRow.Negate();
+            }
+
+            model.Rows.Add(row);
+            model.Rows.Add(totalRow);
         }
 
         private static ManagerServer.Query.GeneralLedger.ChartOfAccountsModel.Group FindGroup(ManagerServer.Query.GeneralLedger.ChartOfAccountsModel.Group[] roots, Guid key)
