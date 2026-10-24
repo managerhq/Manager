@@ -51,7 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.108" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.109.1" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
     <PackageReference Include="CsvHelper" Version="33.1.0" />
     <PackageReference Include="FastMember" Version="1.5.0" />
@@ -60,15 +60,15 @@
     <PackageReference Include="Markdig" Version="1.4.2" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.13" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="10.0.13" />
-    <PackageReference Include="PuppeteerSharp" Version="25.14.0" />
+    <PackageReference Include="PuppeteerSharp" Version="25.15.0" />
     <PackageReference Include="Sentry.AspNetCore" Version="6.12.1" />
     <PackageReference Include="SharpMt940Lib.Core" Version="1.0.2" />
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.5" />
-    <PackageReference Include="AWSSDK.S3" Version="4.0.104.5" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.104.6" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="10.0.13" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="protobuf-net" Version="3.4.30" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.18.0" />
+    <PackageReference Include="protobuf-net" Version="3.4.40" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.18.2" />
   </ItemGroup>
 
   <ItemGroup>
