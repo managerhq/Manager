@@ -9,3 +9,4 @@ ManagerServer/*.csproj.user
 ManagerDestkop/node_modules/
 ManagerDestkop/dist/
 ManagerDestkop/ManagerServer/
+.vs/
