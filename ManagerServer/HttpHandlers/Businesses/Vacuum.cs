@@ -28,6 +28,12 @@ namespace ManagerServer.HttpHandlers.Businesses
 
         protected override Task InnerGet()
         {
+            if (!this.GetCurrentUserPermissions(Business).FullAccess)
+            {
+                Response.StatusCode = 403;
+                return Task.CompletedTask;
+            }
+
             using (Div(@class: "p-8 mx-auto max-w-prose"))
             {
                 using (Div(@class: "card"))
@@ -100,6 +106,12 @@ namespace ManagerServer.HttpHandlers.Businesses
 
         protected override Task InnerPost()
         {
+            if (!this.GetCurrentUserPermissions(Business).FullAccess)
+            {
+                Response.StatusCode = 403;
+                return Task.CompletedTask;
+            }
+
             if (ApplicationData.Businesses.Exists(Business))
             {
                 using (var db = ApplicationData.Businesses.SQLiteConnection(Business))
