@@ -39,7 +39,7 @@ namespace ManagerServer.Api.Businesses.Business
             {
                 var endpoint = (ViewEndpoint<TransactionView>)Activator.CreateInstance(transactionEndpointType);
                 CopyTo(endpoint);
-                var tv = endpoint.AuthorizedHandle();
+                var tv = endpoint.AuthenticatedHandle();
                 return ViewMapper.From(tv);
             }
 
