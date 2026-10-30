@@ -5,8 +5,8 @@
 //   • Per-report page  — has <form id="reportControls"> and a window.REPORT_ID set to a report id.
 //     Renders the form, runs the figures API, displays the report.
 //
-//   • Country index    — has <div id="setup-view">. Drives the Setup-tax-codes flow.
-//     Reports are linked statically as <a> on this page (no JS needed for the list).
+//   • Country index    — has <div id="business-list">. Lists the businesses, then runs the
+//     per-business workspace: report install/uninstall and the tax-code setup flow.
 
 const REPORTING_FIELDS = ["reportingCategory", "reportingCategoryReversed", "taxAmountReportingCategory", "taxAmountReversedReportingCategory"];
 
@@ -54,49 +54,136 @@ async function postMessageWithResponse(message) {
   });
 }
 
-// ---- Business dropdown (used by both page types) ---------------------------
+// ---- Selected business (used by both page types) ---------------------------
+//
+// #business is a single-option <select> naming the business every API call on the page is
+// scoped to. On report pages Manager supplies the name; on the country index the user picks
+// it from the business list and the picker writes it here. Everything downstream — this file's
+// install/tax-code tables and custom-fields.js — reads businessSelect.value and listens for
+// its "change" event, so neither needs to know where the name came from.
 
 const businessSelect = document.getElementById("business");
-if (businessSelect) {
-  if (isReportPage) {
-    // Report pages run inside Manager — ask the parent for the page's business via page-request.
-    // Fallback to ?business= query param for direct/bookmarked access outside Manager.
-    (async () => {
-      let business = null;
-      try {
-        const result = await postMessageWithResponse({ type: "page-request" });
-        business = result?.body?.query?.business || null;
-      } catch { /* not running inside Manager */ }
-      if (!business) {
-        business = new URLSearchParams(window.location.search).get("business");
-      }
-      if (business) {
-        const opt = document.createElement("option");
-        opt.value = business; opt.textContent = business; opt.selected = true;
-        businessSelect.innerHTML = "";
-        businessSelect.appendChild(opt);
-        businessSelect.dispatchEvent(new Event("change"));
-      }
-    })();
-  } else {
-    // Country index — list every business so the user can pick where to install reports / tax codes.
-    (async function loadBusinesses() {
-      try {
-        const res = await fetch("/api4/businesses", { credentials: "include" });
-        if (!res.ok) { businessSelect.innerHTML = `<option value="">(failed to load)</option>`; return; }
-        const data = await res.json();
-        const names = (data.businesses || []).map(b => b.name).sort((a, b) => a.localeCompare(b));
-        if (names.length === 0) { businessSelect.innerHTML = `<option value="">(no businesses)</option>`; return; }
-        // Empty placeholder first so the browser doesn't auto-select a business the user didn't pick.
-        businessSelect.innerHTML = `<option value="">— select a business —</option>`
-          + names.map(n => `<option value="${escapeAttr(n)}">${escapeText(n)}</option>`).join("");
-        businessSelect.value = "";
-        businessSelect.dispatchEvent(new Event("change"));
-      } catch (err) {
-        businessSelect.innerHTML = `<option value="">(error)</option>`;
-      }
-    })();
+
+function setSelectedBusiness(name) {
+  if (!businessSelect) return;
+  businessSelect.innerHTML = "";
+  if (name) {
+    const opt = document.createElement("option");
+    opt.value = name; opt.textContent = name; opt.selected = true;
+    businessSelect.appendChild(opt);
   }
+  businessSelect.dispatchEvent(new Event("change"));
+}
+
+if (businessSelect && isReportPage) {
+  // Report pages run inside Manager — ask the parent for the page's business via page-request.
+  // Fallback to ?business= query param for direct/bookmarked access outside Manager.
+  (async () => {
+    let business = null;
+    try {
+      const result = await postMessageWithResponse({ type: "page-request" });
+      business = result?.body?.query?.business || null;
+    } catch { /* not running inside Manager */ }
+    if (!business) {
+      business = new URLSearchParams(window.location.search).get("business");
+    }
+    if (business) setSelectedBusiness(business);
+  })();
+}
+
+// ---- Country index: shell (business list → business workspace) -------------
+//
+// The index page has two screens. It opens on #business-picker, a list of every business.
+// Picking one enters #business-workspace, whose tabs all act on that business. The only way
+// out is "Close business", which returns to the list — there is deliberately no business
+// switcher inside the workspace, so a tab can never be showing one business's data while
+// another is selected.
+
+// Tab strip: each <button class="tab" data-view="X"> pairs with a <div id="X-view">.
+// (Report pages get their own strip from custom-fields.js keyed on data-cf-view, which this
+// selector deliberately does not match.)
+const indexTabs = document.querySelectorAll(".tab[data-view]");
+const indexViews = document.querySelectorAll('[id$="-view"]');
+let setupLoaded = false; // has the Tax codes tab fetched for the current business yet?
+
+function activateTab(name) {
+  for (const tab of indexTabs) tab.classList.toggle("active", tab.dataset.view === name);
+  for (const view of indexViews) view.hidden = view.id !== `${name}-view`;
+  // Tax codes needs a round-trip to diagnose each template against the business — now that a
+  // business is always selected here, do it on first open instead of making the user ask.
+  if (name === "setup" && !setupLoaded && businessSelect && businessSelect.value) {
+    setupLoaded = true;
+    loadSetup();
+  }
+}
+
+for (const tab of indexTabs) {
+  tab.addEventListener("click", () => activateTab(tab.dataset.view));
+}
+
+const businessList = document.getElementById("business-list");
+if (businessList && businessSelect) {
+  const picker = document.getElementById("business-picker");
+  const workspace = document.getElementById("business-workspace");
+  const searchInput = document.getElementById("business-search");
+  const currentBusinessLabel = document.getElementById("current-business");
+  const closeButton = document.getElementById("closeBusiness");
+  let names = [];
+
+  function renderBusinessList() {
+    const query = (searchInput.value || "").trim().toLowerCase();
+    const matches = query ? names.filter(n => n.toLowerCase().includes(query)) : names;
+    if (matches.length === 0) {
+      businessList.innerHTML = `<div class="status">${query ? "No business matches that name." : "No businesses found. Create one in Manager first."}</div>`;
+      return;
+    }
+    businessList.innerHTML = `<div class="business-items">` + matches.map(n =>
+      `<button type="button" class="business-item" data-name="${escapeAttr(n)}">
+        <span class="business-item-name">${escapeText(n)}</span>
+        <span class="business-item-go" aria-hidden="true">&rarr;</span>
+      </button>`).join("") + `</div>`;
+  }
+
+  function enterBusiness(name) {
+    currentBusinessLabel.textContent = name;
+    picker.hidden = true;
+    workspace.hidden = false;
+    setSelectedBusiness(name);
+    activateTab("reports");
+  }
+
+  function closeBusiness() {
+    workspace.hidden = true;
+    picker.hidden = false;
+    currentBusinessLabel.textContent = "";
+    // Clearing the selection lets every tab drop the business's data instead of keeping it
+    // around behind the list screen.
+    setSelectedBusiness("");
+    activateTab("reports");
+  }
+
+  businessList.addEventListener("click", (e) => {
+    const btn = e.target.closest(".business-item");
+    if (btn) enterBusiness(btn.dataset.name);
+  });
+  searchInput.addEventListener("input", renderBusinessList);
+  closeButton.addEventListener("click", closeBusiness);
+
+  (async function loadBusinesses() {
+    let data;
+    try {
+      const res = await fetch("/api4/businesses", { credentials: "include" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      data = await res.json();
+    } catch (err) {
+      businessList.innerHTML = `<div class="error">Could not load the list of businesses (${escapeText(err.message)}).</div>`;
+      return;
+    }
+    names = (data.businesses || []).map(b => b.name).sort((a, b) => a.localeCompare(b));
+    // A search box only earns its space once the list stops fitting on screen.
+    searchInput.hidden = names.length < 9;
+    renderBusinessList();
+  })();
 }
 
 // ---- Per-report page -------------------------------------------------------
@@ -534,20 +621,15 @@ if (installList && typeof REPORTS !== "undefined") {
 
 const setupView = document.getElementById("setup-view");
 if (setupView) {
-  // Tab switching on the country index page. Each <button class="tab" data-view="X"> pairs with
-  // a <div id="X-view"> — clicking the tab activates the tab and shows its matching view.
-  const allViews = document.querySelectorAll('[id$="-view"]');
-  for (const tab of document.querySelectorAll(".tab")) {
-    tab.addEventListener("click", () => {
-      for (const t of document.querySelectorAll(".tab")) t.classList.remove("active");
-      tab.classList.add("active");
-      const active = tab.dataset.view;
-      for (const view of allViews) view.hidden = view.id !== `${active}-view`;
-    });
-  }
-
   const refreshBtn = document.getElementById("refreshSetup");
   if (refreshBtn) refreshBtn.addEventListener("click", loadSetup);
+
+  // A different business is a different diagnosis: drop the table built for the old one and
+  // make the next open of the tab re-fetch.
+  if (businessSelect) businessSelect.addEventListener("change", () => {
+    setupLoaded = false;
+    document.getElementById("setupOutput").innerHTML = "";
+  });
 
   // If this country has no tax-code templates, hide the Tax codes tab.
   if (typeof TAX_CODE_TEMPLATES !== "undefined" && TAX_CODE_TEMPLATES.length === 0) {

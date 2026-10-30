@@ -40,11 +40,14 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
 
 #reportOutput, #setupOutput { max-width: 1100px; }
 #reportOutput h2 { font-size: 16px; margin: 0 0 12px; }
-#reportOutput table, #setupOutput table { width: 100%; border-collapse: collapse; }
+#reportOutput table, #setupOutput table, #report-install-list table { width: 100%; border-collapse: collapse; }
 #reportOutput th, #reportOutput td,
-#setupOutput th, #setupOutput td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
+#setupOutput th, #setupOutput td,
+#report-install-list th, #report-install-list td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
 #reportOutput td { white-space: pre-line; }
-#reportOutput th, #setupOutput th { background: #f9fafb; text-align: left; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+#reportOutput th, #setupOutput th, #report-install-list th { background: #f9fafb; text-align: left; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+/* Status and Action trail the report name, which takes whatever width is left. */
+#report-install-list th:not(:first-child), #report-install-list td:not(:first-child) { width: 1%; white-space: nowrap; }
 #reportOutput td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 #reportOutput td.num a { color: #2563eb; text-decoration: none; }
 #reportOutput td.num a:hover { text-decoration: underline; }
@@ -69,13 +72,50 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
 
 .status { padding: 12px; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 4px; margin-bottom: 12px; }
 .error { padding: 12px; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 4px; color: #991b1b; margin-bottom: 12px; white-space: pre-wrap; }
-.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .badge.ok      { background: #d1fae5; color: #065f46; }
 .badge.update  { background: #fef3c7; color: #92400e; }
 .badge.missing { background: #fee2e2; color: #991b1b; }
 .muted { color: #6b7280; font-size: 12px; }
 .setup-actions { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; }
 
-#welcome-view { max-width: 720px; }
-#welcome-view p { line-height: 1.55; margin: 0 0 12px; }
-#welcome-view h2 { font-size: 15px; font-weight: 600; margin: 20px 0 6px; }
+/* Country index, screen 1 — business list */
+#business-picker { max-width: 720px; }
+#business-picker .lead { line-height: 1.55; margin: 0 0 24px; color: #374151; }
+.picker-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.picker-head h2 { margin: 0; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+#business-search { padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; background: #fff; width: 220px; }
+.business-items { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+.business-item { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px;
+                 padding: 12px 14px; border: 0; border-top: 1px solid #f3f4f6; background: #fff;
+                 font: inherit; text-align: left; cursor: pointer; }
+.business-item:first-child { border-top: 0; }
+.business-item:hover { background: #f9fafb; }
+.business-item:focus-visible { outline: 2px solid #2563eb; outline-offset: -2px; }
+.business-item-name { font-weight: 600; color: #111827; }
+.business-item-go { color: #d1d5db; }
+.business-item:hover .business-item-go { color: #2563eb; }
+/* The arrow points at the row's destination, so it follows the writing direction. */
+[dir="rtl"] .business-item-go { transform: scaleX(-1); }
+
+/* Country index, screen 2 — the selected business */
+.workspace-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+                 padding: 10px 14px; margin-bottom: 16px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; }
+.workspace-business { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.workspace-label { font-size: 11px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+.workspace-name { font-size: 15px; font-weight: 600; color: #111827; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#reports-view, #setup-view, #coa-view { max-width: 1100px; }
+#reports-view > p, #setup-view > p, #coa-view > p { max-width: 720px; margin: 0 0 16px; line-height: 1.5; }
+
+@media (max-width: 720px) {
+  /* Let a too-wide row scroll rather than squeezing its badge and button columns.
+     Matches the project rule from CLAUDE memory: scroll the row, not the page. */
+  #setupOutput, #report-install-list, #coaOutput { overflow-x: auto; }
+  #setupOutput table, #report-install-list table, #coaOutput table { min-width: 560px; }
+  /* Same rule for the workspace tab strip, which is too wide for a phone-width iframe. */
+  .tabs { overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { white-space: nowrap; }
+  .picker-head { flex-direction: column; align-items: stretch; }
+  #business-search { width: 100%; }
+}

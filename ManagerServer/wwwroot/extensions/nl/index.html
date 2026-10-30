@@ -10,38 +10,51 @@
 
 <h1>Nederland</h1>
 
-<div class="tabs">
-  <button type="button" class="tab active" data-view="welcome">Welkom</button>
-  <button type="button" class="tab" data-view="reports">Rapporten</button>
-  <button type="button" class="tab" data-view="setup">Btw-codes</button>
+<!-- The one business the page is working on. Kept as a hidden <select> because app.js reads
+     #business.value to scope its API calls; the user picks it from the list below, not from
+     this control. -->
+<select id="business" hidden></select>
+
+<!-- Screen 1 — pick a business. -->
+<div id="business-picker">
+  <p class="lead">Deze extensie helpt Nederlandse bedrijven met de nalevingsrapporten van het land en de btw-codes waarvan die rapporten afhankelijk zijn.</p>
+
+  <div class="picker-head">
+    <h2>Selecteer een bedrijf</h2>
+    <input type="search" id="business-search" placeholder="Zoek bedrijven…" autocomplete="off" hidden>
+  </div>
+  <div id="business-list"><div class="status">Bedrijven laden…</div></div>
 </div>
 
-<div class="business-bar">
-  <label>Bedrijf
-    <select id="business" required></select>
-  </label>
-</div>
-
-  <div id="welcome-view">
-    <p>Deze extensie helpt Nederlandse bedrijven met de nalevingsrapporten van het land en de btw-codes waarvan die rapporten afhankelijk zijn.</p>
-    <h2>Rapporten</h2>
-    <p>Installeer landspecifieke rapporten (btw-aangiften, loonadministratie, enzovoort) in een bedrijf. Eenmaal geïnstalleerd verschijnt elk rapport als een knop op het tabblad <strong>Rapporten</strong> van dat bedrijf.</p>
-    <h2>Btw-codes</h2>
-    <p>Het land wordt geleverd met een standaardset btw-codes die vooraf zijn gekoppeld aan de rapportagecategorieën die de rapporten gebruiken. Vanaf het tabblad <strong>Btw-codes</strong> kunt u ontbrekende codes in een bedrijf met één klik aanmaken, of een bestaande code bijwerken om de juiste rapportagecategorieën te koppelen.</p>
-    <p class="muted">Selecteer hierboven een bedrijf en ga vervolgens naar <strong>Rapporten</strong> of <strong>Btw-codes</strong> om te beginnen.</p>
+<!-- Screen 2 — work inside the selected business. Leaving is the only way to change business,
+     so every tab below is unambiguously scoped to the name shown in the bar. -->
+<div id="business-workspace" hidden>
+  <div class="workspace-bar">
+    <div class="workspace-business">
+      <span class="workspace-label">Bedrijf</span>
+      <span class="workspace-name" id="current-business"></span>
+    </div>
+    <button type="button" class="secondary" id="closeBusiness">Bedrijf sluiten</button>
   </div>
 
-  <div id="reports-view" hidden>
-    <p class="muted">Installeer een rapport voor een specifiek bedrijf om het beschikbaar te maken onder het tabblad <strong>Rapporten</strong> van dat bedrijf.</p>
+  <div class="tabs">
+    <button type="button" class="tab active" data-view="reports">Rapporten</button>
+    <button type="button" class="tab" data-view="setup">Btw-codes</button>
+  </div>
+
+  <div id="reports-view">
+    <p class="muted">Een geïnstalleerd rapport verschijnt op het tabblad <strong>Rapporten</strong> van dit bedrijf in Manager, waar het altijd kan worden uitgevoerd.</p>
     <div id="report-install-list" data-country-slug="nl"></div>
   </div>
 
-<div id="setup-view" hidden>
-  <div class="setup-actions">
-    <button type="button" id="refreshSetup" class="primary">Status laden</button>
-    <span class="muted">Knoppen per rij maken of werken één btw-code per keer bij.</span>
+  <div id="setup-view" hidden>
+    <p class="muted">Het land wordt geleverd met een standaardset btw-codes die vooraf zijn gekoppeld aan de rapportagecategorieën die de rapporten gebruiken. Maak ontbrekende codes in dit bedrijf met één klik aan, of werk een bestaande code bij om de juiste rapportagecategorieën te koppelen.</p>
+    <div class="setup-actions">
+      <button type="button" id="refreshSetup" class="secondary">Opnieuw laden</button>
+      <span class="muted">Knoppen per rij maken of werken één btw-code per keer bij.</span>
+    </div>
+    <div id="setupOutput"></div>
   </div>
-  <div id="setupOutput"></div>
 </div>
 
 <script src="reports.js"></script>

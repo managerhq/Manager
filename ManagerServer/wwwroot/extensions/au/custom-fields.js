@@ -246,7 +246,7 @@
 
   const businessSelect = document.getElementById("business");
   function currentBusiness() { return businessSelect ? businessSelect.value : ""; }
-  function noBusinessMessage() { return `<div class="status">Please select a business above.</div>`; }
+  function noBusinessMessage() { return `<div class="status">No business selected.</div>`; }
 
   // ---- Section: Business ABN ------------------------------------------------
 
@@ -633,9 +633,9 @@
   }
 
   // ==========================================================================
-  // Bootstrap A: Index page (Welcome / Reports / Tax codes / Business /
-  // Suppliers / Employees / Payslip items). Tab-driven, with lazy first-load
-  // on tab activate.
+  // Bootstrap A: Index page business workspace (Reports / Tax codes / Business
+  // details / Suppliers / Employees / Payslip items). Tab-driven, with lazy
+  // first-load on tab activate.
   // ==========================================================================
 
   const businessView     = document.getElementById("business-view");
