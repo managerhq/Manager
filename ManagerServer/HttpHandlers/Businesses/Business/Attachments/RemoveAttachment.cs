@@ -1,5 +1,6 @@
 ﻿using ManagerServer.Attributes;
 using ManagerServer.Globalization;
+using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
 namespace ManagerServer.HttpHandlers.Businesses.Business.Attachments
@@ -15,8 +16,23 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.Attachments
 
         public override Task Post()
         {
-            ApplicationData.Businesses.Process(Business, Key, GetUserName());
-            ApplicationData.Businesses.DeleteBlob(Business, Key);
+            var database = ApplicationData.Businesses.Get(Business);
+            var attachment = database.SingleOrDefault<ManagerServer.Model.Attachment>(Key);
+            if (attachment != null)
+            {
+                var allowed = attachment.Object.HasValue && database.SingleOrDefault(attachment.Object.Value) != null
+                    ? DeletePermission.CanDelete(this, Business, attachment.Object.Value)
+                    : this.GetCurrentUserPermissions(Business).FullAccess;
+                if (!allowed)
+                {
+                    Response.StatusCode = 409; // 409 Conflict
+                    return Response.WriteAsync("You don't have a permission to delete this attachment.");
+                }
+
+                ApplicationData.Businesses.Process(Business, Key, GetUserName());
+                ApplicationData.Businesses.DeleteBlob(Business, Key);
+            }
+
             Response.Redirect(Referrer);
             return Task.CompletedTask;
         }
