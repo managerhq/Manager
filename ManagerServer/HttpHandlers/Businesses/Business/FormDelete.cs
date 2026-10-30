@@ -16,31 +16,7 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
 
         public override Task Post()
         {
-            var deleteButton = true;
-            /*
-            var currentUser = this.GetCurrentUser();
-            if (currentUser != null && currentUser.Type == UserType.Restricted)
-            {
-                var userPermissions = GetCurrentUserPermissions(FileID);
-                if (userPermissions != null)
-                {
-                    if (userPermissions.PermittedActions == PermittedActions.View)
-                    {
-                        deleteButton = false;
-                    }
-                    else if (userPermissions.PermittedActions == PermittedActions.ViewCreate)
-                    {
-                        deleteButton = false;
-                    }
-                    else if (userPermissions.PermittedActions == PermittedActions.ViewCreateUpdate)
-                    {
-                        deleteButton = false;
-                    }
-                }
-            }
-            */
-
-            if (!deleteButton)
+            if (!DeletePermission.CanDelete(this, Business, Key))
             {
                 Response.StatusCode = 409; // 409 Conflict
                 return Response.WriteAsync("You don't have a permission to delete this object.");
