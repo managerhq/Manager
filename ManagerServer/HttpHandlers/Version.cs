@@ -9,7 +9,7 @@ namespace ManagerServer.HttpHandlers
         public override Task Get()
         {
             Response.ContentType = "text/plain";
-            return Response.WriteAsync(typeof(Version).Assembly.GetName().Version.ToString());
+            return Response.WriteAsync(typeof(Version).Assembly.GetName().Version.ToString(3));
         }
     }
 }

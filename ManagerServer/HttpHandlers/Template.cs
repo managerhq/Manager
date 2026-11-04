@@ -406,7 +406,7 @@ namespace ManagerServer.HttpHandlers
 
                         using (Div(@class: "p-4 print:hidden font-semibold text-center text-neutral-400"))
                         {
-                            Write(typeof(Program).Assembly.GetName().Version.ToString());
+                            Write(typeof(Program).Assembly.GetName().Version.ToString(3));
                         }
                     }
 
