@@ -131,29 +131,30 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
 
                 using (var w = new StringWriter())
                 {
-                    var csvConfiguration = new CsvHelper.Configuration.CsvConfiguration(System.Threading.Thread.CurrentThread.CurrentCulture)
+                    var csvWriterOptions = CsvWriterOptions.Default with
                     {
-                        Delimiter = "\t"
+                        FormatProvider = System.Threading.Thread.CurrentThread.CurrentCulture,
+                        Separator = '\t'
                     };
 
                     if (BatchCreate)
                     {
                         var headers = GetDictionary(new T()).Select(x => x.Key).ToArray();
-                        using (var csv = new CsvWriter(w, csvConfiguration))
+                        using (var csv = CsvWriter.Create(w, csvWriterOptions))
                         {
                             foreach (var e in headers) csv.WriteField(e);
                         }
                     }
                     else
-                    {                        
+                    {
                         var rows = ApplicationData.Businesses.Get(Business).OfType<T>().Where(x => keys.Contains(x.Key)).Select(x => new Tuple<Guid, Dictionary<string, string>>(x.Key, GetDictionary(x))).ToArray();
                         var headers = rows.SelectMany(x => x.Item2.Keys).Distinct().ToArray();
 
-                        using (var csv = new CsvWriter(w, csvConfiguration))
+                        using (var csv = CsvWriter.Create(w, csvWriterOptions))
                         {
                             foreach (var e in headers) csv.WriteField(e);
                             csv.WriteField("Key");
-                            csv.NextRecord();
+                            csv.EndRecord();
                             if (rows != null)
                             {
                                 foreach (var e in rows)
@@ -164,7 +165,7 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
                                         else csv.WriteField(string.Empty);
                                     }
                                     csv.WriteField(e.Item1.ToString());
-                                    csv.NextRecord();
+                                    csv.EndRecord();
                                 }
                             }
                         }
@@ -235,20 +236,18 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
                     {
                         using (var r = new StringReader(content))
                         {
-                            var csvConfiguration = new CsvHelper.Configuration.CsvConfiguration(System.Threading.Thread.CurrentThread.CurrentCulture)
+                            // Malformed data and missing fields are recovered from rather than thrown, which is the default behaviour.
+                            var csvReaderOptions = CsvReaderOptions.Default with
                             {
-                                Delimiter = "\t",
-                                MissingFieldFound = null,
-                                BadDataFound = null,
-                                IgnoreBlankLines = true
+                                FormatProvider = System.Threading.Thread.CurrentThread.CurrentCulture,
+                                Separator = '\t',
+                                SkipEmptyLines = true
                             };
 
-                            using (var csv = new CsvReader(r, csvConfiguration))
+                            using (var csv = CsvReader.Create(r, csvReaderOptions))
                             {
-                                csv.Read();
-                                csv.ReadHeader();
-
-                                var headers = csv.HeaderRecord.Where(x => !string.IsNullOrWhiteSpace(x)).Where(x => x != "Key").Distinct().ToArray();
+                                // The header is read by the first access to Headers; no explicit Read/ReadHeader is needed.
+                                var headers = csv.Headers.Where(x => !string.IsNullOrWhiteSpace(x)).Where(x => x != "Key").Distinct().ToArray();
                                 var fields = GetMembers(typeof(T)).ToDictionary(x => x.Name);
 
                                 var columns = headers.Select(x => x.Split('.').First()).Distinct().Where(x => fields.ContainsKey(x)).ToArray();
@@ -278,12 +277,14 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
                                         using (TBody())
                                         {
                                             int index = 1;
+                                            // Batch create exports carry no Key column, so its absence is expected.
+                                            var hasKeyColumn = csv.TryGetFieldIndex("Key", out int keyColumn);
                                             while (csv.Read())
                                             {
                                                 var csvRow = new Dictionary<string, string>();
                                                 foreach (var e in headers)
                                                 {
-                                                    var cell = csv[e] ?? string.Empty;
+                                                    var cell = csv.GetString(e) ?? string.Empty;
                                                     csvRow.Add(e, cell.Trim());
                                                 }
 
@@ -292,7 +293,7 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
 
                                                 var o = new T();
 
-                                                if (csv.TryGetField<Guid>("Key", out Guid key))
+                                                if (hasKeyColumn && csv.TryParse<Guid>(keyColumn, out Guid key))
                                                 {
                                                     var o2 = ApplicationData.Businesses.Get(Business).SingleOrDefault<T>(key);
                                                     if (o2 != null)

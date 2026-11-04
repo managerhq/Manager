@@ -5,14 +5,11 @@ using System.Text.RegularExpressions;
 using ManagerServer.Globalization;
 using System.Threading.Tasks;
 using System.Globalization;
-using CsvHelper.Configuration.Attributes;
 using ManagerServer.Helpers;
 using ManagerServer.Model;
 using CsvHelper;
 using ManagerServer.HttpHandlers.Businesses.Business.Settings.BankRules;
 using ManagerServer.Attributes;
-using CsvHelper.Configuration;
-using CsvHelper.TypeConversion;
 
 namespace ManagerServer.HttpHandlers.Businesses.Business.BankAndCashAccounts
 {
@@ -46,7 +43,7 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.BankAndCashAccounts
     [LinkGuide("Learn more about bank reconciliations:", typeof(BankReconciliations.BankReconciliations))]
     [Guide("**Date format confusion** - Dates like 01-02-2024 could mean January 2nd or February 1st depending on format.")]
     [Guide("Manager analyzes your file to determine the most likely date format. Import files with many transactions for better accuracy.")]
-    internal sealed class ImportBankStatement : BusinessTemplate
+    internal sealed partial class ImportBankStatement : BusinessTemplate
     {
         [ProtoMember(1)] public Guid? BankAccount;
 
@@ -94,12 +91,12 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.BankAndCashAccounts
                         var lockDate = ApplicationData.Businesses.Get(Business).Single<ManagerServer.Model.LockDate>();
                         if (lockDate.GetLockDate().HasValue) parsedBankStatementLines = parsedBankStatementLines.Where(x => x.Date > lockDate.GetLockDate()).ToArray();
                     }
-                    catch (CsvHelper.HeaderValidationException ex)
+                    catch (KeyNotFoundException ex)
                     {
                         error = ex.Message;
                         if (error.Length > 1000) error = error.Substring(0, 1000);
                     }
-                    catch (CsvHelper.MissingFieldException ex)
+                    catch (CsvFormatException ex)
                     {
                         error = ex.Message;
                         if (error.Length > 1000) error = error.Substring(0, 1000);
@@ -826,39 +823,42 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.BankAndCashAccounts
                 var csvLines = new List<CsvLine>();
                 using (var r = new StreamReader(new MemoryStream(buffer)))
                 {
-                    var csvConfiguration = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture)
+                    // Separator is deliberately left unset so it is detected from the first lines (comma, semicolon, tab or pipe).
+                    // Malformed data and missing fields are recovered from rather than thrown, which is the default behaviour.
+                    var csvReaderOptions = CsvReaderOptions.Default with
                     {
-                        BadDataFound = x => { },
-                        MissingFieldFound = x => { },
-                        DetectDelimiter = true,
-                        TrimOptions = CsvHelper.Configuration.TrimOptions.Trim,
-                        PrepareHeaderForMatch = x => x.Header.Trim()
+                        FormatProvider = CultureInfo.InvariantCulture,
+                        TrimWhitespace = true,
+                        NormalizeHeaderName = x => x.Trim()
                         //Mode = CsvMode.Escape - this breaks some bank statements
                     };
-                    using (var csv = new CsvHelper.CsvReader(r, csvConfiguration))
+                    using (var csv = CsvReader.Create(r, csvReaderOptions))
                     {
-                        var headerValidationException = default(HeaderValidationException);
-                        while (csv.Read())
+                        // Bank statements often start with preamble rows, so each row in turn is tried as the header
+                        // until one carries the columns CsvLine needs.
+                        var missingColumns = default(IReadOnlyList<string>);
+                        if (!csv.TryValidateHeader<CsvLine>(out var firstMissingColumns))
                         {
-                            csv.ReadHeader();
-                            try
+                            missingColumns = firstMissingColumns;
+                            while (csv.Read())
                             {
-                                csv.ValidateHeader<CsvLine>();
-                                break;
-                            }
-                            catch (HeaderValidationException ex)
-                            {
-                                if (headerValidationException == null) headerValidationException = ex;
+                                csv.ReadHeader();
+                                if (csv.TryValidateHeader<CsvLine>(out var nextMissingColumns)) break;
+                                if (missingColumns == null) missingColumns = nextMissingColumns;
                             }
                         }
 
                         while (csv.Read())
                         {
                             var csvLine = csv.GetRecord<CsvLine>();
-                            if (csvLine != null) csvLines.Add(csv.GetRecord<CsvLine>());
+                            if (csvLine != null) csvLines.Add(csvLine);
                         }
 
-                        if (csvLines.Count == 0 && headerValidationException != null) throw headerValidationException;
+                        // Headers is empty when the file had no rows at all, which is reported as "no transactions" rather than an error.
+                        if (csvLines.Count == 0 && missingColumns != null && missingColumns.Count > 0 && csv.Headers.Count > 0)
+                        {
+                            throw new KeyNotFoundException("Header validation failed. The following columns are missing: " + string.Join(", ", missingColumns));
+                        }
                     }
                 }
 
@@ -1444,41 +1444,35 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.BankAndCashAccounts
             }
         }
 
-        public sealed class CsvLine
+        [CsvRecord]
+        public sealed partial class CsvLine
         {
-            [Optional]
-            [Name("Reference", "#", "Bank Reference Number", "id")]
+            [CsvColumn("Reference", "#", "Bank Reference Number", "id", Optional = true)]
             public string Reference { get; set; }
 
-            [Name("Date", "DATE", "Statement Date", "Transaction Date", "TransactionDate", "Trade Date", "Payment Date", "Created (UTC)", "Transaction date", "transaction_date")]
+            [CsvColumn("Date", "DATE", "Statement Date", "Transaction Date", "TransactionDate", "Trade Date", "Payment Date", "Created (UTC)", "Transaction date", "transaction_date")]
             public string Date { get; set; }
 
-            [Optional]
-            [Name("Payee", "Name")]
+            [CsvColumn("Payee", "Name", Optional = true)]
             public string Contact { get; set; }
 
-            [Optional]            
-            [Name("Description", "details", "DESCRIPTION", "Extended Text", "Comment", "Product name", "Investment", "Transaction ID", "Counter Party", "Details", "Transaction Details")]
+            [CsvColumn("Description", "details", "DESCRIPTION", "Extended Text", "Comment", "Product name", "Investment", "Transaction ID", "Counter Party", "Details", "Transaction Details", Optional = true)]
             public string Description { get; set; }
 
-            [Optional]
-            [Name("Units", "units", "Quantity")]
+            [CsvColumn("Units", "units", "Quantity", Optional = true)]
             public string Quantity { get; set; }
 
-            [Name("Amount", "AMOUNT", "amount", "Credit", "Credits", "Credit Amount", "Net", "In amount(R)", "Total", "Value", "Deposited", "Amount (GBP)", "Amount ($)", "Transaction Amount")]
+            [CsvColumn("Amount", "AMOUNT", "amount", "Credit", "Credits", "Credit Amount", "Net", "In amount(R)", "Total", "Value", "Deposited", "Amount (GBP)", "Amount ($)", "Transaction Amount")]
             public string Amount { get; set; }
 
-            [Optional]
-            [Name("Debit", "Debits", "Debit Amount", "Out amount", "Fee amount")]
+            [CsvColumn("Debit", "Debits", "Debit Amount", "Out amount", "Fee amount", Optional = true)]
             public string Debit { get; set; }
 
-            [Optional]
-            [Name("Money in/out", "Type")]
-            [TypeConverter(typeof(NullableBooleanConverter))]
+            [CsvColumn("Money in/out", "Type", Optional = true)]
+            [CsvConverter(typeof(NullableBooleanConverter))]
             public bool? IsDeposit { get; set; }
 
-            [Optional]
-            [Name("Fee amount")]
+            [CsvColumn("Fee amount", Optional = true)]
             public string Debit2 { get; set; }
         }
 
@@ -1517,10 +1511,12 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.BankAndCashAccounts
             }
         }
 
-        public class NullableBooleanConverter : DefaultTypeConverter
+        public class NullableBooleanConverter : ICsvConverter<bool?>
         {
-            public override object ConvertFromString(string text, IReaderRow row, MemberMapData memberMapData)
+            public bool? Read(CsvReader reader, int index)
             {
+                var text = reader.GetString(index);
+
                 if (string.IsNullOrWhiteSpace(text)) return null;
 
                 var trueValues = new[] { "Money In", "C" };
@@ -1539,6 +1535,9 @@ namespace ManagerServer.HttpHandlers.Businesses.Business.BankAndCashAccounts
                 // If the value doesn't match, return null
                 return null;
             }
+
+            // Bank statements are only ever read, never written.
+            public void Write(CsvWriter writer, bool? value) => throw new NotSupportedException();
         }
     }
 }
