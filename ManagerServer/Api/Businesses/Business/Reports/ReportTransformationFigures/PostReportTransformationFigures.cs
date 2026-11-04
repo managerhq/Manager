@@ -202,10 +202,11 @@ namespace ManagerServer.Api.Businesses.Business.Reports.ReportTransformationFigu
                     values.Add(label.Name);
                     continue;
                 }
-                if (figure is CustomField customField)
+                var customField = figure as CustomField;
+                var hasCustomFieldValue = TryResolveCustomFieldValue(e, customField, employee, supplier, businessDetails, out var customFieldValue);
+                if (customField != null || hasCustomFieldValue)
                 {
-                    var v = ResolveCustomFieldValue(customField, employee, supplier, businessDetails);
-                    if (v != null) values.Add(v);
+                    if (customFieldValue != null) values.Add(customFieldValue);
                     continue;
                 }
 
@@ -293,34 +294,41 @@ namespace ManagerServer.Api.Businesses.Business.Reports.ReportTransformationFigu
             return new Guid(cb);
         }
 
-        // Returns the string value to display for a CustomField figure based on which entity owns it.
-        // CustomField.Contains(Type) checks the field's Placement against the given entity type's GUID.
-        private static object ResolveCustomFieldValue(CustomField field, Model.Employee employee, Model.Supplier supplier, BusinessDetails businessDetails)
+        // Resolves a custom-field value by GUID, searching the owning entities in employee →
+        // supplier → business order and checking both the classic flat dictionary and the typed
+        // CustomFields2 store. The CustomField definition is optional: when it resolves we honour
+        // its Placement and Type, but when it doesn't (field deleted, or a localization-defined
+        // field on a business whose Obsolete_Country is unset) we still return whatever the entity
+        // has stored under that key, instead of letting the GUID fall through to the
+        // reporting-category sum and render as a spurious zero.
+        private static bool TryResolveCustomFieldValue(Guid key, CustomField field, Model.Employee employee, Model.Supplier supplier, BusinessDetails businessDetails, out object value)
         {
-            string raw = null;
-            if (employee != null && field.Contains(typeof(Model.Employee)) && employee.CustomFields != null
-                && employee.CustomFields.TryGetValue(field.Key, out var fromEmployee))
-            {
-                raw = fromEmployee;
-            }
-            if (raw == null && supplier != null && field.Contains(typeof(Model.Supplier)) && supplier.CustomFields != null
-                && supplier.CustomFields.TryGetValue(field.Key, out var fromSupplier))
-            {
-                raw = fromSupplier;
-            }
-            if (raw == null && field.Contains(typeof(BusinessDetails)) && businessDetails.CustomFields != null
-                && businessDetails.CustomFields.TryGetValue(field.Key, out var fromBusiness))
-            {
-                raw = fromBusiness;
-            }
-            if (raw == null) return null;
+            value = null;
 
-            if (field.Type == CustomFieldStyle.Date
-                && DateTime.TryParseExact(raw, "yyyy-M-d", null, System.Globalization.DateTimeStyles.None, out var parsedDate))
+            foreach (ICustomFields owner in new ICustomFields[] { employee, supplier, businessDetails })
             {
-                return parsedDate;
+                if (owner == null) continue;
+                if (field != null && !field.Contains(owner.GetType())) continue;
+
+                if (owner.ClassicCustomFields != null && owner.ClassicCustomFields.TryGetValue(key, out var raw))
+                {
+                    if (raw != null && field?.Type == CustomFieldStyle.Date
+                        && DateTime.TryParseExact(raw, "yyyy-M-d", null, System.Globalization.DateTimeStyles.None, out var parsedDate))
+                    {
+                        value = parsedDate;
+                    }
+                    else
+                    {
+                        value = raw;
+                    }
+                    return true;
+                }
+
+                value = owner.CustomFields?.GetValue(key);
+                if (value != null) return true;
             }
-            return raw;
+
+            return false;
         }
 
         // Builds a URL into the legacy ReportTransformationFigures HTML handler so cells stay
