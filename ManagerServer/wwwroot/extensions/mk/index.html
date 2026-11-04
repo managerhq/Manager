@@ -42,9 +42,23 @@
     <button type="button" class="tab" data-view="setup">Даночни кодови</button>
   </div>
 
+  <!-- Reports tab. Screen 1 lists what this country ships; screen 2 runs one of them
+       against the selected business. Running needs nothing installed — the report's
+       definition is posted with the request — so Install is offered alongside View as
+       a way to put the report on the business's own Reports tab in Manager. -->
   <div id="reports-view">
-    <p class="muted">Инсталираниот извештај се појавува под табот <strong>Извештаи</strong> на овој бизнис во Manager, каде што може да се изврши во секое време.</p>
-    <div id="report-install-list" data-country-slug="mk"></div>
+    <div id="report-list-screen">
+      <p class="muted">Инсталираниот извештај се појавува под табот <strong>Извештаи</strong> на овој бизнис во Manager, каде што може да се изврши во секое време.</p>
+      <div id="report-install-list" data-country-slug="mk"></div>
+    </div>
+
+    <div id="report-runner-screen" hidden>
+      <div class="runner-bar">
+        <button type="button" class="secondary" id="back-to-reports"><span class="runner-back-arrow" aria-hidden="true">←</span> <span>Сите извештаи</span></button>
+        <span class="runner-title" id="runner-title"></span>
+      </div>
+      <div id="report-runner"></div>
+    </div>
   </div>
 
   <div id="setup-view" hidden>

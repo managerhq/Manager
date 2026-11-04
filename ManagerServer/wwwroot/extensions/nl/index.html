@@ -42,9 +42,23 @@
     <button type="button" class="tab" data-view="setup">Btw-codes</button>
   </div>
 
+  <!-- Reports tab. Screen 1 lists what this country ships; screen 2 runs one of them
+       against the selected business. Running needs nothing installed — the report's
+       definition is posted with the request — so Install is offered alongside View as
+       a way to put the report on the business's own Reports tab in Manager. -->
   <div id="reports-view">
-    <p class="muted">Een geïnstalleerd rapport verschijnt op het tabblad <strong>Rapporten</strong> van dit bedrijf in Manager, waar het altijd kan worden uitgevoerd.</p>
-    <div id="report-install-list" data-country-slug="nl"></div>
+    <div id="report-list-screen">
+      <p class="muted">Een geïnstalleerd rapport verschijnt op het tabblad <strong>Rapporten</strong> van dit bedrijf in Manager, waar het altijd kan worden uitgevoerd.</p>
+      <div id="report-install-list" data-country-slug="nl"></div>
+    </div>
+
+    <div id="report-runner-screen" hidden>
+      <div class="runner-bar">
+        <button type="button" class="secondary" id="back-to-reports"><span class="runner-back-arrow" aria-hidden="true">←</span> <span>Alle rapporten</span></button>
+        <span class="runner-title" id="runner-title"></span>
+      </div>
+      <div id="report-runner"></div>
+    </div>
   </div>
 
   <div id="setup-view" hidden>

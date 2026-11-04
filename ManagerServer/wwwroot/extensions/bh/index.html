@@ -52,9 +52,23 @@
     <button type="button" class="tab" data-view="setup" data-i18n="tab.setup">Tax codes</button>
   </div>
 
+  <!-- Reports tab. Screen 1 lists what this country ships; screen 2 runs one of them
+       against the selected business. Running needs nothing installed — the report's
+       definition is posted with the request — so Install is offered alongside View as
+       a way to put the report on the business's own Reports tab in Manager. -->
   <div id="reports-view">
-    <p class="muted" data-i18n="reports.hint">Installing a report adds it to this business's <strong>Reports</strong> tab in Manager, where it can be run any time.</p>
-    <div id="report-install-list" data-country-slug="bh"></div>
+    <div id="report-list-screen">
+      <p class="muted" data-i18n="reports.hint">Installing a report adds it to this business's <strong>Reports</strong> tab in Manager, where it can be run any time.</p>
+      <div id="report-install-list" data-country-slug="bh"></div>
+    </div>
+
+    <div id="report-runner-screen" hidden>
+      <div class="runner-bar">
+        <button type="button" class="secondary" id="back-to-reports"><span class="runner-back-arrow" aria-hidden="true">←</span> <span data-i18n="reports.back">All reports</span></button>
+        <span class="runner-title" id="runner-title"></span>
+      </div>
+      <div id="report-runner"></div>
+    </div>
   </div>
 
   <div id="setup-view" hidden>

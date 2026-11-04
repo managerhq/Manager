@@ -1,31 +1,23 @@
 // Per-report presentation for the AU extension, keyed by the report ids in reports.js.
 //
 // reports.js says what a report *computes* (its rows, and the reporting categories behind
-// each one); a view here says how that report is driven and displayed:
+// each one). A report's controls come from its own page's form, which app.js reuses in
+// both places it runs the report. What is left for a view here is how the result is
+// displayed, and only for the reports where a plain table is not it:
 //
-//   controls     — which form controls the report needs, in order. One or more of
-//                  "period" | "financialYear" | "accounting" | "employee".
-//   hideZeroRows — drop all-zero rows from the table. Markup is still emitted (just
+//   hideZeroRows - drop all-zero rows from the table. Markup is still emitted (just
 //                  with [hidden]) so exportCsv can still read the cells' data-values.
-//   render       — replaces the generic table renderer; owns the whole #reportOutput.
-//   exportCsv    — fills textarea[name="content"] with CSV. app.js then adds a
+//   render       - replaces the generic table renderer; owns the whole #reportOutput.
+//   exportCsv    - fills textarea[name="content"] with CSV. app.js then adds a
 //                  Download CSV button named by csvFilename.
 //
-// app.js reads this on both kinds of page: a per-report page, which names its report in
-// REPORT_ID, and the country index, which builds the form from `controls` so a report can
-// be run against any business without being installed on it first.
+// A report with nothing to say here needs no entry: BAS and TPAR render as the generic
+// table, on their own page and in the country index alike.
 
 const REPORT_VIEWS = {
 
-  // ---- Business Activity Statement ----------------------------------------
-  "11acbfe1-0d24-4161-b366-fe905f2bcfd9": {
-    controls: ["period", "accounting"],
-  },
-
   // ---- PAYG payment summary — individual non-business ---------------------
   "92b38154-38fc-479a-a296-2019f656d1e2": {
-    controls: ["financialYear", "employee"],
-
     // Form-style renderer mirroring the layout of the official ATO paper form
     // (NAT 0046) rather than the generic table the shared renderer produces.
     render: function (report, data, business, period) {
@@ -154,7 +146,6 @@ const REPORT_VIEWS = {
 
   // ---- Single Touch Payroll Worksheet (Phase 2) ---------------------------
   "07332ba3-3e82-4dc1-9451-1350f5d84e24": {
-    controls: ["period"],
     hideZeroRows: true,
     csvFilename: "Single Touch Payroll Worksheet (Phase 2).csv",
 
@@ -240,11 +231,6 @@ const REPORT_VIEWS = {
 
       document.getElementsByName('content')[0].value = Papa.unparse(data);
     },
-  },
-
-  // ---- Taxable Payments Annual Report (TPAR) ------------------------------
-  "c4a0ccf7-9171-4e8e-b390-97f7052b1479": {
-    controls: ["period", "accounting"],
   },
 
 };

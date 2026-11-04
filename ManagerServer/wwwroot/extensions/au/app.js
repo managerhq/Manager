@@ -195,76 +195,19 @@ if (businessList && businessSelect) {
 // the request body — so a runner works against any business the user can open, whether
 // or not that report has been installed as a button on the business's Reports tab.
 //
-// The form it drives comes from one of two places: the static markup in a per-report
-// page, or buildReportForm() writing it into the country index's Reports tab. Every
-// lookup therefore happens when the runner starts rather than when this file loads,
-// and listeners on the shared #business select carry an abort signal so the index can
-// swap reports without leaving the previous runner's handlers behind.
-
-const MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
-                     "July", "August", "September", "October", "November", "December"];
-const QUARTER_LABELS = ["Jan–Mar", "Apr–Jun", "Jul–Sep", "Oct–Dec"];
+// The form it drives is always the one in the report's own page. On that page it is
+// simply the markup already there; the country index borrows the same markup (see
+// loadReportForm) rather than rebuilding it, so a report's controls, their labels and
+// their defaults cannot drift between the two places — which matters because several
+// countries localize that form and one of them defaults to a different period type.
+//
+// Every lookup therefore happens when the runner starts rather than when this file
+// loads, and listeners on the shared #business select carry an abort signal so the
+// index can swap reports without leaving the previous runner's handlers behind.
 
 function reportView(report) {
   if (typeof REPORT_VIEWS === "undefined") return {};
   return REPORT_VIEWS[report.id] || {};
-}
-
-// Markup for the controls a view declares. Deliberately emits the same ids and classes
-// the per-report pages hard-code (#periodType, .period-control[data-types], #accounting
-// …) so initReportRunner can't tell a built form from a hand-written one.
-function buildReportForm(view) {
-  const controls = (view.controls && view.controls.length) ? view.controls : ["period"];
-  const parts = [];
-  for (const control of controls) {
-    if (control === "period") {
-      parts.push(`
-  <label>Period
-    <select id="periodType">
-      <option value="quarter">Quarter</option>
-      <option value="month">Month</option>
-      <option value="custom">Custom range</option>
-    </select>
-  </label>
-  <label class="period-control" data-types="quarter">Quarter
-    <select id="quarter">${QUARTER_LABELS.map((l, i) => `<option value="${i}">${l}</option>`).join("")}</select>
-  </label>
-  <label class="period-control" data-types="month" hidden>Month
-    <select id="month">${MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join("")}</select>
-  </label>
-  <label class="period-control" data-types="quarter month">Year
-    <select id="year"></select>
-  </label>
-  <label class="period-control" data-types="custom" hidden>From date
-    <input type="date" id="fromDate">
-  </label>
-  <label class="period-control" data-types="custom" hidden>To date
-    <input type="date" id="toDate">
-  </label>`);
-    } else if (control === "financialYear") {
-      parts.push(`
-  <label>Financial year
-    <select id="financialYear" required></select>
-  </label>`);
-    } else if (control === "employee") {
-      parts.push(`
-  <label>Employee
-    <select id="employee" required></select>
-  </label>`);
-    } else if (control === "accounting") {
-      parts.push(`
-  <label>Accounting basis
-    <select id="accounting">
-      <option value="0">Accrual</option>
-      <option value="1">Cash</option>
-    </select>
-  </label>`);
-    }
-  }
-  return `<form id="reportControls">${parts.join("")}
-  <button type="submit" class="primary">Generate</button>
-</form>
-<div id="reportOutput"></div>`;
 }
 
 // Wires up the form inside `root` — a whole report page, or the index's runner host.
@@ -292,8 +235,8 @@ function initReportRunner(report, root) {
   const today = new Date();
 
   if (financialYearSelect) {
-    // Australian FY runs 1 July YYYY to 30 June YYYY+1. If we're already past 1 July
-    // this calendar year, the current FY started this year; otherwise last year.
+    // A 1 July - 30 June financial year. If we are already past 1 July in
+    // this calendar year the current FY started this year; otherwise last year.
     const currentFYStart = today.getMonth() >= 6 ? today.getFullYear() : today.getFullYear() - 1;
     for (let y = currentFYStart + 1; y >= currentFYStart - 6; y--) {
       const opt = document.createElement("option");
@@ -748,14 +691,46 @@ if (installList && typeof REPORTS !== "undefined") {
     }
   }
 
-  // Build the report's form into the runner host and hand it to the shared runner.
-  // Only one report is on screen at a time, so the form's ids stay unique.
-  function openRunner(report) {
+  // Borrow the report page's own <form id="reportControls"> instead of rebuilding it.
+  // The page is same-origin and is the single source of truth for which controls the
+  // report takes, what they are labelled and which period type it opens on — all of
+  // which some countries localize. DOMParser does not run scripts, so only the markup
+  // comes across; the output container is ours.
+  async function loadReportForm(report) {
+    const res = await fetch(reportEndpoint(report), { credentials: "include" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+    const form = doc.getElementById("reportControls");
+    if (!form) throw new Error("that page has no report form");
+    return document.importNode(form, true);
+  }
+
+  // Only one report is on screen at a time, so the borrowed form's ids stay unique.
+  // openToken guards against a slow fetch landing after the user has moved on.
+  let openToken = 0;
+  async function openRunner(report) {
+    const token = ++openToken;
     discardRunner();
     runnerTitle.textContent = report.name;
-    runnerHost.innerHTML = buildReportForm(reportView(report));
     listScreen.hidden = true;
     runnerScreen.hidden = false;
+    runnerHost.innerHTML = `<div class="status">Loading…</div>`;
+
+    let form;
+    try {
+      form = await loadReportForm(report);
+    } catch (err) {
+      if (token !== openToken) return;
+      runnerHost.innerHTML = `<div class="error">Could not load this report's form (${escapeText(err.message)}).</div>`;
+      return;
+    }
+    if (token !== openToken) return;
+
+    runnerHost.innerHTML = "";
+    runnerHost.appendChild(form);
+    const output = document.createElement("div");
+    output.id = "reportOutput";
+    runnerHost.appendChild(output);
     activeRunner = initReportRunner(report, runnerHost);
   }
 
@@ -766,6 +741,7 @@ if (installList && typeof REPORTS !== "undefined") {
 
   function closeRunner() {
     if (!canRun) return;
+    openToken++; // abandon any form still loading
     discardRunner();
     runnerScreen.hidden = true;
     listScreen.hidden = false;

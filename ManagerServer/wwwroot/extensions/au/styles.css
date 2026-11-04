@@ -163,6 +163,9 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
    under form#reportControls / #reportOutput above styles them unchanged. */
 .runner-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .runner-title { font-size: 15px; font-weight: 600; color: #111827; }
+/* The arrow points back to the list, so it follows the writing direction. */
+.runner-back-arrow { display: inline-block; }
+[dir="rtl"] .runner-back-arrow { transform: scaleX(-1); }
 /* View sits next to Install in the report list's action column. */
 .row-actions { display: flex; gap: 8px; align-items: center; }
 
