@@ -186,28 +186,108 @@ if (businessList && businessSelect) {
   })();
 }
 
-// ---- Per-report page -------------------------------------------------------
+// ---- Report runner ---------------------------------------------------------
+//
+// Drives one report: reads its form controls, posts the report's definition from
+// reports.js to /api4/report-transformation-figures, renders what comes back.
+//
+// Nothing about a report is stored in the business — the whole definition travels in
+// the request body — so a runner works against any business the user can open, whether
+// or not that report has been installed as a button on the business's Reports tab.
+//
+// The form it drives comes from one of two places: the static markup in a per-report
+// page, or buildReportForm() writing it into the country index's Reports tab. Every
+// lookup therefore happens when the runner starts rather than when this file loads,
+// and listeners on the shared #business select carry an abort signal so the index can
+// swap reports without leaving the previous runner's handlers behind.
 
-const reportControls = document.getElementById("reportControls");
-if (reportControls) {
-  const toDateInput = document.getElementById("toDate");
-  const fromDateInput = document.getElementById("fromDate");
-  const periodTypeSelect = document.getElementById("periodType");
-  const quarterSelect = document.getElementById("quarter");
-  const monthSelect = document.getElementById("month");
-  const yearSelect = document.getElementById("year");
-  // Optional alternative period mode: a single financial-year picker (1 Jul → 30 Jun).
-  // Pages opt in by replacing the standard period controls with <select id="financialYear">.
-  const financialYearSelect = document.getElementById("financialYear");
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
+                     "July", "August", "September", "October", "November", "December"];
+const QUARTER_LABELS = ["Jan–Mar", "Apr–Jun", "Jul–Sep", "Oct–Dec"];
+
+function reportView(report) {
+  if (typeof REPORT_VIEWS === "undefined") return {};
+  return REPORT_VIEWS[report.id] || {};
+}
+
+// Markup for the controls a view declares. Deliberately emits the same ids and classes
+// the per-report pages hard-code (#periodType, .period-control[data-types], #accounting
+// …) so initReportRunner can't tell a built form from a hand-written one.
+function buildReportForm(view) {
+  const controls = (view.controls && view.controls.length) ? view.controls : ["period"];
+  const parts = [];
+  for (const control of controls) {
+    if (control === "period") {
+      parts.push(`
+  <label>Period
+    <select id="periodType">
+      <option value="quarter">Quarter</option>
+      <option value="month">Month</option>
+      <option value="custom">Custom range</option>
+    </select>
+  </label>
+  <label class="period-control" data-types="quarter">Quarter
+    <select id="quarter">${QUARTER_LABELS.map((l, i) => `<option value="${i}">${l}</option>`).join("")}</select>
+  </label>
+  <label class="period-control" data-types="month" hidden>Month
+    <select id="month">${MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join("")}</select>
+  </label>
+  <label class="period-control" data-types="quarter month">Year
+    <select id="year"></select>
+  </label>
+  <label class="period-control" data-types="custom" hidden>From date
+    <input type="date" id="fromDate">
+  </label>
+  <label class="period-control" data-types="custom" hidden>To date
+    <input type="date" id="toDate">
+  </label>`);
+    } else if (control === "financialYear") {
+      parts.push(`
+  <label>Financial year
+    <select id="financialYear" required></select>
+  </label>`);
+    } else if (control === "employee") {
+      parts.push(`
+  <label>Employee
+    <select id="employee" required></select>
+  </label>`);
+    } else if (control === "accounting") {
+      parts.push(`
+  <label>Accounting basis
+    <select id="accounting">
+      <option value="0">Accrual</option>
+      <option value="1">Cash</option>
+    </select>
+  </label>`);
+    }
+  }
+  return `<form id="reportControls">${parts.join("")}
+  <button type="submit" class="primary">Generate</button>
+</form>
+<div id="reportOutput"></div>`;
+}
+
+// Wires up the form inside `root` — a whole report page, or the index's runner host.
+// Returns a teardown function that detaches every listener it added.
+function initReportRunner(report, root) {
+  const view = reportView(report);
+  const controller = new AbortController();
+  const signal = controller.signal;
+  const byId = (id) => root.querySelector("#" + id);
+
+  const reportControls = byId("reportControls");
+  const output = byId("reportOutput");
+  const toDateInput = byId("toDate");
+  const fromDateInput = byId("fromDate");
+  const periodTypeSelect = byId("periodType");
+  const quarterSelect = byId("quarter");
+  const monthSelect = byId("month");
+  const yearSelect = byId("year");
+  // Alternative period mode: a single financial-year picker (1 Jul → 30 Jun).
+  const financialYearSelect = byId("financialYear");
   // Optional per-employee scoping: when present, the user must pick an employee and the
   // employee's key is forwarded to the figures endpoint to filter transactions.
-  const employeeSelect = document.getElementById("employee");
-
-  const report = (typeof REPORT_ID !== "undefined") ? REPORTS.find(r => r.id === REPORT_ID) : null;
-  if (!report) {
-    document.getElementById("reportOutput").innerHTML =
-      `<div class="error">Report not found. The page may be linking to a removed report.</div>`;
-  }
+  const employeeSelect = byId("employee");
 
   const today = new Date();
 
@@ -222,7 +302,7 @@ if (reportControls) {
       financialYearSelect.appendChild(opt);
     }
     financialYearSelect.value = String(currentFYStart);
-  } else {
+  } else if (periodTypeSelect) {
     // Period controls: defaults are previous quarter / previous month.
     let prevQuarter = Math.floor(today.getMonth() / 3) - 1;
     let prevQuarterYear = today.getFullYear();
@@ -246,11 +326,11 @@ if (reportControls) {
 
     const applyPeriodType = () => {
       const type = periodTypeSelect.value;
-      for (const el of document.querySelectorAll(".period-control")) {
+      for (const el of reportControls.querySelectorAll(".period-control")) {
         el.hidden = !el.dataset.types.split(" ").includes(type);
       }
     };
-    periodTypeSelect.addEventListener("change", applyPeriodType);
+    periodTypeSelect.addEventListener("change", applyPeriodType, { signal });
     applyPeriodType();
   }
 
@@ -279,7 +359,10 @@ if (reportControls) {
         employeeSelect.innerHTML = `<option value="">(error)</option>`;
       }
     };
-    businessSelect.addEventListener("change", loadEmployees);
+    businessSelect.addEventListener("change", loadEmployees, { signal });
+    // On a report page the business arrives asynchronously from the parent frame and
+    // fires "change"; in the index it is already chosen, so prime the list now.
+    loadEmployees();
   }
 
   function computePeriod() {
@@ -300,8 +383,6 @@ if (reportControls) {
 
   reportControls.addEventListener("submit", async (e) => {
     e.preventDefault();
-    if (!report) return;
-    const output = document.getElementById("reportOutput");
     output.innerHTML = '<div class="status">Loading…</div>';
 
     const business = businessSelect.value;
@@ -313,8 +394,9 @@ if (reportControls) {
       return;
     }
 
-    const accountingEl = document.getElementById("accounting");
+    const accountingEl = byId("accounting");
     const body = {
+      Business: business,
       FromDate: period.from, ToDate: period.to,
       AccountingMethod: accountingEl ? parseInt(accountingEl.value, 10) : 0,
       Columns: report.columns, Items: report.items,
@@ -327,38 +409,64 @@ if (reportControls) {
     if (report.forEachEmployee) body.ForEachEmployee = report.forEachEmployee;
     if (employeeSelect && employeeSelect.value) body.Employee = employeeSelect.value;
 
+    // Business travels in the body, so this works the same whether the page is nested
+    // in Manager (which would otherwise inject it as a header) or opened on its own.
     let result;
     try {
-      result = await postMessageWithResponse({
-        type: "api-request",
+      const res = await fetch("/api4/report-transformation-figures", {
         method: "POST",
-        path: "/api4/report-transformation-figures",
-        body,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+        credentials: "include",
       });
+      const text = await res.text();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error">Request failed (${res.status}):\n${escapeText(text)}</div>`;
+        return;
+      }
+      result = JSON.parse(text);
     } catch (err) {
-      output.innerHTML = `<div class="error">${err.message}</div>`;
+      output.innerHTML = `<div class="error">${escapeText(err.message)}</div>`;
       return;
     }
-    if (result.status < 200 || result.status >= 300) {
-      const detail = typeof result.body === "string" ? result.body : JSON.stringify(result.body);
-      output.innerHTML = `<div class="error">Request failed (${result.status}):\n${detail}</div>`;
-      return;
-    }
-    renderReport(report, result.body, business, computePeriod());
-  });
+    renderReport(report, result, business, period, { root, view });
+  }, { signal });
+
+  return () => controller.abort();
 }
 
-function renderReport(report, data, business, period) {
-  // Per-page custom renderer hook — lets a report HTML page replace the generic
-  // table layout with a form-style one (used by PAYG payment summary). The override
-  // owns the entire #reportOutput payload and the print-button binding.
-  if (typeof window.RENDER_REPORT === "function") {
-    window.RENDER_REPORT(report, data, business, period);
+// Per-report page bootstrap: the form is already in the page's markup, and REPORT_ID
+// names the report it belongs to.
+if (isReportPage && typeof REPORTS !== "undefined") {
+  const pageReport = (typeof REPORT_ID !== "undefined") ? REPORTS.find(r => r.id === REPORT_ID) : null;
+  if (pageReport) {
+    initReportRunner(pageReport, document);
+  } else {
+    document.getElementById("reportOutput").innerHTML =
+      `<div class="error">Report not found. The page may be linking to a removed report.</div>`;
+  }
+}
+
+// Renders a figures response into `ctx.root`. ctx carries the runner's root element and
+// the report's view (see report-views.js), which between them decide where the markup
+// lands and how it should look.
+function renderReport(report, data, business, period, ctx) {
+  const root = ctx.root;
+  const view = ctx.view || {};
+
+  // Per-report custom renderer — lets a view replace the generic table layout with a
+  // form-style one (used by the PAYG payment summary). The override owns the entire
+  // #reportOutput payload and the print-button binding. window.RENDER_REPORT is still
+  // honoured for any page that sets it inline.
+  const render = view.render || window.RENDER_REPORT;
+  if (typeof render === "function") {
+    render(report, data, business, period);
     return;
   }
   const totalCols = report.columns + 1;
-  const accountingEl = document.getElementById("accounting");
+  const accountingEl = root.querySelector("#accounting");
   const decimals = data.decimals;
+  const hideZero = view.hideZeroRows === true || window.HIDE_ZERO_ROWS === true;
 
   // The container id "printable-content" is what legacy customScript bodies (from Localizations.json)
   // probe via document.getElementById to scrape numeric cells for CSV export.
@@ -372,18 +480,19 @@ function renderReport(report, data, business, period) {
         ${accountingEl ? `<div class="report-basis">${accountingEl.value === "0" ? "Accrual basis" : "Cash basis"}</div>` : ""}
       </div>
       <table>`;
-  html += renderRowsTbody(data.rows || [], report.columns, totalCols, decimals);
-  for (const group of data.supplierGroups || []) html += renderGroupTbody(group, report.columns, totalCols, "supplier", decimals);
-  for (const group of data.employeeGroups || []) html += renderGroupTbody(group, report.columns, totalCols, "employee", decimals);
+  html += renderRowsTbody(data.rows || [], report.columns, totalCols, decimals, hideZero);
+  for (const group of data.supplierGroups || []) html += renderGroupTbody(group, report.columns, totalCols, "supplier", decimals, hideZero);
+  for (const group of data.employeeGroups || []) html += renderGroupTbody(group, report.columns, totalCols, "employee", decimals, hideZero);
   html += `</table>
     </div>`;
   html += `<textarea name="content" hidden></textarea>`;
 
-  const output = document.getElementById("reportOutput");
+  const output = root.querySelector("#reportOutput");
   output.innerHTML = html;
   output.querySelector("#printReport").addEventListener("click", () => window.print());
 
-  const hasExportHook = typeof window.EXPORT_CSV === "function";
+  const exportCsv = view.exportCsv || window.EXPORT_CSV;
+  const hasExportHook = typeof exportCsv === "function";
   if (report.customScript || hasExportHook) {
     installScriptHelpers();
     if (report.customScript) {
@@ -395,14 +504,14 @@ function renderReport(report, data, business, period) {
     }
     if (hasExportHook) {
       try {
-        window.EXPORT_CSV(report, data);
+        exportCsv(report, data);
       } catch (err) {
         console.error("export csv hook failed", err);
       }
     }
     const contentEl = output.querySelector('textarea[name="content"]');
     if (contentEl && contentEl.value) {
-      const filename = report.csvFilename || window.EXPORT_CSV_FILENAME || (report.name.replace(/\s+/g, "_") + ".csv");
+      const filename = view.csvFilename || report.csvFilename || window.EXPORT_CSV_FILENAME || (report.name.replace(/\s+/g, "_") + ".csv");
       const downloadBtn = document.createElement("button");
       downloadBtn.type = "button";
       downloadBtn.className = "primary";
@@ -418,8 +527,8 @@ function renderReport(report, data, business, period) {
 // Header rows return false (we never hide those). Hidden cells (cell.hidden,
 // set by the API when HideIfEmpty zeroes a value) are still inspected — a row
 // whose only cell is a "hidden zero" is exactly what we want to drop. Used by
-// pages that set window.HIDE_ZERO_ROWS — markup is still emitted so the CSV
-// customScript can read cell data-values, just with [hidden] applied to the row.
+// reports whose view sets hideZeroRows — markup is still emitted so the CSV
+// export hook can read cell data-values, just with [hidden] applied to the row.
 function isZeroRow(row) {
   if (row.isHeader) return false;
   for (const cell of row.cells || []) {
@@ -430,8 +539,7 @@ function isZeroRow(row) {
   return true;
 }
 
-function renderRowsTbody(rows, columns, totalCols, decimals) {
-  const hideZero = window.HIDE_ZERO_ROWS === true;
+function renderRowsTbody(rows, columns, totalCols, decimals, hideZero) {
   let html = `<tbody>`;
   for (const row of rows) {
     if (row.isHeader) { html += `<tr><th colspan="${totalCols}">${row.name || ""}</th></tr>`; continue; }
@@ -444,8 +552,7 @@ function renderRowsTbody(rows, columns, totalCols, decimals) {
   return html + `</tbody>`;
 }
 
-function renderGroupTbody(group, columns, totalCols, kind, decimals) {
-  const hideZero = window.HIDE_ZERO_ROWS === true;
+function renderGroupTbody(group, columns, totalCols, kind, decimals, hideZero) {
   const cls = kind ? `group ${kind}` : "group";
   const id = group.key ? ` id="${guidClass(group.key)}"` : "";
   let html = `<tbody class="${cls}"${id}><tr><th colspan="${totalCols}">${escapeText(group.name || "")}</th></tr>`;
@@ -514,12 +621,30 @@ function installScriptHelpers() {
   };
 }
 
-// ---- Country index: Install reports tab ------------------------------------
+// ---- Country index: Reports tab --------------------------------------------
+//
+// Two screens inside the tab. The list names every report this country ships and
+// "View" runs one against the selected business there and then — a report needs no
+// setup in the business, because its definition is posted with the request.
+//
+// Install is the separate, optional step: it writes a CustomButton with placement
+// "reports" into the business so the report also appears as a button on that
+// business's own Reports tab in Manager, which is where an accountant filing a
+// return each quarter will look for it.
 
 const installList = document.getElementById("report-install-list");
 if (installList && typeof REPORTS !== "undefined") {
   const countrySlug = installList.dataset.countrySlug;
+  const listScreen = document.getElementById("report-list-screen");
+  const runnerScreen = document.getElementById("report-runner-screen");
+  const runnerHost = document.getElementById("report-runner");
+  const runnerTitle = document.getElementById("runner-title");
+  const backButton = document.getElementById("back-to-reports");
+  // The runner screen is markup this file does not own; without it the tab still lists
+  // and installs reports, and the sections below this one still load.
+  const canRun = !!(listScreen && runnerScreen && runnerHost && runnerTitle);
   let installedExtensions = [];
+  let activeRunner = null; // teardown for the runner currently on screen
 
   function reportSlug(report) {
     let s = report.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -548,30 +673,40 @@ if (installList && typeof REPORTS !== "undefined") {
   function renderInstallTable() {
     const business = businessSelect.value;
     let html = `<table>
-      <thead><tr><th>Report</th><th>Status</th><th>Action</th></tr></thead><tbody>`;
+      <thead><tr><th>Report</th><th>Shortcut</th><th>Action</th></tr></thead><tbody>`;
     for (let i = 0; i < REPORTS.length; i++) {
       const r = REPORTS[i];
       const endpoint = reportEndpoint(r);
       const installed = installedExtensions.find(e =>
         e.value.endpoint === endpoint && e.value.placement === "reports");
-      let badge, action;
+      // Not being installed isn't a problem to fix — the report runs either way — so
+      // only the installed state gets a badge.
+      let badge, installAction;
       if (!business) {
         badge = `<span class="muted">Select a business</span>`;
-        action = `<button class="secondary" disabled>Install</button>`;
+        installAction = `<button class="secondary" disabled>Install</button>`;
       } else if (installed) {
         badge = `<span class="badge ok">Installed</span>`;
-        action = `<button class="secondary" data-action="uninstall" data-key="${escapeAttr(installed.key)}">Uninstall</button>`;
+        installAction = `<button class="secondary" data-action="uninstall" data-key="${escapeAttr(installed.key)}">Uninstall</button>`;
       } else {
-        badge = `<span class="badge missing">Not installed</span>`;
-        action = `<button class="secondary" data-action="install" data-idx="${i}">Install</button>`;
+        badge = `<span class="muted">Not installed</span>`;
+        installAction = `<button class="secondary" data-action="install" data-idx="${i}">Install</button>`;
       }
-      html += `<tr><td><strong>${escapeText(r.name)}</strong></td><td>${badge}</td><td>${action}</td></tr>`;
+      const viewAction = canRun
+        ? `<button class="primary" data-action="view" data-idx="${i}"${business ? "" : " disabled"}>View</button>`
+        : "";
+      html += `<tr><td><strong>${escapeText(r.name)}</strong></td><td>${badge}</td>`
+            + `<td class="row-actions">${viewAction}${installAction}</td></tr>`;
     }
     html += `</tbody></table>`;
     installList.innerHTML = html;
 
     for (const btn of installList.querySelectorAll("button[data-action]")) {
-      btn.addEventListener("click", () => onInstallAction(btn));
+      if (btn.dataset.action === "view") {
+        btn.addEventListener("click", () => openRunner(REPORTS[parseInt(btn.dataset.idx, 10)]));
+      } else {
+        btn.addEventListener("click", () => onInstallAction(btn));
+      }
     }
   }
 
@@ -613,7 +748,37 @@ if (installList && typeof REPORTS !== "undefined") {
     }
   }
 
-  businessSelect.addEventListener("change", refreshInstalled);
+  // Build the report's form into the runner host and hand it to the shared runner.
+  // Only one report is on screen at a time, so the form's ids stay unique.
+  function openRunner(report) {
+    discardRunner();
+    runnerTitle.textContent = report.name;
+    runnerHost.innerHTML = buildReportForm(reportView(report));
+    listScreen.hidden = true;
+    runnerScreen.hidden = false;
+    activeRunner = initReportRunner(report, runnerHost);
+  }
+
+  function discardRunner() {
+    if (activeRunner) { activeRunner(); activeRunner = null; }
+    runnerHost.innerHTML = "";
+  }
+
+  function closeRunner() {
+    if (!canRun) return;
+    discardRunner();
+    runnerScreen.hidden = true;
+    listScreen.hidden = false;
+  }
+
+  if (backButton) backButton.addEventListener("click", closeRunner);
+
+  businessSelect.addEventListener("change", () => {
+    // Figures on screen belong to the business they were run for, so drop them
+    // rather than leave them sitting under a different business's name.
+    closeRunner();
+    refreshInstalled();
+  });
   renderInstallTable();
 }
 

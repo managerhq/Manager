@@ -46,9 +46,23 @@
     <button type="button" class="tab" data-view="payslip-items">Payslip items</button>
   </div>
 
+  <!-- Reports tab. Screen 1 lists what this country ships; screen 2 runs one of them
+       against the selected business. Running needs nothing installed — the report's
+       definition is posted with the request — so Install is offered alongside View as
+       a way to put the report on the business's own Reports tab in Manager. -->
   <div id="reports-view">
-    <p class="muted">Installing a report adds it to this business's <strong>Reports</strong> tab in Manager, where it can be run any time.</p>
-    <div id="report-install-list" data-country-slug="au"></div>
+    <div id="report-list-screen">
+      <p class="muted">Run any report here against the selected business. Installing one also puts it on this business's <strong>Reports</strong> tab in Manager, where it can be run without coming back to this page.</p>
+      <div id="report-install-list" data-country-slug="au"></div>
+    </div>
+
+    <div id="report-runner-screen" hidden>
+      <div class="runner-bar">
+        <button type="button" class="secondary" id="back-to-reports">← All reports</button>
+        <span class="runner-title" id="runner-title"></span>
+      </div>
+      <div id="report-runner"></div>
+    </div>
   </div>
 
   <div id="setup-view" hidden>
@@ -66,6 +80,7 @@
 </div>
 
 <script src="reports.js"></script>
+<script src="report-views.js"></script>
 <script src="tax-codes.js"></script>
 <script src="app.js"></script>
 <script src="custom-fields.js"></script>
