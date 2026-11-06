@@ -40,10 +40,11 @@ namespace ManagerServer.Api.Businesses
                 .ToArray();
 
             var links = Hyperlinks.ForCurrentDocument(this);
-            var actions = new Dictionary<string, Link>
+            var actions = new Dictionary<string, Link>();
+            if (user.Type != UserType.Restricted)
             {
-                ["create"] = Hyperlinks.ForAction<PostBusiness>(),
-            };
+                actions["create"] = Hyperlinks.ForAction<PostBusiness>();
+            }
 
             return new BusinessesResource(
                 Links: links,
