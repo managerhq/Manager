@@ -63,6 +63,7 @@ namespace ManagerServer.Model
             [ProtoMember(6), AppendValue(nameof(Item), nameof(ManagerServer.Model.InventoryItem.UnitName))] public decimal? Qty { get; set; }
 
             protected override string GetLineDescription() => LineDescription;
+            public override CustomFields GetCustomFields2() => CustomFields2;
         }        
 
         public override string GetDescriptionOrNull()
