@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ManagerServer.Attributes;
 using ManagerServer.Globalization;
+using Microsoft.AspNetCore.Http;
 using ProtoBuf;
 
 namespace ManagerServer.HttpHandlers.Businesses.Business
@@ -25,7 +26,12 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
                 {
                     var keys = item.Split(',').Select(x => Guid.Parse(x)).ToList();
 
-                    var deleteButton = true;
+                    if (keys.Any(x => !DeletePermission.CanDelete(this, Business, x)))
+                    {
+                        Response.StatusCode = 409; // 409 Conflict
+                        await Response.WriteAsync("You don't have a permission to delete one or more of the selected objects.");
+                        return;
+                    }
 
                     var lockDate = ApplicationData.Businesses.Get(Business).Single<ManagerServer.Model.LockDate>();
                     if (lockDate.GetLockDate().HasValue)
@@ -43,26 +49,7 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
                         }
                     }
 
-                    /*
-                    var userPermissions = GetCurrentUserPermissions(FileID);
-                    if (userPermissions.PermittedActions == Manager.Model.PermittedActions.View)
-                    {
-                        deleteButton = false;
-                    }
-                    else if (userPermissions.PermittedActions == Manager.Model.PermittedActions.ViewCreate)
-                    {
-                        deleteButton = false;
-                    }
-                    else if (userPermissions.PermittedActions == Manager.Model.PermittedActions.ViewCreateUpdate)
-                    {
-                        deleteButton = false;
-                    }
-                    */
-
-                    if (deleteButton)
-                    {
-                        ApplicationData.Businesses.Process(Business, keys.ToArray(), GetUserName());
-                    }
+                    ApplicationData.Businesses.Process(Business, keys.ToArray(), GetUserName());
                 }
             }            
         }
