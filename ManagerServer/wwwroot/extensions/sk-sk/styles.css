@@ -40,14 +40,14 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
 
 #reportOutput, #setupOutput { max-width: 1100px; }
 #reportOutput h2 { font-size: 16px; margin: 0 0 12px; }
-#reportOutput table, #setupOutput table, #report-install-list table { width: 100%; border-collapse: collapse; }
+#reportOutput table, #setupOutput table, #report-list table { width: 100%; border-collapse: collapse; }
 #reportOutput th, #reportOutput td,
 #setupOutput th, #setupOutput td,
-#report-install-list th, #report-install-list td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
+#report-list th, #report-list td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
 #reportOutput td { white-space: pre-line; }
-#reportOutput th, #setupOutput th, #report-install-list th { background: #f9fafb; text-align: left; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
-/* Status and Action trail the report name, which takes whatever width is left. */
-#report-install-list th:not(:first-child), #report-install-list td:not(:first-child) { width: 1%; white-space: nowrap; }
+#reportOutput th, #setupOutput th, #report-list th { background: #f9fafb; text-align: left; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+/* Action trails the report name, which takes whatever width is left. */
+#report-list th:not(:first-child), #report-list td:not(:first-child) { width: 1%; white-space: nowrap; }
 #reportOutput td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 #reportOutput td.num a { color: #2563eb; text-decoration: none; }
 #reportOutput td.num a:hover { text-decoration: underline; }
@@ -111,8 +111,8 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
 @media (max-width: 720px) {
   /* Let a too-wide row scroll rather than squeezing its badge and button columns.
      Matches the project rule from CLAUDE memory: scroll the row, not the page. */
-  #setupOutput, #report-install-list, #coaOutput { overflow-x: auto; }
-  #setupOutput table, #report-install-list table, #coaOutput table { min-width: 560px; }
+  #setupOutput, #coaOutput { overflow-x: auto; }
+  #setupOutput table, #coaOutput table { min-width: 560px; }
   /* Same rule for the workspace tab strip, which is too wide for a phone-width iframe. */
   .tabs { overflow-x: auto; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
@@ -129,8 +129,6 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
 /* The arrow points back to the list, so it follows the writing direction. */
 .runner-back-arrow { display: inline-block; }
 [dir="rtl"] .runner-back-arrow { transform: scaleX(-1); }
-/* View sits next to Install in the report list's action column. */
-.row-actions { display: flex; gap: 8px; align-items: center; }
 
 /* DPH return — formal tlačivo (paper-form) aesthetic, overriding the generic report
    styling above to match what Slovak accountants see on the official DPH tlačivo

@@ -40,14 +40,14 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
 
 #reportOutput, #setupOutput { max-width: 1100px; }
 #reportOutput h2 { font-size: 16px; margin: 0 0 12px; }
-#reportOutput table, #setupOutput table, #report-install-list table { width: 100%; border-collapse: collapse; }
+#reportOutput table, #setupOutput table, #report-list table { width: 100%; border-collapse: collapse; }
 #reportOutput th, #reportOutput td,
 #setupOutput th, #setupOutput td,
-#report-install-list th, #report-install-list td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
+#report-list th, #report-list td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
 #reportOutput td { white-space: pre-line; }
-#reportOutput th, #setupOutput th, #report-install-list th { background: #f9fafb; text-align: left; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
-/* Status and Action trail the report name, which takes whatever width is left. */
-#report-install-list th:not(:first-child), #report-install-list td:not(:first-child) { width: 1%; white-space: nowrap; }
+#reportOutput th, #setupOutput th, #report-list th { background: #f9fafb; text-align: left; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+/* Action trails the report name, which takes whatever width is left. */
+#report-list th:not(:first-child), #report-list td:not(:first-child) { width: 1%; white-space: nowrap; }
 #reportOutput td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 #reportOutput td.num a { color: #2563eb; text-decoration: none; }
 #reportOutput td.num a:hover { text-decoration: underline; }
@@ -133,10 +133,10 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
   /* Suppliers table is wide — let the row scroll horizontally rather than collapsing controls.
      Matches the project rule from CLAUDE memory: scroll the row, not the page. */
   #suppliers-view, .cf-table-wrap { overflow-x: auto; }
-  /* Same for the two status tables, whose badge + button columns stop being readable
+  /* Same for the tax-code table, whose badge + button columns stop being readable
      once the browser starts squeezing them. */
-  #setupOutput, #report-install-list { overflow-x: auto; }
-  #setupOutput table, #report-install-list table { min-width: 560px; }
+  #setupOutput { overflow-x: auto; }
+  #setupOutput table { min-width: 560px; }
   /* Same rule for the workspace tab strip, which is too wide for a phone-width iframe. */
   .tabs { overflow-x: auto; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
@@ -166,8 +166,6 @@ button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
 /* The arrow points back to the list, so it follows the writing direction. */
 .runner-back-arrow { display: inline-block; }
 [dir="rtl"] .runner-back-arrow { transform: scaleX(-1); }
-/* View sits next to Install in the report list's action column. */
-.row-actions { display: flex; gap: 8px; align-items: center; }
 
 /* PAYG payment summary form. Lives here rather than in the report page because the
    same renderer (report-views.js) draws it on the page and inside the index runner. */

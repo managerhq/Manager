@@ -6,7 +6,7 @@
 //     Renders the form, runs the figures API, displays the report.
 //
 //   • Country index    — has <div id="business-list">. Lists the businesses, then runs the
-//     per-business workspace: report install/uninstall and the tax-code setup flow.
+//     per-business workspace: running the country's reports and the tax-code setup flow.
 
 const REPORTING_FIELDS = ["reportingCategory", "reportingCategoryReversed", "taxAmountReportingCategory", "taxAmountReversedReportingCategory"];
 
@@ -59,7 +59,7 @@ async function postMessageWithResponse(message) {
 // #business is a single-option <select> naming the business every API call on the page is
 // scoped to. On report pages Manager supplies the name; on the country index the user picks
 // it from the business list and the picker writes it here. Everything downstream — this file's
-// install/tax-code tables and custom-fields.js — reads businessSelect.value and listens for
+// report/tax-code tables and custom-fields.js — reads businessSelect.value and listens for
 // its "change" event, so neither needs to know where the name came from.
 
 const businessSelect = document.getElementById("business");
@@ -192,8 +192,7 @@ if (businessList && businessSelect) {
 // reports.js to /api4/report-transformation-figures, renders what comes back.
 //
 // Nothing about a report is stored in the business — the whole definition travels in
-// the request body — so a runner works against any business the user can open, whether
-// or not that report has been installed as a button on the business's Reports tab.
+// the request body — so a runner works against any business the user can open.
 //
 // The form it drives is always the one in the report's own page. On that page it is
 // simply the markup already there; the country index borrows the same markup (see
@@ -567,26 +566,21 @@ function installScriptHelpers() {
 // ---- Country index: Reports tab --------------------------------------------
 //
 // Two screens inside the tab. The list names every report this country ships and
-// "View" runs one against the selected business there and then — a report needs no
-// setup in the business, because its definition is posted with the request.
-//
-// Install is the separate, optional step: it writes a CustomButton with placement
-// "reports" into the business so the report also appears as a button on that
-// business's own Reports tab in Manager, which is where an accountant filing a
-// return each quarter will look for it.
+// "View" runs one against the selected business there and then. The report's whole
+// definition is posted with the request, so nothing about it has to be set up in the
+// business first — every report this country ships is runnable against every business.
 
-const installList = document.getElementById("report-install-list");
-if (installList && typeof REPORTS !== "undefined") {
-  const countrySlug = installList.dataset.countrySlug;
+const reportList = document.getElementById("report-list");
+if (reportList && typeof REPORTS !== "undefined") {
+  const countrySlug = reportList.dataset.countrySlug;
   const listScreen = document.getElementById("report-list-screen");
   const runnerScreen = document.getElementById("report-runner-screen");
   const runnerHost = document.getElementById("report-runner");
   const runnerTitle = document.getElementById("runner-title");
   const backButton = document.getElementById("back-to-reports");
   // The runner screen is markup this file does not own; without it the tab still lists
-  // and installs reports, and the sections below this one still load.
+  // the country's reports, and the sections below this one still load.
   const canRun = !!(listScreen && runnerScreen && runnerHost && runnerTitle);
-  let installedExtensions = [];
   let activeRunner = null; // teardown for the runner currently on screen
 
   function reportSlug(report) {
@@ -598,96 +592,23 @@ if (installList && typeof REPORTS !== "undefined") {
     return `/extensions/${countrySlug}/${reportSlug(report)}.html`;
   }
 
-  async function refreshInstalled() {
-    const business = businessSelect.value;
-    if (!business) { installedExtensions = []; renderInstallTable(); return; }
-    let res;
-    try {
-      res = await fetch(`/api4/extension-batch?business=${encodeURIComponent(business)}&pageSize=500`, { credentials: "include" });
-    } catch {
-      installedExtensions = []; renderInstallTable(); return;
-    }
-    if (!res.ok) { installedExtensions = []; renderInstallTable(); return; }
-    const data = await res.json();
-    installedExtensions = (data.items || []).map(it => ({ key: it.key, value: it.item || {} }));
-    renderInstallTable();
-  }
-
-  function renderInstallTable() {
+  function renderReportTable() {
     const business = businessSelect.value;
     let html = `<table>
-      <thead><tr><th>Report</th><th>Shortcut</th><th>Action</th></tr></thead><tbody>`;
+      <thead><tr><th>Report</th><th>Action</th></tr></thead><tbody>`;
     for (let i = 0; i < REPORTS.length; i++) {
       const r = REPORTS[i];
-      const endpoint = reportEndpoint(r);
-      const installed = installedExtensions.find(e =>
-        e.value.endpoint === endpoint && e.value.placement === "reports");
-      // Not being installed isn't a problem to fix — the report runs either way — so
-      // only the installed state gets a badge.
-      let badge, installAction;
-      if (!business) {
-        badge = `<span class="muted">Select a business</span>`;
-        installAction = `<button class="secondary" disabled>Install</button>`;
-      } else if (installed) {
-        badge = `<span class="badge ok">Installed</span>`;
-        installAction = `<button class="secondary" data-action="uninstall" data-key="${escapeAttr(installed.key)}">Uninstall</button>`;
-      } else {
-        badge = `<span class="muted">Not installed</span>`;
-        installAction = `<button class="secondary" data-action="install" data-idx="${i}">Install</button>`;
-      }
       const viewAction = canRun
         ? `<button class="primary" data-action="view" data-idx="${i}"${business ? "" : " disabled"}>View</button>`
         : "";
-      html += `<tr><td><strong>${escapeText(r.name)}</strong></td><td>${badge}</td>`
-            + `<td class="row-actions">${viewAction}${installAction}</td></tr>`;
+      html += `<tr><td><strong>${escapeText(r.name)}</strong></td>`
+            + `<td>${viewAction}</td></tr>`;
     }
     html += `</tbody></table>`;
-    installList.innerHTML = html;
+    reportList.innerHTML = html;
 
-    for (const btn of installList.querySelectorAll("button[data-action]")) {
-      if (btn.dataset.action === "view") {
-        btn.addEventListener("click", () => openRunner(REPORTS[parseInt(btn.dataset.idx, 10)]));
-      } else {
-        btn.addEventListener("click", () => onInstallAction(btn));
-      }
-    }
-  }
-
-  async function onInstallAction(btn) {
-    const business = businessSelect.value;
-    if (!business) return;
-    const action = btn.dataset.action;
-    btn.disabled = true;
-    btn.textContent = action === "install" ? "Installing…" : "Uninstalling…";
-    try {
-      if (action === "install") {
-        const r = REPORTS[parseInt(btn.dataset.idx, 10)];
-        const value = {
-          Name: r.name,
-          Source: 0,
-          Endpoint: reportEndpoint(r),
-          Placement: "reports",
-        };
-        const res = await fetch("/api4/extension", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ Business: business, Value: value }),
-          credentials: "include",
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
-      } else {
-        const key = btn.dataset.key;
-        const res = await fetch(`/api4/extension?business=${encodeURIComponent(business)}&key=${encodeURIComponent(key)}`, {
-          method: "DELETE",
-          credentials: "include",
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
-      }
-      await refreshInstalled();
-    } catch (err) {
-      btn.disabled = false;
-      btn.textContent = action === "install" ? "Install" : "Uninstall";
-      alert(`Failed: ${err.message}`);
+    for (const btn of reportList.querySelectorAll('button[data-action="view"]')) {
+      btn.addEventListener("click", () => openRunner(REPORTS[parseInt(btn.dataset.idx, 10)]));
     }
   }
 
@@ -753,9 +674,9 @@ if (installList && typeof REPORTS !== "undefined") {
     // Figures on screen belong to the business they were run for, so drop them
     // rather than leave them sitting under a different business's name.
     closeRunner();
-    refreshInstalled();
+    renderReportTable();
   });
-  renderInstallTable();
+  renderReportTable();
 }
 
 // ---- Country index: Setup tax codes tab ------------------------------------
@@ -822,7 +743,7 @@ function diagnose(template) {
     (tc.value.name || "").trim().toLowerCase() === templateName);
   if (matchByName) {
     // Templates that carry no reporting-category bindings (e.g. Slovakia's "DPH 10% Nákup")
-    // have nothing to "update" — a name match means the user already has it installed.
+    // have nothing to "update" — a name match means the business already has the code.
     return { state: templateHasCategories ? "update" : "ok", existing: matchByName };
   }
 
