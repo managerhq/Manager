@@ -1,0 +1,600 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "HKD",
+      "2": "Hong Kong Dollars",
+      "4": "HK$"
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {},
+  "6116531b-cb3d-4f85-b239-745972943a6b": {},
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "dd/MM/yyyy",
+      "4": "HH:mm:ss",
+      "3": "CgEuEgEsGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {},
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {},
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {},
+  "6027ab88-f804-4827-beff-26b76bb94587": {},
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {},
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {},
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {},
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {
+    "436f269c-126f-4055-847b-b8d146b7e1e8": {
+      "1": "Contact",
+      "4": 1
+    }
+  },
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "3d984190-0986-4240-a59b-e024e43bce34": {
+      "1": "Accounting and taxation service fees 會計及稅務費用",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 1
+    },
+    "ca88881b-3eb4-4f4b-b6eb-d7e135f22fc5": {
+      "1": "Advertising, marketing and promotions 廣告及推廣費用",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 2
+    },
+    "c595d80b-54ef-43f2-a51e-5f60a432bf52": {
+      "1": "Audit fee 審計費",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 3
+    },
+    "23db138b-cffb-480a-b873-7291f6f0543a": {
+      "1": "Bank charges 銀行收費",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 4
+    },
+    "6cd733f7-1e69-4218-a01d-7659d0e4daac": {
+      "1": "Bank interest expense 銀行利息開支",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 5
+    },
+    "ee4ed882-9225-497e-b09b-94f082b3caaa": {
+      "1": "Building management and air con charges 大廈管理及冷氣費",
+      "11": "",
+      "3": "d4ffe2f1-63e9-4b66-86ef-fb9a1f7a113a",
+      "10": 10150053
+    },
+    "1eccec49-ba1b-4d23-bc02-c9776e696561": {
+      "1": "Business registration 商業登記費",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 6
+    },
+    "d83c667e-ecde-4c79-9b2f-82d0a7beb939": {
+      "1": "Cleaning 清潔費",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 7
+    },
+    "d0dc5be7-a89f-436a-bb4d-53e4ad4c89cc": {
+      "1": "Commission income 佣金收入",
+      "11": "",
+      "3": "9b0e6dcd-9e57-4db9-851b-081b77f547b1",
+      "10": 5
+    },
+    "79f4c5f6-8520-41e1-8d7a-45c94e429f5b": {
+      "1": "Computer expenses 電腦消耗品",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 8
+    },
+    "14018f41-4114-40ff-bd75-a80c256d9db6": {
+      "1": "Corporate management fees 法團管理費",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 9
+    },
+    "99bcd8ad-da75-4171-8642-319db811ad25": {
+      "1": "Donations 慈善捐獻",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 10
+    },
+    "1133190a-4839-444a-b542-17c0f1f0dae1": {
+      "1": "Entertainment (local) 應酬費(本地)",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 11
+    },
+    "461c7327-b338-4d38-80fa-f125b678ec09": {
+      "1": "Gain on sale or disposal of fixed assets 出售或處置資產後獲利",
+      "3": "9b0e6dcd-9e57-4db9-851b-081b77f547b1",
+      "14": 1,
+      "10": 7
+    },
+    "1617dfaa-9498-45e4-aa05-c83b79307900": {
+      "1": "Insurance (office) 保險費用",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 13
+    },
+    "084e835b-31a9-4946-b0ec-7d62b21bca43": {
+      "1": "Interest income 利息收入",
+      "11": "",
+      "3": "9b0e6dcd-9e57-4db9-851b-081b77f547b1",
+      "10": 6
+    },
+    "d615991a-2580-41c9-9923-23fb58856bce": {
+      "1": "Legal, consultancy and professional fees 法律及專業顧問費用",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 14
+    },
+    "6e9febae-2b26-441e-a3d6-aef546f766e7": {
+      "1": "Loan interest expense (bank loans) 銀行貸款利息支出",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 15
+    },
+    "2a0eb28a-19d2-43b2-b3ab-a332d8286314": {
+      "1": "Loan interest expense (finance lease) 租賃利息支出",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 16
+    },
+    "e97b1b24-db78-4706-aab9-1969fcd259b9": {
+      "1": "Local public transport 本地公共交通車費",
+      "11": "",
+      "3": "ea1238f5-740b-4b93-9da9-835cf32be556",
+      "10": 10200102
+    },
+    "c8ddf57a-29d3-4043-bb29-7098094b1036": {
+      "1": "Local taxi or uber 本地的士車資",
+      "11": "",
+      "3": "ea1238f5-740b-4b93-9da9-835cf32be556",
+      "10": 10200103
+    },
+    "277d7681-7e76-4dec-9968-5263cdf79034": {
+      "1": "Loss on sale or disposal of fixed assets 出售或處置資產後損失",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "14": 1,
+      "10": 17
+    },
+    "0fd2fd67-7a91-44db-b242-ba841ab9bb15": {
+      "1": "Management income 管理費收入",
+      "11": "",
+      "3": "9b0e6dcd-9e57-4db9-851b-081b77f547b1",
+      "10": 4
+    },
+    "2a13eb51-9bbb-481c-90f7-a2b8d0029dbe": {
+      "1": "Memberships and professional subscriptions 會籍費用",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 18
+    },
+    "6709acdd-4bc2-4a74-af2d-4bb06602c93e": {
+      "1": "Motoring - consumables, upgrades, maintenance, repairs, cleaning 車輛維修, 升級, 清潔",
+      "11": "",
+      "3": "68ca2780-4e3d-4833-aa7d-91090659f14a",
+      "10": 10130052
+    },
+    "46f3ee04-92bf-4dd8-b2e2-0a6cf55a644f": {
+      "1": "Motoring - fines and penalties 車輛違例罰款",
+      "11": "",
+      "3": "68ca2780-4e3d-4833-aa7d-91090659f14a",
+      "10": 10130055
+    },
+    "83f3090f-8d66-4bea-ada2-1b0f31aa0780": {
+      "1": "Motoring - fuel, parking, tolls 車輛燃料，泊車，隧道費",
+      "11": "",
+      "3": "68ca2780-4e3d-4833-aa7d-91090659f14a",
+      "10": 10130053
+    },
+    "09930af7-1d33-496a-a071-9c5009d3573b": {
+      "1": "Motoring - insurance, licences, registrations 車輛保險, 牌照, 登記費",
+      "11": "",
+      "3": "68ca2780-4e3d-4833-aa7d-91090659f14a",
+      "10": 10130054
+    },
+    "b4f2a2a2-568a-41b6-b1ad-a8900dec74a7": {
+      "1": "Postage and couriers 郵政及速遞",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 21
+    },
+    "d5b5097b-6850-4f4f-975c-50840f8ce650": {
+      "1": "Preliminary or incorporation expenses 公司成立, 註冊費用",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 22
+    },
+    "5482299a-ce56-4d48-b37d-12d5172e8984": {
+      "1": "Printing, stationery, newspapers and periodicals 印刷, 文具, 刊物",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 23
+    },
+    "799a3565-3a36-4a2e-be9d-3909aeccf8ee": {
+      "1": "Purchases 購貨",
+      "11": "",
+      "3": "190d484a-e668-41e6-bea9-4b88bf46479d",
+      "10": 9010
+    },
+    "00a105e5-b2db-4782-83b8-596ba5b84dc3": {
+      "1": "Rent and rates (office) 辦公室租金及差餉",
+      "11": "",
+      "3": "d4ffe2f1-63e9-4b66-86ef-fb9a1f7a113a",
+      "10": 10150052
+    },
+    "6fcaf1be-5bb9-407f-b619-d796fe3d4608": {
+      "1": "Rental income 租金收入",
+      "11": "",
+      "3": "9b0e6dcd-9e57-4db9-851b-081b77f547b1",
+      "10": 3
+    },
+    "4ca38149-459d-4195-a80d-7748f0089ad0": {
+      "1": "Repairs and maintenance (office) 辦公室維修及保養",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 24
+    },
+    "adb9bbaf-cae4-410a-965d-15910c39ceab": {
+      "1": "Sales income 銷售",
+      "11": "",
+      "3": "9b0e6dcd-9e57-4db9-851b-081b77f547b1",
+      "10": 1
+    },
+    "96747d91-8997-405e-a1a9-f4c58f4d7525": {
+      "1": "Secretarial fees 公司秘書費用",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 25
+    },
+    "1be65bad-b40b-48a5-b280-101c7530690b": {
+      "1": "Staff costs - director's fees and salaries 董事薪酬",
+      "11": "",
+      "3": "fab043d4-4eac-40fd-ac76-25aa96bc36e5",
+      "10": 10190082
+    },
+    "ea666599-1013-4367-b8e7-3392cfdc07c3": {
+      "1": "Staff costs - employer's mpf contributions 強積金(僱主供款)",
+      "11": "",
+      "3": "fab043d4-4eac-40fd-ac76-25aa96bc36e5",
+      "10": 10190085
+    },
+    "1bb53f34-bf83-4144-8b7d-f2ef4037545a": {
+      "1": "Staff costs - messing, training, welfare and benefits 員工福利及訓練",
+      "11": "",
+      "3": "fab043d4-4eac-40fd-ac76-25aa96bc36e5",
+      "10": 10190086
+    },
+    "0fb63b0f-8c38-4799-b0ef-cf4613c49fe2": {
+      "1": "Staff costs - monthly salaries 月薪員工薪酬",
+      "11": "",
+      "3": "fab043d4-4eac-40fd-ac76-25aa96bc36e5",
+      "10": 10190083
+    },
+    "6bc43283-51a7-46f9-b489-4d20342376a4": {
+      "1": "Staff costs - quarters, residence provided or housing allowance 員工房屋津貼",
+      "11": "",
+      "3": "fab043d4-4eac-40fd-ac76-25aa96bc36e5",
+      "10": 10190087
+    },
+    "ffa3ee46-dc58-46e2-95a9-491694724e24": {
+      "1": "Staff costs - recruitment expenses 招聘費用",
+      "11": "",
+      "3": "fab043d4-4eac-40fd-ac76-25aa96bc36e5",
+      "10": 10190088
+    },
+    "03bc8431-a254-4d92-bc1b-28e0551d0a71": {
+      "1": "Staff costs - temp staff wages 臨時員工薪金",
+      "11": "",
+      "3": "fab043d4-4eac-40fd-ac76-25aa96bc36e5",
+      "10": 10190084
+    },
+    "234235e6-0932-435d-85f1-6eff6e63408f": {
+      "1": "Tax provision for the period 本年度預計稅款",
+      "11": "",
+      "3": "16f1dd0d-279c-4063-9e2a-72a710d9d9ca",
+      "10": 1301
+    },
+    "dea926fe-0dba-47b3-a80c-c6f96799eb5f": {
+      "1": "Telecom - staff mobile 流動電訊開支",
+      "11": "",
+      "3": "34e85cd0-8d8b-4bbc-8316-4a08f5564267",
+      "10": 10200053
+    },
+    "fdec8a29-8d88-4ed4-b829-da227de15c24": {
+      "1": "Telecom and Internet - office 固網及互聯網電訊開支",
+      "11": "",
+      "3": "34e85cd0-8d8b-4bbc-8316-4a08f5564267",
+      "10": 10200052
+    },
+    "d1fc9637-90c1-4695-977a-2562588da9c3": {
+      "1": "Transportation, frieght, shipping and customs 運輸, 船務, 關稅",
+      "11": "",
+      "3": "190d484a-e668-41e6-bea9-4b88bf46479d",
+      "10": 9050
+    },
+    "5b167414-9ea1-460c-a9cd-14ed0b2b50ba": {
+      "1": "Travel abroad - entertaining clients 海外應酬客戶",
+      "11": "",
+      "3": "212b98fc-e4da-4c59-bfa7-bbff3c12de76",
+      "10": 10200111
+    },
+    "d768936d-2b3e-40d7-9b5e-376bfc1b82c7": {
+      "1": "Travel abroad - flights 機票",
+      "11": "",
+      "3": "212b98fc-e4da-4c59-bfa7-bbff3c12de76",
+      "10": 10200107
+    },
+    "e8c11d5d-f869-433a-ab9b-46b288b5cf67": {
+      "1": "Travel abroad - hotels 酒店",
+      "11": "",
+      "3": "212b98fc-e4da-4c59-bfa7-bbff3c12de76",
+      "10": 10200108
+    },
+    "6bc6cd13-7726-4693-be41-d0c6675dafca": {
+      "1": "Travel abroad - land and sea public transport 海外陸路, 海上交通",
+      "11": "",
+      "3": "212b98fc-e4da-4c59-bfa7-bbff3c12de76",
+      "10": 10200109
+    },
+    "5441a5d3-9f5d-48db-9c8f-50a08b3157fd": {
+      "1": "Travel abroad - staff meals and messing 員工海外餐飲",
+      "11": "",
+      "3": "212b98fc-e4da-4c59-bfa7-bbff3c12de76",
+      "10": 10200110
+    },
+    "826e05ee-0df4-4508-9551-3c27a8df4add": {
+      "1": "Under (Over) provision from previous years 往年稅務撥備不足(超額)",
+      "11": "",
+      "3": "16f1dd0d-279c-4063-9e2a-72a710d9d9ca",
+      "10": 1302
+    },
+    "93cc412c-61db-400b-aee1-81c9747de1ea": {
+      "1": "Utilities - electricity, water, fuel and gas 水, 電, 燃料費",
+      "11": "",
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "10": 30
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "190d484a-e668-41e6-bea9-4b88bf46479d": {
+      "1": "Cost of revenue 經營成本",
+      "6": 1,
+      "5": 9
+    },
+    "68ca2780-4e3d-4833-aa7d-91090659f14a": {
+      "1": "Motor vehicle expenses 車輛開支",
+      "6": 2,
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "5": 19
+    },
+    "d4ffe2f1-63e9-4b66-86ef-fb9a1f7a113a": {
+      "1": "Office premise costs 辦公室租借開支",
+      "6": 2,
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "5": 20
+    },
+    "fac5fbb5-4e36-40c8-b465-fc667b8c373c": {
+      "1": "Operating expenses 營運開支",
+      "6": 1,
+      "5": 10
+    },
+    "9b0e6dcd-9e57-4db9-851b-081b77f547b1": {
+      "1": "Revenue 業務收入",
+      "5": 8
+    },
+    "fab043d4-4eac-40fd-ac76-25aa96bc36e5": {
+      "1": "Staff costs 員工薪酬及開支",
+      "6": 2,
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "5": 26
+    },
+    "16f1dd0d-279c-4063-9e2a-72a710d9d9ca": {
+      "1": "Taxation 稅務",
+      "6": 1,
+      "5": 13
+    },
+    "34e85cd0-8d8b-4bbc-8316-4a08f5564267": {
+      "1": "Telecommunications 電訊開支",
+      "6": 2,
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "5": 27
+    },
+    "ea1238f5-740b-4b93-9da9-835cf32be556": {
+      "1": "Travel (local) 本地交通開支",
+      "6": 2,
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "5": 28
+    },
+    "212b98fc-e4da-4c59-bfa7-bbff3c12de76": {
+      "1": "Travel (overseas) 海外交通開支",
+      "6": 2,
+      "3": "fac5fbb5-4e36-40c8-b465-fc667b8c373c",
+      "5": 29
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {
+    "1bac7fd6-b2c8-4b7a-a894-7d14151fa104": {
+      "1": "Net profit (loss) for the period 淨盈利 (虧損)",
+      "3": 14
+    },
+    "f8bdd293-86fd-4b2a-b2d7-1c6dd0dedee0": {
+      "1": "Profit (Loss) before taxation 稅前盈利 (虧損)",
+      "3": 12
+    }
+  },
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "4d5876bd-344c-4989-91b4-d14ab62d4c5b": {
+      "1": "Accrued expenses 應繳費用",
+      "3": "70ccb204-58af-4f92-94ed-78298ba6cfa6"
+    },
+    "fcb4e7e4-1aa3-44c7-b279-23db172ae8a0": {
+      "1": "Accrued mpf payments 應繳強積金",
+      "3": "70ccb204-58af-4f92-94ed-78298ba6cfa6"
+    },
+    "808d9359-f645-48aa-88c3-7cef8fdaa691": {
+      "1": "Accrued wages 應繳工資",
+      "3": "70ccb204-58af-4f92-94ed-78298ba6cfa6"
+    },
+    "5cac2c1c-f544-43f9-828d-dccc94471a01": {
+      "1": "Cash in hand (cash float, petty cash) 現金賬",
+      "17": "",
+      "3": "44ca8069-6544-4351-98b2-f7666a54c6e5",
+      "16": 3011
+    },
+    "4e1cfeb5-2dbd-4fcc-8742-5a12dca5b206": {
+      "1": "Cash in hand (cash sales not yet banked) 暫存現金銷售",
+      "17": "",
+      "3": "44ca8069-6544-4351-98b2-f7666a54c6e5",
+      "16": 3012
+    },
+    "ede2102c-e4c8-4655-8aca-537b4deba568": {
+      "1": "Computer equipment 電腦設備",
+      "3": "811428cd-0b2d-4387-9187-95fe8533c666",
+      "18": 1,
+      "16": 4
+    },
+    "75f7f605-e88b-4df3-a4a8-cd6d8320676d": {
+      "1": "Dividends paid 股息",
+      "17": "",
+      "3": "1c0fe8da-9928-47ec-9155-cb923b20fdc8",
+      "16": 600202
+    },
+    "4418dd72-b438-4f6f-b323-55e2f1b7ffe3": {
+      "1": "Prepayment 預付項目",
+      "17": "",
+      "3": "44ca8069-6544-4351-98b2-f7666a54c6e5",
+      "16": 3001
+    },
+    "6935afef-d172-405b-9a87-50f7c9d7de8a": {
+      "1": "Provision for taxation (Tax repayable) 稅務撥備",
+      "17": "",
+      "3": "7af99c9a-4c8c-4610-9944-eaa6f8ab368c",
+      "16": 4002
+    },
+    "5f26ae54-0572-425e-888a-93f812aba0c0": {
+      "1": "Rental deposit 租金，按金",
+      "17": "",
+      "3": "058f1182-702c-42f4-89c8-2ebf8d5c307f",
+      "16": 300301
+    },
+    "36d3be52-e63b-4fc2-9fac-9bd9c36b56b3": {
+      "1": "Share capital 已發行股本",
+      "17": "",
+      "3": "9275ff4c-4cff-41d0-b7b5-f31c783f03d8",
+      "16": 6001
+    },
+    "28298651-e949-443b-91b2-a1d8ae3abeab": {
+      "1": "Utility deposits 公共設施，按金",
+      "17": "",
+      "3": "058f1182-702c-42f4-89c8-2ebf8d5c307f",
+      "16": 300302
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {
+    "70ccb204-58af-4f92-94ed-78298ba6cfa6": {
+      "1": "Accrued expenses 應繳費用",
+      "3": "7af99c9a-4c8c-4610-9944-eaa6f8ab368c",
+      "4": 4003
+    },
+    "d05c8974-45ca-4c37-9633-f1c64adfd027": {
+      "1": "Amount due to/ (from) a director 董事來往賬",
+      "3": "7af99c9a-4c8c-4610-9944-eaa6f8ab368c",
+      "4": 4010
+    },
+    "44ca8069-6544-4351-98b2-f7666a54c6e5": {
+      "1": "Current assets 流動資產",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 3
+    },
+    "7af99c9a-4c8c-4610-9944-eaa6f8ab368c": {
+      "1": "Current liabilities 流動負債",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc",
+      "4": 4
+    },
+    "058f1182-702c-42f4-89c8-2ebf8d5c307f": {
+      "1": "Deposits and temp payments 按金及臨時款項",
+      "3": "44ca8069-6544-4351-98b2-f7666a54c6e5",
+      "4": 3003
+    },
+    "12b77af6-385a-4e69-ab40-3f160838ae1e": {
+      "1": "Intangible assets 無形資產",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 2
+    },
+    "d6311d6c-c4e6-4e1d-a5e7-49aaf1d8cf24": {
+      "1": "Long term liabilities 長期負債",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc",
+      "4": 5
+    },
+    "811428cd-0b2d-4387-9187-95fe8533c666": {
+      "1": "Property, plant and equipment 廠房與設備",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 1
+    },
+    "1c0fe8da-9928-47ec-9155-cb923b20fdc8": {
+      "1": "Retained earnings 累積盈餘",
+      "3": "9275ff4c-4cff-41d0-b7b5-f31c783f03d8",
+      "4": 6002
+    },
+    "5aa53af2-3c81-4b66-820e-400497b57528": {
+      "1": "Sundry creditors 其他應付賬",
+      "3": "7af99c9a-4c8c-4610-9944-eaa6f8ab368c",
+      "4": 4005
+    },
+    "d97a74b5-9d3d-40a5-b2db-41870a649e6d": {
+      "1": "Sundry debtors 其他應收賬",
+      "3": "44ca8069-6544-4351-98b2-f7666a54c6e5",
+      "4": 3004
+    }
+  },
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {
+    "7cb509fe-163c-4629-84c9-708ec79eba94": {
+      "1": "Bonus",
+      "3": "0fb63b0f-8c38-4799-b0ef-cf4613c49fe2"
+    },
+    "1a6a30c1-ce26-47c9-a63c-85149eba57f6": {
+      "1": "Double pay",
+      "3": "0fb63b0f-8c38-4799-b0ef-cf4613c49fe2"
+    },
+    "907e39da-392f-4c71-a537-cd38dbe8cb59": {
+      "1": "Salary",
+      "3": "0fb63b0f-8c38-4799-b0ef-cf4613c49fe2"
+    },
+    "7d76def1-9e84-423c-b440-4b052cc1798b": {
+      "1": "Wage",
+      "3": "0fb63b0f-8c38-4799-b0ef-cf4613c49fe2"
+    }
+  },
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {
+    "3f391168-8324-441e-a0eb-6f15f9773e56": {
+      "1": "MPF - employee's deduction",
+      "3": "fcb4e7e4-1aa3-44c7-b279-23db172ae8a0"
+    }
+  },
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {
+    "39d5a954-67f4-4f5a-bae9-6a01ece3fd9f": {
+      "1": "MPF - employer's contribution",
+      "3": "ea666599-1013-4367-b8e7-3392cfdc07c3",
+      "4": "fcb4e7e4-1aa3-44c7-b279-23db172ae8a0"
+    }
+  },
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {},
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {},
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {},
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "71390d38-deb6-4295-8033-c05e36e2f45c": {
+      "1": "Drawings"
+    },
+    "a1c583ff-c905-43a8-80f6-e10377d8f413": {
+      "1": "Funds contributed"
+    },
+    "4a7d7c0a-45db-4582-be5c-9018fa8d031b": {
+      "1": "Share of profit"
+    }
+  }
+}

@@ -1,0 +1,1683 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "GHS",
+      "2": "Ghanaian Cedi",
+      "4": "GH₵"
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {},
+  "6116531b-cb3d-4f85-b239-745972943a6b": {
+    "fac51da2-beb4-4564-863c-d44d833242b0": {
+      "2": "USD",
+      "1": "US dollar",
+      "3": "$"
+    },
+    "d3e03102-9cb9-48cd-9c8d-6742f6308fb8": {
+      "2": "GBP",
+      "1": "Pounds sterling",
+      "3": "£"
+    },
+    "c267dc6a-b38a-4970-8edf-a1dcb20e9f6d": {
+      "2": "EUR",
+      "1": "Euro",
+      "3": "€"
+    }
+  },
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "dd/MM/yyyy",
+      "4": "HH:mm:ss",
+      "2": 1,
+      "3": "CgEuEgEsGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {
+    "fc1937a8-4a50-4fca-93e9-dd489c143798": {
+      "1": "Communication Service Tax Returns",
+      "2": "2021-01-01T00:00:00",
+      "3": "2023-03-30T00:00:00",
+      "6": 2,
+      "7": [
+        {
+          "4": "--------------------"
+        },
+        {},
+        {
+          "4": "Gross Revenue",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Less Non-Communication Service Revenue",
+          "5": [
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Net Revenue (CST Taxable Value)",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "CST Payable",
+          "5": [
+            "139d7462-3be2-4cd4-b6f3-2f80c93d9f79",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "18": true,
+      "19": [
+        {
+          "1": "The purpose of this report is to provide information on the taxable activities for the specified period for Communication Service Tax registered businesses."
+        },
+        {
+          "1": "To determine your tax liability, you must take into account the balance on the CST Payable account at the beginning of the current period."
+        }
+      ],
+      "16": true
+    },
+    "e19ab698-ae9a-4e81-bb58-b41f4d3d8abc": {
+      "1": "Irrecoverable Levies and VAT On Purchases For Std Rate Business",
+      "2": "2021-01-01T00:00:00",
+      "3": "2023-04-03T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "4": "----"
+        },
+        {
+          "5": [
+            "89b5daed-5c30-41a6-a5a9-3db4c28e376a"
+          ],
+          "6": [
+            "75458424-a757-4575-bfae-794144e8233e"
+          ]
+        },
+        {
+          "4": "Irrecoverable VAT on Purchases  from Standard Rate Bus",
+          "5": [
+            "73f0f57a-9d47-4837-9fa4-e5766028a0b6",
+            "81b77660-d4dd-4e21-baf6-feb0b90a6a1d",
+            "551ba59e-f6c6-4477-ab6b-5b0df283e23a",
+            "e1bf6b91-fb61-4764-afd2-f6ff42fed545",
+            "b5a9299a-0d9c-4c00-84fa-1482bc3a246f",
+            "63945788-cdd3-4387-9c6f-a10f16c3fb6d",
+            "e808c8e6-1f60-466a-bf3e-e1a8299ac390"
+          ],
+          "6": [
+            "63945788-cdd3-4387-9c6f-a10f16c3fb6d",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Irrecoverable VAT on Purchases from VFRS Business",
+          "5": [
+            "6357196f-7f55-46bf-ba8a-4c25d199996d",
+            "d9ae0b25-21b8-42fc-908b-a2da7f5e7e95",
+            "eefd6ecb-3631-4f1f-856b-fb1a457f03da"
+          ],
+          "6": [
+            "eefd6ecb-3631-4f1f-856b-fb1a457f03da",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Total",
+          "5": [
+            "73f0f57a-9d47-4837-9fa4-e5766028a0b6",
+            "81b77660-d4dd-4e21-baf6-feb0b90a6a1d",
+            "551ba59e-f6c6-4477-ab6b-5b0df283e23a",
+            "6357196f-7f55-46bf-ba8a-4c25d199996d"
+          ],
+          "6": [
+            "63945788-cdd3-4387-9c6f-a10f16c3fb6d",
+            "eefd6ecb-3631-4f1f-856b-fb1a457f03da",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "19": [
+        {
+          "1": ""
+        }
+      ]
+    },
+    "9a826a1c-2fdd-48c3-bd33-31fba5d1c76c": {
+      "1": "Irrecoverable Levies and VAT on Purchases for VFRS Business",
+      "2": "2021-01-01T00:00:00",
+      "3": "2023-04-03T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "4": "----"
+        },
+        {
+          "5": [
+            "89b5daed-5c30-41a6-a5a9-3db4c28e376a"
+          ],
+          "6": [
+            "75458424-a757-4575-bfae-794144e8233e"
+          ]
+        },
+        {
+          "4": "Irrecoverable VAT on Purchases from Standard Rate Business.",
+          "5": [
+            "375b6dc5-887c-429d-a99c-0827e221f991"
+          ],
+          "6": [
+            "8ef48714-b6fc-40d2-b986-b737bcc65669",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Irrecoverable VAT on Purchases from VFRS Business",
+          "5": [
+            "a85bfb8b-48af-4843-8bef-ed58e11d797e"
+          ],
+          "6": [
+            "6aa35363-a7de-48aa-bedd-179af65faa52",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Total",
+          "5": [
+            "375b6dc5-887c-429d-a99c-0827e221f991",
+            "a85bfb8b-48af-4843-8bef-ed58e11d797e"
+          ],
+          "6": [
+            "8ef48714-b6fc-40d2-b986-b737bcc65669",
+            "6aa35363-a7de-48aa-bedd-179af65faa52",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "19": [
+        {
+          "1": ""
+        }
+      ]
+    },
+    "074321bb-e9f4-46ce-b3d2-93229ceaa53e": {
+      "1": "Standard Rate NHIL, GET Fund & Covid-19 Levy Return.",
+      "2": "2021-01-01T00:00:00",
+      "3": "2023-04-03T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "4": "Supply of Goods for the period\n-----------------------------------------"
+        },
+        {
+          "4": "",
+          "5": [
+            "9f9e0f1a-e9c7-409c-9822-f51aa0186201"
+          ],
+          "6": [
+            "75458424-a757-4575-bfae-794144e8233e"
+          ]
+        },
+        {
+          "4": "NHIL Standard Rate (1)",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "d8cb8aeb-500c-4c93-95e9-b0b52199566e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "GET Fund Standard Rate (2)",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "fa4b0439-cc0b-4c2b-a272-484c3c8b2618",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "COVID-19 Levy (4)",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "ad011294-3e1a-4528-add3-ac7406159db3",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>NHIL, GETFund COVID-19 Levy Payable (5) [(1)+(2)+(3)+(4)]</b>",
+          "6": [
+            "d8cb8aeb-500c-4c93-95e9-b0b52199566e",
+            "fa4b0439-cc0b-4c2b-a272-484c3c8b2618",
+            "ad011294-3e1a-4528-add3-ac7406159db3",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Zero Rated (6)",
+          "5": [
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Relief (7)",
+          "5": [
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Total value of Taxable Supplies(8) [(4)+(6)+(7)]</b>",
+          "5": [
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Exempt (9)",
+          "5": [
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Total Value of Supplies (10) [(8)+(9)]</b>",
+          "5": [
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "18": true,
+      "19": [
+        {
+          "1": "The purpose of this report is to provide information on the taxable activities for the specified period for VAT Standard rate registered businesses."
+        },
+        {
+          "1": "To determine your tax liability, you must take into account the balance on the levies payable account at the beginning of the current period."
+        }
+      ],
+      "16": true
+    },
+    "e5aaffd6-69ce-4076-bf82-da6b90a089d4": {
+      "1": "Standard Rate VAT Return",
+      "2": "2021-01-01T00:00:00",
+      "3": "2023-03-30T00:00:00",
+      "6": 1,
+      "7": [
+        {},
+        {
+          "4": "Supplies of Goods and/or Services\n-------------------------------------"
+        },
+        {
+          "5": [
+            "679a7e2e-a170-4cc8-bc3a-71c3bdde835d"
+          ],
+          "6": [
+            "75458424-a757-4575-bfae-794144e8233e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Value of supplies (Exclusive of Levies) (1)",
+          "5": [
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "NHIL (2)",
+          "5": [
+            "d8cb8aeb-500c-4c93-95e9-b0b52199566e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "GETFund (3)",
+          "5": [
+            "fa4b0439-cc0b-4c2b-a272-484c3c8b2618",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "COVID-19 Levy (4)",
+          "5": [
+            "ad011294-3e1a-4528-add3-ac7406159db3",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Taxable Value (Inclusive of Levies) (5)</b>",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "d8cb8aeb-500c-4c93-95e9-b0b52199566e",
+            "fa4b0439-cc0b-4c2b-a272-484c3c8b2618",
+            "ad011294-3e1a-4528-add3-ac7406159db3",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "b5fce9c4-cba8-448c-94f9-434e92ee43a2",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Zero Rated (6)",
+          "5": [
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Relief (7)",
+          "5": [
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Total Value of Taxable Supplies (8) [(5)+(6)+(7)]</b>",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "d8cb8aeb-500c-4c93-95e9-b0b52199566e",
+            "fa4b0439-cc0b-4c2b-a272-484c3c8b2618",
+            "ad011294-3e1a-4528-add3-ac7406159db3",
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Exempt (9)",
+          "5": [
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Total Value of Supplies (10) [(8)+(9)]</b>",
+          "5": [
+            "df082146-7c30-42f3-b2c4-67a0d0dda872",
+            "f063e1b4-642d-4415-ac49-da575ae58884",
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "d8cb8aeb-500c-4c93-95e9-b0b52199566e",
+            "fa4b0439-cc0b-4c2b-a272-484c3c8b2618",
+            "ad011294-3e1a-4528-add3-ac7406159db3",
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Purchases and Expenses</b>\n---------------------------------------------------"
+        },
+        {
+          "5": [
+            "3e226750-edef-4ac9-b3d1-eab26d794e8b"
+          ],
+          "6": [
+            "75458424-a757-4575-bfae-794144e8233e"
+          ]
+        },
+        {
+          "4": "Local Input (Flat Rate) (11)",
+          "5": [
+            "6357196f-7f55-46bf-ba8a-4c25d199996d",
+            "eefd6ecb-3631-4f1f-856b-fb1a457f03da"
+          ],
+          "6": [
+            "1952dc0a-1a58-49ff-b97b-0adcbc30ee74"
+          ]
+        },
+        {
+          "4": "Local Input (Standard) (12)",
+          "5": [
+            "73f0f57a-9d47-4837-9fa4-e5766028a0b6",
+            "81b77660-d4dd-4e21-baf6-feb0b90a6a1d",
+            "551ba59e-f6c6-4477-ab6b-5b0df283e23a"
+          ],
+          "6": [
+            "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6"
+          ]
+        },
+        {
+          "4": "Imports (13)",
+          "5": [
+            "85a69b89-f137-45f3-8419-e86034c2e6ac"
+          ],
+          "6": [
+            "39da8625-0c49-43c6-9171-282d17466af4"
+          ]
+        },
+        {
+          "4": "Total Value of Inputs (14) [(11)+(12)+(13)]",
+          "5": [
+            "73f0f57a-9d47-4837-9fa4-e5766028a0b6",
+            "81b77660-d4dd-4e21-baf6-feb0b90a6a1d",
+            "551ba59e-f6c6-4477-ab6b-5b0df283e23a",
+            "85a69b89-f137-45f3-8419-e86034c2e6ac",
+            "6357196f-7f55-46bf-ba8a-4c25d199996d",
+            "eefd6ecb-3631-4f1f-856b-fb1a457f03da"
+          ],
+          "6": [
+            "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6",
+            "39da8625-0c49-43c6-9171-282d17466af4",
+            "1952dc0a-1a58-49ff-b97b-0adcbc30ee74"
+          ]
+        },
+        {
+          "4": "<b>Deductible Input Tax (15) [(12)+(13)]</b>",
+          "6": [
+            "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6",
+            "39da8625-0c49-43c6-9171-282d17466af4",
+            "1952dc0a-1a58-49ff-b97b-0adcbc30ee74"
+          ]
+        },
+        {
+          "4": "Net Payment Due for this period (16) [(5)-(15)].",
+          "6": [
+            "b5fce9c4-cba8-448c-94f9-434e92ee43a2",
+            "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6",
+            "39da8625-0c49-43c6-9171-282d17466af4",
+            "1952dc0a-1a58-49ff-b97b-0adcbc30ee74",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "18": true,
+      "19": [
+        {
+          "1": "The purpose of this report is to provide information on the taxable activities for the specified period."
+        },
+        {
+          "1": "To determine your tax liability, you must take into account Withholding VAT credits and the balance on the VAT account at the beginning of the current period."
+        }
+      ],
+      "16": true
+    },
+    "43534f37-2836-48b1-bc45-f4cde942f5b8": {
+      "1": "Tourism Levy costs on Purchases",
+      "2": "2021-01-01T00:00:00",
+      "3": "2023-04-03T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "4": "------"
+        },
+        {
+          "4": "Details",
+          "5": [
+            "75458424-a757-4575-bfae-794144e8233e"
+          ]
+        },
+        {
+          "4": "Tourism Levy Costs",
+          "5": [
+            "d7f9f3d8-2633-4da6-b0f3-891954ce5907"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "19": [
+        {
+          "1": ""
+        }
+      ]
+    },
+    "1fb1f32d-2ca7-4620-842a-ba16d3cadf11": {
+      "1": "Tourism Levy Payable Return",
+      "2": "2021-01-01T00:00:00",
+      "3": "2021-12-31T00:00:00",
+      "7": [
+        {
+          "4": "-------------------"
+        },
+        {
+          "4": "Supply for the period",
+          "5": [
+            "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Tourism Levy Payable",
+          "5": [
+            "1f7f4934-5f9b-4abd-b4e9-b46f0621ffa1",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "18": true,
+      "19": [
+        {
+          "1": "The purpose of this report is to provide information on the income from tourism related activities for the specified period."
+        },
+        {
+          "1": "You must take into account the balance on the Tourism Levy account at the beginning of the current period."
+        }
+      ],
+      "16": true
+    },
+    "53bc5b1a-c35e-4485-a486-8603c49f1004": {
+      "1": "VAT Flat Rate Scheme (VFRS) And Covid-19 Levy Return",
+      "2": "2021-01-01T00:00:00",
+      "3": "2023-04-03T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "4": "Supply of Goods for the period\n-----------------------------------------"
+        },
+        {
+          "4": "",
+          "5": [
+            "9f9e0f1a-e9c7-409c-9822-f51aa0186201"
+          ],
+          "6": [
+            "75458424-a757-4575-bfae-794144e8233e"
+          ]
+        },
+        {
+          "4": "VAT,NHIL & GETFund (1)",
+          "5": [
+            "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "2af40332-7315-4d55-8d75-55e786e790a6",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "COVID-19 Levy (2)",
+          "5": [
+            "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "bd5e83b7-e29b-45e8-93b4-826750d01b2b",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Total VAT & COVID-19 Levy Payable (3) </b>",
+          "5": [
+            "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "2af40332-7315-4d55-8d75-55e786e790a6",
+            "bd5e83b7-e29b-45e8-93b4-826750d01b2b",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Zero Rated (4)",
+          "5": [
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Relief (5)",
+          "5": [
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Total value of Taxable Supplies(6) [(3)+(4)+(5)]</b>",
+          "5": [
+            "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Exempt (7)",
+          "5": [
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Total Value of goods (8) [(6)+(7)]</b>",
+          "5": [
+            "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+            "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+            "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+            "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Purchases and Expenses\n----------------------------------"
+        },
+        {
+          "5": [
+            "c530b928-69d4-4a68-90ba-d6c44cc2c072"
+          ]
+        },
+        {
+          "4": "Local (9)",
+          "5": [
+            "a85bfb8b-48af-4843-8bef-ed58e11d797e",
+            "171734bb-49da-4ff5-adff-3423f9b8eaac",
+            "2713dc31-1e14-4c22-a42d-bafc82e8e37d",
+            "23689ea1-0a19-44cd-9fb3-055f6d28606f",
+            "a8cf0ce5-50e3-42d0-993e-f2728cd571e3",
+            "375b6dc5-887c-429d-a99c-0827e221f991",
+            "a99f1012-b5ab-48d3-b8c6-f1d42b85bffc",
+            "efe7ace4-196b-4b21-903b-aeee0b2321d5",
+            "9d08b6fb-89b8-4b99-8158-d14d7e5f085b",
+            "b4b1daae-d4a3-4939-9789-83d059cc1ae4",
+            "6aa35363-a7de-48aa-bedd-179af65faa52",
+            "008ef26e-623b-4dd1-adaf-03a0dc39a199",
+            "8ef48714-b6fc-40d2-b986-b737bcc65669"
+          ]
+        },
+        {
+          "4": "Import (10)",
+          "5": [
+            "85a69b89-f137-45f3-8419-e86034c2e6ac",
+            "39da8625-0c49-43c6-9171-282d17466af4"
+          ]
+        },
+        {
+          "4": "<b>Total Purchases and Expenses(9)+(10)</b>",
+          "5": [
+            "a85bfb8b-48af-4843-8bef-ed58e11d797e",
+            "171734bb-49da-4ff5-adff-3423f9b8eaac",
+            "2713dc31-1e14-4c22-a42d-bafc82e8e37d",
+            "23689ea1-0a19-44cd-9fb3-055f6d28606f",
+            "a8cf0ce5-50e3-42d0-993e-f2728cd571e3",
+            "375b6dc5-887c-429d-a99c-0827e221f991",
+            "a99f1012-b5ab-48d3-b8c6-f1d42b85bffc",
+            "efe7ace4-196b-4b21-903b-aeee0b2321d5",
+            "9d08b6fb-89b8-4b99-8158-d14d7e5f085b",
+            "b4b1daae-d4a3-4939-9789-83d059cc1ae4",
+            "6aa35363-a7de-48aa-bedd-179af65faa52",
+            "008ef26e-623b-4dd1-adaf-03a0dc39a199",
+            "8ef48714-b6fc-40d2-b986-b737bcc65669",
+            "85a69b89-f137-45f3-8419-e86034c2e6ac",
+            "39da8625-0c49-43c6-9171-282d17466af4"
+          ]
+        },
+        {
+          "4": ""
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "18": true,
+      "19": [
+        {
+          "1": "The purpose of this report is to provide information on the taxable activities for the specified period."
+        },
+        {
+          "1": "To determine your tax liability, you must take into account Withholding VAT credits and the balance on the VAT account at the beginning of the current period."
+        }
+      ],
+      "16": true
+    }
+  },
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {
+    "89b5daed-5c30-41a6-a5a9-3db4c28e376a": {
+      "1": "Expenses"
+    },
+    "75458424-a757-4575-bfae-794144e8233e": {
+      "1": "Tax Amount"
+    },
+    "679a7e2e-a170-4cc8-bc3a-71c3bdde835d": {
+      "1": "Taxable Supplies"
+    },
+    "9f9e0f1a-e9c7-409c-9822-f51aa0186201": {
+      "1": "Taxable Value"
+    },
+    "c530b928-69d4-4a68-90ba-d6c44cc2c072": {
+      "1": "Value Of Input (Including Vat & Covid-19 Levy)"
+    },
+    "3e226750-edef-4ac9-b3d1-eab26d794e8b": {
+      "1": "Value of Taxable Input"
+    }
+  },
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {
+    "2713dc31-1e14-4c22-a42d-bafc82e8e37d": {
+      "1": "Exempt Value Purchases"
+    },
+    "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c": {
+      "1": "Exempt Value Sales"
+    },
+    "171734bb-49da-4ff5-adff-3423f9b8eaac": {
+      "1": "Relief Value Purchases"
+    },
+    "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a": {
+      "1": "Relief Value Sales"
+    },
+    "85a69b89-f137-45f3-8419-e86034c2e6ac": {
+      "1": "VAT 15% Import Purchases Taxable Value"
+    },
+    "73f0f57a-9d47-4837-9fa4-e5766028a0b6": {
+      "1": "VAT 21% + CST 5% Purchases Taxable Value"
+    },
+    "df082146-7c30-42f3-b2c4-67a0d0dda872": {
+      "1": "VAT 21% + CST 5% Sales Taxable value"
+    },
+    "81b77660-d4dd-4e21-baf6-feb0b90a6a1d": {
+      "1": "VAT 21% Purchases Taxable Value (Std Rate Reg)"
+    },
+    "375b6dc5-887c-429d-a99c-0827e221f991": {
+      "1": "VAT 21% Purchases Taxable Value (VFRS Reg)"
+    },
+    "f063e1b4-642d-4415-ac49-da575ae58884": {
+      "1": "VAT 21% Sales Taxable Value"
+    },
+    "551ba59e-f6c6-4477-ab6b-5b0df283e23a": {
+      "1": "VAT 21%+ 1% TL Purchases Taxable Value"
+    },
+    "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf": {
+      "1": "VAT 21%+ 1% TL Sales Taxable Value"
+    },
+    "a85bfb8b-48af-4843-8bef-ed58e11d797e": {
+      "1": "VFRS 4% Purchases Taxable  Value (VFRS Reg)"
+    },
+    "6357196f-7f55-46bf-ba8a-4c25d199996d": {
+      "1": "VFRS 4% Purchases Taxable Value (STD Reg)"
+    },
+    "20f6ed3b-0bff-4c47-a7d7-d01bd949393d": {
+      "1": "VFRS 4% Sales Taxable Value"
+    },
+    "23689ea1-0a19-44cd-9fb3-055f6d28606f": {
+      "1": "Zero Rated Value Purchases"
+    },
+    "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e": {
+      "1": "Zero Rated Value Sales"
+    }
+  },
+  "6027ab88-f804-4827-beff-26b76bb94587": {},
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {
+    "a8cf0ce5-50e3-42d0-993e-f2728cd571e3": {
+      "1": "Covid-19 Levy Purchase Tax Amount for VFRS reg. Business"
+    },
+    "e808c8e6-1f60-466a-bf3e-e1a8299ac390": {
+      "1": "Covid-19 Levy Purchases Tax Amount for Standard rate businesses (Std rate Purchase)"
+    },
+    "d9ae0b25-21b8-42fc-908b-a2da7f5e7e95": {
+      "1": "Covid-19 Levy Purchases Tax Amount for Standard rate businesses (VFRS Purchase)"
+    },
+    "ad011294-3e1a-4528-add3-ac7406159db3": {
+      "1": "Covid-19 Levy Standard rate Sales Tax Amount"
+    },
+    "bd5e83b7-e29b-45e8-93b4-826750d01b2b": {
+      "1": "Covid-19 Levy VFRS Sales Tax Amount"
+    },
+    "139d7462-3be2-4cd4-b6f3-2f80c93d9f79": {
+      "1": "CST Levy Amount"
+    },
+    "e1bf6b91-fb61-4764-afd2-f6ff42fed545": {
+      "1": "GET Fund 2.5% Purchases Tax Amount for std rate business"
+    },
+    "b4b1daae-d4a3-4939-9789-83d059cc1ae4": {
+      "1": "GET Fund 2.5% Purchases Tax Amount for VFRS business"
+    },
+    "fa4b0439-cc0b-4c2b-a272-484c3c8b2618": {
+      "1": "GET Fund 2.5% Sales Tax Amount"
+    },
+    "eefd6ecb-3631-4f1f-856b-fb1a457f03da": {
+      "1": "Irrecoverable levies adjustment. VAT 4% Purchases Tax Amount from VFRS supplier (For std rate registered business)"
+    },
+    "6aa35363-a7de-48aa-bedd-179af65faa52": {
+      "1": "Irrecoverable levies adjustment. VAT 4% Purchases Tax Amount from VFRS supplier (For VFRS registered business)"
+    },
+    "008ef26e-623b-4dd1-adaf-03a0dc39a199": {
+      "1": "Irrecoverable levies And Tax adjustment. For VFRS 4% Purchases Tax Amount from Std Rate business"
+    },
+    "63945788-cdd3-4387-9c6f-a10f16c3fb6d": {
+      "1": "Irrecoverable VAT 21 % Purchases Tax Amount for Standard Rate business"
+    },
+    "8ef48714-b6fc-40d2-b986-b737bcc65669": {
+      "1": "Irrecoverable VAT 21 % Purchases Tax Amount for VFRS reg. business"
+    },
+    "b5a9299a-0d9c-4c00-84fa-1482bc3a246f": {
+      "1": "NHIL 2.5% Purchases Tax Amount Standard rate Registered business"
+    },
+    "9d08b6fb-89b8-4b99-8158-d14d7e5f085b": {
+      "1": "NHIL 2.5% Purchases Tax Amount VFRS registered business"
+    },
+    "d8cb8aeb-500c-4c93-95e9-b0b52199566e": {
+      "1": "NHIL 2.5% Sales Tax Amount"
+    },
+    "d7f9f3d8-2633-4da6-b0f3-891954ce5907": {
+      "1": "Tourism Levy on Purchase Tax Amount"
+    },
+    "1f7f4934-5f9b-4abd-b4e9-b46f0621ffa1": {
+      "1": "Tourism Levy on Sales Levy Amount"
+    },
+    "39da8625-0c49-43c6-9171-282d17466af4": {
+      "1": "VAT 15% Purchases Import Tax Amount"
+    },
+    "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6": {
+      "1": "VAT 15% Purchases Tax Amount for standard rate business"
+    },
+    "efe7ace4-196b-4b21-903b-aeee0b2321d5": {
+      "1": "VAT 15% Purchases Tax Amount for VFRS registered business"
+    },
+    "b5fce9c4-cba8-448c-94f9-434e92ee43a2": {
+      "1": "VAT 15% Sales Tax Amount"
+    },
+    "1952dc0a-1a58-49ff-b97b-0adcbc30ee74": {
+      "1": "VAT 3% VFRS Purchases Tax Amount for standard rate business"
+    },
+    "a99f1012-b5ab-48d3-b8c6-f1d42b85bffc": {
+      "1": "VAT 3% VFRS Purchases Tax Amount for VFRS business"
+    },
+    "2af40332-7315-4d55-8d75-55e786e790a6": {
+      "1": "VAT 3% VFRS Sales Tax Amount"
+    }
+  },
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {},
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {
+    "275cd430-99b7-4718-a708-1fd200572cc8": {
+      "1": "VAT 15% Import Tax Amount",
+      "21": "VAT 15% Import",
+      "18": "85a69b89-f137-45f3-8419-e86034c2e6ac",
+      "5": 1,
+      "7": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+      "19": "39da8625-0c49-43c6-9171-282d17466af4",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "Purpose of this Tax code is to capture tax amounts payable on imports indicated on Import Tax bills from Ghana Revenue Authority"
+      },
+      "23": {}
+    },
+    "4c4b0730-dc92-42c0-94bf-8b846d869a2a": {
+      "1": "VAT 15% Import Tax Base",
+      "21": "VAT 15% Import",
+      "18": "85a69b89-f137-45f3-8419-e86034c2e6ac",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "The purpose of this Tax Code is to capture the tax base used by GRA to compute import tax."
+      },
+      "23": {}
+    },
+    "f5b7bacf-681a-43c0-a35d-5d0c70ba55dd": {
+      "1": "VAT 21% + 1% Tourism Levy Purchases",
+      "21": "VAT 21+ TL1%",
+      "18": "551ba59e-f6c6-4477-ab6b-5b0df283e23a",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "NHIL 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "b5a9299a-0d9c-4c00-84fa-1482bc3a246f"
+        },
+        {
+          "1": "GETFund Levy 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "e1bf6b91-fb61-4764-afd2-f6ff42fed545"
+        },
+        {
+          "1": "COVID-19 Levy 1%",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "d9ae0b25-21b8-42fc-908b-a2da7f5e7e95"
+        },
+        {
+          "1": "VAT 15%",
+          "2": 15.9,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6"
+        },
+        {
+          "1": "Tourism Levy 1%",
+          "2": 1.0,
+          "4": "77b66969-76f0-423d-b5f8-097c79eaae12",
+          "5": "d7f9f3d8-2633-4da6-b0f3-891954ce5907"
+        },
+        {
+          "2": -6.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "63945788-cdd3-4387-9c6f-a10f16c3fb6d"
+        },
+        {
+          "2": -1.0,
+          "4": "77b66969-76f0-423d-b5f8-097c79eaae12",
+          "5": "63945788-cdd3-4387-9c6f-a10f16c3fb6d"
+        }
+      ],
+      "13": true,
+      "14": "VAT Invoice",
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "Purchases VAT code for Tourism and hospitality enterprises 18.5%+1% (NHIL, GETFund, Tourism Levy and Covid Levies are irrecoverable)"
+      },
+      "23": {}
+    },
+    "30538df5-f145-4c21-be90-2766f17e7183": {
+      "1": "VAT 21% + CST 5% Purchases",
+      "21": "VAT 21%+ CST 5%",
+      "18": "73f0f57a-9d47-4837-9fa4-e5766028a0b6",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "CST 5%",
+          "2": 5.0,
+          "4": "71f9d49c-1eb3-4806-9a5a-9724c211a2c6",
+          "5": "139d7462-3be2-4cd4-b6f3-2f80c93d9f79"
+        },
+        {
+          "1": "NHIL 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "b5a9299a-0d9c-4c00-84fa-1482bc3a246f"
+        },
+        {
+          "1": "GETFund 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "e1bf6b91-fb61-4764-afd2-f6ff42fed545"
+        },
+        {
+          "1": "Covid-19 Levy",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "d9ae0b25-21b8-42fc-908b-a2da7f5e7e95"
+        },
+        {
+          "1": "VAT 15%",
+          "2": 16.65,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6"
+        },
+        {
+          "2": -5.0,
+          "4": "71f9d49c-1eb3-4806-9a5a-9724c211a2c6",
+          "5": "63945788-cdd3-4387-9c6f-a10f16c3fb6d"
+        },
+        {
+          "2": -6.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "63945788-cdd3-4387-9c6f-a10f16c3fb6d"
+        }
+      ],
+      "14": "VAT Invoice",
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "VAT 18.5% + CST 5% Purchases for Communication Service enterprises ((NHIL, GETFund, CST and Covid Levies are irrecoverable)"
+      },
+      "23": {}
+    },
+    "f2ec70d7-8ad7-4967-927a-894d92109e31": {
+      "1": "VAT 21% + CST 5% Sales",
+      "21": "VAT 21% + CST 5%",
+      "18": "df082146-7c30-42f3-b2c4-67a0d0dda872",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "CST 5%",
+          "2": 5.0,
+          "4": "71f9d49c-1eb3-4806-9a5a-9724c211a2c6",
+          "5": "139d7462-3be2-4cd4-b6f3-2f80c93d9f79"
+        },
+        {
+          "1": "NHIL 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "d8cb8aeb-500c-4c93-95e9-b0b52199566e"
+        },
+        {
+          "1": "GETFund 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "fa4b0439-cc0b-4c2b-a272-484c3c8b2618"
+        },
+        {
+          "1": "Covid-19 Levy",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "ad011294-3e1a-4528-add3-ac7406159db3"
+        },
+        {
+          "1": "VAT15%",
+          "2": 16.65,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "b5fce9c4-cba8-448c-94f9-434e92ee43a2"
+        }
+      ],
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "VAT 18.5% + CST 5% Sales for Communication Service enterprises"
+      },
+      "23": {}
+    },
+    "87e042be-4886-4030-b593-8d66990ae91e": {
+      "1": "VAT 21% +1% Tourism Levy Sales",
+      "21": "VAT21%+TL 1%",
+      "18": "1cfc3ea8-ef21-48fb-b24c-8578b30e17bf",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "NHIL 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "d8cb8aeb-500c-4c93-95e9-b0b52199566e"
+        },
+        {
+          "1": "GETFund Levy 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "fa4b0439-cc0b-4c2b-a272-484c3c8b2618"
+        },
+        {
+          "1": "COVID-19 Levy 1%",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "ad011294-3e1a-4528-add3-ac7406159db3"
+        },
+        {
+          "1": "VAT 15%",
+          "2": 15.9,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "b5fce9c4-cba8-448c-94f9-434e92ee43a2"
+        },
+        {
+          "1": "Tourism Levy 1%",
+          "2": 1.0,
+          "4": "77b66969-76f0-423d-b5f8-097c79eaae12",
+          "5": "1f7f4934-5f9b-4abd-b4e9-b46f0621ffa1"
+        }
+      ],
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "Sales VAT code for Tourism and hospitality enterprises 18.5%+1% Tourism Levy"
+      },
+      "23": {}
+    },
+    "afb4da6e-e268-4129-b5c4-cce489be5e28": {
+      "1": "VAT 21% Purchases",
+      "21": "VAT 21%",
+      "18": "81b77660-d4dd-4e21-baf6-feb0b90a6a1d",
+      "5": 2,
+      "6": 1,
+      "4": 12.5,
+      "7": "601fcd54-f916-4cfd-b42b-3eaecb92df85",
+      "2": [
+        {
+          "1": "NHIL 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "b5a9299a-0d9c-4c00-84fa-1482bc3a246f"
+        },
+        {
+          "1": "GETFund 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "e1bf6b91-fb61-4764-afd2-f6ff42fed545"
+        },
+        {
+          "1": "COVID-19 Levy 1%",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "e808c8e6-1f60-466a-bf3e-e1a8299ac390"
+        },
+        {
+          "1": "VAT 15%",
+          "2": 15.9,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "76f04dc3-3a88-4cff-ae74-7cc9c7600fb6"
+        },
+        {
+          "2": -6.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "63945788-cdd3-4387-9c6f-a10f16c3fb6d"
+        }
+      ],
+      "14": "VAT Invoice",
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "Standard VAT tax code for PURCHASES transactions. Levies (NHIL, GETFund and Covid Levies are irrecoverable)"
+      },
+      "23": {}
+    },
+    "e6ebf019-6c32-4c2f-b075-6fd53cebec14": {
+      "1": "VAT 21% Purchases (VFRS Reg. Persons)",
+      "21": "VAT 21%",
+      "18": "375b6dc5-887c-429d-a99c-0827e221f991",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "NHIL 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "9d08b6fb-89b8-4b99-8158-d14d7e5f085b"
+        },
+        {
+          "1": "GETFund 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "b4b1daae-d4a3-4939-9789-83d059cc1ae4"
+        },
+        {
+          "1": "COVID-19 Levy 1%",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "a8cf0ce5-50e3-42d0-993e-f2728cd571e3"
+        },
+        {
+          "1": "VAT 15%",
+          "2": 15.9,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "efe7ace4-196b-4b21-903b-aeee0b2321d5"
+        },
+        {
+          "2": -6.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "8ef48714-b6fc-40d2-b986-b737bcc65669"
+        },
+        {
+          "2": -15.9,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "8ef48714-b6fc-40d2-b986-b737bcc65669"
+        }
+      ],
+      "10": true,
+      "23": {}
+    },
+    "dee3ff7c-b75a-4385-80ad-8f7edc065a59": {
+      "1": "VAT 21% Sales",
+      "21": "VAT 21%",
+      "18": "f063e1b4-642d-4415-ac49-da575ae58884",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "NHIL 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "d8cb8aeb-500c-4c93-95e9-b0b52199566e"
+        },
+        {
+          "1": "GETFund 2.5%",
+          "2": 2.5,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "fa4b0439-cc0b-4c2b-a272-484c3c8b2618"
+        },
+        {
+          "1": "COVID-19 Levy 1%",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "ad011294-3e1a-4528-add3-ac7406159db3"
+        },
+        {
+          "1": "VAT 15%",
+          "2": 15.9,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "b5fce9c4-cba8-448c-94f9-434e92ee43a2"
+        }
+      ],
+      "13": true,
+      "14": "VAT Invoice",
+      "16": "Credit Note",
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "Standard VAT tax code for SALES transactions."
+      },
+      "23": {}
+    },
+    "efcfa696-99ef-4f72-ac0d-4c482c512d05": {
+      "1": "VAT Exempt Purchases",
+      "21": "VAT Exempt",
+      "18": "2713dc31-1e14-4c22-a42d-bafc82e8e37d",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "The supply of goods and services that are exempt from VAT."
+      }
+    },
+    "dc5bb029-3c83-4452-a074-8ca86b9b01ac": {
+      "1": "VAT Exempt Sales",
+      "21": "VAT Exempt",
+      "18": "8e46e566-200d-4f82-9ad0-7d2bcfa3ad7c",
+      "2": [
+        {}
+      ],
+      "13": true,
+      "14": "VAT Invoice",
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "The supply of goods and services that are exempt from VAT."
+      }
+    },
+    "08990347-b32d-4931-a53b-c50d3934e2a7": {
+      "1": "VAT Relief Purchases",
+      "21": "VAT Relief",
+      "18": "171734bb-49da-4ff5-adff-3423f9b8eaac",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "For goods and services that are taxable, but the law provides relief from payment of the applicable tax. (purchases)"
+      }
+    },
+    "2a6c64e9-cc4b-47cd-808d-6aa0b6734991": {
+      "1": "VAT Relief Sales",
+      "21": "VAT Relief",
+      "18": "f2d52b61-2f9b-43d0-aeac-79ed843d9f0a",
+      "2": [
+        {}
+      ],
+      "13": true,
+      "14": "VAT Invoice",
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "For goods and services that are taxable, but the law provides relief from payment of the applicable tax."
+      },
+      "23": {}
+    },
+    "ff8c47e7-b945-44de-bdb0-b94f42113c86": {
+      "1": "VAT Zero Rated Purchases",
+      "21": "VAT 0% Rated",
+      "18": "23689ea1-0a19-44cd-9fb3-055f6d28606f",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "Purchase of goods and services that are zero-rated are provided for under the law."
+      }
+    },
+    "cccb2a90-eeb8-4f73-886f-47a929edf9cc": {
+      "1": "VAT Zero Rated Sales",
+      "21": "VAT 0% Rated",
+      "18": "f25a88ff-d78e-42d7-b4ae-ccfbb65ccd3e",
+      "2": [
+        {}
+      ],
+      "13": true,
+      "14": "VAT Invoice",
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "Supply of goods and services that are zero-rated are provided for under the law. (To Free Zones in Ghana)"
+      }
+    },
+    "bb68df4e-4385-4a82-b326-0a827c155091": {
+      "1": "VFRS 4% Purchases  (VFRS Reg. Persons)",
+      "21": "VFRS 4%",
+      "18": "a85bfb8b-48af-4843-8bef-ed58e11d797e",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "Covid-19 1% Levy",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "a8cf0ce5-50e3-42d0-993e-f2728cd571e3"
+        },
+        {
+          "1": "VAT 3% Flat Rate",
+          "2": 3.0,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "a99f1012-b5ab-48d3-b8c6-f1d42b85bffc"
+        },
+        {
+          "2": -1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "6aa35363-a7de-48aa-bedd-179af65faa52"
+        },
+        {
+          "2": -3.0,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "6aa35363-a7de-48aa-bedd-179af65faa52"
+        }
+      ],
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "VAT Flat Rate Scheme. This tax is not recoverable."
+      },
+      "23": {}
+    },
+    "7bf83b04-5664-4d75-baa9-dbee6af26bd1": {
+      "1": "VFRS 4% Purchases (Std Rate Reg. Persons)",
+      "21": "VFRS 4%",
+      "18": "6357196f-7f55-46bf-ba8a-4c25d199996d",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "Covid-19 Levy",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "d9ae0b25-21b8-42fc-908b-a2da7f5e7e95"
+        },
+        {
+          "1": "VAT 3% Flat Rate",
+          "2": 3.0,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "1952dc0a-1a58-49ff-b97b-0adcbc30ee74"
+        },
+        {
+          "2": -1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "eefd6ecb-3631-4f1f-856b-fb1a457f03da"
+        }
+      ],
+      "10": true,
+      "23": {}
+    },
+    "5beb3de6-78d7-4a61-88fb-b168fee09250": {
+      "1": "VFRS 4% Sales",
+      "21": "VFRS 4%",
+      "18": "20f6ed3b-0bff-4c47-a7d7-d01bd949393d",
+      "5": 2,
+      "6": 1,
+      "2": [
+        {
+          "1": "COVID-19 1% Levy",
+          "2": 1.0,
+          "4": "b79ee340-33b1-4d10-be52-b3b070bfff06",
+          "5": "bd5e83b7-e29b-45e8-93b4-826750d01b2b"
+        },
+        {
+          "1": "VAT 3% Flat Rate",
+          "2": 3.0,
+          "4": "d0a1e627-aaba-463b-aa56-706c4d20a98e",
+          "5": "2af40332-7315-4d55-8d75-55e786e790a6"
+        }
+      ],
+      "13": true,
+      "14": "VAT Flat Rate Invoice",
+      "10": true,
+      "17": {
+        "d2247f87-eabc-4b73-b3a3-4c8c1faa5dae": "VAT Flat Rate Scheme"
+      }
+    }
+  },
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {
+    "a12d2ca1-36d7-4ca7-89e2-29ed474ed40a": {
+      "1": "National ID Number",
+      "5": 1,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "8": true,
+      "12": true
+    },
+    "893e5ac8-372c-4024-bc0b-153c87b96830": {
+      "1": "TIN:",
+      "5": 1,
+      "13": [
+        "38cf4712-6e95-4ce1-b53a-bff03edad273"
+      ],
+      "8": true
+    },
+    "f449e831-aba3-4b07-8ea9-13c387511615": {
+      "1": "VAT No:",
+      "5": 2,
+      "13": [
+        "38cf4712-6e95-4ce1-b53a-bff03edad273"
+      ],
+      "8": true
+    }
+  },
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "6b5422aa-4118-4204-820f-7c57abac6c17": {
+      "1": "13% SSF Employer contribution",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "afdd1864-e9ac-41d5-b57a-539955067aaf": {
+      "1": "Accounting fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "d480ba43-0fb0-48b6-bee3-ebef457c5477": {
+      "1": "Advertising and promotion",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "92dab841-7c35-4729-ad02-65d9dd7853f5": {
+      "1": "Bank charges",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "9032b2e7-27f3-4b8b-8b7d-1f03ec29cf1e": {
+      "1": "Donations",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "de200fe3-29f8-4542-9f83-ae294a337db5": {
+      "1": "Electricity",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "9d569072-74c5-41d6-b731-c37907619dda": {
+      "1": "Interest received",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "89675c03-2c54-4793-a2eb-cf05fe7b4ff3": {
+      "1": "Legal fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "e4830f05-eed4-4c9a-992f-d7a148f9220a": {
+      "1": "Printing and stationery",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "1d6e0fd9-5baf-442f-a475-6ad0328e3382": {
+      "1": "Rent",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "fa8e9cdc-4d98-4977-8294-cdd89114bc24": {
+      "1": "Repairs and maintenance",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "8d946632-90fd-4c4d-9513-75fb65c3b5c1": {
+      "1": "Salaries & Wages",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "9b78d3bd-168b-4284-b8b6-4c49e5ae20c1": {
+      "1": "Sales",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "22a96db9-444c-4fc7-bf55-c6024fc3ae2f": {
+      "1": "Telephone",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "fd003045-876e-439e-b923-1904453f5c30": {
+      "1": "Expenses",
+      "6": 1,
+      "5": 2
+    },
+    "95713fac-30d3-42e4-b536-dd7bc4f7a80e": {
+      "1": "Income",
+      "5": 1
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {},
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "71f9d49c-1eb3-4806-9a5a-9724c211a2c6": {
+      "1": "CST Payable",
+      "3": "350a516c-780c-4154-874b-a3e8780e271f",
+      "16": 9
+    },
+    "b79ee340-33b1-4d10-be52-b3b070bfff06": {
+      "1": "Levies Payable",
+      "3": "350a516c-780c-4154-874b-a3e8780e271f",
+      "21": "87585fbf-1078-4fb4-921e-5268605269bc",
+      "16": 7
+    },
+    "50084239-3e47-44a2-97c5-14af63b01549": {
+      "1": "P.A.Y.E",
+      "3": "350a516c-780c-4154-874b-a3e8780e271f",
+      "21": "87585fbf-1078-4fb4-921e-5268605269bc",
+      "16": 4
+    },
+    "6bfe476c-4601-4227-94c4-bc6478dce9c0": {
+      "1": "Social Security Payables",
+      "3": "350a516c-780c-4154-874b-a3e8780e271f",
+      "21": "87585fbf-1078-4fb4-921e-5268605269bc",
+      "16": 3
+    },
+    "77b66969-76f0-423d-b5f8-097c79eaae12": {
+      "1": "Tourism Levy",
+      "3": "350a516c-780c-4154-874b-a3e8780e271f",
+      "16": 8
+    },
+    "d0a1e627-aaba-463b-aa56-706c4d20a98e": {
+      "1": "VAT Payable",
+      "3": "350a516c-780c-4154-874b-a3e8780e271f",
+      "21": "87585fbf-1078-4fb4-921e-5268605269bc",
+      "16": 6
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {
+    "350a516c-780c-4154-874b-a3e8780e271f": {
+      "1": "Current Liabilities",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    },
+    "73bb2e30-e461-4137-8c5d-56b674d067f4": {
+      "1": "Non-Current Liabilities",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    }
+  },
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {
+    "f0314b87-a2e5-40c7-b217-da1b2bd6e283": {
+      "1": "Basic Salary",
+      "3": "8d946632-90fd-4c4d-9513-75fb65c3b5c1"
+    }
+  },
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {
+    "dcece859-04ae-41cc-88da-9b9c0d914535": {
+      "1": "5.5% SSF Contribution",
+      "3": "6bfe476c-4601-4227-94c4-bc6478dce9c0"
+    },
+    "a6ead1c4-3c82-48b5-9ed8-fbe5c2ba7534": {
+      "1": "P.A.Y.E",
+      "3": "50084239-3e47-44a2-97c5-14af63b01549"
+    }
+  },
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {
+    "0ad0e7c2-ae99-48e1-a68e-38b2abcf972d": {
+      "1": "13% Employer Contribution",
+      "3": "6b5422aa-4118-4204-820f-7c57abac6c17",
+      "4": "6bfe476c-4601-4227-94c4-bc6478dce9c0"
+    }
+  },
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {},
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {},
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {},
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "1f10ee66-c427-45ba-bd9b-bf8bb5654c50": {
+      "1": "Drawings"
+    },
+    "4c71ca38-f129-4b46-a7d9-d528d4c429e9": {
+      "1": "Funds contributed"
+    },
+    "6c446de0-84a2-42ca-8535-e472091988ff": {
+      "1": "Share of profit"
+    }
+  }
+}

@@ -26,38 +26,41 @@ namespace ManagerServer.Localizations
 #endif
                 var jsonSettings = new JsonSerializerSettings();
                 jsonSettings.ContractResolver = new CustomContractResolver();
-                var localizationsJson = EmbeddedAssets.GetFile("Localizations.json");
-                if (localizationsJson.Exists)
+
+                // One file per locale, named by locale code, mirroring Assets/Translations.
+                foreach (var file in EmbeddedAssets.GetDirectory("Localizations"))
                 {
+                    if (file.IsDirectory) continue;
+                    if (!file.Name.EndsWith(".json", StringComparison.OrdinalIgnoreCase)) continue;
+
                     string json;
-                    using (var stream = localizationsJson.CreateReadStream())
+                    using (var stream = file.CreateReadStream())
                     using (var reader = new StreamReader(stream))
                     {
                         json = reader.ReadToEnd();
                     }
-                    var source = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Dictionary<Guid, Dictionary<Guid, object>>>>(json);
 
+                    var source = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<Guid, Dictionary<Guid, object>>>(json);
+                    if (source == null) continue;
+
+                    var list = new List<ManagerServer.Model.Object>();
                     foreach (var e in source)
                     {
-                        var list = new List<ManagerServer.Model.Object>();
+                        var type = ManagerServer.Model.Object.GetTypeByGuid(e.Key);
+                        if (type == null) continue;
+
                         foreach (var e2 in e.Value)
                         {
-                            var type = ManagerServer.Model.Object.GetTypeByGuid(e2.Key);
-                            if (type != null)
+                            var o = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(e2.Value), type, jsonSettings) as ManagerServer.Model.Object;
+                            if (o != null)
                             {
-                                foreach (var e3 in e2.Value)
-                                {
-                                    var o = JsonConvert.DeserializeObject(JsonConvert.SerializeObject(e3.Value), type, jsonSettings) as ManagerServer.Model.Object;
-                                    if (o != null)
-                                    {
-                                        o.Key = e3.Key;
-                                        list.Add(o);
-                                    }
-                                }
+                                o.Key = e2.Key;
+                                list.Add(o);
                             }
                         }
-                        Json.Add(e.Key, list.ToArray());
                     }
+
+                    Json.Add(Path.GetFileNameWithoutExtension(file.Name), list.ToArray());
                 }
 #if !DEBUG
             }

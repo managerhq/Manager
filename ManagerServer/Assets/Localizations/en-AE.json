@@ -1,0 +1,1812 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "AED",
+      "2": "Emirati Dirham",
+      "4": "AED",
+      "5": 2
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {},
+  "6116531b-cb3d-4f85-b239-745972943a6b": {},
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "MM/dd/yyyy",
+      "4": "HH:mm:ss",
+      "3": "CgEuEgEsGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {
+    "968fc581-9821-4ed7-9a43-ce92382cebff": {
+      "1": "VAT201- VAT Return (En)",
+      "2": "2021-10-01T00:00:00",
+      "3": "2021-12-31T00:00:00",
+      "6": 2,
+      "7": [
+        {
+          "4": "<strong>Item</strong>",
+          "5": [
+            "5d8e1c6c-3186-4eae-9d44-b66f27158ff0"
+          ],
+          "6": [
+            "aef1a55c-f04c-497a-af7b-2ee08daa477b"
+          ],
+          "7": [
+            "68e528dc-911f-4264-a5a4-af337a1affa0"
+          ]
+        },
+        {
+          "4": "VAT on Sales and All Other Outputs\n---"
+        },
+        {
+          "4": "1a. Standard rated supplies in Abu Dhabi",
+          "5": [
+            "4d7ceb05-fd94-4410-a452-2bf9d4051e55",
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1b. Standard rated supplies in Dubai",
+          "5": [
+            "92e69c96-b2cd-4d79-990a-e29c846f0bbf",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1c. Standard rated supplies in Sharjah",
+          "5": [
+            "57519307-54b5-4fb6-8443-b038657333e9",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1d. Standard rated supplies in Ajman",
+          "5": [
+            "c4c07830-13aa-48a6-b533-eb289c4a7f67",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1e. Standard rated supplies in Umm Al Quwain",
+          "5": [
+            "19714cba-3754-4d67-8137-7e29cd99863f",
+            "ca894f5a-21ef-44d8-be40-7a6557559677",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1f. Standard rated supplies in Ras Al Khaimah",
+          "5": [
+            "1d16eb25-2205-412b-b352-b90395f4e85c",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1g. Standard rated supplies in Fujairah",
+          "5": [
+            "49dad923-ead3-4d13-8e61-02696817621c",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "2. Tax refunds provided to tourists under the Tax Refund for Tourists Scheme<sup> 1</sup>",
+          "5": [
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "ca894f5a-21ef-44d8-be40-7a6557559677"
+          ],
+          "6": [
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "3. Supplies subject to reverse charge provisions",
+          "5": [
+            "a39ab313-2a32-476d-b164-13ec976c4458"
+          ],
+          "6": [
+            "fbf182fe-b5bc-412f-8b53-e2223f97c072",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "4. Zero rated supplies",
+          "5": [
+            "66e92d01-e15c-4d34-a8ee-3002173343f9",
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "ca894f5a-21ef-44d8-be40-7a6557559677",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "5. Exempt supplies",
+          "5": [
+            "e10fa856-164f-4977-960b-106f319079fa",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "6. Goods imported into the UAE<sup> 2</sup>",
+          "5": [
+            "a5f566d9-6514-4b2a-afaf-fe153e79f1db"
+          ],
+          "6": [
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "7. Adjustments to goods imported into the UAE<sup> 2</sup>",
+          "5": [
+            "8c1b0749-9fd4-4172-824f-bb7db66b0db2"
+          ],
+          "6": [
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<!--hr style=\"border:0px;height:1px;color:#000;background-color:#000;margin:2px 0;\" /-->",
+          "5": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "6": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "7": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ]
+        },
+        {
+          "4": "<strong>8. Totals</strong>",
+          "5": [
+            "4d7ceb05-fd94-4410-a452-2bf9d4051e55",
+            "c4c07830-13aa-48a6-b533-eb289c4a7f67",
+            "92e69c96-b2cd-4d79-990a-e29c846f0bbf",
+            "e10fa856-164f-4977-960b-106f319079fa",
+            "49dad923-ead3-4d13-8e61-02696817621c",
+            "1d16eb25-2205-412b-b352-b90395f4e85c",
+            "57519307-54b5-4fb6-8443-b038657333e9",
+            "19714cba-3754-4d67-8137-7e29cd99863f",
+            "66e92d01-e15c-4d34-a8ee-3002173343f9",
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "ca894f5a-21ef-44d8-be40-7a6557559677",
+            "67bf9646-f303-445e-b953-f0627d0e0d50",
+            "bed71304-9e69-4312-8717-817d9db7375b",
+            "c47760c1-d19b-404a-912a-a150c70f8f4f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "fbf182fe-b5bc-412f-8b53-e2223f97c072",
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "VAT on Expenses and All Other Inputs\n---"
+        },
+        {
+          "4": "9. Standard rated expenses",
+          "5": [
+            "87a669a0-97f4-401b-8556-44cca6c50e83"
+          ],
+          "6": [
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141"
+          ],
+          "7": [
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484"
+          ]
+        },
+        {
+          "4": "10. Supplies subject to the reverse charge provisions",
+          "5": [
+            "a39ab313-2a32-476d-b164-13ec976c4458",
+            "a5f566d9-6514-4b2a-afaf-fe153e79f1db",
+            "8c1b0749-9fd4-4172-824f-bb7db66b0db2"
+          ],
+          "6": [
+            "ebbd248e-32a1-4c19-88c2-7494183d84e8"
+          ]
+        },
+        {
+          "5": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "6": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "7": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ]
+        },
+        {
+          "4": "<strong>11. Totals</strong>",
+          "5": [
+            "87a669a0-97f4-401b-8556-44cca6c50e83",
+            "8c1b0749-9fd4-4172-824f-bb7db66b0db2",
+            "a5f566d9-6514-4b2a-afaf-fe153e79f1db",
+            "a39ab313-2a32-476d-b164-13ec976c4458"
+          ],
+          "6": [
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+            "ebbd248e-32a1-4c19-88c2-7494183d84e8"
+          ],
+          "7": [
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484"
+          ]
+        },
+        {
+          "4": "Net VAT Due\n---"
+        },
+        {
+          "5": [
+            "8262cc11-39f0-4a62-a342-88d076fb67ab"
+          ]
+        },
+        {
+          "4": "<strong>12. Total value of tax due for the period (AED) </strong>",
+          "5": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "0080c618-9652-4308-91c8-9ae241920e40",
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "fbf182fe-b5bc-412f-8b53-e2223f97c072",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "13. Total value of recoverable tax for the period (AED)",
+          "5": [
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484",
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+            "ebbd248e-32a1-4c19-88c2-7494183d84e8",
+            "be2d3b30-1890-4ba4-9ce3-90cfc77743fc",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "",
+          "5": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ]
+        },
+        {
+          "4": "<strong>14. Payable tax for the period (AED)</strong>",
+          "5": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "0080c618-9652-4308-91c8-9ae241920e40",
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484",
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "be2d3b30-1890-4ba4-9ce3-90cfc77743fc",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "18": true,
+      "19": [
+        {
+          "1": "<sup>1</sup>  Tourist refund only applies if you are registered in the Tax Refunds for Tourists Scheme."
+        },
+        {
+          "1": "<sup>2</sup>  In case you are registered for deferral of VAT imported goods, the Tax Code \"<span dir=\"rtl\"><b>واردات مؤجلة VAT 5%</b></span>\". The amount of deferred VAT shall automatically appear on your VAT return on the Federal Tax Authority's (FTA) website. In case the figures in this report do not match the FTA's figures, you can click on \"<b>View Details</b>\" button:<br><br>\n&mdash; In case transactions were identified both in books and in the FTA's website with amount discrepancies, you can edit such transactions to reflect the correct amount.<br>\n&mdash; In case transactions were missing in your books, use the information provided by the FTA to create the records<br>\n&mdash; In case transactions were missing in the FTA, you can drill-down to Item 6 of this report and apply the Tax Code \"<span dir=\"rtl\"><b>تعديل واردات VAT 5% آجلة الدفع</b></span>\" to any such transactions and then transfer the balance that appears under Item 7 of this report to the same item in the FTA website."
+        }
+      ],
+      "16": true
+    },
+    "714d8ced-64f2-4bf9-bcd8-7564b0e33f2b": {
+      "1": "VAT201- إقرار ضريبة القيمة المضافة",
+      "2": "2021-10-01T00:00:00",
+      "3": "2021-12-31T00:00:00",
+      "6": 2,
+      "7": [
+        {
+          "4": "<strong>البند</strong>",
+          "5": [
+            "17d3feb6-0b2e-4311-8c51-24de7f7ccf93"
+          ],
+          "6": [
+            "0b9eb1c8-583b-47eb-8605-d6d1fa2d1cf7"
+          ],
+          "7": [
+            "e38fe8fa-1a78-4381-883a-19e9d00f9d05"
+          ]
+        },
+        {
+          "4": "ضريبة القيمة المضافة على المبيعات و المخرجات الأخرى\n---"
+        },
+        {
+          "4": "1أ. التوريدات الخاضعة للنسبة الأساسية في أبو ظبي",
+          "5": [
+            "4d7ceb05-fd94-4410-a452-2bf9d4051e55",
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1ب. التوريدات الخاضعة للنسبة الأساسية في دبي",
+          "5": [
+            "92e69c96-b2cd-4d79-990a-e29c846f0bbf",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1ج. التوريدات الخاضعة للنسبة الأساسية في الشارقة",
+          "5": [
+            "57519307-54b5-4fb6-8443-b038657333e9",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1د. التوريدات الخاضعة للنسبة الأساسية في عجمان",
+          "5": [
+            "c4c07830-13aa-48a6-b533-eb289c4a7f67",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1هـ. التوريدات الخاضعة للنسبة الأساسية في أم القيوين",
+          "5": [
+            "19714cba-3754-4d67-8137-7e29cd99863f",
+            "ca894f5a-21ef-44d8-be40-7a6557559677",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1و. التوريدات الخاضعة للنسبة الأساسية في رأس الخيمة",
+          "5": [
+            "1d16eb25-2205-412b-b352-b90395f4e85c",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1ز. التوريدات الخاضعة للنسبة الأساسية في الفجيرة",
+          "5": [
+            "49dad923-ead3-4d13-8e61-02696817621c",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "2.المبالغ التي تم ردها للسياح بناء على نظام رد الضريبة للسياح<sup> 1</sup>",
+          "5": [
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "ca894f5a-21ef-44d8-be40-7a6557559677"
+          ],
+          "6": [
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "3. التوريدات الخاضعة لآلية الاحتساب العكسي",
+          "5": [
+            "a39ab313-2a32-476d-b164-13ec976c4458"
+          ],
+          "6": [
+            "fbf182fe-b5bc-412f-8b53-e2223f97c072",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "4. التوريدات الخاضعة لنسبة الصفر",
+          "5": [
+            "66e92d01-e15c-4d34-a8ee-3002173343f9",
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "ca894f5a-21ef-44d8-be40-7a6557559677",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "5. التوريدات المعفاة",
+          "5": [
+            "e10fa856-164f-4977-960b-106f319079fa",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "6. السلع المستوردة إلى الإمارات<sup> 2</sup>",
+          "5": [
+            "a5f566d9-6514-4b2a-afaf-fe153e79f1db"
+          ],
+          "6": [
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "7. تعديلات على السلع المستوردة إلى الإمارات <sup> 2</sup>",
+          "5": [
+            "8c1b0749-9fd4-4172-824f-bb7db66b0db2"
+          ],
+          "6": [
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<!--hr style=\"border:0px;height:1px;color:#000;background-color:#000;margin:2px 0;\" /-->",
+          "5": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "6": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "7": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ]
+        },
+        {
+          "4": "<strong>8.المجموع </strong>",
+          "5": [
+            "4d7ceb05-fd94-4410-a452-2bf9d4051e55",
+            "c4c07830-13aa-48a6-b533-eb289c4a7f67",
+            "92e69c96-b2cd-4d79-990a-e29c846f0bbf",
+            "e10fa856-164f-4977-960b-106f319079fa",
+            "49dad923-ead3-4d13-8e61-02696817621c",
+            "1d16eb25-2205-412b-b352-b90395f4e85c",
+            "57519307-54b5-4fb6-8443-b038657333e9",
+            "19714cba-3754-4d67-8137-7e29cd99863f",
+            "66e92d01-e15c-4d34-a8ee-3002173343f9",
+            "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+            "2861b59b-4b65-425b-b483-2a208e13f257",
+            "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+            "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+            "a93fec1c-45fe-4f13-9951-7d172016230f",
+            "4f8c1645-5439-4712-93b7-cabe86e1d842",
+            "ca894f5a-21ef-44d8-be40-7a6557559677",
+            "67bf9646-f303-445e-b953-f0627d0e0d50",
+            "bed71304-9e69-4312-8717-817d9db7375b",
+            "c47760c1-d19b-404a-912a-a150c70f8f4f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "fbf182fe-b5bc-412f-8b53-e2223f97c072",
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "7": [
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "ضريبة القيمة المضافة على النفقات و جميع المدخلات الأخرى\n---"
+        },
+        {
+          "4": "9. النفقات الخاضعة للنسبة الأساسية",
+          "5": [
+            "87a669a0-97f4-401b-8556-44cca6c50e83"
+          ],
+          "6": [
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141"
+          ],
+          "7": [
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484"
+          ]
+        },
+        {
+          "4": "10. التوريدات الخاضعة لآلية الاحتساب العكسي",
+          "5": [
+            "a39ab313-2a32-476d-b164-13ec976c4458",
+            "a5f566d9-6514-4b2a-afaf-fe153e79f1db",
+            "8c1b0749-9fd4-4172-824f-bb7db66b0db2"
+          ],
+          "6": [
+            "ebbd248e-32a1-4c19-88c2-7494183d84e8"
+          ]
+        },
+        {
+          "5": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "6": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ],
+          "7": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ]
+        },
+        {
+          "4": "<strong>11.المجموع </strong>",
+          "5": [
+            "87a669a0-97f4-401b-8556-44cca6c50e83",
+            "8c1b0749-9fd4-4172-824f-bb7db66b0db2",
+            "a5f566d9-6514-4b2a-afaf-fe153e79f1db",
+            "a39ab313-2a32-476d-b164-13ec976c4458"
+          ],
+          "6": [
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+            "ebbd248e-32a1-4c19-88c2-7494183d84e8"
+          ],
+          "7": [
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484"
+          ]
+        },
+        {
+          "4": "صافي ضريبة القيمة المضافة المستحقة\n---"
+        },
+        {
+          "4": "",
+          "5": [
+            "9691745a-edbd-4aa2-8322-486480da726b"
+          ]
+        },
+        {
+          "4": "<strong>12. مجموع الضريبة المستحقة عن الفترة الضريبية </strong>",
+          "5": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "0080c618-9652-4308-91c8-9ae241920e40",
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "fbf182fe-b5bc-412f-8b53-e2223f97c072",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "13. مجموع الضريبة القابلة للاسترداد عن الفترة الضريبية",
+          "5": [
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484",
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+            "ebbd248e-32a1-4c19-88c2-7494183d84e8",
+            "be2d3b30-1890-4ba4-9ce3-90cfc77743fc",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "",
+          "5": [
+            "480ee05d-a514-4f86-834f-d4b84ef8ea8a"
+          ]
+        },
+        {
+          "4": "<strong>14.الضريبة المستحقة الدفع للفترة الضريبية</strong>",
+          "5": [
+            "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+            "0080c618-9652-4308-91c8-9ae241920e40",
+            "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+            "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+            "7f5342b2-f516-4080-8519-02bef80ccb2d",
+            "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+            "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+            "33081404-3da5-40a3-a202-e71520baee91",
+            "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+            "13f5839e-0adc-4d82-b573-602fbba36e44",
+            "ef043631-acd7-4324-838e-264b3d6076fa",
+            "37987e47-9c5c-435c-aad2-e9aa68a4a484",
+            "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+            "c50afa54-369d-47bb-a052-4202286dfdd0",
+            "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+            "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+            "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+            "54772f89-27db-4a04-a519-a4fed503904b",
+            "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+            "1b188fc0-84d5-4fdc-960c-370c3c031196",
+            "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+            "be2d3b30-1890-4ba4-9ce3-90cfc77743fc",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "14": true,
+      "15": "document.getElementById('printable-content').style.direction = 'rtl';",
+      "18": true,
+      "19": [
+        {
+          "1": "<div dir=\"rtl\">رد الضريبة للسياح ينطبق في حال كنت مسجلاً في نظام رد الضريبة للسياح.</div>"
+        },
+        {
+          "1": "<div dir=\"rtl>إن كنت مسجلاً لدى الدوائر لتأجيل دفع ضريبة القيمة المضافة من خلال الإقرار الضريبي ، فإنه يجب تطبيق الرمز الضريبي العكسي \"<b>واردات مؤجلة VAT 5%</b>\"  للواردات المندرجة تحت هذا البند. سيظهر مبلغ الضريبة المؤجل تلقائياً على إقرارك الضريبي في نظام الهيئة الاتحادية للضرائب. في حال عدم مطابقة هذا التقرير لأرقام الهيئة ، بإمكانك الضغط على زر \"<b>عرض البيانات</b>\" بجانب البند 6 للاطّلاع على التفاصيل.\n<br><br>\n&mdash; في حال عدم مطابقة مبالغ المعاملات كلاً على حدة بإمكانك تعديل مبالغ حساباتك لتطابق المبالغ الصحيحة.<br>\n&mdash; في حال وجود معاملات ناقصة في حساباتك بإمكانك استخدام المعلومات الموفرة من نظام الهيئة لإنشاء معاملات جديدة في حساباتك.<br>\n&mdash; في حال وجود معاملات ناقصة في نظام الهيئة ، بإمكانك الاطّلاع على تفاصيل البند 6 من هذا التقرير و تطبيق الرمز الضريبي \"<b>تعديل واردات VAT 5% آجلة الدفع</b>\" للمعاملات الناقصة من نظام الهيئة و من ثم ترحيل المبلغ الظاهر في البند 7 من هذا التقرير للبند نفسه من نظام الهيئة.</div>"
+        }
+      ],
+      "16": true
+    }
+  },
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {
+    "68e528dc-911f-4264-a5a4-af337a1affa0": {
+      "1": "<div style=\"text-align:center;\"><strong>Adjustment (AED)</strong></div>"
+    },
+    "5d8e1c6c-3186-4eae-9d44-b66f27158ff0": {
+      "1": "<div style=\"text-align:center;\"><strong>Amount (AED)</strong></div>"
+    },
+    "aef1a55c-f04c-497a-af7b-2ee08daa477b": {
+      "1": "<div style=\"text-align:center;\"><strong>VAT Amount (AED)</strong></div>"
+    },
+    "8262cc11-39f0-4a62-a342-88d076fb67ab": {
+      "1": "<div style=\"text-align:center;\"><strong>VAT Due (AED)</strong></div>"
+    },
+    "e38fe8fa-1a78-4381-883a-19e9d00f9d05": {
+      "1": "<div style=\"text-align:center;\"><strong>التعديل (بالدرهم)</strong></div>"
+    },
+    "17d3feb6-0b2e-4311-8c51-24de7f7ccf93": {
+      "1": "<div style=\"text-align:center;\"><strong>المبلغ (بالدرهم)</strong></div>"
+    },
+    "9691745a-edbd-4aa2-8322-486480da726b": {
+      "1": "<div style=\"text-align:center;\"><strong>ضريبة القيمة المضافة المستحقة (بالدرهم)</strong></div>"
+    },
+    "0b9eb1c8-583b-47eb-8605-d6d1fa2d1cf7": {
+      "1": "<div style=\"text-align:center;\"><strong>مبلغ ضريبة القيمة المضافة (بالدرهم)</strong></div>"
+    },
+    "480ee05d-a514-4f86-834f-d4b84ef8ea8a": {
+      "1": "<hr style=\"border:0px;height:1px;color:#000;background-color:#000;margin:2px 0;\">"
+    }
+  },
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {
+    "be2d3b30-1890-4ba4-9ce3-90cfc77743fc": {
+      "1": "VAT Prior Periods C/F"
+    },
+    "8c1b0749-9fd4-4172-824f-bb7db66b0db2": {
+      "1": "VAT/I - Adjust Deferred Import 5%"
+    },
+    "dc4213a6-9943-4d3b-93cf-f0399b076e01": {
+      "1": "VAT/I - Adjustments",
+      "2": true
+    },
+    "66d4b224-e7f5-4791-affa-608c8c89db4f": {
+      "1": "VAT/I - Apportionment",
+      "2": true
+    },
+    "a5f566d9-6514-4b2a-afaf-fe153e79f1db": {
+      "1": "VAT/I - Deferred Import 5%"
+    },
+    "a39ab313-2a32-476d-b164-13ec976c4458": {
+      "1": "VAT/I - RCM 5%"
+    },
+    "87a669a0-97f4-401b-8556-44cca6c50e83": {
+      "1": "VAT/I - Standard 5%"
+    },
+    "4d7ceb05-fd94-4410-a452-2bf9d4051e55": {
+      "1": "VAT/O - ADB 5%"
+    },
+    "f48c5423-1c31-4ab9-aafe-72399434a1c2": {
+      "1": "VAT/O - ADB 5% - Tourist Refund"
+    },
+    "cfb05cff-d8cd-4b6f-bd0a-0aa7961a84fb": {
+      "1": "VAT/O - Adjustments",
+      "2": true
+    },
+    "c4c07830-13aa-48a6-b533-eb289c4a7f67": {
+      "1": "VAT/O - AJM 5%"
+    },
+    "2861b59b-4b65-425b-b483-2a208e13f257": {
+      "1": "VAT/O - AJM 5% - Tourist Refund"
+    },
+    "92e69c96-b2cd-4d79-990a-e29c846f0bbf": {
+      "1": "VAT/O - DXB 5%"
+    },
+    "f828de4a-14ab-4f7a-a6d1-62410e485eff": {
+      "1": "VAT/O - DXB 5% - Tourist Refund"
+    },
+    "e10fa856-164f-4977-960b-106f319079fa": {
+      "1": "VAT/O - Exempt"
+    },
+    "49dad923-ead3-4d13-8e61-02696817621c": {
+      "1": "VAT/O - FUJ 5%"
+    },
+    "4bb94e77-7f3b-4903-94ea-9678ba92ab94": {
+      "1": "VAT/O - FUJ 5% - Tourist Refund"
+    },
+    "1d16eb25-2205-412b-b352-b90395f4e85c": {
+      "1": "VAT/O - RAK 5%"
+    },
+    "a93fec1c-45fe-4f13-9951-7d172016230f": {
+      "1": "VAT/O - RAK 5% - Tourist Refund"
+    },
+    "57519307-54b5-4fb6-8443-b038657333e9": {
+      "1": "VAT/O - SHJ 5%"
+    },
+    "4f8c1645-5439-4712-93b7-cabe86e1d842": {
+      "1": "VAT/O - SHJ 5% - Tourist Refund"
+    },
+    "19714cba-3754-4d67-8137-7e29cd99863f": {
+      "1": "VAT/O - UAQ 5%"
+    },
+    "ca894f5a-21ef-44d8-be40-7a6557559677": {
+      "1": "VAT/O - UAQ 5% - Tourist Refund"
+    },
+    "66e92d01-e15c-4d34-a8ee-3002173343f9": {
+      "1": "VAT/O - Zero"
+    }
+  },
+  "6027ab88-f804-4827-beff-26b76bb94587": {
+    "67bf9646-f303-445e-b953-f0627d0e0d50": {
+      "1": "VAT/O - Adjust Deferred Import 5%"
+    },
+    "bed71304-9e69-4312-8717-817d9db7375b": {
+      "1": "VAT/O - Deferred Import 5%"
+    },
+    "c47760c1-d19b-404a-912a-a150c70f8f4f": {
+      "1": "VAT/O - RCM 5%"
+    }
+  },
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {
+    "ef043631-acd7-4324-838e-264b3d6076fa": {
+      "1": "VAT/I Amount - Adjustment"
+    },
+    "37987e47-9c5c-435c-aad2-e9aa68a4a484": {
+      "1": "VAT/I Amount - Apportionment"
+    },
+    "ebbd248e-32a1-4c19-88c2-7494183d84e8": {
+      "1": "VAT/I Amount - RCM 5%"
+    },
+    "d3949c15-9bdd-4282-a6bd-3a09b9723141": {
+      "1": "VAT/I Amount - Standard 5%"
+    },
+    "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4": {
+      "1": "VAT/O Adjustment - ADB 5%"
+    },
+    "73e4f6d6-7396-45a1-a26d-ade5e0d13c56": {
+      "1": "VAT/O Adjustment - AJM 5%"
+    },
+    "7d0cd4c1-406f-48cb-b6c8-30c7d6927673": {
+      "1": "VAT/O Adjustment - DXB 5%"
+    },
+    "54772f89-27db-4a04-a519-a4fed503904b": {
+      "1": "VAT/O Adjustment - FUJ 5%"
+    },
+    "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3": {
+      "1": "VAT/O Adjustment - RAK 5%"
+    },
+    "1b188fc0-84d5-4fdc-960c-370c3c031196": {
+      "1": "VAT/O Adjustment - SHJ 5%"
+    },
+    "f12af519-bb28-45d7-b8e8-716d97c8ab1f": {
+      "1": "VAT/O Adjustment - UAQ 5%"
+    },
+    "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9": {
+      "1": "VAT/O Amount - ADB 5%"
+    },
+    "0080c618-9652-4308-91c8-9ae241920e40": {
+      "1": "VAT/O Amount - Adjustment",
+      "2": true
+    },
+    "249c10d1-d87a-4c82-a2e2-0189c28e25d6": {
+      "1": "VAT/O Amount - AJM 5%"
+    },
+    "7f5342b2-f516-4080-8519-02bef80ccb2d": {
+      "1": "VAT/O Amount - DXB 5%"
+    },
+    "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85": {
+      "1": "VAT/O Amount - FUJ 5%"
+    },
+    "33081404-3da5-40a3-a202-e71520baee91": {
+      "1": "VAT/O Amount - RAK 5%"
+    },
+    "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec": {
+      "1": "VAT/O Amount - SHJ 5%"
+    },
+    "13f5839e-0adc-4d82-b573-602fbba36e44": {
+      "1": "VAT/O Amount - UAQ 5%"
+    }
+  },
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {
+    "1f50c5cf-f797-4e22-a34b-2613f4567a80": {
+      "1": "VAT/O Amount - Adjust Deferred Import 5%"
+    },
+    "53edcddb-3c89-4ba6-984a-6ba80ca52a98": {
+      "1": "VAT/O Amount - Deferred Import 5%"
+    },
+    "fbf182fe-b5bc-412f-8b53-e2223f97c072": {
+      "1": "VAT/O Amount - RCM 5%"
+    },
+    "c50afa54-369d-47bb-a052-4202286dfdd0": {
+      "1": "VAT/O Reverse Charged Amount - Tourist Refund"
+    }
+  },
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {
+    "8d3f3794-fb19-4f8e-9478-b2228652aad1": {
+      "1": "ADH VAT 5%",
+      "21": "VAT 5%",
+      "18": "4d7ceb05-fd94-4410-a452-2bf9d4051e55",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "78dcfb9c-99ee-4eb7-b281-9b5ef3753853": {
+      "1": "ADH VAT 5% adjustment",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "e9f5e4f3-ab9f-4f10-bb48-f0f6d60f69c4",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "6a4e8d77-70c3-4fcb-8e94-7b96a5ed8088": {
+      "1": "ADH VAT 5% tourist refund",
+      "21": "VAT Refund",
+      "18": "f48c5423-1c31-4ab9-aafe-72399434a1c2",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "a9f0a57c-0c4a-4bf1-8251-d78743f27cf9",
+      "20": "c50afa54-369d-47bb-a052-4202286dfdd0",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "13": true,
+      "14": "Tax invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "129607f4-0bdc-4be3-8965-1be95bf04296": {
+      "1": "AJM VAT 5%",
+      "21": "VAT 5%",
+      "18": "c4c07830-13aa-48a6-b533-eb289c4a7f67",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "2a087bcb-2392-4ab3-a7be-9422505faad4": {
+      "1": "AJM VAT 5% adjustment",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "73e4f6d6-7396-45a1-a26d-ade5e0d13c56",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "fb320a1b-0f07-4eb4-9e58-4220fb9c9d5e": {
+      "1": "AJM VAT 5% tourist refund",
+      "21": "VAT Refund",
+      "18": "2861b59b-4b65-425b-b483-2a208e13f257",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "249c10d1-d87a-4c82-a2e2-0189c28e25d6",
+      "20": "c50afa54-369d-47bb-a052-4202286dfdd0",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "13": true,
+      "14": "Tax invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "37dd756b-1944-4049-96d3-d7c970424a44": {
+      "1": "Apportionment VAT 100%",
+      "21": "",
+      "18": "dc4213a6-9943-4d3b-93cf-f0399b076e01",
+      "5": 1,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "ef043631-acd7-4324-838e-264b3d6076fa",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "10": true,
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "a82f93f3-6f15-4e99-9c77-f10529ba8130": {
+      "1": "Deferred import VAT 5% adjustment",
+      "21": "VAT 5%",
+      "18": "8c1b0749-9fd4-4172-824f-bb7db66b0db2",
+      "22": "67bf9646-f303-445e-b953-f0627d0e0d50",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "ebbd248e-32a1-4c19-88c2-7494183d84e8",
+      "20": "1f50c5cf-f797-4e22-a34b-2613f4567a80",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "10": true,
+      "23": {}
+    },
+    "84adce3d-7a2c-4dc2-b591-61d91b4e18db": {
+      "1": "Deferred imports VAT 5%",
+      "21": "VAT 5%",
+      "18": "a5f566d9-6514-4b2a-afaf-fe153e79f1db",
+      "22": "bed71304-9e69-4312-8717-817d9db7375b",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "ebbd248e-32a1-4c19-88c2-7494183d84e8",
+      "20": "53edcddb-3c89-4ba6-984a-6ba80ca52a98",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "10": true,
+      "23": {}
+    },
+    "1cac3c9b-b17f-41e9-ae68-cd591eeb0c8e": {
+      "1": "DUB VAT 5%",
+      "21": "VAT 5%",
+      "18": "92e69c96-b2cd-4d79-990a-e29c846f0bbf",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "7f5342b2-f516-4080-8519-02bef80ccb2d",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "d8dd99b0-790b-479a-be8d-ae950589af63": {
+      "1": "DUB VAT 5% adjustment",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "7d0cd4c1-406f-48cb-b6c8-30c7d6927673",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "fff7bcb3-8933-4340-b97f-c93ff90b0d8e": {
+      "1": "DUB VAT 5% tourist refund",
+      "21": "VAT Refund",
+      "18": "f828de4a-14ab-4f7a-a6d1-62410e485eff",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "7f5342b2-f516-4080-8519-02bef80ccb2d",
+      "20": "c50afa54-369d-47bb-a052-4202286dfdd0",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "13": true,
+      "14": "Tax invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "dbb03787-2faa-47f0-ba4f-ecb9dc99032f": {
+      "1": "Export VAT 0%",
+      "21": "VAT 0%",
+      "18": "66e92d01-e15c-4d34-a8ee-3002173343f9",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "ef2579f1-3130-4744-a914-29effc01a7d0": {
+      "1": "FUJ VAT 5%",
+      "21": "VAT 5%",
+      "18": "49dad923-ead3-4d13-8e61-02696817621c",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "c772af92-ab8f-4cc2-82bd-9511f21b8291": {
+      "1": "FUJ VAT 5% adjustment",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "54772f89-27db-4a04-a519-a4fed503904b",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "d1167503-5b2d-4d7d-8f4b-d87abd03b91e": {
+      "1": "FUJ VAT 5% tourist refund",
+      "21": "VAT Refund",
+      "18": "4bb94e77-7f3b-4903-94ea-9678ba92ab94",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "0f04d627-50a3-4ae2-a5ab-5f18e64f1d85",
+      "20": "c50afa54-369d-47bb-a052-4202286dfdd0",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "13": true,
+      "14": "Tax invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "8c324f5e-2f97-4431-9b81-1eb5842571a7": {
+      "1": "Imports VAT 5%",
+      "21": "VAT 5%",
+      "18": "87a669a0-97f4-401b-8556-44cca6c50e83",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "912f6ab1-a1b5-4ad8-8ab5-a94dc76b5503": {
+      "1": "Purchase VAT 5%",
+      "21": "VAT 5%",
+      "18": "87a669a0-97f4-401b-8556-44cca6c50e83",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "d3949c15-9bdd-4282-a6bd-3a09b9723141",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "f7b01e7e-ebb8-490c-a82f-18989bd44480": {
+      "1": "Purchase VAT 5% adjustment",
+      "21": "VAT 5%",
+      "18": "dc4213a6-9943-4d3b-93cf-f0399b076e01",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "ef043631-acd7-4324-838e-264b3d6076fa",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "10": true,
+      "23": {}
+    },
+    "7ae5546a-c74d-47fe-a1c0-9b8cdb28ed54": {
+      "1": "RAK VAT 5%",
+      "21": "VAT 5%",
+      "18": "1d16eb25-2205-412b-b352-b90395f4e85c",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "33081404-3da5-40a3-a202-e71520baee91",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "ac7a626a-dccd-48d6-9bd1-81cbf590561f": {
+      "1": "RAK VAT 5% adjustment",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "f57c1502-4dc1-4584-bda1-4f6dfc1bf8a3",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "11066442-2388-4690-9f14-87fece831677": {
+      "1": "RAK VAT 5% tourist refund",
+      "21": "VAT Refund",
+      "18": "a93fec1c-45fe-4f13-9951-7d172016230f",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "33081404-3da5-40a3-a202-e71520baee91",
+      "20": "c50afa54-369d-47bb-a052-4202286dfdd0",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "13": true,
+      "14": "Tax invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "fe634b05-2d3b-485e-9b8c-39635c2b570d": {
+      "1": "Reverse charged VAT 5%",
+      "21": "RCM 5%",
+      "18": "a39ab313-2a32-476d-b164-13ec976c4458",
+      "22": "c47760c1-d19b-404a-912a-a150c70f8f4f",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "ebbd248e-32a1-4c19-88c2-7494183d84e8",
+      "20": "fbf182fe-b5bc-412f-8b53-e2223f97c072",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "10": true,
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "3d6a2364-39c7-4570-9b14-3d37b08e515b": {
+      "1": "SHJ VAT 5%",
+      "21": "VAT 5%",
+      "18": "57519307-54b5-4fb6-8443-b038657333e9",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "1e98ceeb-aa76-4649-ba41-13589d888174": {
+      "1": "SHJ VAT 5% adjustment",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "1b188fc0-84d5-4fdc-960c-370c3c031196",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "cb5609aa-d022-467b-be9e-834217062117": {
+      "1": "SHJ VAT 5% tourist refund",
+      "21": "VAT Refund",
+      "18": "4f8c1645-5439-4712-93b7-cabe86e1d842",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "2363a90e-bc5e-43d9-a4de-25b8b05dc9ec",
+      "20": "c50afa54-369d-47bb-a052-4202286dfdd0",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "13": true,
+      "14": "Tax invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "0d1c7e57-3a4e-46ea-8f62-8f80b15450f6": {
+      "1": "UAQ VAT 5%",
+      "21": "VAT 5%",
+      "18": "19714cba-3754-4d67-8137-7e29cd99863f",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "13f5839e-0adc-4d82-b573-602fbba36e44",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "893d9981-1043-41ca-a913-af8fb3821834": {
+      "1": "UAQ VAT 5% adjustment",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "f12af519-bb28-45d7-b8e8-716d97c8ab1f",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "fc5eece1-4ae1-4b77-b968-57947fd4e3e8": {
+      "1": "UAQ VAT 5% tourist refund",
+      "21": "VAT Refund",
+      "18": "ca894f5a-21ef-44d8-be40-7a6557559677",
+      "5": 2,
+      "4": 5.0,
+      "7": "10addd3d-38ec-4ac9-b63e-6aea1e960d9b",
+      "19": "13f5839e-0adc-4d82-b573-602fbba36e44",
+      "20": "c50afa54-369d-47bb-a052-4202286dfdd0",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "13": true,
+      "14": "Tax invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "10": true,
+      "23": {}
+    },
+    "8323bb59-eb25-4931-baf2-eb45b5af2a7f": {
+      "1": "VAT 0%",
+      "21": "VAT 0%",
+      "18": "66e92d01-e15c-4d34-a8ee-3002173343f9",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    },
+    "93ba319d-6910-4544-80bb-819e7394ec0d": {
+      "1": "VAT brought forward",
+      "18": "be2d3b30-1890-4ba4-9ce3-90cfc77743fc",
+      "2": [
+        {}
+      ],
+      "23": {}
+    },
+    "34f56ae6-f59a-4821-884f-6833fe8cd482": {
+      "1": "VAT exempt",
+      "21": "",
+      "18": "e10fa856-164f-4977-960b-106f319079fa",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "27a8256b-9447-4ab6-accd-321a0d65dc1e": ""
+      },
+      "23": {}
+    }
+  },
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {},
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "0d3886b2-fa78-4c86-85f6-0de4e3a08ddf": {
+      "1": "Accounting fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "e264a8b6-d4c2-4bc1-9419-b836ac9b3432": {
+      "1": "Advertising and promotion",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "6bdd02d6-5008-492c-ba44-f95cba8bac86": {
+      "1": "Bank charges",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "c1888c4f-0daf-47ae-bb83-c1d254dbaf12": {
+      "1": "Computer equipment",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "13879c6b-86a6-43e9-9cae-3c659ea5fb43": {
+      "1": "Donations",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "176fc328-4bbb-4ee3-b385-f240164690e4": {
+      "1": "Electricity",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "6e90b67a-99eb-4269-b967-323b46c3f420": {
+      "1": "Entertainment",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "faf04780-7116-43e0-9744-21e351fa95c0": {
+      "1": "Interest - received",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "8b08ca84-0256-4920-85f3-1995bc5fa127": {
+      "1": "Legal fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "d430b303-0465-44b9-b856-c3a174ad31a5": {
+      "1": "Motor vehicle expenses",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "2238fc21-92ab-44d3-b94c-10ad91743209": {
+      "1": "Printing and stationery",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "200b4677-c31d-4485-a155-321a10429f1b": {
+      "1": "Rent",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "a0da93a0-6b05-47e2-9d86-4d74277ce8f2": {
+      "1": "Repairs and maintenance",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "3412c520-3218-4e22-bf0c-bbbb1fb4cf68": {
+      "1": "Sales",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "21c06ac1-95d8-406e-a789-e68b2b3f42e1": {
+      "1": "Shipping and clearing",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "7aa2d54c-1d5c-4f6e-b558-ab52661cc317": {
+      "1": "Tax expenses",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "29e3ee92-ff81-477c-a2c7-64c3b3721c5e": {
+      "1": "Telephone",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "fd003045-876e-439e-b923-1904453f5c30": {
+      "1": "Expenses",
+      "6": 1,
+      "5": 2
+    },
+    "95713fac-30d3-42e4-b536-dd7bc4f7a80e": {
+      "1": "Income",
+      "5": 1
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {},
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "e1c48f3e-f107-4df0-9ed2-05b8c60604a2": {
+      "1": "Tourist scheme VAT refund clearing",
+      "3": "9b800649-b2c9-4b1a-9274-37001178a14f"
+    },
+    "7d529ee7-ecf6-49ca-884b-97e6155d8f68": {
+      "1": "VAT adjustment clearing",
+      "3": "9b800649-b2c9-4b1a-9274-37001178a14f"
+    },
+    "10addd3d-38ec-4ac9-b63e-6aea1e960d9b": {
+      "1": "VAT payable",
+      "3": "9b800649-b2c9-4b1a-9274-37001178a14f"
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {
+    "9b800649-b2c9-4b1a-9274-37001178a14f": {
+      "1": "VAT liabilities",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    }
+  },
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {},
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {},
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {},
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {},
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {},
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {},
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "7eb409f9-3910-4cc4-b365-73046c6fbbe7": {
+      "1": "المسحوبات"
+    },
+    "376f407b-0db4-478b-87d1-3b9071ca380e": {
+      "1": "توزيع الأرباح"
+    },
+    "6563483e-ad43-4857-af1b-7286fd5ff6a1": {
+      "1": "مساهمات مالية"
+    }
+  }
+}

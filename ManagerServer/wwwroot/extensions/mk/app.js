@@ -411,7 +411,7 @@ function renderReport(report, data, business, period, ctx) {
   const decimals = data.decimals;
   const hideZero = view.hideZeroRows === true || window.HIDE_ZERO_ROWS === true;
 
-  // The container id "printable-content" is what legacy customScript bodies (from Localizations.json)
+  // The container id "printable-content" is what legacy customScript bodies (from Assets/Localizations)
   // probe via document.getElementById to scrape numeric cells for CSV export.
   let html = `
     <div class="report-actions"><button type="button" class="primary" id="printReport">Print</button></div>

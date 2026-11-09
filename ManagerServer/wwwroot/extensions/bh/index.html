@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="styles.css">
 <script>
   // Pick locale from ?lang= (default en). Set lang/dir on <html> before body renders so RTL
-  // applies without a layout flash. tax-codes.js keeps English names because Localizations.json
+  // applies without a layout flash. tax-codes.js keeps English names because Assets/Localizations
   // has no ar-BH block (Bahrain tax-code names are accountant-shorthand English in en-BH only).
   window.MANAGER_LANG = new URLSearchParams(location.search).get("lang") === "ar" ? "ar" : "en";
   if (window.MANAGER_LANG === "ar") {

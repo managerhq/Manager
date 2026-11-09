@@ -1,0 +1,1677 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "BHD",
+      "2": "Bahraini Dinar",
+      "4": "",
+      "5": 3
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {},
+  "6116531b-cb3d-4f85-b239-745972943a6b": {},
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "dd/MM/yyyy",
+      "4": "HH:mm:ss",
+      "3": "CgEuEgEsGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {
+    "a3eb1f6f-8edb-4c72-b4af-3a731128ae57": {
+      "1": "Simplified VAT Return Form",
+      "2": "2021-11-24T00:00:00",
+      "3": "2021-11-24T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "4": "<Strong>Description</strong>",
+          "5": [
+            "9783c618-935b-4293-9f2c-3ee99ad2abd4"
+          ],
+          "6": [
+            "9ad4dfd8-a70e-42e9-a4a0-3e4d6ab78d20"
+          ]
+        },
+        {
+          "4": "VAT on Sales\n---"
+        },
+        {
+          "4": "1(a). Standard rated sales at 10%",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "5e734f66-3b02-445e-a2a1-0046ac4f2741",
+            "89f5fefe-aee1-4267-a886-9c97e2c9a557"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd"
+          ]
+        },
+        {
+          "4": "1(b). Standard rated sales at 5%",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "7b9670e0-c931-4049-a272-7f32fc96db8c",
+            "93b0bd51-6450-4607-bd1b-9e7f63570526"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "96803c41-2d04-4131-a8db-1666c04bbc60"
+          ]
+        },
+        {
+          "4": "2. Zero-rated (including exports)",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "999ec8d0-7059-4863-bd7f-c953f493651f",
+            "14e4ff0c-dab3-49cf-bd4d-7dd84361313c",
+            "69cfd039-03f7-4b5c-81c6-57147f42e64f",
+            "6f91160d-75ac-4417-b731-3d7c3c455ec4",
+            "eb35e686-9b29-43c9-a859-1aafc2564fa3",
+            "8c9c8c52-f412-4dee-b640-ed42f7d3b548",
+            "d80edd49-7c68-4090-8df6-9aa8576b0ff2",
+            "fa9db85e-79fd-447d-8c10-c5843a0d0a5a"
+          ]
+        },
+        {
+          "4": "3. Other & exempt sales",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "e777119e-8a4a-44c6-a526-98d58c954139",
+            "a1c39d2b-daf7-494f-abe9-0d5117538ad5"
+          ]
+        },
+        {
+          "5": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ],
+          "6": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ]
+        },
+        {
+          "4": "<strong>4. Total sales</strong>",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "5e734f66-3b02-445e-a2a1-0046ac4f2741",
+            "7b9670e0-c931-4049-a272-7f32fc96db8c",
+            "6f91160d-75ac-4417-b731-3d7c3c455ec4",
+            "999ec8d0-7059-4863-bd7f-c953f493651f",
+            "14e4ff0c-dab3-49cf-bd4d-7dd84361313c",
+            "69cfd039-03f7-4b5c-81c6-57147f42e64f",
+            "e777119e-8a4a-44c6-a526-98d58c954139",
+            "89f5fefe-aee1-4267-a886-9c97e2c9a557",
+            "93b0bd51-6450-4607-bd1b-9e7f63570526",
+            "eb35e686-9b29-43c9-a859-1aafc2564fa3",
+            "fa9db85e-79fd-447d-8c10-c5843a0d0a5a",
+            "8c9c8c52-f412-4dee-b640-ed42f7d3b548",
+            "d80edd49-7c68-4090-8df6-9aa8576b0ff2",
+            "a1c39d2b-daf7-494f-abe9-0d5117538ad5"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd",
+            "96803c41-2d04-4131-a8db-1666c04bbc60"
+          ]
+        },
+        {
+          "4": "<strong>5. Total purchases</strong>",
+          "5": [
+            "c301c953-9a09-43e7-8f67-486d241a4fcf",
+            "7cabf5f3-4905-4a42-b01c-d81dbf31e60a",
+            "0c5b5394-089e-44de-87b8-ec21ed57de16",
+            "00ddea61-01f0-4f0a-bf1f-1cef89ec0fa4",
+            "669fb456-a40f-47aa-893c-133765012cf4",
+            "de8c6443-f2cb-4851-9e83-838fac305146",
+            "254ee382-de24-465c-8b33-384eecd1d1a4",
+            "a73f9213-5bb7-4638-ba43-51e41dbd460d",
+            "a8e786e3-026a-433a-aba0-57b2692e9f06",
+            "79549b48-77ee-4c03-ac57-a5631527f9d6",
+            "c7fd7075-421b-4765-881a-c6eb3470d951",
+            "94dd3ca7-0bcb-4517-82f3-8c09ce5f9bb7"
+          ],
+          "6": [
+            "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+            "530fa538-c99c-494c-be42-fbe526b70127",
+            "be828bbd-bf72-449a-bad6-2ed895743851",
+            "138e5e9d-0f8e-4f50-99fc-4991ab9276bf"
+          ]
+        },
+        {
+          "6": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ]
+        },
+        {
+          "4": "<strong>6. Total VAT due for current period</strong>",
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd",
+            "96803c41-2d04-4131-a8db-1666c04bbc60",
+            "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+            "530fa538-c99c-494c-be42-fbe526b70127",
+            "be828bbd-bf72-449a-bad6-2ed895743851",
+            "138e5e9d-0f8e-4f50-99fc-4991ab9276bf"
+          ]
+        },
+        {
+          "4": "7. Corrections from previous period (between BHD ±5,000)",
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "826d2851-42ed-4fdf-9bec-e5e9b9ca69e3"
+          ]
+        },
+        {
+          "4": "8(a). VAT credit carried forward from previous period(s)",
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "4046ac0b-320a-4fc3-b1ff-519a2e5abbb6"
+          ]
+        },
+        {
+          "6": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ]
+        },
+        {
+          "4": "<strong>9. Net VAT due (or reclaimed)</strong>",
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd",
+            "96803c41-2d04-4131-a8db-1666c04bbc60",
+            "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+            "530fa538-c99c-494c-be42-fbe526b70127",
+            "be828bbd-bf72-449a-bad6-2ed895743851",
+            "138e5e9d-0f8e-4f50-99fc-4991ab9276bf",
+            "826d2851-42ed-4fdf-9bec-e5e9b9ca69e3",
+            "4046ac0b-320a-4fc3-b1ff-519a2e5abbb6"
+          ]
+        }
+      ],
+      "17": true,
+      "10": "",
+      "11": [
+        {
+          "4": ""
+        }
+      ],
+      "13": [
+        {
+          "4": ""
+        }
+      ],
+      "15": "",
+      "19": [
+        {
+          "1": ""
+        }
+      ],
+      "16": true
+    },
+    "0af8303d-9e3a-4d64-9f31-59bf3710c9e9": {
+      "1": "VAT Return Form",
+      "2": "2021-11-24T00:00:00",
+      "3": "2021-11-24T00:00:00",
+      "6": 2,
+      "7": [
+        {
+          "4": "<Strong>Description</strong>",
+          "5": [
+            "9783c618-935b-4293-9f2c-3ee99ad2abd4"
+          ],
+          "6": [
+            "4409d9b9-0175-423d-9866-c98bd044e700"
+          ],
+          "7": [
+            "9ad4dfd8-a70e-42e9-a4a0-3e4d6ab78d20"
+          ]
+        },
+        {
+          "4": "VAT on Sales\n---"
+        },
+        {
+          "4": "1(a). Standard rated sales at 10%",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "5e734f66-3b02-445e-a2a1-0046ac4f2741",
+            "2b62afa4-867d-4a83-b9e7-2ef4f9450062",
+            "ab22f7a7-5f86-4c1d-aa64-b2cb8a679f6a"
+          ],
+          "6": [
+            "89f5fefe-aee1-4267-a886-9c97e2c9a557",
+            "4b8ec250-2749-4f3c-ae2d-5d73fabe46c5",
+            "32137c10-5f56-41b7-862c-0335ee180e9c"
+          ],
+          "7": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd",
+            "0709ba70-bbe2-410a-8e55-2a4b5eb85d55",
+            "6fb3990f-e785-4ebd-94d0-3be9ab118100"
+          ]
+        },
+        {
+          "4": "1(b). Standard rated sales at 5%",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "7b9670e0-c931-4049-a272-7f32fc96db8c",
+            "6aba9dcb-8df2-4ba5-87de-313f4426cb4d",
+            "45c539fb-f4c4-4b9b-84c8-9f82a967aef8"
+          ],
+          "6": [
+            "93b0bd51-6450-4607-bd1b-9e7f63570526",
+            "5c758108-ead7-446c-80d9-608174d9d2a3",
+            "e005ba85-d3d4-47bc-946a-fb33b10c95f6"
+          ],
+          "7": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "96803c41-2d04-4131-a8db-1666c04bbc60",
+            "85d92713-d182-47f8-8102-e7165a59bb1a",
+            "a2969543-9f88-4b94-ab71-e1d64bc65cc8"
+          ]
+        },
+        {
+          "4": "2. Sales to registered VAT payers in other GCC states",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "999ec8d0-7059-4863-bd7f-c953f493651f"
+          ],
+          "6": [
+            "eb35e686-9b29-43c9-a859-1aafc2564fa3"
+          ]
+        },
+        {
+          "4": "3. Sales subject to domestic reverse charge mechanism",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "6f91160d-75ac-4417-b731-3d7c3c455ec4"
+          ],
+          "6": [
+            "fa9db85e-79fd-447d-8c10-c5843a0d0a5a"
+          ]
+        },
+        {
+          "4": "4. Zero rated domestic sales",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "14e4ff0c-dab3-49cf-bd4d-7dd84361313c"
+          ],
+          "6": [
+            "8c9c8c52-f412-4dee-b640-ed42f7d3b548"
+          ]
+        },
+        {
+          "4": "5. Exports",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "69cfd039-03f7-4b5c-81c6-57147f42e64f"
+          ],
+          "6": [
+            "d80edd49-7c68-4090-8df6-9aa8576b0ff2"
+          ]
+        },
+        {
+          "4": "6. Exempt sales",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "e777119e-8a4a-44c6-a526-98d58c954139"
+          ],
+          "6": [
+            "a1c39d2b-daf7-494f-abe9-0d5117538ad5"
+          ]
+        },
+        {
+          "5": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ],
+          "6": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ],
+          "7": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ]
+        },
+        {
+          "4": "<strong>7. Total sales</strong>",
+          "5": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "5e734f66-3b02-445e-a2a1-0046ac4f2741",
+            "2b62afa4-867d-4a83-b9e7-2ef4f9450062",
+            "ab22f7a7-5f86-4c1d-aa64-b2cb8a679f6a",
+            "7b9670e0-c931-4049-a272-7f32fc96db8c",
+            "6aba9dcb-8df2-4ba5-87de-313f4426cb4d",
+            "45c539fb-f4c4-4b9b-84c8-9f82a967aef8",
+            "6f91160d-75ac-4417-b731-3d7c3c455ec4",
+            "999ec8d0-7059-4863-bd7f-c953f493651f",
+            "14e4ff0c-dab3-49cf-bd4d-7dd84361313c",
+            "69cfd039-03f7-4b5c-81c6-57147f42e64f",
+            "e777119e-8a4a-44c6-a526-98d58c954139"
+          ],
+          "6": [
+            "89f5fefe-aee1-4267-a886-9c97e2c9a557",
+            "4b8ec250-2749-4f3c-ae2d-5d73fabe46c5",
+            "32137c10-5f56-41b7-862c-0335ee180e9c",
+            "93b0bd51-6450-4607-bd1b-9e7f63570526",
+            "5c758108-ead7-446c-80d9-608174d9d2a3",
+            "e005ba85-d3d4-47bc-946a-fb33b10c95f6",
+            "eb35e686-9b29-43c9-a859-1aafc2564fa3",
+            "fa9db85e-79fd-447d-8c10-c5843a0d0a5a",
+            "8c9c8c52-f412-4dee-b640-ed42f7d3b548",
+            "d80edd49-7c68-4090-8df6-9aa8576b0ff2",
+            "a1c39d2b-daf7-494f-abe9-0d5117538ad5"
+          ],
+          "7": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd",
+            "0709ba70-bbe2-410a-8e55-2a4b5eb85d55",
+            "6fb3990f-e785-4ebd-94d0-3be9ab118100",
+            "96803c41-2d04-4131-a8db-1666c04bbc60",
+            "85d92713-d182-47f8-8102-e7165a59bb1a",
+            "a2969543-9f88-4b94-ab71-e1d64bc65cc8"
+          ]
+        },
+        {
+          "4": "VAT on Purchases\n---"
+        },
+        {
+          "4": "8(a). Standard rated domestic purchases at 10%",
+          "5": [
+            "c301c953-9a09-43e7-8f67-486d241a4fcf"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "de8c6443-f2cb-4851-9e83-838fac305146",
+            "c7fd7075-421b-4765-881a-c6eb3470d951"
+          ],
+          "7": [
+            "e93616f6-5df6-4d91-aa38-4e480c2f189e"
+          ]
+        },
+        {
+          "4": "8(b). Standard rated domestic purchases at 5%",
+          "5": [
+            "7cabf5f3-4905-4a42-b01c-d81dbf31e60a"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "254ee382-de24-465c-8b33-384eecd1d1a4",
+            "94dd3ca7-0bcb-4517-82f3-8c09ce5f9bb7"
+          ],
+          "7": [
+            "530fa538-c99c-494c-be42-fbe526b70127"
+          ]
+        },
+        {
+          "4": "9(a). Imports subject to VAT paid at customs at 10%",
+          "5": [
+            "0c5b5394-089e-44de-87b8-ec21ed57de16"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a73f9213-5bb7-4638-ba43-51e41dbd460d"
+          ],
+          "7": [
+            "be828bbd-bf72-449a-bad6-2ed895743851"
+          ]
+        },
+        {
+          "4": "9(b). Imports subject to VAT paid at customs at 5%",
+          "5": [
+            "00ddea61-01f0-4f0a-bf1f-1cef89ec0fa4"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a8e786e3-026a-433a-aba0-57b2692e9f06"
+          ],
+          "7": [
+            "138e5e9d-0f8e-4f50-99fc-4991ab9276bf"
+          ]
+        },
+        {
+          "4": "10. Imports subject to deferral at customs",
+          "5": [
+            "94b0a050-3033-4b5d-a849-ac5975b2aa4b"
+          ],
+          "7": [
+            "3e2cb402-73a9-4b2d-aad9-01fe2c2c6037"
+          ]
+        },
+        {
+          "4": "11(a). Imports subject to VAT accounted for through reverse charge mechanism at 10%",
+          "5": [
+            "a9ad1d08-84ae-4cc5-ac8b-0d83c76184d8"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "8ad3c559-16e4-4858-a207-8c73b7989008"
+          ],
+          "7": [
+            "13814b08-20d7-4db7-9542-678b0f5de733"
+          ]
+        },
+        {
+          "4": "11(b). Imports subject to VAT accounted for through reverse charge mechanism at 5%",
+          "5": [
+            "73e4fed0-2c20-4b7d-96bd-f8beb1a737bf"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a22e920e-0562-4f11-8b54-77742b7c6451"
+          ],
+          "7": [
+            "a8226fd6-595f-4835-8224-42d3528b421e"
+          ]
+        },
+        {
+          "4": "12. Purchases subject to domestic reverse charge mechanism",
+          "5": [
+            "f444c201-c89a-4a9a-8452-dc02402a6ee2",
+            "1fd498a8-2ca4-4729-9e4a-6fbe9b53e2dc"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "b2eecf56-e67c-4dfb-ab26-b21d1187ac24",
+            "884cc276-53b0-46d2-8e2f-34ef4ed67a7a"
+          ],
+          "7": [
+            "32017220-0485-4938-9435-94ef9646d192",
+            "abf963b1-526c-43d4-9f48-407b522504f1"
+          ]
+        },
+        {
+          "4": "13. Purchases from non-registered suppliers, zero rated/exempt purchases",
+          "5": [
+            "669fb456-a40f-47aa-893c-133765012cf4"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "79549b48-77ee-4c03-ac57-a5631527f9d6"
+          ]
+        },
+        {
+          "5": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ],
+          "6": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ],
+          "7": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ]
+        },
+        {
+          "4": "<strong>14. Total purchases</strong>",
+          "5": [
+            "c301c953-9a09-43e7-8f67-486d241a4fcf",
+            "7cabf5f3-4905-4a42-b01c-d81dbf31e60a",
+            "0c5b5394-089e-44de-87b8-ec21ed57de16",
+            "00ddea61-01f0-4f0a-bf1f-1cef89ec0fa4",
+            "a9ad1d08-84ae-4cc5-ac8b-0d83c76184d8",
+            "73e4fed0-2c20-4b7d-96bd-f8beb1a737bf",
+            "f444c201-c89a-4a9a-8452-dc02402a6ee2",
+            "1fd498a8-2ca4-4729-9e4a-6fbe9b53e2dc",
+            "669fb456-a40f-47aa-893c-133765012cf4",
+            "94b0a050-3033-4b5d-a849-ac5975b2aa4b"
+          ],
+          "6": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "b2eecf56-e67c-4dfb-ab26-b21d1187ac24",
+            "884cc276-53b0-46d2-8e2f-34ef4ed67a7a",
+            "a73f9213-5bb7-4638-ba43-51e41dbd460d",
+            "a8e786e3-026a-433a-aba0-57b2692e9f06",
+            "8ad3c559-16e4-4858-a207-8c73b7989008",
+            "a22e920e-0562-4f11-8b54-77742b7c6451",
+            "de8c6443-f2cb-4851-9e83-838fac305146",
+            "254ee382-de24-465c-8b33-384eecd1d1a4",
+            "79549b48-77ee-4c03-ac57-a5631527f9d6",
+            "c7fd7075-421b-4765-881a-c6eb3470d951",
+            "94dd3ca7-0bcb-4517-82f3-8c09ce5f9bb7"
+          ],
+          "7": [
+            "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+            "be828bbd-bf72-449a-bad6-2ed895743851",
+            "13814b08-20d7-4db7-9542-678b0f5de733",
+            "32017220-0485-4938-9435-94ef9646d192",
+            "530fa538-c99c-494c-be42-fbe526b70127",
+            "138e5e9d-0f8e-4f50-99fc-4991ab9276bf",
+            "abf963b1-526c-43d4-9f48-407b522504f1",
+            "a8226fd6-595f-4835-8224-42d3528b421e",
+            "3e2cb402-73a9-4b2d-aad9-01fe2c2c6037"
+          ]
+        },
+        {
+          "4": "Net VAT Due\n---"
+        },
+        {
+          "4": "<strong>15. Total VAT due for current period</strong>",
+          "7": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd",
+            "0709ba70-bbe2-410a-8e55-2a4b5eb85d55",
+            "6fb3990f-e785-4ebd-94d0-3be9ab118100",
+            "96803c41-2d04-4131-a8db-1666c04bbc60",
+            "85d92713-d182-47f8-8102-e7165a59bb1a",
+            "a2969543-9f88-4b94-ab71-e1d64bc65cc8",
+            "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+            "be828bbd-bf72-449a-bad6-2ed895743851",
+            "13814b08-20d7-4db7-9542-678b0f5de733",
+            "32017220-0485-4938-9435-94ef9646d192",
+            "530fa538-c99c-494c-be42-fbe526b70127",
+            "138e5e9d-0f8e-4f50-99fc-4991ab9276bf",
+            "abf963b1-526c-43d4-9f48-407b522504f1",
+            "a8226fd6-595f-4835-8224-42d3528b421e",
+            "3e2cb402-73a9-4b2d-aad9-01fe2c2c6037"
+          ]
+        },
+        {
+          "4": "16. Corrections from previous period (between BHD ±5,000)",
+          "7": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "826d2851-42ed-4fdf-9bec-e5e9b9ca69e3"
+          ]
+        },
+        {
+          "4": "17. VAT credit carried forward from previous period(s)",
+          "7": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "4046ac0b-320a-4fc3-b1ff-519a2e5abbb6"
+          ]
+        },
+        {
+          "7": [
+            "f844326f-4794-404c-ad6d-6b289e3da75f"
+          ]
+        },
+        {
+          "4": "<strong>18. Net VAT due (or reclaimed)</strong>",
+          "7": [
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "a26c44be-08ee-494f-973e-cfe9c81510cd",
+            "0709ba70-bbe2-410a-8e55-2a4b5eb85d55",
+            "6fb3990f-e785-4ebd-94d0-3be9ab118100",
+            "96803c41-2d04-4131-a8db-1666c04bbc60",
+            "85d92713-d182-47f8-8102-e7165a59bb1a",
+            "a2969543-9f88-4b94-ab71-e1d64bc65cc8",
+            "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+            "be828bbd-bf72-449a-bad6-2ed895743851",
+            "13814b08-20d7-4db7-9542-678b0f5de733",
+            "32017220-0485-4938-9435-94ef9646d192",
+            "530fa538-c99c-494c-be42-fbe526b70127",
+            "138e5e9d-0f8e-4f50-99fc-4991ab9276bf",
+            "abf963b1-526c-43d4-9f48-407b522504f1",
+            "a8226fd6-595f-4835-8224-42d3528b421e",
+            "826d2851-42ed-4fdf-9bec-e5e9b9ca69e3",
+            "4046ac0b-320a-4fc3-b1ff-519a2e5abbb6",
+            "3e2cb402-73a9-4b2d-aad9-01fe2c2c6037"
+          ]
+        }
+      ],
+      "17": true,
+      "10": "",
+      "11": [
+        {
+          "4": ""
+        }
+      ],
+      "13": [
+        {
+          "4": ""
+        }
+      ],
+      "15": "",
+      "19": [
+        {
+          "1": ""
+        }
+      ],
+      "16": true
+    }
+  },
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {
+    "9783c618-935b-4293-9f2c-3ee99ad2abd4": {
+      "1": "<div style='font-weight:bold;text-align:center;'>Amount</div>"
+    },
+    "9ad4dfd8-a70e-42e9-a4a0-3e4d6ab78d20": {
+      "1": "<div style=\"font-weight:bold;text-align:center;\">VAT Amount</div>"
+    },
+    "4409d9b9-0175-423d-9866-c98bd044e700": {
+      "1": "<div style=\"width:14ch; font-weight:bold; text-align:center; margin:auto;\">Adjustment/ Apportionment</div>"
+    },
+    "f844326f-4794-404c-ad6d-6b289e3da75f": {
+      "1": "<hr style=\"height:1px;border-width:0;color:#000;background-color:#000;margin:5px 0\">"
+    }
+  },
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {
+    "826d2851-42ed-4fdf-9bec-e5e9b9ca69e3": {
+      "1": "VAT Corrections C/F from Prev. Periods"
+    },
+    "4046ac0b-320a-4fc3-b1ff-519a2e5abbb6": {
+      "1": "VAT Credits C/F from Prev. Periods"
+    },
+    "94b0a050-3033-4b5d-a849-ac5975b2aa4b": {
+      "1": "VAT/I - Deferred Imports"
+    },
+    "f444c201-c89a-4a9a-8452-dc02402a6ee2": {
+      "1": "VAT/I - Domestic RCM 10%"
+    },
+    "1fd498a8-2ca4-4729-9e4a-6fbe9b53e2dc": {
+      "1": "VAT/I - Domestic RCM 5%"
+    },
+    "0c5b5394-089e-44de-87b8-ec21ed57de16": {
+      "1": "VAT/I - Imports 10%"
+    },
+    "00ddea61-01f0-4f0a-bf1f-1cef89ec0fa4": {
+      "1": "VAT/I - Imports 5%"
+    },
+    "a9ad1d08-84ae-4cc5-ac8b-0d83c76184d8": {
+      "1": "VAT/I - RCM 10%"
+    },
+    "73e4fed0-2c20-4b7d-96bd-f8beb1a737bf": {
+      "1": "VAT/I - RCM 5%"
+    },
+    "c301c953-9a09-43e7-8f67-486d241a4fcf": {
+      "1": "VAT/I - Standard 10%"
+    },
+    "7cabf5f3-4905-4a42-b01c-d81dbf31e60a": {
+      "1": "VAT/I - Standard 5%"
+    },
+    "669fb456-a40f-47aa-893c-133765012cf4": {
+      "1": "VAT/I - Zero"
+    },
+    "b2eecf56-e67c-4dfb-ab26-b21d1187ac24": {
+      "1": "VAT/I Adjustment - Domestic RCM 10%"
+    },
+    "884cc276-53b0-46d2-8e2f-34ef4ed67a7a": {
+      "1": "VAT/I Adjustment - Domestic RCM 5%"
+    },
+    "a73f9213-5bb7-4638-ba43-51e41dbd460d": {
+      "1": "VAT/I Adjustment - Import 10%"
+    },
+    "a8e786e3-026a-433a-aba0-57b2692e9f06": {
+      "1": "VAT/I Adjustment - Import 5%"
+    },
+    "8ad3c559-16e4-4858-a207-8c73b7989008": {
+      "1": "VAT/I Adjustment - RCM 10%"
+    },
+    "a22e920e-0562-4f11-8b54-77742b7c6451": {
+      "1": "VAT/I Adjustment - RCM 5%"
+    },
+    "de8c6443-f2cb-4851-9e83-838fac305146": {
+      "1": "VAT/I Adjustment - Standard 10%"
+    },
+    "254ee382-de24-465c-8b33-384eecd1d1a4": {
+      "1": "VAT/I Adjustment - Standard 5%"
+    },
+    "79549b48-77ee-4c03-ac57-a5631527f9d6": {
+      "1": "VAT/I Adjustment - Zero"
+    },
+    "c7fd7075-421b-4765-881a-c6eb3470d951": {
+      "1": "VAT/I Apportionment - Standard 10%"
+    },
+    "94dd3ca7-0bcb-4517-82f3-8c09ce5f9bb7": {
+      "1": "VAT/I Apportionment - Standard 5%"
+    },
+    "6f91160d-75ac-4417-b731-3d7c3c455ec4": {
+      "1": "VAT/O - Domestic RCM Sales 0%"
+    },
+    "e777119e-8a4a-44c6-a526-98d58c954139": {
+      "1": "VAT/O - Exempt"
+    },
+    "69cfd039-03f7-4b5c-81c6-57147f42e64f": {
+      "1": "VAT/O - Exports 0%"
+    },
+    "999ec8d0-7059-4863-bd7f-c953f493651f": {
+      "1": "VAT/O - GCC 0%"
+    },
+    "5e734f66-3b02-445e-a2a1-0046ac4f2741": {
+      "1": "VAT/O - Standard 10%"
+    },
+    "7b9670e0-c931-4049-a272-7f32fc96db8c": {
+      "1": "VAT/O - Standard 5%"
+    },
+    "14e4ff0c-dab3-49cf-bd4d-7dd84361313c": {
+      "1": "VAT/O - Zero"
+    },
+    "fa9db85e-79fd-447d-8c10-c5843a0d0a5a": {
+      "1": "VAT/O Adjustment - DRCM Sales 0%"
+    },
+    "a1c39d2b-daf7-494f-abe9-0d5117538ad5": {
+      "1": "VAT/O Adjustment - Exempt"
+    },
+    "d80edd49-7c68-4090-8df6-9aa8576b0ff2": {
+      "1": "VAT/O Adjustment - Export 0%"
+    },
+    "eb35e686-9b29-43c9-a859-1aafc2564fa3": {
+      "1": "VAT/O Adjustment - GCC 0%"
+    },
+    "89f5fefe-aee1-4267-a886-9c97e2c9a557": {
+      "1": "VAT/O Adjustment - Standard 10%"
+    },
+    "93b0bd51-6450-4607-bd1b-9e7f63570526": {
+      "1": "VAT/O Adjustment - Standard 5%"
+    },
+    "8c9c8c52-f412-4dee-b640-ed42f7d3b548": {
+      "1": "VAT/O Adjustment - Zero"
+    }
+  },
+  "6027ab88-f804-4827-beff-26b76bb94587": {
+    "2b62afa4-867d-4a83-b9e7-2ef4f9450062": {
+      "1": "VAT/O - Domestic RCM 10%"
+    },
+    "6aba9dcb-8df2-4ba5-87de-313f4426cb4d": {
+      "1": "VAT/O - Domestic RCM 5%"
+    },
+    "ab22f7a7-5f86-4c1d-aa64-b2cb8a679f6a": {
+      "1": "VAT/O - RCM 10%"
+    },
+    "45c539fb-f4c4-4b9b-84c8-9f82a967aef8": {
+      "1": "VAT/O - RCM 5%"
+    },
+    "4b8ec250-2749-4f3c-ae2d-5d73fabe46c5": {
+      "1": "VAT/O Adjustment - Domestic RCM 10%"
+    },
+    "5c758108-ead7-446c-80d9-608174d9d2a3": {
+      "1": "VAT/O Adjustment - Domestic RCM 5%"
+    },
+    "32137c10-5f56-41b7-862c-0335ee180e9c": {
+      "1": "VAT/O Adjustment - RCM 10%"
+    },
+    "e005ba85-d3d4-47bc-946a-fb33b10c95f6": {
+      "1": "VAT/O Adjustment - RCM 5%"
+    }
+  },
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {
+    "3e2cb402-73a9-4b2d-aad9-01fe2c2c6037": {
+      "1": "VAT/I Amount - Deferred Imports"
+    },
+    "32017220-0485-4938-9435-94ef9646d192": {
+      "1": "VAT/I Amount - Domestic RCM 10%"
+    },
+    "abf963b1-526c-43d4-9f48-407b522504f1": {
+      "1": "VAT/I Amount - Domestic RCM 5%"
+    },
+    "be828bbd-bf72-449a-bad6-2ed895743851": {
+      "1": "VAT/I Amount - Imports 10%"
+    },
+    "138e5e9d-0f8e-4f50-99fc-4991ab9276bf": {
+      "1": "VAT/I Amount - Imports 5%"
+    },
+    "13814b08-20d7-4db7-9542-678b0f5de733": {
+      "1": "VAT/I Amount - RCM 10%"
+    },
+    "a8226fd6-595f-4835-8224-42d3528b421e": {
+      "1": "VAT/I Amount - RCM 5%"
+    },
+    "e93616f6-5df6-4d91-aa38-4e480c2f189e": {
+      "1": "VAT/I Amount - Standard 10%"
+    },
+    "530fa538-c99c-494c-be42-fbe526b70127": {
+      "1": "VAT/I Amount - Standard 5%"
+    },
+    "96803c41-2d04-4131-a8db-1666c04bbc60": {
+      "1": "VAT/O Amount  - Standard 5%"
+    },
+    "a26c44be-08ee-494f-973e-cfe9c81510cd": {
+      "1": "VAT/O Amount - Standard 10%"
+    }
+  },
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {
+    "0709ba70-bbe2-410a-8e55-2a4b5eb85d55": {
+      "1": "VAT/O Amount - Domestic RCM 10%"
+    },
+    "85d92713-d182-47f8-8102-e7165a59bb1a": {
+      "1": "VAT/O Amount - Domestic RCM 5%"
+    },
+    "6fb3990f-e785-4ebd-94d0-3be9ab118100": {
+      "1": "VAT/O Amount - RCM 10%"
+    },
+    "a2969543-9f88-4b94-ab71-e1d64bc65cc8": {
+      "1": "VAT/O Amount - RCM 5%"
+    }
+  },
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {
+    "464d907c-d2df-4497-9714-d23b3dd1eaf5": {
+      "1": "Adjust DRCM VAT/I 10%",
+      "21": "VAT RCM",
+      "18": "b2eecf56-e67c-4dfb-ab26-b21d1187ac24",
+      "22": "4b8ec250-2749-4f3c-ae2d-5d73fabe46c5",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "32017220-0485-4938-9435-94ef9646d192",
+      "20": "0709ba70-bbe2-410a-8e55-2a4b5eb85d55",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "23": {}
+    },
+    "03cd8b42-08ef-436e-896a-89cd1365a8e7": {
+      "1": "Adjust DRCM VAT/I 5%",
+      "21": "VAT RCM",
+      "18": "884cc276-53b0-46d2-8e2f-34ef4ed67a7a",
+      "22": "5c758108-ead7-446c-80d9-608174d9d2a3",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "abf963b1-526c-43d4-9f48-407b522504f1",
+      "20": "85d92713-d182-47f8-8102-e7165a59bb1a",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "23": {}
+    },
+    "1d8242fc-6851-4a68-90d9-2da41a53babd": {
+      "1": "Adjust DRCM VAT/O 0%",
+      "21": "VAT 0%",
+      "18": "fa9db85e-79fd-447d-8c10-c5843a0d0a5a",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "23": {}
+    },
+    "8888f49a-7a9a-4f9f-b6a7-b050f375fe2b": {
+      "1": "Adjust Export VAT/O 0%",
+      "21": "VAT 0%",
+      "18": "d80edd49-7c68-4090-8df6-9aa8576b0ff2",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note"
+    },
+    "36cf9f85-3c83-4313-a59c-d0b9a9b1d777": {
+      "1": "Adjust GCC VAT/O 0%",
+      "21": "VAT 0%",
+      "18": "eb35e686-9b29-43c9-a859-1aafc2564fa3",
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note"
+    },
+    "20efc9da-b23e-4c26-a636-fa65d2de29d3": {
+      "1": "Adjust Import VAT/I 10%",
+      "21": "VAT 10%",
+      "18": "a73f9213-5bb7-4638-ba43-51e41dbd460d",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "be828bbd-bf72-449a-bad6-2ed895743851",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "30280579-5899-4e59-9c3e-7ea94b82899e": {
+      "1": "Adjust Import VAT/I 5%",
+      "21": "VAT 5%",
+      "18": "a8e786e3-026a-433a-aba0-57b2692e9f06",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "138e5e9d-0f8e-4f50-99fc-4991ab9276bf",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "cd14ca5e-746d-4f87-9bd3-15a92c7e4671": {
+      "1": "Adjust RCM VAT/I 10%",
+      "21": "VAT RCM",
+      "18": "8ad3c559-16e4-4858-a207-8c73b7989008",
+      "22": "32137c10-5f56-41b7-862c-0335ee180e9c",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "13814b08-20d7-4db7-9542-678b0f5de733",
+      "20": "6fb3990f-e785-4ebd-94d0-3be9ab118100",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "23": {}
+    },
+    "4e550cfc-0072-43ee-8f26-8483b6fd714b": {
+      "1": "Adjust RCM VAT/I 5%",
+      "21": "VAT RCM",
+      "18": "a22e920e-0562-4f11-8b54-77742b7c6451",
+      "22": "e005ba85-d3d4-47bc-946a-fb33b10c95f6",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "a8226fd6-595f-4835-8224-42d3528b421e",
+      "20": "a2969543-9f88-4b94-ab71-e1d64bc65cc8",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "23": {}
+    },
+    "200c17d0-acaa-4d19-9740-9fa72c3e2701": {
+      "1": "Adjust VAT/I 0%",
+      "21": "VAT 0%",
+      "18": "79549b48-77ee-4c03-ac57-a5631527f9d6",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "91cdfec4-16da-4344-8168-55869c1db211": {
+      "1": "Adjust VAT/I 10%",
+      "21": "VAT 10%",
+      "18": "de8c6443-f2cb-4851-9e83-838fac305146",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "d25a45f9-3b07-4827-9986-4ebe0d1a950d": {
+      "1": "Adjust VAT/I 5%",
+      "21": "VAT 5%",
+      "18": "254ee382-de24-465c-8b33-384eecd1d1a4",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "530fa538-c99c-494c-be42-fbe526b70127",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "3e3d5f6b-564b-4f96-b735-790d35786d74": {
+      "1": "Adjust VAT/O 0%",
+      "21": "VAT 0%",
+      "18": "8c9c8c52-f412-4dee-b640-ed42f7d3b548",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note"
+    },
+    "aacc0597-2a7b-4834-b2fb-17329a141da5": {
+      "1": "Adjust VAT/O 10%",
+      "21": "VAT 10%",
+      "18": "89f5fefe-aee1-4267-a886-9c97e2c9a557",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "a26c44be-08ee-494f-973e-cfe9c81510cd",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note"
+    },
+    "ba48e190-158f-4228-936d-ce7a5cba378a": {
+      "1": "Adjust VAT/O 5%",
+      "21": "VAT 5%",
+      "18": "93b0bd51-6450-4607-bd1b-9e7f63570526",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "96803c41-2d04-4131-a8db-1666c04bbc60",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "685b5890-b228-4787-ba27-46dea3c900ce": {
+      "1": "Adjust VAT/O Exempt",
+      "21": "VAT Exempt",
+      "18": "a1c39d2b-daf7-494f-abe9-0d5117538ad5",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "8f308d3d-17e3-45f3-baeb-428f842cca18": {
+      "1": "Apportion VAT/I 10%",
+      "21": "",
+      "18": "94dd3ca7-0bcb-4517-82f3-8c09ce5f9bb7",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "530fa538-c99c-494c-be42-fbe526b70127",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "c76b8ddd-1382-4d1c-8ae6-e2974f0824d3": {
+      "1": "Apportion VAT/I 5%",
+      "21": "",
+      "18": "94dd3ca7-0bcb-4517-82f3-8c09ce5f9bb7",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "530fa538-c99c-494c-be42-fbe526b70127",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "49f71c4c-47fe-40c1-ac53-c00f528e3e0e": {
+      "1": "Deferred import VAT 10%",
+      "21": "VAT 10%",
+      "18": "94b0a050-3033-4b5d-a849-ac5975b2aa4b",
+      "22": "ab22f7a7-5f86-4c1d-aa64-b2cb8a679f6a",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "3e2cb402-73a9-4b2d-aad9-01fe2c2c6037",
+      "20": "6fb3990f-e785-4ebd-94d0-3be9ab118100",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "23": {}
+    },
+    "04c3307c-2fa8-4940-8858-4a45db3104ca": {
+      "1": "Deferred import VAT 5%",
+      "21": "VAT 5%",
+      "18": "94b0a050-3033-4b5d-a849-ac5975b2aa4b",
+      "22": "45c539fb-f4c4-4b9b-84c8-9f82a967aef8",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "3e2cb402-73a9-4b2d-aad9-01fe2c2c6037",
+      "20": "a2969543-9f88-4b94-ab71-e1d64bc65cc8",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "23": {}
+    },
+    "a54b6c53-ea9b-4f53-b8aa-d29126ccfcb2": {
+      "1": "Domestic RCM 10%",
+      "21": "VAT RCM",
+      "18": "f444c201-c89a-4a9a-8452-dc02402a6ee2",
+      "22": "2b62afa4-867d-4a83-b9e7-2ef4f9450062",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "32017220-0485-4938-9435-94ef9646d192",
+      "20": "0709ba70-bbe2-410a-8e55-2a4b5eb85d55",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": ""
+    },
+    "7acc97c8-4887-40bb-9d33-0ffe2b5155e7": {
+      "1": "Domestic RCM 5%",
+      "21": "VAT RCM",
+      "18": "1fd498a8-2ca4-4729-9e4a-6fbe9b53e2dc",
+      "22": "6aba9dcb-8df2-4ba5-87de-313f4426cb4d",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "abf963b1-526c-43d4-9f48-407b522504f1",
+      "20": "85d92713-d182-47f8-8102-e7165a59bb1a",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "db11138c-b413-44ae-b21d-78852bb9e39d": {
+      "1": "Export VAT 0%",
+      "21": "VAT 0%",
+      "18": "69cfd039-03f7-4b5c-81c6-57147f42e64f",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "c56d4d37-13a8-4c9e-b2a3-8edade5227e7": {
+      "1": "Export VAT GCC 0%",
+      "21": "VAT 0%",
+      "18": "999ec8d0-7059-4863-bd7f-c953f493651f",
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "7c0aa34b-ff0b-4b47-8686-8b0473407104": {
+      "1": "Import VAT 10%",
+      "21": "VAT 10%",
+      "18": "0c5b5394-089e-44de-87b8-ec21ed57de16",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "be828bbd-bf72-449a-bad6-2ed895743851",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "0925e5c4-3652-4e9f-af1e-6acea36e7d36": {
+      "1": "Import VAT 100%",
+      "21": "",
+      "18": "00ddea61-01f0-4f0a-bf1f-1cef89ec0fa4",
+      "5": 1,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "138e5e9d-0f8e-4f50-99fc-4991ab9276bf",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "7a2a9d92-248e-49bf-953b-2cb73f4c282b": {
+      "1": "Import VAT 5%",
+      "21": "VAT 5%",
+      "18": "00ddea61-01f0-4f0a-bf1f-1cef89ec0fa4",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "138e5e9d-0f8e-4f50-99fc-4991ab9276bf",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "ea338d8f-701c-45c3-b5a0-486052c9c0cb": {
+      "1": "Input VAT 0%",
+      "21": "VAT 0%",
+      "18": "669fb456-a40f-47aa-893c-133765012cf4",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "a99b83ec-cb14-48ca-8f00-00ac60ce75a2": {
+      "1": "Input VAT 10%",
+      "21": "VAT 10%",
+      "18": "c301c953-9a09-43e7-8f67-486d241a4fcf",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "e93616f6-5df6-4d91-aa38-4e480c2f189e",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "b59e7eb1-da5a-499c-9e4a-535a9accbfdb": {
+      "1": "Input VAT 5%",
+      "21": "VAT 5%",
+      "18": "7cabf5f3-4905-4a42-b01c-d81dbf31e60a",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "530fa538-c99c-494c-be42-fbe526b70127",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "e71288aa-addf-4152-98bd-813811cada63": {
+      "1": "Input VAT Exempt",
+      "21": "VAT Exempt",
+      "18": "669fb456-a40f-47aa-893c-133765012cf4",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "3147ab19-740d-49c4-a038-438908c36c0d": {
+      "1": "Output Domestic RCM 0%",
+      "21": "VAT 0%",
+      "18": "6f91160d-75ac-4417-b731-3d7c3c455ec4",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "23": {}
+    },
+    "d08297cf-6052-416d-b5c8-c3f7b678801c": {
+      "1": "Output VAT 0%",
+      "21": "VAT 0%",
+      "18": "14e4ff0c-dab3-49cf-bd4d-7dd84361313c",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "61e7eef3-437c-4a55-b0d4-098a0964cbcf": {
+      "1": "Output VAT 10%",
+      "21": "VAT 10%",
+      "18": "5e734f66-3b02-445e-a2a1-0046ac4f2741",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "a26c44be-08ee-494f-973e-cfe9c81510cd",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note"
+    },
+    "db575f9e-3745-4ed9-a68b-bf27f00b28fe": {
+      "1": "Output VAT 5%",
+      "21": "VAT 5%",
+      "18": "7b9670e0-c931-4049-a272-7f32fc96db8c",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "96803c41-2d04-4131-a8db-1666c04bbc60",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "dc491d66-9055-4fc6-9a9d-b1850ff8ee40": {
+      "1": "Output VAT Exempt",
+      "21": "VAT Exempt",
+      "18": "e777119e-8a4a-44c6-a526-98d58c954139",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": "",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    },
+    "14c85d76-547c-4f8a-ac16-6d3884f3a61e": {
+      "1": "VAT correction 5%",
+      "21": "VAT 5%",
+      "5": 2,
+      "4": 5.0,
+      "7": "8e99da1e-99f3-4ebb-be7a-d183debfb6a7",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "bc7ba198-c48d-49e0-9c5c-bc5a11140632": {
+      "1": "VAT corrections 10%",
+      "21": "VAT 10%",
+      "5": 2,
+      "4": 10.0,
+      "7": "8e99da1e-99f3-4ebb-be7a-d183debfb6a7",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "15": true,
+      "16": "Tax Credit Note"
+    },
+    "455f14a1-109e-46d5-b8d1-4627611bd277": {
+      "1": "VAT PP Corrections C/F",
+      "21": "",
+      "18": "826d2851-42ed-4fdf-9bec-e5e9b9ca69e3",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "87082101-3222-437c-bab5-549c9f91c679": {
+      "1": "VAT PP Credits C/F",
+      "21": "",
+      "18": "4046ac0b-320a-4fc3-b1ff-519a2e5abbb6",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "14": "",
+      "16": ""
+    },
+    "5eadbe36-66d9-4ecb-889b-13d3bfe6ef1e": {
+      "1": "VAT RCM 10%",
+      "21": "VAT RCM",
+      "18": "a9ad1d08-84ae-4cc5-ac8b-0d83c76184d8",
+      "22": "ab22f7a7-5f86-4c1d-aa64-b2cb8a679f6a",
+      "5": 2,
+      "4": 10.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "13814b08-20d7-4db7-9542-678b0f5de733",
+      "20": "6fb3990f-e785-4ebd-94d0-3be9ab118100",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": ""
+    },
+    "2f4eef77-1880-40be-932f-f16767336973": {
+      "1": "VAT RCM 5%",
+      "21": "VAT RCM",
+      "18": "73e4fed0-2c20-4b7d-96bd-f8beb1a737bf",
+      "22": "45c539fb-f4c4-4b9b-84c8-9f82a967aef8",
+      "5": 2,
+      "4": 5.0,
+      "7": "5c7008ea-e684-4864-bef9-a8d7765373e3",
+      "19": "a8226fd6-595f-4835-8224-42d3528b421e",
+      "20": "a2969543-9f88-4b94-ab71-e1d64bc65cc8",
+      "2": [
+        {
+          "1": ""
+        }
+      ],
+      "11": true,
+      "14": "",
+      "16": "",
+      "17": {
+        "1caa5943-ad8a-46a0-8f9c-6a57c1a6611f": ""
+      }
+    }
+  },
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {
+    "1e8ea509-69e1-4f1c-9e33-00111179a440": {
+      "1": "VAT account",
+      "13": [
+        "38cf4712-6e95-4ce1-b53a-bff03edad273"
+      ],
+      "4": 1,
+      "8": true
+    }
+  },
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "20d83f0d-acf3-41ca-b862-de272540fe72": {
+      "1": "Accounting fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "7a3284b0-29dd-4760-aeb3-ec991017b5ff": {
+      "1": "Advertising and promotion",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "7a4d5651-745d-4d94-8c20-c699916b7caa": {
+      "1": "Bank charges",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "e640f46c-4390-4ed8-ac39-4c48f610862b": {
+      "1": "Computer equipment",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "6538e49f-1546-42af-bd4e-e9e47b26024a": {
+      "1": "Donations",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "e102aa32-d2b5-4086-97d4-ad25845c3ab0": {
+      "1": "Electricity",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "68e0ea1a-b342-4b9a-96f4-a93aacb8a6d6": {
+      "1": "Entertainment",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "8309d078-65a3-44e0-b774-f77a7d799054": {
+      "1": "Interest received",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "a4c7b841-84f0-4b7f-8250-751d47548c81": {
+      "1": "Legal fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "31cc153e-aae5-45a3-920c-1489503e9afe": {
+      "1": "Motor vehicle expenses",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "af7257a0-8c7a-4aea-8572-9dd879767caa": {
+      "1": "Printing and stationery",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "269eb567-92a0-4d86-978c-50504ab4d3b5": {
+      "1": "Rent",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "acbc601b-bfa3-49bf-aaf2-2b472790d3e6": {
+      "1": "Repairs and maintenance",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "afc510ba-0281-47cf-bd21-ec8981db03ec": {
+      "1": "Sales",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "c281c672-100d-464a-8fd1-28e14a19b841": {
+      "1": "Shipping and clearing",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "282d2b39-b04b-4afc-9c49-2d94ba55075b": {
+      "1": "Social Insurance expense (SIO)(GOSI)",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "53674685-c017-466f-91c7-da7bfd651246": {
+      "1": "Tax expenses"
+    },
+    "e0016fa8-089a-4be3-8d97-c7e6bfbf7966": {
+      "1": "Telephone",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "fd003045-876e-439e-b923-1904453f5c30": {
+      "1": "Expenses",
+      "6": 1,
+      "5": 2
+    },
+    "95713fac-30d3-42e4-b536-dd7bc4f7a80e": {
+      "1": "Income",
+      "5": 1
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {},
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "8e99da1e-99f3-4ebb-be7a-d183debfb6a7": {
+      "1": "VAT Corrections",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    },
+    "5c7008ea-e684-4864-bef9-a8d7765373e3": {
+      "1": "VAT payable",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {},
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {
+    "79f63530-3eb1-46f1-b800-ff23ac3914b6": {
+      "1": "Basic salary"
+    },
+    "39201ae2-fc78-4c3a-9e15-620831d36191": {
+      "1": "Bonus pay"
+    },
+    "84801d87-3339-480f-bf46-acabfc5ca7d6": {
+      "1": "HR allowance"
+    },
+    "8d8996d7-b0b9-4324-9b17-114ef4a0b410": {
+      "1": "Regular overtime (125%)"
+    },
+    "f8f007a2-272d-473f-8c11-5e1525e82a76": {
+      "1": "Shift allowance"
+    },
+    "4232b823-2fdd-4413-8053-259f78ef088d": {
+      "1": "Special overtime (150%)"
+    }
+  },
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {
+    "f9b8cec2-c60e-4e81-8c5b-c2ce53ae34ac": {
+      "1": "Social insurance deductible (7%)",
+      "3": "282d2b39-b04b-4afc-9c49-2d94ba55075b"
+    }
+  },
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {},
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {},
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {},
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {},
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "b73b5ca2-c874-4b15-9c43-4bee10791ee0": {
+      "1": "Drawings"
+    },
+    "449d6c28-354d-43ec-8441-7d11ad36fa2e": {
+      "1": "Funds contributed"
+    },
+    "5a8e8c57-cf5e-400d-bf23-e9b5ef96b4d6": {
+      "1": "Share of profit"
+    }
+  }
+}

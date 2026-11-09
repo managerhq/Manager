@@ -1,0 +1,905 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "EUR",
+      "2": "Euro",
+      "4": "€"
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {},
+  "6116531b-cb3d-4f85-b239-745972943a6b": {},
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "dd.MM.yyyy",
+      "4": "HH:mm:ss",
+      "2": 1,
+      "3": "CgEsEgEuGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {
+    "02035279-7e0d-4090-b1c8-abb0cb667e69": {
+      "1": "Umsatzsteuer-Voranmeldung",
+      "2": "2021-11-01T00:00:00",
+      "3": "2021-12-31T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "4": "Mustermann GmbH\nMusterasse 11\n99999 Musterhausen"
+        },
+        {
+          "4": "<b>I.   Anmeldung der Umsatzsteuer-Vorauszahlung<b>"
+        },
+        {
+          "4": "<b>Lieferungen und sonstige Leistungen   \n(einschließlich unentgeltlicher Wertabgaben)<b>"
+        },
+        {
+          "4": "<b>Steuerfreie Umsätze mit Vorsteuerabzug<b>"
+        },
+        {
+          "4": "Innergemeinschaftliche Lieferungen (§ 4 Nummer 1 Buchstabe b UStG) an Abnehmer\nmit Umsatzsteuer-Identifikationsnummer",
+          "5": [
+            "c1c52061-f02e-4a46-963e-293b05183c49"
+          ],
+          "6": [
+            "00147d2a-4b80-4faa-9d83-a5f572b88ae7",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "Weitere steuerfreie Umsätze mit Vorsteuerabzug (zum Beispiel Ausfuhrlieferungen,\nUmsätze nach § 4 Nummer 2 bis 7 UStG)",
+          "5": [
+            "03a72951-e6d1-4241-99fa-69e912696242"
+          ],
+          "6": [
+            "09a8bae5-3c32-45c0-a8a5-aab2c34624a6",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "<b>Steuerpflichtige Umsätze<b>\n(Lieferungen und sonstige Leistungen einschl. unentgeltlicher Wertabgaben)"
+        },
+        {
+          "4": "zum Steuersatz von 19 %",
+          "5": [
+            "78b40f95-d884-43e9-9401-8fb823c3f5e5"
+          ],
+          "6": [
+            "d9d70433-d291-441b-93f9-2d20c49a9148",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "zum Steuersatz von   7 %",
+          "5": [
+            "5a52c282-17e0-4bb8-b08b-4c6e3d1d712c"
+          ],
+          "6": [
+            "e0c14744-bf55-4b3e-97af-35bb029a528a",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "<b>Innergemeinschaftliche Erwerbe<b>"
+        },
+        {
+          "4": "<b>Steuerpfl ichtige innergemeinschaftliche Erwerbe<b>"
+        },
+        {
+          "4": "zum Steuersatz von 19 %.",
+          "5": [
+            "f47f7bd4-0bf7-4330-b492-f91c69a6ef15"
+          ],
+          "6": [
+            "b188401a-e704-40ed-bb36-fc5c1fed61b1",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "zum Steuersatz von   7 %",
+          "5": [
+            "60cd64b2-95ef-4db3-9994-cbc0313ba59b"
+          ],
+          "6": [
+            "95a8d3e2-f623-40bc-b504-16bc0a0b35b0",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "<b>Ergänzende Angaben zu Umsätzen<b>"
+        },
+        {
+          "4": "Nicht steuerbare sonstige Leistungen gem. § 18b Satz 1 Nr. 2 UStG",
+          "5": [
+            "1bd6309d-ef45-42ec-a988-36e808204e41"
+          ],
+          "6": [
+            "babe9a58-ad90-44a7-a9c0-55fc28f1d7c2",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "Übrige nicht steuerbare Umsätze (Leistungsort nicht im Inland)",
+          "5": [
+            "b7fde49a-5b33-4c25-81dd-aa0b9b6bc88f"
+          ],
+          "6": [
+            "9c4a4842-4c57-449f-af4f-6dc1d0c66fb0",
+            "0846abcd-dc2a-4914-9c9b-9d7130ac99d6"
+          ]
+        },
+        {
+          "4": "<b>Abziehbare Vorsteuerbeträge<b>"
+        },
+        {
+          "4": "Vorsteuerbeträge aus Rechnungen von anderen Unternehmern (§ 15 Abs. 1 Satz 1 Nr. 1 UStG),\naus Leistungen im Sinne des § 13a Abs. 1 Nr. 6 UStG (§ 15 Abs. 1 Satz 1 Nr. 5 UStG) und aus  \ninnergemeinschaftlichen Dreiecksgeschäften (§ 25b Abs. 5 UStG)",
+          "5": [
+            "e9feb07b-57e4-4b4c-9481-11fc95f0316b"
+          ],
+          "6": [
+            "293a06a0-851b-4643-add2-e1dab55194ee",
+            "06e845c7-fbf2-48bb-97f8-429e69a31c6b",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Vorsteuerbeträge aus dem innergemeinschaftlichen Erwerb von Gegenständen  \n(§ 15 Abs. 1 Satz 1 Nr. 3 UStG)",
+          "5": [
+            "ab5a9d75-179e-45d8-a9c2-99425ec1e1e6"
+          ],
+          "6": [
+            "c70cea5e-b543-45b8-9e46-f649a6c0a123",
+            "8a8b45aa-7b5f-4b54-80f8-6bcd07f6006e"
+          ]
+        },
+        {
+          "4": "Entstandene Einfuhrumsatzsteuer (§ 15 Abs. 1 Satz 1 Nr. 2 UStG)",
+          "5": [
+            "413f4335-a1a3-482b-9b80-eca79890f8fb"
+          ],
+          "6": [
+            "233867a2-0f84-4843-895f-5e3b655f606b",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "<b>Umsatzsteuer-Vorauszahlung/Überschuss<b>"
+        },
+        {
+          "4": "Verbleibende Umsatzsteuer-Vorauszahlung bzw Überschuss",
+          "5": [
+            "5e748aad-0e30-4cd3-bf51-045b9a6cbb0c"
+          ],
+          "6": [
+            "293a06a0-851b-4643-add2-e1dab55194ee",
+            "8b8ba6e0-fed0-49a3-80f0-e3b25a4b6787",
+            "06e845c7-fbf2-48bb-97f8-429e69a31c6b",
+            "c3c75f77-8ad0-46de-974e-d8a27a2e366a",
+            "233867a2-0f84-4843-895f-5e3b655f606b"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "19": [
+        {
+          "1": ""
+        }
+      ]
+    }
+  },
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {
+    "1bd6309d-ef45-42ec-a988-36e808204e41": {
+      "1": "21"
+    },
+    "c1c52061-f02e-4a46-963e-293b05183c49": {
+      "1": "41"
+    },
+    "03a72951-e6d1-4241-99fa-69e912696242": {
+      "1": "43"
+    },
+    "b7fde49a-5b33-4c25-81dd-aa0b9b6bc88f": {
+      "1": "45"
+    },
+    "ab5a9d75-179e-45d8-a9c2-99425ec1e1e6": {
+      "1": "61"
+    },
+    "413f4335-a1a3-482b-9b80-eca79890f8fb": {
+      "1": "62"
+    },
+    "e9feb07b-57e4-4b4c-9481-11fc95f0316b": {
+      "1": "66"
+    },
+    "78b40f95-d884-43e9-9401-8fb823c3f5e5": {
+      "1": "81"
+    },
+    "5e748aad-0e30-4cd3-bf51-045b9a6cbb0c": {
+      "1": "83"
+    },
+    "5a52c282-17e0-4bb8-b08b-4c6e3d1d712c": {
+      "1": "86"
+    },
+    "f47f7bd4-0bf7-4330-b492-f91c69a6ef15": {
+      "1": "89"
+    },
+    "60cd64b2-95ef-4db3-9994-cbc0313ba59b": {
+      "1": "93"
+    }
+  },
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {
+    "09a8bae5-3c32-45c0-a8a5-aab2c34624a6": {
+      "1": "0% DLL (43) NON EU Customer Sales"
+    },
+    "9c4a4842-4c57-449f-af4f-6dc1d0c66fb0": {
+      "1": "0% DLS (45) NON EU Other Services"
+    },
+    "b188401a-e704-40ed-bb36-fc5c1fed61b1": {
+      "1": "igE 19% (89/61) Innergemeinschaftliche Erwerbe"
+    },
+    "95a8d3e2-f623-40bc-b504-16bc0a0b35b0": {
+      "1": "igE 7% (93/61) Innergemeinschaftliche Erwerbe"
+    },
+    "00147d2a-4b80-4faa-9d83-a5f572b88ae7": {
+      "1": "igL 0% (41) Innergemeinschaftliche Lieferungen"
+    },
+    "babe9a58-ad90-44a7-a9c0-55fc28f1d7c2": {
+      "1": "igsL 0% (21) Innergemeinschaftliche sonstige Leistungen"
+    },
+    "d9d70433-d291-441b-93f9-2d20c49a9148": {
+      "1": "MwSt 19% (81) Erlöse"
+    },
+    "e0c14744-bf55-4b3e-97af-35bb029a528a": {
+      "1": "MwSt 7% (86) Erlöse"
+    }
+  },
+  "6027ab88-f804-4827-beff-26b76bb94587": {},
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {
+    "233867a2-0f84-4843-895f-5e3b655f606b": {
+      "1": "EUSt ( 62 )"
+    },
+    "8b8ba6e0-fed0-49a3-80f0-e3b25a4b6787": {
+      "1": "MwSt 19% (81)"
+    },
+    "c3c75f77-8ad0-46de-974e-d8a27a2e366a": {
+      "1": "MwSt 7% (86)"
+    },
+    "293a06a0-851b-4643-add2-e1dab55194ee": {
+      "1": "VSt 19% (66)"
+    },
+    "06e845c7-fbf2-48bb-97f8-429e69a31c6b": {
+      "1": "VSt 7% (66)"
+    }
+  },
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {
+    "c70cea5e-b543-45b8-9e46-f649a6c0a123": {
+      "1": "igE 19% (89/61) RC"
+    },
+    "8a8b45aa-7b5f-4b54-80f8-6bcd07f6006e": {
+      "1": "igE 7% (93/61) RC"
+    }
+  },
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {
+    "931ec5a1-7f05-4a69-b07a-bcc6263f9a5d": {
+      "1": "0% DLL (43)",
+      "21": "0% DLL",
+      "18": "09a8bae5-3c32-45c0-a8a5-aab2c34624a6",
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "2": [
+        {
+          "4": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71"
+        },
+        {
+          "4": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71"
+        }
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "4120 Steuerfreie Umsätze § 4 Nr. 1a. UStG KZ 43",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "0% DLL (43)"
+      }
+    },
+    "17679bab-8130-46e4-b7ce-bc23d81bfb37": {
+      "1": "0% DLS (45)",
+      "21": "0% DLS",
+      "18": "9c4a4842-4c57-449f-af4f-6dc1d0c66fb0",
+      "2": [
+        {},
+        {}
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "4338 Nicht steuerbare Umsätze Drittland KZ 45",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "0% DLS (45)"
+      }
+    },
+    "bc02e239-895c-4ffb-acf5-24d23d3154ca": {
+      "1": "EUSt (62)",
+      "18": "91f76384-989b-4919-83f0-260471157140",
+      "5": 1,
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "19": "233867a2-0f84-4843-895f-5e3b655f606b",
+      "2": [
+        {},
+        {}
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "1433 Entstandene Einfuhrumsatzsteuer - KZ 62",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "EUSt (62)"
+      }
+    },
+    "6f5ba2ee-e1bf-4f84-a9c8-6bff9696348b": {
+      "1": "igE 19% (89/61)",
+      "18": "b188401a-e704-40ed-bb36-fc5c1fed61b1",
+      "5": 2,
+      "4": 19.0,
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "19": "df3a3cd2-6aa5-4eb4-91d3-4b15f8d85098",
+      "20": "8a8b45aa-7b5f-4b54-80f8-6bcd07f6006e",
+      "2": [
+        {
+          "2": 19.0,
+          "4": "4029e2a9-7b0c-4822-9038-6470101d1fb0"
+        }
+      ],
+      "11": true,
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "3804 / 1404 KZ 89 / 61 USt aus EG Erwerb KZ 89 / Abziehbare VSt aus EG Erwerb KZ 61",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "igE 19% (89/61)"
+      }
+    },
+    "dfe01742-b5f3-414b-9f44-3d712c5a4438": {
+      "1": "igE 7% (93/61)",
+      "21": "igE 7%",
+      "18": "95a8d3e2-f623-40bc-b504-16bc0a0b35b0",
+      "5": 2,
+      "4": 7.0,
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "19": "13096770-16c2-4a69-a3ef-477bbf2b89a1",
+      "20": "8a8b45aa-7b5f-4b54-80f8-6bcd07f6006e",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "3802 / 1402 KZ 89 / 61 USt aus EG Erwerb KZ 93 / Abziehbare VSt aus EG Erwerb KZ 61"
+      }
+    },
+    "a1be2816-2c78-4af6-84b1-19222175eea4": {
+      "1": "igL 0% (41)",
+      "21": "igL 0%",
+      "18": "00147d2a-4b80-4faa-9d83-a5f572b88ae7",
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "2": [
+        {
+          "4": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71"
+        },
+        {
+          "4": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71"
+        }
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "4125 Steuerfreie EU-Lieferungen § 4 Nr.1b UStG KZ 41",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "igL 0% (41)"
+      }
+    },
+    "3b95667a-1345-4de8-ad97-a79502f40b26": {
+      "1": "igsL 0% (21)",
+      "21": "igsL 0%",
+      "18": "babe9a58-ad90-44a7-a9c0-55fc28f1d7c2",
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "2": [
+        {},
+        {}
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "4336 Erlöse aus im and. EU-Land steuerpfl. sonst. Leistungen, 13 b KZ 21",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "igsL 0% (21)"
+      }
+    },
+    "13fe02d9-c454-42d2-beb5-53d79d28784b": {
+      "1": "MwSt 19%",
+      "21": "MwSt 19%",
+      "18": "d9d70433-d291-441b-93f9-2d20c49a9148",
+      "5": 2,
+      "4": 19.0,
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "19": "8b8ba6e0-fed0-49a3-80f0-e3b25a4b6787",
+      "2": [
+        {}
+      ],
+      "17": {
+        "0af70b6b-2d00-4567-bef3-0165adb65c37": "19%",
+        "bed91342-47b8-48a7-9401-32462787fa21": "4400 Erlöse 19% USt KZ 81",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "MwSt. 19% (81)"
+      }
+    },
+    "0283b674-28e5-473b-a23f-ca7610608681": {
+      "1": "Mwst 7%",
+      "21": "Mwst 7%",
+      "18": "e0c14744-bf55-4b3e-97af-35bb029a528a",
+      "5": 2,
+      "4": 7.0,
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "19": "c3c75f77-8ad0-46de-974e-d8a27a2e366a",
+      "2": [
+        {}
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "4300 Erlöse 7% USt KZ 86",
+        "60f9ff09-709d-4b94-9170-00ba91c13273": "MwSt. 7% (86)"
+      }
+    },
+    "604554a7-7056-40ab-a68b-4ab590368292": {
+      "1": "VSt 19%",
+      "21": "VSt 19%",
+      "18": "38c02696-9ebd-4428-87f1-5b8042035132",
+      "5": 2,
+      "4": 19.0,
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "19": "293a06a0-851b-4643-add2-e1dab55194ee",
+      "2": [
+        {}
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "1406 Abziehbare Vorsteuer normal KZ 66"
+      }
+    },
+    "01f5b422-9744-4ed3-a435-2c5bfe081f02": {
+      "1": "VSt 7%",
+      "21": "VSt 7%",
+      "18": "1daf47e4-95a0-4abd-a718-0f75c64ad906",
+      "5": 2,
+      "4": 7.0,
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "19": "06e845c7-fbf2-48bb-97f8-429e69a31c6b",
+      "2": [
+        {}
+      ],
+      "17": {
+        "bed91342-47b8-48a7-9401-32462787fa21": "1401 Abziehbare Vosteuer ermäßigt KZ 66"
+      }
+    }
+  },
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {
+    "bed91342-47b8-48a7-9401-32462787fa21": {
+      "1": "Informationen",
+      "5": 1,
+      "13": [
+        "7f368d97-8b7f-4b39-b156-dc66afd9496a"
+      ],
+      "4": 2,
+      "11": "",
+      "8": true
+    },
+    "436f269c-126f-4055-847b-b8d146b7e1e8": {
+      "1": "Kontakt",
+      "4": 1
+    }
+  },
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "7f056fe2-4b23-4401-8e0a-232da6eee8c0": {
+      "1": "Abschreibungen auf Kfz",
+      "11": "6222",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1"
+    },
+    "3acf4b60-8408-47a4-86f4-44a48aa1fa9e": {
+      "1": "AfA auf Sachanlagen",
+      "11": "6220",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1"
+    },
+    "37e1b2b1-389d-4fe8-a44c-cde94f1ebc01": {
+      "1": "Bezugsnebenkosten Spedition Paketdienst",
+      "11": "5841",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "10": 8
+    },
+    "29fcb02e-462f-47bc-b00f-802323938c28": {
+      "1": "Bürobedarf",
+      "11": "6815",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6815
+    },
+    "1d80a5fa-bfad-47d1-9d55-aa8f041e7554": {
+      "1": "EG-Erwerb 19% VSt und 19% USt",
+      "11": "5425",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "10": 4
+    },
+    "053d1b40-9d4c-4009-834e-0da387fa3eb1": {
+      "1": "EG-Erwerb 7% VSt und 7% USt",
+      "11": "5420",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "10": 3
+    },
+    "45ef74f2-d9dd-4015-8134-d2476532160c": {
+      "1": "Erhaltene Skonti VSt normal",
+      "11": "5736",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "10": 6
+    },
+    "5a3be18c-5185-4a38-b048-86e87cbb95e3": {
+      "1": "Erlöse aus im and. EG-Land steuerpfl. sonst. Leistungen, 13 b",
+      "11": "4336",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "17": true,
+      "8": "3b95667a-1345-4de8-ad97-a79502f40b26",
+      "10": 3
+    },
+    "f11ba61b-3692-49b6-96ef-521118f329b3": {
+      "1": "Erlöse aus Verkäufen Sachanlagevermögen",
+      "11": "4849",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 10
+    },
+    "71ffa24e-ea17-4cb7-b1b5-fd00fd771bee": {
+      "1": "Erlöse Dienstleistung",
+      "11": "4401",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6
+    },
+    "dc11407d-11dc-4c79-8d02-dcc254178b2d": {
+      "1": "Erlöse ohne Warenlager",
+      "11": "4402",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 7
+    },
+    "681b0448-73f2-45b5-a1ea-1b3a0f8a372b": {
+      "1": "Fahrzeugkosten",
+      "11": "6500",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6500
+    },
+    "1ca2e52f-9cd4-4151-93b1-439b04cf2c7b": {
+      "1": "Fremdleistungen 19% VSt",
+      "11": "5906",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 9
+    },
+    "dbd0a1e2-434a-47d4-b3b0-c369edf99e27": {
+      "1": "Gas, Strom, Wasser",
+      "11": "6325",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6325
+    },
+    "d98afe54-fcf8-4668-afdf-11ade05bd660": {
+      "1": "Geschenke",
+      "11": "6610",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6610
+    },
+    "f783efa7-d0e5-44e7-838b-752855d1efb6": {
+      "1": "Gewährte Skonti USt normal",
+      "11": "4736",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "10": 9
+    },
+    "a8328ddf-ccab-4637-a539-35337a1ca55a": {
+      "1": "Gewerbesteuer",
+      "11": "7610",
+      "3": "46a44612-cb81-4b34-9bdd-bfce8aba19ec"
+    },
+    "e699c6a2-651c-4648-87a4-b92dde9257af": {
+      "1": "Heizung",
+      "11": "6320",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6320
+    },
+    "50d651ca-7622-486a-b30e-6d80e234ac05": {
+      "1": "Instandhaltung Räume",
+      "11": "6335",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6335
+    },
+    "c6dd265d-610f-4f1a-8963-818dc4fec515": {
+      "1": "Kfz Miete",
+      "11": "6560",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6560
+    },
+    "6d6384d6-aa16-4d37-bf3a-fae33692a4d2": {
+      "1": "Kfz Steuer",
+      "11": "7685",
+      "3": "c0ebffda-6222-4211-87ed-1338ad744d79",
+      "10": 7685
+    },
+    "d25c8fc3-8931-4b64-8874-5c980504d7d7": {
+      "1": "Kfz-Versicherungen",
+      "11": "6520",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "10": 6520
+    },
+    "c986d1a3-b4df-4c5e-98d7-d9fbadcc5111": {
+      "1": "Kosten Warenabgabe",
+      "11": "6700",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6700
+    },
+    "7cb953de-cc49-47f0-888f-32333ed37dce": {
+      "1": "Laufende Kfz Betriebskosten",
+      "11": "6530",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6530
+    },
+    "41f0a030-3a3f-4773-a053-a5c77a55f25c": {
+      "1": "Miete",
+      "11": "6310",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "10": 6310
+    },
+    "475a6563-5884-40a5-a81b-9d816c668e05": {
+      "1": "Nebenerlöse Porto und Verpackung",
+      "11": "4499",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 8
+    },
+    "d7b28a7f-ee6e-4f29-93a8-552ea730dab2": {
+      "1": "Nebenkosten des Geldverkehrs",
+      "11": "6855",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "10": 6855
+    },
+    "3ac0b097-3f2a-41ab-88bd-c9b20939928c": {
+      "1": "Nicht steuerbare Umsätze Drittland",
+      "11": "4338",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "10": 4
+    },
+    "f2f56a9d-caf1-41ca-a0b7-2478a9b2df8d": {
+      "1": "Porto",
+      "11": "6800",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "10": 6800
+    },
+    "e2f13c11-6e8f-444d-a190-334c7aeb63db": {
+      "1": "Rechts und Beratungskosten",
+      "11": "6825",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6825
+    },
+    "e185a314-c05f-472e-9ade-b80d576332f1": {
+      "1": "Reinigung",
+      "11": "6330",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6330
+    },
+    "853c0bba-b727-4850-baaa-993d6e19dd41": {
+      "1": "Sofortabschreibungen GWG",
+      "11": "6260",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b"
+    },
+    "e6b6b9cd-c8c0-43d1-b150-f616bc1c1ac0": {
+      "1": "Sonstige Betriebliche Aufwendungen",
+      "11": "6300",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b"
+    },
+    "35c11f69-54c4-4b1f-9bf9-6abc4b6e8ed3": {
+      "1": "Sonstige Zinsen und ähnliche Erträge",
+      "11": "7100",
+      "3": "8aafafa5-7204-4c6f-92d1-2d5e90de788a"
+    },
+    "2bb48fd1-8924-4c34-b399-f32199bdf5d9": {
+      "1": "Sonstiger Betriebsbedarf",
+      "11": "6850",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6850
+    },
+    "4fabe74b-6eae-470c-9bcc-00acef4f25c6": {
+      "1": "Steuerfreie EG-Lieferungen § 4 Nr.1b UStG",
+      "11": "4125",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "17": true,
+      "8": "a1be2816-2c78-4af6-84b1-19222175eea4",
+      "10": 2
+    },
+    "35ad1b07-13ac-4b61-894b-a1d368341b98": {
+      "1": "Steuerfreie Einfuhren ( Drittland )",
+      "11": "5559",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "17": true,
+      "8": "e847da30-933a-44a5-970a-4699545348c9",
+      "10": 5
+    },
+    "d17d4d7a-2b86-4fdf-b4dd-5e5725221de0": {
+      "1": "Steuerfreie Umsätze § 4 Nr. 1a. UStG",
+      "11": "4120",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e",
+      "17": true,
+      "8": "931ec5a1-7f05-4a69-b07a-bcc6263f9a5d",
+      "10": 1
+    },
+    "8e48e2c2-3b34-41e0-9f54-5806eba193f2": {
+      "1": "Telefon",
+      "11": "6805",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 6805
+    },
+    "5f02f6b8-0c0b-4162-85b2-4d04450862c1": {
+      "1": "Versicherungen",
+      "11": "6400",
+      "3": "266634cf-0d8b-48a3-b854-3417d68707e1",
+      "10": 6400
+    },
+    "872dfc35-3f24-4a2a-819a-d81c9b89957d": {
+      "1": "Wareneinkauf ohne Lager",
+      "11": "5202",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "17": true,
+      "8": "13fe02d9-c454-42d2-beb5-53d79d28784b",
+      "10": 2
+    },
+    "2571811a-a1e1-4a86-b2ef-3fce230bb16b": {
+      "1": "Zölle und Einfuhrabgaben",
+      "11": "5840",
+      "3": "fd003045-876e-439e-b923-1904453f5c30",
+      "10": 7
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "46a44612-cb81-4b34-9bdd-bfce8aba19ec": {
+      "1": "Aufwendungen nicht abzugsfähig",
+      "6": 1,
+      "5": 7
+    },
+    "fd003045-876e-439e-b923-1904453f5c30": {
+      "1": "Betriebliche Aufwendungen",
+      "6": 1,
+      "5": 3
+    },
+    "95713fac-30d3-42e4-b536-dd7bc4f7a80e": {
+      "1": "Betriebliche Erträge",
+      "5": 1
+    },
+    "266634cf-0d8b-48a3-b854-3417d68707e1": {
+      "1": "Sonstige Betriebliche Aufwendungen",
+      "6": 1,
+      "5": 4
+    },
+    "c0ebffda-6222-4211-87ed-1338ad744d79": {
+      "1": "Weitere Aufwendungen",
+      "6": 1,
+      "5": 5
+    },
+    "8aafafa5-7204-4c6f-92d1-2d5e90de788a": {
+      "1": "Weitere Erträge",
+      "5": 2
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {
+    "8a37eafe-729c-4bed-ae48-49a1456f5903": {
+      "1": "Gewinn vor Steuern",
+      "3": 6
+    }
+  },
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "c91c5528-b1db-4041-8cda-ef2dae0fc367": {
+      "1": "Erhaltene Anzahlungen auf Bestellungen",
+      "17": "3250",
+      "3": "7d3797d7-67a4-430b-9f6b-9058a47bd860",
+      "16": 2
+    },
+    "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71": {
+      "1": "Umsatzsteuer Vorsteuer Sammelkonto",
+      "17": "3800",
+      "3": "7d3797d7-67a4-430b-9f6b-9058a47bd860",
+      "16": 5
+    },
+    "7e4d69df-2111-406e-b00c-6a4797921d76": {
+      "1": "Verbindlichkeiten gegenüber Kreditinstituten",
+      "17": "3150",
+      "3": "7d3797d7-67a4-430b-9f6b-9058a47bd860",
+      "16": 1
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {
+    "7626e906-e3da-472d-b51d-57f7329bac12": {
+      "1": "Abschreibungen Anlagevermögen",
+      "3": "786b5e90-9355-4c6b-b643-7991b4049c74",
+      "4": 3
+    },
+    "786b5e90-9355-4c6b-b643-7991b4049c74": {
+      "1": "Anlagevermögen",
+      "3": "e8ed4f99-4c01-4f04-9b63-99ca00e3fa40",
+      "4": 2
+    },
+    "e8ed4f99-4c01-4f04-9b63-99ca00e3fa40": {
+      "1": "Anlagevermögenskonten",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 1
+    },
+    "802c504a-aec2-437d-a847-2311e34438f0": {
+      "1": "Forderungen",
+      "3": "bb67af6e-6b62-4036-9a5d-68a571ed8b67",
+      "4": 2
+    },
+    "b2abbc85-6859-4b40-acc3-f2aaceda1979": {
+      "1": "Kassenbestand Guthaben bei Banken",
+      "3": "bb67af6e-6b62-4036-9a5d-68a571ed8b67",
+      "4": 4
+    },
+    "3e72d1b9-567a-468f-a4d2-f9ae730bf15d": {
+      "1": "Sachanlagen",
+      "3": "786b5e90-9355-4c6b-b643-7991b4049c74",
+      "4": 1
+    },
+    "20a605f7-97e1-46b6-ac8b-9177ab3eaf25": {
+      "1": "Sonstige Vermögenskonten",
+      "3": "bb67af6e-6b62-4036-9a5d-68a571ed8b67",
+      "4": 3
+    },
+    "bb67af6e-6b62-4036-9a5d-68a571ed8b67": {
+      "1": "Umlaufvermögenskonten",
+      "3": "e8ed4f99-4c01-4f04-9b63-99ca00e3fa40",
+      "4": 3
+    },
+    "7d3797d7-67a4-430b-9f6b-9058a47bd860": {
+      "1": "Verbindlichkeiten",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    },
+    "38622165-dc3a-4e88-bedf-491feebdd544": {
+      "1": "Vorräte",
+      "3": "bb67af6e-6b62-4036-9a5d-68a571ed8b67",
+      "4": 1
+    }
+  },
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {},
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {},
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {},
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {},
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {},
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {},
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "bf557a8a-0c58-488a-bae8-014fbc42962d": {
+      "1": "Drawings"
+    },
+    "43383a4a-c007-477b-b601-4d52b74ea72f": {
+      "1": "Funds contributed"
+    },
+    "7c20cb1d-d9f9-408b-bded-d57e759c14f3": {
+      "1": "Share of profit"
+    }
+  }
+}

@@ -1,0 +1,1626 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "AUD",
+      "2": "Australian Dollar",
+      "4": "$"
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {
+    "844ab100-63d8-40d7-abc9-1a578197f3a8": {
+      "1": true
+    }
+  },
+  "6116531b-cb3d-4f85-b239-745972943a6b": {
+    "595b4031-7b14-47bd-8b3a-4b798fafc8ea": {
+      "2": "USD",
+      "1": "United States Dollar",
+      "3": "$"
+    },
+    "4ac5e6a0-71b7-4f06-899b-683c56877bbd": {
+      "2": "NZD",
+      "1": "New Zealand Dollar",
+      "3": "NZ$"
+    },
+    "55f20c6f-3bab-438a-99a8-8ce9a266423d": {
+      "2": "GBP",
+      "1": "Great British Pond",
+      "3": "£"
+    },
+    "56d978bf-ca12-4534-b45b-14bf6193a482": {
+      "2": "EUR",
+      "1": "Euro",
+      "3": "€"
+    }
+  },
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "dd/MM/yyyy",
+      "4": "h:mm:ss tt",
+      "2": 1,
+      "3": "CgEuEgEsGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {
+    "11acbfe1-0d24-4161-b366-fe905f2bcfd9": {
+      "1": "Business Activity Statement",
+      "2": "2022-03-04T00:00:00",
+      "3": "2022-03-04T00:00:00",
+      "7": [
+        {
+          "4": "Sales\n--------"
+        },
+        {
+          "4": "G1 Total sales (including any GST)",
+          "5": [
+            "32d6a783-3c55-4a65-92dc-2041e546951a",
+            "0b667cb2-173f-43f7-86da-7023622b51fc",
+            "529c8964-4cc6-46d3-a4f9-02af1eb4ea85",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "2108b786-8999-473a-97b2-30b0214be867",
+            "255e0796-b9cf-4425-b785-3f442993215d",
+            "3671a124-a6bc-41c4-b0a4-59ed4b559daf",
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe"
+          ]
+        },
+        {
+          "4": "G2 Export sales",
+          "5": [
+            "2108b786-8999-473a-97b2-30b0214be867",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "G3 Other GST-free sales",
+          "5": [
+            "529c8964-4cc6-46d3-a4f9-02af1eb4ea85",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "G4 Input taxed sales",
+          "5": [
+            "255e0796-b9cf-4425-b785-3f442993215d",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Purchases\n---------------"
+        },
+        {
+          "4": "G10 Capital purchases (including any GST)",
+          "5": [
+            "0b667cb2-173f-43f7-86da-7023622b51fc",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ]
+        },
+        {
+          "4": "G11 Non-capital purchases (including any GST)",
+          "5": [
+            "32d6a783-3c55-4a65-92dc-2041e546951a",
+            "2108b786-8999-473a-97b2-30b0214be867",
+            "529c8964-4cc6-46d3-a4f9-02af1eb4ea85",
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ]
+        },
+        {
+          "4": "Summary\n-------------"
+        },
+        {
+          "4": "1A GST on sales",
+          "5": [
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe"
+          ]
+        },
+        {
+          "4": "7A Deferred GST",
+          "5": [
+            "3671a124-a6bc-41c4-b0a4-59ed4b559daf",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "8A Total amount you owe the ATO (1A + 7A)",
+          "5": [
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "3671a124-a6bc-41c4-b0a4-59ed4b559daf",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe"
+          ]
+        },
+        {
+          "4": "1B GST on purchases",
+          "5": [
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe"
+          ]
+        },
+        {
+          "4": "PAYG tax withheld\n------------------------"
+        },
+        {
+          "4": "W1 Total salary, wages and other payments",
+          "5": [
+            "1b442ce9-b447-452d-a051-a2d4205a7b05",
+            "d0321999-ab88-4cb9-88fb-083df3dab634",
+            "35b90096-c604-4f02-b0f1-edce5bed95c7",
+            "88c4b86a-4287-4473-90a8-3981db7b070e",
+            "44bfada5-9d85-4dfe-8783-1e111fafb2ed",
+            "f9e00d0c-396d-4ba4-9ab0-e81114c8b1f5",
+            "f25bdb57-d366-45cc-93db-2e401fb7001f",
+            "1eeec512-af7f-4cc5-bb83-1231c27c2e91",
+            "1b250247-e58f-4345-8fb3-5283a4ddd8e4",
+            "9cd51c1d-fdf9-41cb-89fd-1f65e72d13b2",
+            "19c366ef-0da2-46e3-8b48-c09aa985cab7",
+            "2cc195f2-6f31-4035-a969-9c98c80ce132",
+            "3540ac43-bcf2-4499-855e-d13612ab9829",
+            "c8adcd5b-af39-4adf-8c67-d5038aa6c008",
+            "1c8995a9-b06c-4f93-add4-66db7fb577b7",
+            "99ed30cd-78df-4532-ac14-4c3c9be30005",
+            "0477def9-f904-497f-8b37-6b174227d544",
+            "ae443a9c-fb4e-4518-a829-f3f4bbfbfb10",
+            "8ac17e05-8428-4be0-9271-d0d5e6005f06",
+            "b03d3161-ba98-4110-b4a9-b25ad8f32518",
+            "bfe5e639-f749-424f-b405-135d8a60884f",
+            "b88234cb-70ea-40d2-8a4b-cb6e9016f6ce",
+            "70d6f505-8911-4a04-94b8-6bd349577586",
+            "08dd214c-9b39-4c3a-8c19-5b121f23627f",
+            "b81229e3-cb3c-4d11-90cf-23b6e46ae147",
+            "cf03ab85-80a9-4cdb-afca-8b9db1e300d7",
+            "9d376dc3-c56c-48fa-95cd-976223d57a66",
+            "404fb279-cb40-4098-a9f3-73891e2fd2f3"
+          ]
+        },
+        {
+          "4": "W2 Amount withheld from payments shown at W1",
+          "5": [
+            "43dc8de9-5e59-471e-b220-111c97ada19e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Result\n---------"
+        },
+        {
+          "4": "Amount owing to ATO",
+          "5": [
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "43dc8de9-5e59-471e-b220-111c97ada19e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "3671a124-a6bc-41c4-b0a4-59ed4b559daf",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "16": true
+    },
+    "92b38154-38fc-479a-a296-2019f656d1e2": {
+      "1": "PAYG payment summary — individual non-business",
+      "2": "2019-03-03T00:00:00",
+      "3": "2022-03-03T00:00:00",
+      "5": "7b2aed25-d5f9-4fb6-9c2b-0a1de1f7fb5b",
+      "7": [
+        {
+          "4": "Payee details\n------------------"
+        },
+        {
+          "4": "Name",
+          "5": [
+            "db71c44c-ec5a-4701-aa54-67ada72aff1a"
+          ]
+        },
+        {
+          "4": "TFN",
+          "5": [
+            "8067ce2d-6a48-45f1-a5a9-5e2d923e9cc7"
+          ]
+        },
+        {
+          "4": "Total tax withheld",
+          "5": [
+            "43dc8de9-5e59-471e-b220-111c97ada19e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "Gross Payments",
+          "5": [
+            "f25bdb57-d366-45cc-93db-2e401fb7001f",
+            "1eeec512-af7f-4cc5-bb83-1231c27c2e91",
+            "1b442ce9-b447-452d-a051-a2d4205a7b05",
+            "d0321999-ab88-4cb9-88fb-083df3dab634",
+            "88c4b86a-4287-4473-90a8-3981db7b070e",
+            "44bfada5-9d85-4dfe-8783-1e111fafb2ed",
+            "f9e00d0c-396d-4ba4-9ab0-e81114c8b1f5",
+            "b03d3161-ba98-4110-b4a9-b25ad8f32518",
+            "8ac17e05-8428-4be0-9271-d0d5e6005f06",
+            "bfe5e639-f749-424f-b405-135d8a60884f",
+            "08dd214c-9b39-4c3a-8c19-5b121f23627f",
+            "404fb279-cb40-4098-a9f3-73891e2fd2f3"
+          ]
+        },
+        {
+          "4": "CDEP payments",
+          "5": [
+            "35b90096-c604-4f02-b0f1-edce5bed95c7"
+          ]
+        },
+        {
+          "4": "Total allowances",
+          "5": [
+            "1b250247-e58f-4345-8fb3-5283a4ddd8e4",
+            "9cd51c1d-fdf9-41cb-89fd-1f65e72d13b2",
+            "0477def9-f904-497f-8b37-6b174227d544",
+            "ae443a9c-fb4e-4518-a829-f3f4bbfbfb10",
+            "b88234cb-70ea-40d2-8a4b-cb6e9016f6ce",
+            "70d6f505-8911-4a04-94b8-6bd349577586",
+            "b81229e3-cb3c-4d11-90cf-23b6e46ae147",
+            "cf03ab85-80a9-4cdb-afca-8b9db1e300d7",
+            "9d376dc3-c56c-48fa-95cd-976223d57a66"
+          ]
+        },
+        {
+          "4": "Reportable employer superannuation contributions",
+          "5": [
+            "e42078eb-62da-4992-845b-084a976e404d"
+          ]
+        },
+        {
+          "4": "Lump Sum Payment A",
+          "5": [
+            "19c366ef-0da2-46e3-8b48-c09aa985cab7",
+            "2cc195f2-6f31-4035-a969-9c98c80ce132"
+          ]
+        },
+        {
+          "4": "Lump Sum Payment B",
+          "5": [
+            "3540ac43-bcf2-4499-855e-d13612ab9829"
+          ]
+        },
+        {
+          "4": "Lump Sum Payment D",
+          "5": [
+            "c8adcd5b-af39-4adf-8c67-d5038aa6c008"
+          ]
+        },
+        {
+          "4": "Lump Sum Payment E",
+          "5": [
+            "1c8995a9-b06c-4f93-add4-66db7fb577b7"
+          ]
+        },
+        {
+          "4": "Lump Sum Payment W",
+          "5": [
+            "99ed30cd-78df-4532-ac14-4c3c9be30005"
+          ]
+        },
+        {
+          "4": "Payer details\n------------------"
+        },
+        {
+          "4": "Name",
+          "5": [
+            "ce6302f8-0b02-42d8-b6b7-850063e4bbe0"
+          ]
+        },
+        {
+          "4": "ABN",
+          "5": [
+            "0fba87ee-0386-401a-8d1f-302313b663f4"
+          ]
+        }
+      ],
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "16": true
+    },
+    "07332ba3-3e82-4dc1-9451-1350f5d84e24": {
+      "1": "Single Touch Payroll Worksheet (Phase 2)",
+      "2": "2018-02-22T00:00:00",
+      "3": "2024-06-29T00:00:00",
+      "7": [
+        {
+          "4": "Summary\n-------------"
+        },
+        {
+          "4": "Entity ABN",
+          "5": [
+            "0fba87ee-0386-401a-8d1f-302313b663f4"
+          ]
+        },
+        {
+          "4": "Period W1 value",
+          "5": [
+            "1b442ce9-b447-452d-a051-a2d4205a7b05",
+            "d0321999-ab88-4cb9-88fb-083df3dab634",
+            "35b90096-c604-4f02-b0f1-edce5bed95c7",
+            "88c4b86a-4287-4473-90a8-3981db7b070e",
+            "44bfada5-9d85-4dfe-8783-1e111fafb2ed",
+            "f9e00d0c-396d-4ba4-9ab0-e81114c8b1f5",
+            "f25bdb57-d366-45cc-93db-2e401fb7001f",
+            "1eeec512-af7f-4cc5-bb83-1231c27c2e91",
+            "1b250247-e58f-4345-8fb3-5283a4ddd8e4",
+            "9cd51c1d-fdf9-41cb-89fd-1f65e72d13b2",
+            "19c366ef-0da2-46e3-8b48-c09aa985cab7",
+            "2cc195f2-6f31-4035-a969-9c98c80ce132",
+            "3540ac43-bcf2-4499-855e-d13612ab9829",
+            "c8adcd5b-af39-4adf-8c67-d5038aa6c008",
+            "1c8995a9-b06c-4f93-add4-66db7fb577b7",
+            "99ed30cd-78df-4532-ac14-4c3c9be30005",
+            "0477def9-f904-497f-8b37-6b174227d544",
+            "ae443a9c-fb4e-4518-a829-f3f4bbfbfb10",
+            "8ac17e05-8428-4be0-9271-d0d5e6005f06",
+            "b03d3161-ba98-4110-b4a9-b25ad8f32518",
+            "bfe5e639-f749-424f-b405-135d8a60884f",
+            "70d6f505-8911-4a04-94b8-6bd349577586",
+            "b88234cb-70ea-40d2-8a4b-cb6e9016f6ce",
+            "08dd214c-9b39-4c3a-8c19-5b121f23627f",
+            "b81229e3-cb3c-4d11-90cf-23b6e46ae147",
+            "cf03ab85-80a9-4cdb-afca-8b9db1e300d7",
+            "9d376dc3-c56c-48fa-95cd-976223d57a66",
+            "404fb279-cb40-4098-a9f3-73891e2fd2f3"
+          ]
+        },
+        {
+          "4": "Period W2 value",
+          "5": [
+            "43dc8de9-5e59-471e-b220-111c97ada19e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "11": [
+        {}
+      ],
+      "12": true,
+      "13": [
+        {
+          "4": "Payroll number",
+          "5": [
+            "b8c661cd-ff56-4862-853b-75d0f2920776",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Employee TFN",
+          "5": [
+            "8067ce2d-6a48-45f1-a5a9-5e2d923e9cc7"
+          ]
+        },
+        {
+          "4": "Family name",
+          "5": [
+            "11acbfb3-9557-487a-8b8b-2528a2c43c53"
+          ]
+        },
+        {
+          "4": "Given name",
+          "5": [
+            "0713b751-ee07-4d22-8b17-ad0131029ca0"
+          ]
+        },
+        {
+          "4": "Middle name",
+          "5": [
+            "91a2b722-99cd-41e1-b638-532793aae782",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Date of birth",
+          "5": [
+            "f6859bbb-1736-4e60-81f2-2703a9ea4686"
+          ]
+        },
+        {
+          "4": "Address 1",
+          "5": [
+            "57a258c7-3296-4b4a-bc6c-82ba5755c222"
+          ]
+        },
+        {
+          "4": "Address 2",
+          "5": [
+            "ce735064-e907-478f-83b0-f319b2a9a7fb",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Suburb",
+          "5": [
+            "f6326e38-61c9-41c6-8bda-7a9f2d594150"
+          ]
+        },
+        {
+          "4": "State/territory",
+          "5": [
+            "050a3828-8ba0-4db9-b560-f24a3c5e413b"
+          ]
+        },
+        {
+          "4": "Postcode",
+          "5": [
+            "dc15193e-9883-4e89-a78b-7e6751db5240"
+          ]
+        },
+        {
+          "4": "Country",
+          "5": [
+            "343a8633-5d10-46ca-9d20-0beed32ebab8"
+          ]
+        },
+        {
+          "4": "Email",
+          "5": [
+            "f66ab672-c1c6-4280-9439-bdb0a72b7619"
+          ]
+        },
+        {
+          "4": "Hired date",
+          "5": [
+            "03d6a7cc-2fc8-47f7-a001-8d714c55cd48"
+          ]
+        },
+        {
+          "4": "Basis of employment code",
+          "5": [
+            "6b837666-1039-4cfc-948b-5c36b30682c2"
+          ]
+        },
+        {
+          "4": "Tax treatment code",
+          "5": [
+            "8980d8c4-ed06-4534-9b22-4e5d4fca2595"
+          ]
+        },
+        {
+          "4": "Tax treatment option",
+          "5": [
+            "89005ebb-4898-4f79-81f3-471b61143d77"
+          ]
+        },
+        {
+          "4": "Study and Training Support Loan",
+          "5": [
+            "b159d29e-b71f-4f45-aacf-c61ac53fb576"
+          ]
+        },
+        {
+          "4": "Medicare levy surcharge",
+          "5": [
+            "570b929c-64cc-478c-b26f-332841fd9632"
+          ]
+        },
+        {
+          "4": "Medicare levy exemption",
+          "5": [
+            "8bbfc716-4cf7-4ad9-9cc5-57fa4bcd8176"
+          ]
+        },
+        {
+          "4": "Medicare levy reduction",
+          "5": [
+            "8bbfc716-4cf7-4ad9-9cc5-57fa4bcd8176"
+          ]
+        },
+        {
+          "4": "Pay period start date",
+          "5": [
+            "cef33379-d1b3-4172-b090-0fc24cf978da"
+          ]
+        },
+        {
+          "4": "Pay period end date",
+          "5": [
+            "8ba7e5e7-8f74-443a-b7ee-d8539b12e7e2"
+          ]
+        },
+        {
+          "4": "Income stream code",
+          "5": [
+            "af894e25-9a1e-4384-9536-2f816d86c2e5"
+          ]
+        },
+        {
+          "4": "Income stream country code",
+          "5": [
+            "2ee7f0d0-83f3-4b43-8ff9-2d34291ad7b1"
+          ]
+        },
+        {
+          "4": "Employee gross pay",
+          "5": [
+            "f25bdb57-d366-45cc-93db-2e401fb7001f",
+            "1eeec512-af7f-4cc5-bb83-1231c27c2e91",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Employee tax",
+          "5": [
+            "43dc8de9-5e59-471e-b220-111c97ada19e",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Exempt foreign income",
+          "5": [
+            "f9e00d0c-396d-4ba4-9ab0-e81114c8b1f5",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Overtime",
+          "5": [
+            "b03d3161-ba98-4110-b4a9-b25ad8f32518",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Bonus commission",
+          "5": [
+            "1b442ce9-b447-452d-a051-a2d4205a7b05",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Directors fees",
+          "5": [
+            "44bfada5-9d85-4dfe-8783-1e111fafb2ed",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Employee CDEP",
+          "5": [
+            "35b90096-c604-4f02-b0f1-edce5bed95c7",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Cashout leave",
+          "5": [
+            "d0321999-ab88-4cb9-88fb-083df3dab634",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Term unused leave",
+          "5": [
+            "08dd214c-9b39-4c3a-8c19-5b121f23627f",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Parental leave",
+          "5": [
+            "bfe5e639-f749-424f-b405-135d8a60884f",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Workers comp leave",
+          "5": [
+            "404fb279-cb40-4098-a9f3-73891e2fd2f3",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Defence leave",
+          "5": [
+            "88c4b86a-4287-4473-90a8-3981db7b070e",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Other leave",
+          "5": [
+            "8ac17e05-8428-4be0-9271-d0d5e6005f06",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Kilometer allowance",
+          "5": [
+            "1b250247-e58f-4345-8fb3-5283a4ddd8e4",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Transport allowance",
+          "5": [
+            "9d376dc3-c56c-48fa-95cd-976223d57a66",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Laundry allowance",
+          "5": [
+            "9cd51c1d-fdf9-41cb-89fd-1f65e72d13b2",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Meal allowance",
+          "5": [
+            "0477def9-f904-497f-8b37-6b174227d544",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Travel allowance",
+          "5": [
+            "9d376dc3-c56c-48fa-95cd-976223d57a66",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Tool allowance",
+          "5": [
+            "b81229e3-cb3c-4d11-90cf-23b6e46ae147",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Tasks allowance",
+          "5": [
+            "70d6f505-8911-4a04-94b8-6bd349577586",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Qualifications allowance",
+          "5": [
+            "b88234cb-70ea-40d2-8a4b-cb6e9016f6ce",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Other allowance 1 value",
+          "5": [
+            "ae443a9c-fb4e-4518-a829-f3f4bbfbfb10",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Lump sum A type T amount",
+          "5": [
+            "2cc195f2-6f31-4035-a969-9c98c80ce132",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Lump sum A type R amount",
+          "5": [
+            "19c366ef-0da2-46e3-8b48-c09aa985cab7",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Lump sum B amount",
+          "5": [
+            "3540ac43-bcf2-4499-855e-d13612ab9829",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Lump sum D amount",
+          "5": [
+            "c8adcd5b-af39-4adf-8c67-d5038aa6c008",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Lump sum E financial year 1",
+          "5": [
+            "1c8995a9-b06c-4f93-add4-66db7fb577b7",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Lump sum W amount",
+          "5": [
+            "99ed30cd-78df-4532-ac14-4c3c9be30005",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Union fees",
+          "5": [
+            "0a084bbf-9b39-460a-aa36-5085ed19c99c",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Workplace giving",
+          "5": [
+            "f1bc8fba-622b-44bf-893c-ad33834c7c88",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Super guarantee amount",
+          "5": [
+            "d4bc3a93-b10a-4a88-ab40-d4539bff054e",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "SG earnings amount",
+          "5": [
+            "1eeec512-af7f-4cc5-bb83-1231c27c2e91",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "RESC",
+          "5": [
+            "e42078eb-62da-4992-845b-084a976e404d",
+            "7d3ddc8b-49f1-4064-997a-430367e54055",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Termination date",
+          "5": [
+            "2d6b0b42-0dc7-4242-9f9d-c37a9eba5c48",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        },
+        {
+          "4": "Termination type",
+          "5": [
+            "cc5736e6-2ecb-45b4-8920-4b9e0cef15c9",
+            "c9d0844e-7628-4bf4-899c-155be1577983"
+          ]
+        }
+      ],
+      "14": true,
+      "15": "var data = [];\nvar employees = document.getElementsByClassName('employee');\nfor (i = 0; i < employees.length; i++)\n{\n    employee = employees[i];\n    data.push({\n        \"Entity ABN\": document.getElementsByClassName('0fba87ee0386401a8d1f302313b663f4').getText().split(' ').join(''),\n\t\t\"Period W1 value\": document.getElementsByClassName('a850ea3d0ee80695311cd5bf38c6c919').getValue(),\n\t\t\"Period W2 value\": document.getElementsByClassName('48e36eda2b0205de0b0139297433f16e').getValue(),\n\t\t\"Period CS garnishee Total\": 0,\n\t\t\"Period CS deduction Total\": 0,\n\t\t\"Payroll number\": employee.getElementsByClassName('b8c661cdff564862853b75d0f2920776').getText().defaultValue(employee.id),\n\t\t\"Employee TFN\": employee.getElementsByClassName('8067ce2d6a4845f1a5a95e2d923e9cc7').getText().split(' ').join(''),\n\t\t\"Family name\": employee.getElementsByClassName('11acbfb39557487a8b8b2528a2c43c53').getText(),\n\t\t\"Given name\": employee.getElementsByClassName('0713b751ee074d228b17ad0131029ca0').getText(),\n\t\t\"Middle name\": employee.getElementsByClassName('91a2b72299cd41e1b638532793aae782').getText(),\n\t\t\"Date of birth\": employee.getElementsByClassName('f6859bbb17364e6081f22703a9ea4686').getText().split('-').reverse().join('/'),\n\t\t\"Address 1\": employee.getElementsByClassName('57a258c732964b4abc6c82ba5755c222').getText(),\n\t\t\"Address 2\": employee.getElementsByClassName('ce735064e907478f83b0f319b2a9a7fb').getText(),\n\t\t\"Suburb\": employee.getElementsByClassName('f6326e3861c941c68bda7a9f2d594150').getText(),\n\t\t\"State/territory\": employee.getElementsByClassName('050a38288ba04db9b560f24a3c5e413b').getText(),\n\t\t\"Postcode\": employee.getElementsByClassName('dc15193e98834e89a78b7e6751db5240').getText(),\n\t\t\"Country\": employee.getElementsByClassName('343a86335d1046ca9d200beed32ebab8').getText().split(' ')[0],\n\t\t\"Email\": employee.getElementsByClassName('f66ab672c1c642809439bdb0a72b7619').getText(),\n\t\t\"Hired date\": employee.getElementsByClassName('03d6a7cc2fc847f7a0018d714c55cd48').getText().split('-').reverse().join('/'),\n\t\t\"Basis of employment code\": employee.getElementsByClassName('6b83766610394cfc948b5c36b30682c2').getText().split(' ')[0],\n\t\t\"Tax treatment code\": employee.getElementsByClassName('8980d8c4ed0645349b224e5d4fca2595').getText().split(' ')[0].defaultValue('R')+employee.getElementsByClassName('89005ebb48984f7981f3471b61143d77').getText().split(' ')[0].defaultValue('T')+employee.getElementsByClassName('b159d29eb71f4f45aacfc61ac53fb576').getText().split(' ')[0].defaultValue('X')+employee.getElementsByClassName('570b929c64cc478cb26f332841fd9632').getText().split(' ')[0].defaultValue('X')+employee.getElementsByClassName('8bbfc7164cf74ad99cc557fa4bcd8176').getText().split(' ')[0].defaultValue('X')+employee.getElementsByClassName('8100d24730af4996a6b46a68a71b2098').getText().split(' ')[0].defaultValue('X'),\n\t\t\"Pay period start date\": document.getElementsByClassName('cef33379d1b34172b0900fc24cf978da').getValue().split('-').reverse().join('/'),\n\t\t\"Pay period end date\": document.getElementsByClassName('8ba7e5e78f74443ab7eed8539b12e7e2').getValue().split('-').reverse().join('/'),\n\t\t\"Final EOY pay indicator\": document.getElementsByClassName('8ba7e5e78f74443ab7eed8539b12e7e2').getValue().endsWith('-06-30').toString(),\n\t\t\"Income stream code\": employee.getElementsByClassName('af894e259a1e438495362f816d86c2e5').getText().split(' ')[0].defaultValue('SAW'),\n\t\t\"Income stream country code\": employee.getElementsByClassName('2ee7f0d083f34b438ff92d34291ad7b1').getText(),\n\t\t\"Employee gross pay\": employee.getElementsByClassName('9188c2ce35e8496db1227f72ba2e6edb').getValue(),\n\t\t\"Employee tax\": employee.getElementsByClassName('35deb25162f345ba927b7a2a13d6b13b').getValue(),\n\t\t\"Exempt foreign income\": employee.getElementsByClassName('84ddd187709c0bc003caab12732df1a0').getValue(),\n\t\t\"Overtime\": employee.getElementsByClassName('cd00edeaf36901742dd3f159bf16654d').getValue(),\n\t\t\"Bonus commission\": employee.getElementsByClassName('6679f062fdb60549392be1d747bf3b50').getValue(),\n\t\t\"Directors fees\": employee.getElementsByClassName('3982712ed4740d9a1ef95d12784af2b8').getValue(),\n\t\t\"Employee CDEP\": employee.getElementsByClassName('4884dc1d8ff50f66298baecd3c08d592').getValue(),\n\t\t\"Cashout leave\": employee.getElementsByClassName('ad0fc512e2790cdd11814b3e943ff661').getValue(),\n\t\t\"Term unused leave\": employee.getElementsByClassName('75e0fdc7d2c80c5e1563181178c6222a').getValue(),\n\t\t\"Parental leave\": employee.getElementsByClassName('c2d83ab2beb8022b2d7f505eed85c81a').getValue(),\n\t\t\"Workers comp leave\": employee.getElementsByClassName('3d726ef282b100fc3089308a79ca92a6').getValue(),\n\t\t\"Defence leave\": employee.getElementsByClassName('f5f964e10b76041709d27a82bc9e475b').getValue(),\n\t\t\"Other leave\": employee.getElementsByClassName('f7fca28ecdd90b840b0b93d681e51f53').getValue(),\n\t\t\"Kilometer allowance\": employee.getElementsByClassName('6618deccac7e032116c91180c33898b1').getValue(),\n\t\t\"Transport allowance\": employee.getElementsByClassName('e00ab1488c9d089e0cb7d46144303a33').getValue(),\n\t\t\"Laundry allowance\": employee.getElementsByClassName('e1e8c096b40801af10875c6680c853e7').getValue(),\n\t\t\"Meal allowance\": employee.getElementsByClassName('794a0272b0f5091b124d281425c29511').getValue(),\n\t\t\"Travel allowance\": employee.getElementsByClassName('e00ab1488c9d089e0cb7d46144303a33').getValue(),\n\t\t\"Tool allowance\": employee.getElementsByClassName('c52ff56882cd0d7509b560b5838fa112').getValue(),\n\t\t\"Tasks allowance\": employee.getElementsByClassName('0deb298ec0e00a600dc228d02eb235d3').getValue(),\n\t\t\"Qualifications allowance\": employee.getElementsByClassName('c5bfe840391b00b61331886df7f3b69b').getValue(),\n\t\t\"Other allowance 1 description\": \"Other\",\n\t\t\"Other allowance 1 value\": employee.getElementsByClassName('d379e617b2bf057c3153b0f7dc1ebb45').getValue(),\n\t\t\"Lump sum A type T amount\": employee.getElementsByClassName('51fc497926c000513013df9bafe9a167').getValue(),\n\t\t\"Lump sum A type R amount\": employee.getElementsByClassName('64feba644453068712328399ce608ae2').getValue(),\n\t\t\"Lump sum B amount\": employee.getElementsByClassName('487d70c8f50304fd1c249235754ed87c').getValue(),\n\t\t\"Lump sum D amount\": employee.getElementsByClassName('b59011d0e6c80abb151d9600ed43805d').getValue(),\n\t\t\"Lump sum E financial year 1\": employee.getElementsByClassName('61b44922f99d0ff734ae25d8185037e2').getValue(),\n\t\t\"Lump sum W amount\": employee.getElementsByClassName('e4d0ec46312e0556356e0f3ffc064050').getValue(),\n\t\t\"Union fees\": employee.getElementsByClassName('7c0a7407a79344ae8a6d3bb36962d939').getValue(),\n\t\t\"Workplace giving\": employee.getElementsByClassName('87beb0025e81461ba967c60507376c2d').getValue(),\n\t\t\"Super guarantee amount\": employee.getElementsByClassName('a981e618f8fb0aec323a9750fc1a451b').getValue(),\n\t\t\"SG earnings amount\": employee.getElementsByClassName('63d31999e68e0ca122f95132a5996ec4').getValue(),\n\t\t\"RESC\": employee.getElementsByClassName('991da4602b2b09f61d214b49f08b0018').getValue(),\n\t\t\"Termination date\": employee.getElementsByClassName('2d6b0b420dc742429f9dc37a9eba5c48').getText().split('-').reverse().join('/'),\n\t\t\"Termination type\": employee.getElementsByClassName('cc5736e62ecb45b489204b9e0cef15c9').getText().split(' ')[0]\n    });\n}\n\ndocument.getElementsByName('content')[0].value = Papa.unparse(data);",
+      "18": true,
+      "19": [
+        {
+          "1": "Go to www.singletouch.com.au and click Login to \"Single Touch Lite\""
+        },
+        {
+          "1": "In the top navigation under \"STP EVENTS\" click \"Upload CSV\""
+        },
+        {
+          "1": "Obtain CSV file by clicking on \"Export\" button above. Then select this CSV file to upload on Single Touch website"
+        }
+      ],
+      "16": true
+    },
+    "c4a0ccf7-9171-4e8e-b390-97f7052b1479": {
+      "1": "Taxable Payments Annual Report (TPAR)",
+      "2": "2020-03-04T00:00:00",
+      "3": "2022-03-04T00:00:00",
+      "7": [
+        {
+          "4": "Section A: Payer details - this is the business that made the payment\n--------------------"
+        },
+        {
+          "4": "Payer name",
+          "5": [
+            "ce6302f8-0b02-42d8-b6b7-850063e4bbe0"
+          ]
+        },
+        {
+          "4": "Payer ABN",
+          "5": [
+            "0fba87ee-0386-401a-8d1f-302313b663f4"
+          ]
+        },
+        {
+          "4": "Section B: Declaration - this section must be completed by an individual authorised by the payer.\n--------------------"
+        },
+        {
+          "4": "Section C: Payee details - there are the businesses or people you have paid\n--------------------"
+        }
+      ],
+      "17": true,
+      "8": true,
+      "9": "e3f5b9dd-ee9a-4fd0-9ca9-750c9aad9b1f",
+      "10": "Yes",
+      "11": [
+        {
+          "4": "Name",
+          "5": [
+            "22ec22e1-8ed2-4cba-a5b9-533a1e451977"
+          ]
+        },
+        {
+          "4": "ABN",
+          "5": [
+            "9483841a-8d21-4c77-8031-614f721878fa"
+          ]
+        },
+        {
+          "4": "Total GST",
+          "5": [
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe",
+            "3671a124-a6bc-41c4-b0a4-59ed4b559daf"
+          ]
+        },
+        {
+          "4": "Gross amount",
+          "5": [
+            "32d6a783-3c55-4a65-92dc-2041e546951a",
+            "0b667cb2-173f-43f7-86da-7023622b51fc",
+            "529c8964-4cc6-46d3-a4f9-02af1eb4ea85",
+            "4e4b5344-49b5-494b-9a73-86c492d6d399",
+            "6b8ee065-60a5-4820-a896-1ceb681f53fe",
+            "2108b786-8999-473a-97b2-30b0214be867",
+            "3671a124-a6bc-41c4-b0a4-59ed4b559daf"
+          ]
+        }
+      ],
+      "13": [
+        {}
+      ],
+      "19": [
+        {}
+      ],
+      "16": true
+    }
+  },
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {},
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {
+    "32d6a783-3c55-4a65-92dc-2041e546951a": {
+      "1": "GST 10%"
+    },
+    "0b667cb2-173f-43f7-86da-7023622b51fc": {
+      "1": "GST 10% (CAPEX)"
+    },
+    "2108b786-8999-473a-97b2-30b0214be867": {
+      "1": "GST Free (export)"
+    },
+    "529c8964-4cc6-46d3-a4f9-02af1eb4ea85": {
+      "1": "GST Free (other)"
+    },
+    "255e0796-b9cf-4425-b785-3f442993215d": {
+      "1": "Input Taxed"
+    }
+  },
+  "6027ab88-f804-4827-beff-26b76bb94587": {},
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {
+    "4e4b5344-49b5-494b-9a73-86c492d6d399": {
+      "1": "GST Amount"
+    },
+    "6b8ee065-60a5-4820-a896-1ceb681f53fe": {
+      "1": "GST Amount (CAPEX)"
+    }
+  },
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {
+    "3671a124-a6bc-41c4-b0a4-59ed4b559daf": {
+      "1": "GST Amount (reversed)"
+    }
+  },
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {
+    "8cf9d117-3142-4d9c-82ee-b57a0e22c809": {
+      "1": "GST 10%",
+      "18": "32d6a783-3c55-4a65-92dc-2041e546951a",
+      "5": 2,
+      "4": 10.0,
+      "7": "010176ed-a8b6-4cba-9d47-f8b46696a9e5",
+      "19": "4e4b5344-49b5-494b-9a73-86c492d6d399",
+      "2": [
+        {}
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "17": {
+        "6f95e5e5-50e8-4bbb-a750-2550be8cc47c": "GST 10%"
+      }
+    },
+    "3e2cb830-e229-4525-8794-2e38761b3cfd": {
+      "1": "GST 10% (CAPEX)",
+      "18": "0b667cb2-173f-43f7-86da-7023622b51fc",
+      "5": 2,
+      "4": 10.0,
+      "7": "010176ed-a8b6-4cba-9d47-f8b46696a9e5",
+      "19": "6b8ee065-60a5-4820-a896-1ceb681f53fe",
+      "2": [
+        {}
+      ],
+      "13": true,
+      "14": "Tax Invoice",
+      "10": true,
+      "17": {
+        "6f95e5e5-50e8-4bbb-a750-2550be8cc47c": "GST 10% (CAPEX)"
+      }
+    },
+    "73952f89-6139-4fd0-a937-165b8ed66ba8": {
+      "1": "GST 10% (Deferred)",
+      "18": "32d6a783-3c55-4a65-92dc-2041e546951a",
+      "5": 2,
+      "4": 10.0,
+      "7": "010176ed-a8b6-4cba-9d47-f8b46696a9e5",
+      "19": "4e4b5344-49b5-494b-9a73-86c492d6d399",
+      "20": "3671a124-a6bc-41c4-b0a4-59ed4b559daf",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "10": true,
+      "17": {
+        "6f95e5e5-50e8-4bbb-a750-2550be8cc47c": "GST 10% (Deferred)"
+      }
+    },
+    "14f63584-be71-40ca-9028-1a60e2e2cc90": {
+      "1": "GST Free",
+      "18": "529c8964-4cc6-46d3-a4f9-02af1eb4ea85",
+      "2": [
+        {}
+      ],
+      "17": {
+        "6f95e5e5-50e8-4bbb-a750-2550be8cc47c": "GST Free"
+      }
+    },
+    "10d8f9dc-db1e-4c87-9480-a696f59aeddf": {
+      "1": "GST Free Import Export",
+      "18": "2108b786-8999-473a-97b2-30b0214be867",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "6f95e5e5-50e8-4bbb-a750-2550be8cc47c": "GST Free Import Export"
+      }
+    },
+    "9fe15ead-2138-4f4b-b3f5-398857d08503": {
+      "1": "GST on Imports",
+      "5": 1,
+      "7": "010176ed-a8b6-4cba-9d47-f8b46696a9e5",
+      "19": "4e4b5344-49b5-494b-9a73-86c492d6d399",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "6f95e5e5-50e8-4bbb-a750-2550be8cc47c": "GST on Imports"
+      }
+    },
+    "f218a321-f83d-4d06-8d02-b52f595cc4fe": {
+      "1": "Input Taxed",
+      "18": "255e0796-b9cf-4425-b785-3f442993215d",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "6f95e5e5-50e8-4bbb-a750-2550be8cc47c": "Input Taxed"
+      }
+    }
+  },
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {
+    "0fba87ee-0386-401a-8d1f-302313b663f4": {
+      "1": "ABN",
+      "13": [
+        "38cf4712-6e95-4ce1-b53a-bff03edad273"
+      ],
+      "4": 1,
+      "11": "Australian Business Number"
+    },
+    "9483841a-8d21-4c77-8031-614f721878fa": {
+      "1": "Australian Business Number (ABN)",
+      "13": [
+        "6d2dc48d-2053-4e45-8330-285ebd431242"
+      ],
+      "4": 1
+    },
+    "e3f5b9dd-ee9a-4fd0-9ca9-750c9aad9b1f": {
+      "1": "Include this supplier in Taxable Payments Annual Report (TPAR)",
+      "13": [
+        "6d2dc48d-2053-4e45-8330-285ebd431242"
+      ],
+      "3": 2,
+      "9": "Yes\nNo",
+      "11": "This is to indicate whether supplier is a contractor providing building and construction services.\nhttps://www.ato.gov.au/Business/Reports-and-returns/In-detail/Examples-of-building-and-construction-services/?anchor=Whatarebuildingandconstructionservices#Whatarebuildingandconstructionservices"
+    },
+    "57a258c7-3296-4b4a-bc6c-82ba5755c222": {
+      "1": "STP - Address 1",
+      "5": 503,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "4": 1
+    },
+    "ce735064-e907-478f-83b0-f319b2a9a7fb": {
+      "1": "STP - Address 2",
+      "5": 504,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "4": 1
+    },
+    "343a8633-5d10-46ca-9d20-0beed32ebab8": {
+      "1": "STP - Country",
+      "5": 508,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "au — Australia",
+      "4": 1
+    },
+    "f6859bbb-1736-4e60-81f2-2703a9ea4686": {
+      "1": "STP - Date of Birth",
+      "5": 509,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 4
+    },
+    "11acbfb3-9557-487a-8b8b-2528a2c43c53": {
+      "1": "STP - Family name",
+      "5": 502,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "4": 1
+    },
+    "0713b751-ee07-4d22-8b17-ad0131029ca0": {
+      "1": "STP - Given name",
+      "5": 500,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "4": 1
+    },
+    "03d6a7cc-2fc8-47f7-a001-8d714c55cd48": {
+      "1": "STP - Hired date",
+      "5": 300,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 4
+    },
+    "af894e25-9a1e-4384-9536-2f816d86c2e5": {
+      "1": "STP - Income stream code",
+      "5": 550,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "SAW - Salary and Wages\nCHP - Closely Held Payees\nIAA - Inbound Assignees to Australia\nWHM - Working Holiday Makers\nSWP - Seasonal Worker Programme\nFEI - Foreign Employment\nJPD - Joint Petroleum Development Area\nVOL - Voluntary Agreement\nLAB - Labour-Hire\nOSP - Other Specified Payments"
+    },
+    "2ee7f0d0-83f3-4b43-8ff9-2d34291ad7b1": {
+      "1": "STP - Income stream country code",
+      "5": 555,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "11": "This field is required if you selected \"Working Holiday Makers (WHM)\" under \"STP - Income Stream Code\" field. Enter the two-letter code representing the home country of the working holiday maker. This will be the alpha-2 code defined for the country in ISO 3166-1 (cannot be AU, CC, CX, HM, or NF)."
+    },
+    "8bbfc716-4cf7-4ad9-9cc5-57fa4bcd8176": {
+      "1": "STP - Medicare levy exemption",
+      "5": 604,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "H - Half\nF - Full\nX - No exemption"
+    },
+    "8100d247-30af-4996-a6b4-6a68a71b2098": {
+      "1": "STP - Medicare levy reduction",
+      "5": 605,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "0 – Spouse only\n1 – One dependant\n2 – Two dependants\n3 – Three dependants\n4 – Four dependants\n5 – Five dependants\n6 – Six dependants\n7 – Seven dependants\n8 – Eight dependants\n9 – Nine dependants\nA – Ten or more dependants\nX – No reduction"
+    },
+    "570b929c-64cc-478c-b26f-332841fd9632": {
+      "1": "STP - Medicare levy surcharge",
+      "5": 603,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "1 – Tier 1\n2 – Tier 2\n3 – Tier 3\nX – No surcharge"
+    },
+    "91a2b722-99cd-41e1-b638-532793aae782": {
+      "1": "STP - Middle name",
+      "5": 501,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "4": 1
+    },
+    "6b837666-1039-4cfc-948b-5c36b30682c2": {
+      "1": "STP - Payment basis",
+      "5": 512,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "F — Full time\nP — Part time\nC — Casual\nL — Labour hire\nV — Voluntary Agreement\nD — Death Beneficiary\nN — Non-Employee",
+      "11": "Single Touch Payroll requires to report on what payment basis each employee is. https://www.ato.gov.au/business/employee-or-contractor/how-to-work-it-out--employee-or-contractor/"
+    },
+    "b8c661cd-ff56-4862-853b-75d0f2920776": {
+      "1": "STP - Payroll number",
+      "5": 401,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "11": "A unique number that identifies an employee for Single Touch Payroll"
+    },
+    "dc15193e-9883-4e89-a78b-7e6751db5240": {
+      "1": "STP - Postcode",
+      "5": 507,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ]
+    },
+    "050a3828-8ba0-4db9-b560-f24a3c5e413b": {
+      "1": "STP - State/territory",
+      "5": 506,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ]
+    },
+    "b159d29e-b71f-4f45-aacf-c61ac53fb576": {
+      "1": "STP - Study and Training Support Loan",
+      "5": 602,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "S – Has STSL\nX – No STSL"
+    },
+    "f6326e38-61c9-41c6-8bda-7a9f2d594150": {
+      "1": "STP - Suburb",
+      "5": 505,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "4": 1
+    },
+    "8980d8c4-ed06-4534-9b22-4e5d4fca2595": {
+      "1": "STP - Tax treatment code",
+      "5": 600,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "R - Regular\nA - Actors\nC - Horticulturists and Shearers\nS – Seniors and Pensioners\nH – Working Holiday Maker\nW – Seasonal Worker Programme\nF – Foreign Resident\nN – No TFN\nD – ATO Defined\nV – Voluntary Agreement"
+    },
+    "89005ebb-4898-4f79-81f3-471b61143d77": {
+      "1": "STP - Tax treatment option",
+      "5": 601,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "T – With tax-free threshold\nD – Daily casuals\nN – With no tax-free threshold\nD – 3 or less performances per week (Actors)\nP – Promotional (Actors)\nF – Foreign resident\nS – Single (Seniors and Pensioners)\nM – Couple (Seniors and Pensioners)\nI – Illness separated couple (Seniors and Pensioners)\nR – Registered employer (Working Holiday Maker)\nU – Unregistered employer (Working Holiday Maker)\nP - Seasonal Worker Programme\nA – Australian resident (No TFN)\nB – Death Beneficiary\nV – Downward Variation\nZ – Non-Employee\nC – With Commissioner’s instalment rate (CIR) (Voluntary Agreement)\nO – Without Commissioner’s instalment rate (CIR) (Voluntary Agreement)"
+    },
+    "2d6b0b42-0dc7-4242-9f9d-c37a9eba5c48": {
+      "1": "STP - Termination date",
+      "5": 606,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 4
+    },
+    "cc5736e6-2ecb-45b4-8920-4b9e0cef15c9": {
+      "1": "STP - Termination type",
+      "5": 606,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "3": 2,
+      "9": "V - Voluntary Cessation\nI - Ill Health\nD - Deceased\nR - Redundancy\nF - Dismissal\nC - Contract Cessation\nT - Transfer",
+      "11": ""
+    },
+    "8067ce2d-6a48-45f1-a5a9-5e2d923e9cc7": {
+      "1": "Tax File Number (TFN)",
+      "5": 200,
+      "13": [
+        "dadb7f95-a5dd-45c0-945d-6ad4ee28776e"
+      ],
+      "4": 1
+    }
+  },
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "2b4c2819-4dca-4982-9408-9a1930ba57e5": {
+      "1": "Accounting fees",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "49a69153-ffab-40a4-93b7-1e5fe5163be4": {
+      "1": "Advertising and promotion",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "054273ca-974e-4e2d-b861-93f0bd320041": {
+      "1": "Bank charges",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "18965e26-402f-4c28-bdfd-c66b4c51716f": {
+      "1": "Computer equipment",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "b49fbd7b-5b0b-47a5-a594-6868ac6e482d": {
+      "1": "Donations",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "c4af1693-71fc-4a15-b671-4b06bf3d07ff": {
+      "1": "Electricity",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "7c2bdcc1-9bc0-481f-888a-935d615ab5f3": {
+      "1": "Entertainment",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "e493db69-2719-4a81-91d4-626bdd79e120": {
+      "1": "Interest received",
+      "3": "b18c53b6-1501-4bca-bc6f-80e54f0c233b"
+    },
+    "fd661a72-18a6-4434-ab28-5c7e9b934129": {
+      "1": "Legal fees",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "481675eb-5214-43ce-83c6-d83f23955513": {
+      "1": "Motor vehicle expenses",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "97d11de2-bc3f-4571-a33f-0742e122df86": {
+      "1": "Printing and stationery",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "384accf5-dbf1-4324-95c6-c2a5cf172f1f": {
+      "1": "Rent",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "2ad42b75-64fc-441d-b89a-1614a50dde61": {
+      "1": "Repairs and maintenance",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "8831519b-bb68-4198-822f-ead99bc4e955": {
+      "1": "Sales",
+      "3": "b18c53b6-1501-4bca-bc6f-80e54f0c233b"
+    },
+    "ac34fc03-7b0d-4c71-bc88-b213c3d0f750": {
+      "1": "Telephone",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    },
+    "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1": {
+      "1": "Wages & salaries",
+      "3": "77b58dec-02b7-4e28-aa55-81c70ec255ee"
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "77b58dec-02b7-4e28-aa55-81c70ec255ee": {
+      "1": "Expenses",
+      "6": 1,
+      "5": 2
+    },
+    "b18c53b6-1501-4bca-bc6f-80e54f0c233b": {
+      "1": "Income",
+      "5": 1
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {},
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "010176ed-a8b6-4cba-9d47-f8b46696a9e5": {
+      "1": "GST payable",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    },
+    "8a3514e3-3bac-43b8-9521-21fc59e90287": {
+      "1": "Payroll liabilities",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc"
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {},
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {
+    "7898a69d-4b8c-4d61-bd27-dd2ae462d0cd": {
+      "1": "Back pay",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "1c8995a9-b06c-4f93-add4-66db7fb577b7",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Lump sum E"
+      }
+    },
+    "36286793-b7d7-4022-aee2-125e6557c582": {
+      "1": "Bonus",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "1b442ce9-b447-452d-a051-a2d4205a7b05",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Gross payments"
+      }
+    },
+    "70423c5d-8062-41ae-8eea-a442652f0d08": {
+      "1": "Commission",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "1b442ce9-b447-452d-a051-a2d4205a7b05",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Gross payments"
+      }
+    },
+    "b546cf89-1c78-4ab0-abcc-25fcb50aab3e": {
+      "1": "Meal expense",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "0477def9-f904-497f-8b37-6b174227d544",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Allowance - Meals",
+        "07fb0059-a29a-4d7a-8a7c-64f63311c05c": ""
+      }
+    },
+    "f7bad7d8-ab90-403c-9620-76465687f4ce": {
+      "1": "Ordinary hours",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "1eeec512-af7f-4cc5-bb83-1231c27c2e91",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Gross payments",
+        "07fb0059-a29a-4d7a-8a7c-64f63311c05c": "Yes"
+      }
+    },
+    "4c63a2ad-4f45-4f17-b3c0-1ca1b1049643": {
+      "1": "Overtime",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "f25bdb57-d366-45cc-93db-2e401fb7001f",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Gross payments"
+      }
+    },
+    "353768ad-424f-4e08-afe2-f0f40aec1366": {
+      "1": "Salary",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "1eeec512-af7f-4cc5-bb83-1231c27c2e91",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Gross payments",
+        "07fb0059-a29a-4d7a-8a7c-64f63311c05c": "Yes"
+      }
+    },
+    "1cfbb20a-7c52-45ab-9802-0e8de056d08c": {
+      "1": "Travel expense",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "9d376dc3-c56c-48fa-95cd-976223d57a66",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Allowance - Travel",
+        "07fb0059-a29a-4d7a-8a7c-64f63311c05c": ""
+      }
+    },
+    "0ae29fdb-1321-48f2-a07d-1e9cc343f80e": {
+      "1": "Unused annual leave",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "2cc195f2-6f31-4035-a969-9c98c80ce132",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Lump sum A",
+        "07fb0059-a29a-4d7a-8a7c-64f63311c05c": ""
+      }
+    },
+    "969e5175-b959-4019-8dce-1e475a70eca3": {
+      "1": "Unused long service leave",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "5": "2cc195f2-6f31-4035-a969-9c98c80ce132",
+      "4": {
+        "8198caf2-1125-4f8e-9469-527583e3ea5e": "Lump sum A",
+        "07fb0059-a29a-4d7a-8a7c-64f63311c05c": ""
+      }
+    }
+  },
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {
+    "aaf3c5c1-2fd4-44d8-8499-e653115cb33e": {
+      "1": "Charitable donation",
+      "3": "8a3514e3-3bac-43b8-9521-21fc59e90287",
+      "5": "f1bc8fba-622b-44bf-893c-ad33834c7c88",
+      "4": {
+        "e253ec72-1200-414a-941a-a93f4039a045": "Workplace giving"
+      }
+    },
+    "caa9f4fb-4e4a-4366-8199-76df53161d24": {
+      "1": "PAYG withholding",
+      "3": "8a3514e3-3bac-43b8-9521-21fc59e90287",
+      "5": "43dc8de9-5e59-471e-b220-111c97ada19e",
+      "4": {
+        "e253ec72-1200-414a-941a-a93f4039a045": "PAYG"
+      }
+    },
+    "53993ce6-56ec-4ece-9c7e-8be13dc1f922": {
+      "1": "Union fees",
+      "3": "8a3514e3-3bac-43b8-9521-21fc59e90287",
+      "5": "0a084bbf-9b39-460a-aa36-5085ed19c99c",
+      "4": {
+        "e253ec72-1200-414a-941a-a93f4039a045": "Union / association fees"
+      }
+    }
+  },
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {
+    "15e20b83-b811-48d9-a147-4ed5d3b5c7ff": {
+      "1": "Salary sacrifice",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "4": "8a3514e3-3bac-43b8-9521-21fc59e90287",
+      "6": "e42078eb-62da-4992-845b-084a976e404d",
+      "5": {
+        "8ce55e79-ec7a-4e5d-a41f-84c7b7b7189e": "Reportable employer super contribution"
+      }
+    },
+    "671ce5ca-3382-436f-8908-914279f8ea25": {
+      "1": "Superannuation guarantee",
+      "3": "2be9dcbd-4c7c-40f0-9e7f-ceb3352740c1",
+      "4": "8a3514e3-3bac-43b8-9521-21fc59e90287",
+      "6": "d4bc3a93-b10a-4a88-ab40-d4539bff054e",
+      "5": {
+        "8ce55e79-ec7a-4e5d-a41f-84c7b7b7189e": "Superannuation guarantee"
+      }
+    }
+  },
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {
+    "1b442ce9-b447-452d-a051-a2d4205a7b05": {
+      "1": "Bonus commission"
+    },
+    "d0321999-ab88-4cb9-88fb-083df3dab634": {
+      "1": "Cashout leave"
+    },
+    "35b90096-c604-4f02-b0f1-edce5bed95c7": {
+      "1": "CDEP payments"
+    },
+    "88c4b86a-4287-4473-90a8-3981db7b070e": {
+      "1": "Defence leave"
+    },
+    "44bfada5-9d85-4dfe-8783-1e111fafb2ed": {
+      "1": "Directors fees"
+    },
+    "f9e00d0c-396d-4ba4-9ab0-e81114c8b1f5": {
+      "1": "Exempt foreign employment income"
+    },
+    "f25bdb57-d366-45cc-93db-2e401fb7001f": {
+      "1": "Gross payments"
+    },
+    "1eeec512-af7f-4cc5-bb83-1231c27c2e91": {
+      "1": "Gross payments - OTE"
+    },
+    "1b250247-e58f-4345-8fb3-5283a4ddd8e4": {
+      "1": "Kilometer allowance"
+    },
+    "9cd51c1d-fdf9-41cb-89fd-1f65e72d13b2": {
+      "1": "Laundry allowance"
+    },
+    "19c366ef-0da2-46e3-8b48-c09aa985cab7": {
+      "1": "Lump sum A (type R)"
+    },
+    "2cc195f2-6f31-4035-a969-9c98c80ce132": {
+      "1": "Lump sum A (type T)"
+    },
+    "3540ac43-bcf2-4499-855e-d13612ab9829": {
+      "1": "Lump sum B"
+    },
+    "c8adcd5b-af39-4adf-8c67-d5038aa6c008": {
+      "1": "Lump sum D"
+    },
+    "1c8995a9-b06c-4f93-add4-66db7fb577b7": {
+      "1": "Lump sum E"
+    },
+    "99ed30cd-78df-4532-ac14-4c3c9be30005": {
+      "1": "Lump sum W"
+    },
+    "0477def9-f904-497f-8b37-6b174227d544": {
+      "1": "Meal allowance"
+    },
+    "ae443a9c-fb4e-4518-a829-f3f4bbfbfb10": {
+      "1": "Other allowance"
+    },
+    "8ac17e05-8428-4be0-9271-d0d5e6005f06": {
+      "1": "Other leave"
+    },
+    "b03d3161-ba98-4110-b4a9-b25ad8f32518": {
+      "1": "Overtime"
+    },
+    "bfe5e639-f749-424f-b405-135d8a60884f": {
+      "1": "Parental leave"
+    },
+    "b88234cb-70ea-40d2-8a4b-cb6e9016f6ce": {
+      "1": "Qualifications allowance"
+    },
+    "70d6f505-8911-4a04-94b8-6bd349577586": {
+      "1": "Tasks allowance"
+    },
+    "08dd214c-9b39-4c3a-8c19-5b121f23627f": {
+      "1": "Term unused leave"
+    },
+    "b81229e3-cb3c-4d11-90cf-23b6e46ae147": {
+      "1": "Tool allowance"
+    },
+    "cf03ab85-80a9-4cdb-afca-8b9db1e300d7": {
+      "1": "Transport allowance"
+    },
+    "9d376dc3-c56c-48fa-95cd-976223d57a66": {
+      "1": "Travel allowance"
+    },
+    "404fb279-cb40-4098-a9f3-73891e2fd2f3": {
+      "1": "Workers comp leave"
+    }
+  },
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {
+    "43dc8de9-5e59-471e-b220-111c97ada19e": {
+      "1": "PAYG"
+    },
+    "0a084bbf-9b39-460a-aa36-5085ed19c99c": {
+      "1": "Union / association fees"
+    },
+    "f1bc8fba-622b-44bf-893c-ad33834c7c88": {
+      "1": "Workplace giving"
+    }
+  },
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {
+    "e42078eb-62da-4992-845b-084a976e404d": {
+      "1": "Reportable employer super contribution"
+    },
+    "d4bc3a93-b10a-4a88-ab40-d4539bff054e": {
+      "1": "Superannuation guarantee"
+    }
+  },
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "0c649990-3b1c-47e8-934a-7dc2997eeb0d": {
+      "1": "Drawings"
+    },
+    "b35bbbad-79ac-4f54-8894-55a619fef55d": {
+      "1": "Funds contributed"
+    },
+    "db9df470-2392-4a32-96eb-193d3135e8c0": {
+      "1": "Share of profit"
+    }
+  }
+}

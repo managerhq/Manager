@@ -1,0 +1,530 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "KES",
+      "2": "Kenya Shillings",
+      "4": "Ksh"
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {},
+  "6116531b-cb3d-4f85-b239-745972943a6b": {},
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "dd/MM/yyyy",
+      "4": "HH:mm:ss",
+      "3": "CgEuEgEsGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {},
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {},
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {},
+  "6027ab88-f804-4827-beff-26b76bb94587": {},
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {},
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {},
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {},
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {},
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "2ddc7079-8b24-41f8-b13a-1d05392cb01d": {
+      "1": "Accounting fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "7415cccc-cd25-45eb-bd90-223e3f270549": {
+      "1": "Advertising and promotion",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "e518b1dd-65eb-475f-8427-572ace1d1368": {
+      "1": "Bank charges",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "1ab53040-3868-479e-afc1-4ccbb7cb161d": {
+      "1": "Computer equipment",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "3c1ae4de-7635-4038-b993-b05260cf1972": {
+      "1": "Donations",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "ed09314e-edef-4b93-9792-f84676dd9b2c": {
+      "1": "Electricity",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "c19933d8-286d-431f-b24c-ad03347010f9": {
+      "1": "Entertainment",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "84161a09-7a38-4063-bbbe-ecf1f4e146eb": {
+      "1": "Interest received",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "44c98246-7d46-4cff-a2d2-060e27eb91c3": {
+      "1": "Legal fees",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "0edb311a-b4cf-49ee-9836-fd0cd3b6d558": {
+      "1": "Motor vehicle expenses",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "c4605e56-c406-4caa-bf55-98c053ba90d8": {
+      "1": "Printing and stationery",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "7323c86d-ddc3-4322-87d0-39ad96b750ff": {
+      "1": "Rent",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "51449e5f-b88a-4b43-9e1d-fa2d365689c5": {
+      "1": "Repairs and maintenance",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    },
+    "b5fb6fe8-9a29-4549-98e0-13a826adf131": {
+      "1": "Salaries and Wages",
+      "11": "6.5.1",
+      "3": "b59936fd-b95b-41ab-a2e5-ebc63e60fc77"
+    },
+    "760bf1bc-042b-4962-8d24-0ceec17cd909": {
+      "1": "Sales",
+      "3": "95713fac-30d3-42e4-b536-dd7bc4f7a80e"
+    },
+    "39d70c74-c422-44c3-b16e-c980394531b8": {
+      "1": "Telephone",
+      "3": "fd003045-876e-439e-b923-1904453f5c30"
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "b59936fd-b95b-41ab-a2e5-ebc63e60fc77": {
+      "1": "Employment Expenses",
+      "6": 1,
+      "5": 3
+    },
+    "fd003045-876e-439e-b923-1904453f5c30": {
+      "1": "Expenses",
+      "6": 1,
+      "5": 2
+    },
+    "95713fac-30d3-42e4-b536-dd7bc4f7a80e": {
+      "1": "Income",
+      "5": 1
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {},
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "acf98b5f-c3f4-400a-a98c-c9a1a779eefc": {
+      "1": "Accrued Interest",
+      "17": "4.1.3",
+      "3": "bc8a67ae-9ffe-4517-a3a6-15d0f5e67234",
+      "16": 3
+    },
+    "d95d9f94-054a-4ddc-8a63-63b045603949": {
+      "1": "Any Other Reserve",
+      "17": "6.6",
+      "3": "a955da3b-8111-4568-96e8-0b5f850e3577",
+      "18": 1,
+      "16": 6
+    },
+    "810d403f-8daa-4f1a-bea0-f9baddf24b2d": {
+      "1": "Bank Overdrafts",
+      "17": "4.1.4",
+      "3": "bc8a67ae-9ffe-4517-a3a6-15d0f5e67234",
+      "18": 2,
+      "16": 4
+    },
+    "dcfa06f9-9510-4482-b85d-585d7c0a25b3": {
+      "1": "Debentures",
+      "17": "2.2",
+      "3": "082033b3-0ca5-461f-9709-619c485b28b7",
+      "18": 1,
+      "16": 2
+    },
+    "78afbc27-b271-4b9b-ae4b-df5d87fe7d69": {
+      "1": "Debt Securities issued",
+      "17": "7.1.5",
+      "3": "542fee89-e569-46a5-ae8c-52bc6cb4116b",
+      "18": 2,
+      "16": 5
+    },
+    "5e52dfbc-e4f9-40de-9a82-488c36be9148": {
+      "1": "Deferred Tax Assets",
+      "17": "3.3",
+      "3": "0e6afcf6-db26-4713-a3a3-680260b44984",
+      "16": 8
+    },
+    "ccad135e-dd3e-4091-995f-5a12d6e8a2ba": {
+      "1": "Deferred Tax Liability",
+      "17": "7.3",
+      "3": "ef817948-ec6b-4488-a398-4501e083401c",
+      "18": 2,
+      "16": 6
+    },
+    "b50f5799-2771-4879-a5ec-c4235a8b554a": {
+      "1": "Deposits (Other than Fixed Deposit)",
+      "17": "3.2.5",
+      "3": "a2918577-da5a-4d42-b13f-2f5de9973985",
+      "18": 2,
+      "16": 5
+    },
+    "54dfea86-fdec-4604-a9b9-bfcd44a359a1": {
+      "1": "Dividends Payable",
+      "17": "4.1.5",
+      "3": "bc8a67ae-9ffe-4517-a3a6-15d0f5e67234",
+      "18": 1,
+      "16": 5
+    },
+    "351a716a-e1b3-42fe-b523-aa636930807f": {
+      "1": "Fixed Deposits",
+      "17": "2.3",
+      "3": "082033b3-0ca5-461f-9709-619c485b28b7",
+      "18": 1,
+      "16": 3
+    },
+    "4b88cc87-8c4f-4bff-8f9b-6f796f09065b": {
+      "1": "Foreign Loans from Related Parties",
+      "17": "7.1.1",
+      "3": "542fee89-e569-46a5-ae8c-52bc6cb4116b",
+      "18": 2,
+      "16": 1
+    },
+    "fdd01440-c84b-411c-922c-f6594d66a717": {
+      "1": "Foreign Loans from Related Parties",
+      "17": "7.2.1",
+      "3": "ef817948-ec6b-4488-a398-4501e083401c",
+      "18": 2,
+      "16": 1
+    },
+    "6fca6604-5d3f-4612-bd37-4b98731fe422": {
+      "1": "Foreign Loans from Unrelated Parties",
+      "17": "7.2.2",
+      "3": "ef817948-ec6b-4488-a398-4501e083401c",
+      "18": 2,
+      "16": 2
+    },
+    "ba249d13-61ef-4c00-84c6-47d232adae09": {
+      "1": "Foreign Loans from Unrelated Parties",
+      "17": "7.1.2",
+      "3": "542fee89-e569-46a5-ae8c-52bc6cb4116b",
+      "16": 2
+    },
+    "b8630753-1cd0-4e6d-b85b-c02a6e0efb47": {
+      "1": "Foreign Loans to Related Parties",
+      "17": "3.2.1",
+      "3": "a2918577-da5a-4d42-b13f-2f5de9973985",
+      "18": 2,
+      "16": 1
+    },
+    "d9ac009a-4c4f-44ab-8f21-5f36abc18e05": {
+      "1": "Foreign Loans to Unrelated Parties",
+      "17": "3.2.2",
+      "3": "a2918577-da5a-4d42-b13f-2f5de9973985",
+      "18": 2,
+      "16": 2
+    },
+    "ea3122f4-5e45-4784-bd82-cbcff6411eed": {
+      "1": "General Reserve",
+      "17": "6.5",
+      "3": "a955da3b-8111-4568-96e8-0b5f850e3577",
+      "18": 1,
+      "16": 5
+    },
+    "1ec5c3f1-ab91-4d41-8365-709e9079b995": {
+      "1": "Government Securities",
+      "17": "2.4",
+      "3": "082033b3-0ca5-461f-9709-619c485b28b7",
+      "18": 1,
+      "16": 4
+    },
+    "d0f19efb-8d22-4382-b73b-f165202867d8": {
+      "1": "HELB Deductions Payable",
+      "17": "4.1.6.2",
+      "3": "6c568a24-c2ba-4d82-ae54-3d7f5bf6214e",
+      "16": 2
+    },
+    "bc76dc12-ac05-479b-ba49-6ea9c50fd9a6": {
+      "1": "Issued, Subscribed and Paid Up Share Capital",
+      "17": "6.1",
+      "3": "a955da3b-8111-4568-96e8-0b5f850e3577",
+      "18": 1,
+      "16": 1
+    },
+    "724a34df-1192-4581-832d-d707a948c27d": {
+      "1": "Liabilities for Leased Assets",
+      "17": "4.1.2",
+      "3": "bc8a67ae-9ffe-4517-a3a6-15d0f5e67234",
+      "16": 2
+    },
+    "c2e6cbca-7ab9-42aa-9b3b-7ef6eb44347f": {
+      "1": "Loans and Advances to Others",
+      "17": "3.2.6",
+      "3": "a2918577-da5a-4d42-b13f-2f5de9973985",
+      "18": 2,
+      "16": 6
+    },
+    "57059bd5-c042-4d8b-90d0-39181e674f9f": {
+      "1": "Loans and Advances to Staff",
+      "17": "3.2.4",
+      "3": "a2918577-da5a-4d42-b13f-2f5de9973985",
+      "18": 2,
+      "16": 4
+    },
+    "4e92d00d-eb7a-44ec-95fc-ca69ffe257bc": {
+      "1": "Local Loans",
+      "17": "3.2.3",
+      "3": "a2918577-da5a-4d42-b13f-2f5de9973985",
+      "18": 2,
+      "16": 3
+    },
+    "6a79a832-9e96-41ea-93c0-590c641eb4d2": {
+      "1": "Local Loans",
+      "17": "7.2.3",
+      "3": "ef817948-ec6b-4488-a398-4501e083401c",
+      "18": 2,
+      "16": 3
+    },
+    "7327df01-a8f0-4760-91e7-8612f42eb932": {
+      "1": "Local Loans",
+      "17": "7.1.3",
+      "3": "542fee89-e569-46a5-ae8c-52bc6cb4116b",
+      "18": 2,
+      "16": 3
+    },
+    "e01d8852-d546-441c-a7d6-601f31da31b3": {
+      "1": "NHIF Deductions Payable",
+      "17": "4.1.6.1",
+      "3": "6c568a24-c2ba-4d82-ae54-3d7f5bf6214e",
+      "16": 1
+    },
+    "fcffebd9-7a3e-451c-9f8f-074a212cf121": {
+      "1": "NITA Payable",
+      "17": "4.1.6.3",
+      "3": "6c568a24-c2ba-4d82-ae54-3d7f5bf6214e",
+      "16": 3
+    },
+    "ba8b79c2-0597-43bf-8254-cb93f0fcd376": {
+      "1": "NSSF Deductions Payable",
+      "17": "4.1.6.4",
+      "3": "6c568a24-c2ba-4d82-ae54-3d7f5bf6214e",
+      "16": 4
+    },
+    "933a8e36-ec5d-4ef8-9bb0-b170808532c2": {
+      "1": "Other Current Assets",
+      "17": "3.1.4",
+      "3": "0e6afcf6-db26-4713-a3a3-680260b44984",
+      "16": 7
+    },
+    "bd22e7b7-68a4-482c-a8cf-8a04f3e84b50": {
+      "1": "Other Investments",
+      "17": "2.5",
+      "3": "082033b3-0ca5-461f-9709-619c485b28b7",
+      "18": 1,
+      "16": 5
+    },
+    "03113c6f-9777-4386-a9c0-b05de7705c7a": {
+      "1": "Other Loans",
+      "17": "7.2.4",
+      "3": "ef817948-ec6b-4488-a398-4501e083401c",
+      "18": 2,
+      "16": 4
+    },
+    "da697e77-0d9f-4a1c-8969-8e012a2c07b0": {
+      "1": "Other Loans",
+      "17": "7.1.4",
+      "3": "542fee89-e569-46a5-ae8c-52bc6cb4116b",
+      "18": 2,
+      "16": 4
+    },
+    "a463dc9d-2c47-46b2-80c4-3bc8c091a70a": {
+      "1": "Other Provisions",
+      "17": "4.2.3",
+      "3": "c2aaa05e-822f-4005-8bf7-e626cfec04d2",
+      "16": 3
+    },
+    "ba8d3cd0-c057-4ff0-a5ee-76285562362a": {
+      "1": "Other Receivables / Other Debtors",
+      "17": "3.1.2.3",
+      "3": "0e6afcf6-db26-4713-a3a3-680260b44984",
+      "16": 4
+    },
+    "2321a00f-cb6c-4824-b3b3-c928cf16fa02": {
+      "1": "Payables / Creditors for more than one year",
+      "17": "7.2.5",
+      "3": "ef817948-ec6b-4488-a398-4501e083401c",
+      "18": 2,
+      "16": 5
+    },
+    "702b4158-260e-4167-a1c4-fc9c175a0c76": {
+      "1": "PAYE Payable",
+      "17": "4.1.6.5",
+      "3": "6c568a24-c2ba-4d82-ae54-3d7f5bf6214e",
+      "16": 5
+    },
+    "49406146-4e44-4d63-a19f-c7c497cff8b1": {
+      "1": "Prepayments",
+      "17": "3.1.2.2",
+      "3": "0e6afcf6-db26-4713-a3a3-680260b44984",
+      "16": 3
+    },
+    "2f3e1431-3c60-4bfa-aead-0307e07e2e0d": {
+      "1": "Provision for Income Tax",
+      "17": "4.2.1",
+      "3": "c2aaa05e-822f-4005-8bf7-e626cfec04d2",
+      "16": 1
+    },
+    "8a4c9fa1-1867-41bc-9e1f-6737f5513092": {
+      "1": "Provision of Bad Debts",
+      "17": "4.2.2",
+      "3": "c2aaa05e-822f-4005-8bf7-e626cfec04d2",
+      "16": 2
+    },
+    "dbd27c19-1648-40cf-8171-26b0d92403b1": {
+      "1": "Revaluation Reserve",
+      "17": "6.3",
+      "3": "a955da3b-8111-4568-96e8-0b5f850e3577",
+      "18": 1,
+      "16": 3
+    },
+    "902d6e97-b90d-46da-aa21-a579b694b494": {
+      "1": "SACCO Deductions Payable",
+      "17": "4.1.6.6",
+      "3": "6c568a24-c2ba-4d82-ae54-3d7f5bf6214e",
+      "16": 6
+    },
+    "69d42ee2-0e63-4183-b9eb-324c29b2361d": {
+      "1": "Share Premium",
+      "17": "6.2",
+      "3": "a955da3b-8111-4568-96e8-0b5f850e3577",
+      "18": 1,
+      "16": 2
+    },
+    "7b48a150-0304-40b3-a47c-03bb4ed06609": {
+      "1": "Shares",
+      "17": "2.1",
+      "3": "082033b3-0ca5-461f-9709-619c485b28b7",
+      "18": 1,
+      "16": 1
+    },
+    "b361d933-f675-46eb-9a67-4fe2b594efca": {
+      "1": "Translation Reserve",
+      "17": "6.4",
+      "3": "a955da3b-8111-4568-96e8-0b5f850e3577",
+      "16": 4
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {
+    "db2d6295-5e27-4fb9-bf55-21b64a707699": {
+      "1": "1. Fixed Assets – Non Current Assets",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 2
+    },
+    "082033b3-0ca5-461f-9709-619c485b28b7": {
+      "1": "2. Investments",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 3
+    },
+    "fb31306d-a8a7-4fd8-bcd8-c1afcdc17125": {
+      "1": "3. Current Assets, Loans and Advances",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 4
+    },
+    "0e6afcf6-db26-4713-a3a3-680260b44984": {
+      "1": "3.1 Current Assets",
+      "3": "fb31306d-a8a7-4fd8-bcd8-c1afcdc17125"
+    },
+    "a2918577-da5a-4d42-b13f-2f5de9973985": {
+      "1": "3.2 Loans and Advances",
+      "3": "fb31306d-a8a7-4fd8-bcd8-c1afcdc17125"
+    },
+    "c4d9882c-4ee2-49a8-9326-bafec451254b": {
+      "1": "4. Current Liabilities and Provisions",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc",
+      "4": 1
+    },
+    "bc8a67ae-9ffe-4517-a3a6-15d0f5e67234": {
+      "1": "4.1 Current Liabilities",
+      "3": "c4d9882c-4ee2-49a8-9326-bafec451254b"
+    },
+    "6c568a24-c2ba-4d82-ae54-3d7f5bf6214e": {
+      "1": "4.1.6 Other Current liabilities",
+      "3": "c4d9882c-4ee2-49a8-9326-bafec451254b"
+    },
+    "c2aaa05e-822f-4005-8bf7-e626cfec04d2": {
+      "1": "4.2 Provisions",
+      "3": "c4d9882c-4ee2-49a8-9326-bafec451254b"
+    },
+    "a955da3b-8111-4568-96e8-0b5f850e3577": {
+      "1": "6 Share Capital, Reserves and Surplus",
+      "3": "9275ff4c-4cff-41d0-b7b5-f31c783f03d8"
+    },
+    "7d573f92-541c-42ee-bd75-3b52f41139ec": {
+      "1": "7. Long Term Liabilities",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc",
+      "4": 2
+    },
+    "542fee89-e569-46a5-ae8c-52bc6cb4116b": {
+      "1": "7.1 Secured Liabilities",
+      "3": "7d573f92-541c-42ee-bd75-3b52f41139ec"
+    },
+    "ef817948-ec6b-4488-a398-4501e083401c": {
+      "1": "7.2 Unsecured Liabilities",
+      "3": "7d573f92-541c-42ee-bd75-3b52f41139ec"
+    }
+  },
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {
+    "8cf8a65a-022b-49ba-bc77-5ba3499be102": {
+      "1": "Basic Pay",
+      "3": "b5fb6fe8-9a29-4549-98e0-13a826adf131"
+    },
+    "cf2aa531-7f18-4e4c-a40b-5791c7322538": {
+      "1": "Commuter Allowance",
+      "3": "b5fb6fe8-9a29-4549-98e0-13a826adf131"
+    },
+    "21495ccb-3845-498c-8501-73cc7535996a": {
+      "1": "House Allowance",
+      "3": "b5fb6fe8-9a29-4549-98e0-13a826adf131"
+    },
+    "7bddb1f8-8194-4440-a34d-d8acbbf45086": {
+      "1": "Leave Pay",
+      "3": "b5fb6fe8-9a29-4549-98e0-13a826adf131"
+    }
+  },
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {
+    "9ce80bbb-0fc2-409a-8a9f-09af78182a57": {
+      "1": "HELB Deduction",
+      "3": "d0f19efb-8d22-4382-b73b-f165202867d8"
+    },
+    "ec454e3e-92cb-48dd-8de4-688c5b026a76": {
+      "1": "NHIF Deduction",
+      "3": "e01d8852-d546-441c-a7d6-601f31da31b3"
+    },
+    "13e28f7f-f40c-423d-8567-89693d93bd52": {
+      "1": "NSSF Deduction",
+      "3": "ba8b79c2-0597-43bf-8254-cb93f0fcd376"
+    },
+    "089f3570-eafe-426c-9220-060b95e03bd3": {
+      "1": "PAYE Tax",
+      "3": "702b4158-260e-4167-a1c4-fc9c175a0c76"
+    },
+    "baff4889-f097-4853-9995-1ba6ca1568be": {
+      "1": "SACCO Deductions",
+      "3": "902d6e97-b90d-46da-aa21-a579b694b494"
+    }
+  },
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {
+    "7144543a-8662-479a-9ec5-1775047629cb": {
+      "1": "NSSF - Employer Contribution",
+      "3": "b5fb6fe8-9a29-4549-98e0-13a826adf131",
+      "4": "ba8b79c2-0597-43bf-8254-cb93f0fcd376"
+    }
+  },
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {},
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {},
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {},
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "b4230560-ef9c-41d0-b8e6-551fd3166f61": {
+      "1": "Drawings"
+    },
+    "7c516abc-6636-4b25-8593-af34a0b9138d": {
+      "1": "Funds contributed"
+    },
+    "e0fbc022-94a1-4e06-9d0b-e2546210bac3": {
+      "1": "Share of profit"
+    }
+  }
+}

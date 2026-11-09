@@ -3,7 +3,7 @@
 // panel injected above the report output on each report page.
 //
 // Field GUIDs match the entries under section dcb382dc-… in
-// Assets/Localizations.json (the "en-AU" CustomField bag, auto-seeded into
+// Assets/Localizations/en-AU.json (the CustomField bag, auto-seeded into
 // every business that activates the AU localization — no extension-side
 // metadata POST required).
 //
@@ -98,7 +98,7 @@
   };
 
   // Payslip-item reporting categories defined by the AU localization
-  // (Localizations.json sections 3de1fae6-… / 1ccb2c74-… / ad4c002b-…). The
+  // (Assets/Localizations sections 3de1fae6-… / 1ccb2c74-… / ad4c002b-…). The
   // server has no public endpoint to list these, but the GUIDs are seeded
   // into every business that activates the AU localization, so we can hard
   // code them here — exactly the same approach we take for custom fields.

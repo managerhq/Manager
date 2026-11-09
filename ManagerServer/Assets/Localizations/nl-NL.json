@@ -1,0 +1,1047 @@
+{
+  "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+    "39dde4fc-7af8-44cc-8572-3b1ff4cfb918": {
+      "3": "EUR",
+      "2": "Euro",
+      "4": "€"
+    }
+  },
+  "844ab100-63d8-40d7-abc9-1a578197f3a8": {},
+  "6116531b-cb3d-4f85-b239-745972943a6b": {},
+  "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+    "a56e89d1-7bee-4509-8b84-c9ebc3808b0c": {
+      "1": "dd-MM-yyyy",
+      "4": "HH:mm:ss",
+      "2": 1,
+      "3": "CgEuEgEsGAM="
+    }
+  },
+  "02c3fbc6-4473-436f-b58d-fd51937f4e77": {
+    "b755a3ef-32aa-4eab-8936-0e48b057f627": {
+      "1": "Concept BTW Aangifte",
+      "2": "2022-03-08T00:00:00",
+      "3": "2022-03-08T00:00:00",
+      "6": 1,
+      "7": [
+        {
+          "5": [
+            "0352dd2e-a7e6-45ad-af6a-c654fb088900"
+          ],
+          "6": [
+            "455f108b-fa7d-4079-9f29-2fab9c36494a"
+          ]
+        },
+        {
+          "4": "1 Prestaties binnenland\n--------------"
+        },
+        {
+          "4": "1a Leveringen/diensten belast met hoog tarief",
+          "5": [
+            "69577f89-05e7-4855-8b9a-d841636fa15d",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "fc81db2c-54e6-4cc1-a34e-38cd374e104b",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1b Leveringen/diensten belast met laag tarief",
+          "5": [
+            "cfd53d9e-46f4-41fd-83a9-c9a5ed12252b",
+            "7e759940-4d2f-40e1-88f7-a19d04e8da15",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ],
+          "6": [
+            "57f036ff-97a9-4b61-a998-dc72407ce75d",
+            "fbd9872a-88ff-42e3-9989-128fa1686764",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1c Leveringen/diensten belast met overige tarieven, behalve 0%"
+        },
+        {
+          "4": "1d Privégebruik",
+          "6": [
+            "13d9c26e-f9c6-41cb-b653-91f21bd27628",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "1e Leveringen/diensten belast met 0% of niet bij u belast",
+          "5": [
+            "a0ac84a7-b379-4351-a0b4-5b836170e2d3",
+            "3a97d8bd-ea09-4674-87d6-e61498e3292d",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "2 Verleggingsregelingen binnenland\n--------------"
+        },
+        {
+          "4": "2a Leveringen/diensten waarbij de heffing van omzetbelasting naar u is verlegd",
+          "5": [
+            "3a97d8bd-ea09-4674-87d6-e61498e3292d",
+            "6daef94f-22bf-4390-896f-7bb3a1432d9d",
+            "ee1d5b46-44ed-4e45-9a41-d7f6e17d52fb",
+            "70238b59-21c6-4c7f-9834-0db8566ca656",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ]
+        },
+        {
+          "4": "3 Prestaties naar of in het buitenland\n--------------"
+        },
+        {
+          "4": "3a Leveringen naar landen buiten de EU (uitvoer)",
+          "5": [
+            "fa6074ad-56fe-4a45-8d2a-592e259f9d24",
+            "0865745d-8902-44fb-91c9-94646e2cf634",
+            "d5b050a4-fe2f-4346-9b8c-1c97d47e842e",
+            "4518b12f-2cdf-44cf-a6ad-ab185f7d2030",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "3b Leveringen naar of diensten in landen binnen de EU",
+          "5": [
+            "21f63491-4058-4ce7-8f80-9dc3e5e70e27",
+            "9cc68957-2300-40e6-a219-7c2ce8f3769e",
+            "b23ed8bd-a5d8-48a5-ac76-3d3052670c14",
+            "d9e35291-8956-4891-9e7a-ca35bacb502b",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        },
+        {
+          "4": "3c Installatie/afstandsverkopen binnen de EU"
+        },
+        {
+          "4": "4 Prestaties vanuit het buitenland aan u verricht\n--------------"
+        },
+        {
+          "4": "4a Leveringen/diensten uit landen buiten de EU",
+          "5": [
+            "4518b12f-2cdf-44cf-a6ad-ab185f7d2030",
+            "fa6074ad-56fe-4a45-8d2a-592e259f9d24",
+            "d5b050a4-fe2f-4346-9b8c-1c97d47e842e",
+            "0865745d-8902-44fb-91c9-94646e2cf634",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ],
+          "6": [
+            "ae8911a5-12a2-4e36-a9f7-1baf382ea13c",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ]
+        },
+        {
+          "4": "4b Leveringen/diensten uit landen binnen de EU",
+          "5": [
+            "21f63491-4058-4ce7-8f80-9dc3e5e70e27",
+            "9cc68957-2300-40e6-a219-7c2ce8f3769e",
+            "b23ed8bd-a5d8-48a5-ac76-3d3052670c14",
+            "d9e35291-8956-4891-9e7a-ca35bacb502b",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ],
+          "6": [
+            "7d4b9447-8bba-48b8-ae2e-3f58bb921cbd",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ]
+        },
+        {
+          "4": "5 Voorbelasting en kleineondernemersregeling\n--------------"
+        },
+        {
+          "4": "5a Omzetbelasting (rubrieken 1 t/m 4",
+          "6": [
+            "fc81db2c-54e6-4cc1-a34e-38cd374e104b",
+            "57f036ff-97a9-4b61-a998-dc72407ce75d",
+            "fbd9872a-88ff-42e3-9989-128fa1686764",
+            "13d9c26e-f9c6-41cb-b653-91f21bd27628",
+            "211bb6c2-9ca7-4cda-a099-99bcde19a173",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0",
+            "81c7b060-bc5d-46d0-8000-999069d7b2cc",
+            "108043fc-1c37-477d-b32c-63b7b0690f75"
+          ]
+        },
+        {
+          "4": "5b Voorbelasting",
+          "6": [
+            "fc81db2c-54e6-4cc1-a34e-38cd374e104b",
+            "57f036ff-97a9-4b61-a998-dc72407ce75d",
+            "fbd9872a-88ff-42e3-9989-128fa1686764",
+            "13d9c26e-f9c6-41cb-b653-91f21bd27628",
+            "7d4b9447-8bba-48b8-ae2e-3f58bb921cbd",
+            "ae8911a5-12a2-4e36-a9f7-1baf382ea13c",
+            "89c4e9b6-f555-4243-8432-680a1cc97a61"
+          ]
+        },
+        {
+          "4": "5c Subtotaal (rubriek 5a min 5b)",
+          "6": [
+            "fc81db2c-54e6-4cc1-a34e-38cd374e104b",
+            "57f036ff-97a9-4b61-a998-dc72407ce75d",
+            "fbd9872a-88ff-42e3-9989-128fa1686764",
+            "13d9c26e-f9c6-41cb-b653-91f21bd27628",
+            "0b3fe333-755b-42c0-b921-2835e39e50f0"
+          ]
+        }
+      ],
+      "17": true,
+      "11": [
+        {}
+      ],
+      "13": [
+        {}
+      ],
+      "19": [
+        {}
+      ],
+      "16": true
+    }
+  },
+  "849c558a-5f58-4779-939b-dc9d2f5ac89f": {
+    "0352dd2e-a7e6-45ad-af6a-c654fb088900": {
+      "1": "Bedrag waarover omzetbelasting wordt berekend"
+    },
+    "455f108b-fa7d-4079-9f29-2fab9c36494a": {
+      "1": "Omzetbelasting"
+    }
+  },
+  "0cb739c7-6767-4949-88a7-6415c5ec083d": {
+    "21f63491-4058-4ce7-8f80-9dc3e5e70e27": {
+      "1": "BTW 0% EU"
+    },
+    "4518b12f-2cdf-44cf-a6ad-ab185f7d2030": {
+      "1": "BTW 0% non-EU"
+    },
+    "3a97d8bd-ea09-4674-87d6-e61498e3292d": {
+      "1": "BTW 0% verlegd"
+    },
+    "a0ac84a7-b379-4351-a0b4-5b836170e2d3": {
+      "1": "BTW 0% vrijgesteld"
+    },
+    "69577f89-05e7-4855-8b9a-d841636fa15d": {
+      "1": "BTW 21%"
+    },
+    "9cc68957-2300-40e6-a219-7c2ce8f3769e": {
+      "1": "BTW 21% EU"
+    },
+    "fa6074ad-56fe-4a45-8d2a-592e259f9d24": {
+      "1": "BTW 21% non-EU"
+    },
+    "70238b59-21c6-4c7f-9834-0db8566ca656": {
+      "1": "BTW 21% verlegd"
+    },
+    "cfd53d9e-46f4-41fd-83a9-c9a5ed12252b": {
+      "1": "BTW 6%"
+    },
+    "b23ed8bd-a5d8-48a5-ac76-3d3052670c14": {
+      "1": "BTW 6% EU"
+    },
+    "d5b050a4-fe2f-4346-9b8c-1c97d47e842e": {
+      "1": "BTW 6% non-EU"
+    },
+    "6daef94f-22bf-4390-896f-7bb3a1432d9d": {
+      "1": "BTW 6% verlegd"
+    },
+    "7e759940-4d2f-40e1-88f7-a19d04e8da15": {
+      "1": "BTW 9%"
+    },
+    "d9e35291-8956-4891-9e7a-ca35bacb502b": {
+      "1": "BTW 9% EU"
+    },
+    "0865745d-8902-44fb-91c9-94646e2cf634": {
+      "1": "BTW 9% non-EU"
+    },
+    "ee1d5b46-44ed-4e45-9a41-d7f6e17d52fb": {
+      "1": "BTW 9% verlegd"
+    },
+    "a90c6fdf-a034-42ca-a2bf-e3e8807e85b1": {
+      "1": "BTW privégebruik",
+      "2": true
+    }
+  },
+  "6027ab88-f804-4827-beff-26b76bb94587": {},
+  "f58e8724-7e63-422c-8649-a12cf77c2208": {
+    "fc81db2c-54e6-4cc1-a34e-38cd374e104b": {
+      "1": "Tax - BTW 21%"
+    },
+    "57f036ff-97a9-4b61-a998-dc72407ce75d": {
+      "1": "Tax - BTW 6%"
+    },
+    "fbd9872a-88ff-42e3-9989-128fa1686764": {
+      "1": "Tax - BTW 9%"
+    },
+    "7d4b9447-8bba-48b8-ae2e-3f58bb921cbd": {
+      "1": "Tax - BTW EU"
+    },
+    "ae8911a5-12a2-4e36-a9f7-1baf382ea13c": {
+      "1": "Tax - BTW non-EU"
+    },
+    "13d9c26e-f9c6-41cb-b653-91f21bd27628": {
+      "1": "Tax - BTW privégebruik"
+    }
+  },
+  "52a10ec1-0808-4641-91b8-45eb33626ae3": {
+    "81c7b060-bc5d-46d0-8000-999069d7b2cc": {
+      "1": "Tax - BTW EU (reverse charge)"
+    },
+    "108043fc-1c37-477d-b32c-63b7b0690f75": {
+      "1": "Tax - BTW non-EU (reverse charge)"
+    }
+  },
+  "7f368d97-8b7f-4b39-b156-dc66afd9496a": {
+    "d0eca2ec-e9da-40de-9be6-e2e9fb34269a": {
+      "1": "BTW 0% EU",
+      "18": "21f63491-4058-4ce7-8f80-9dc3e5e70e27",
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "2": [
+        {}
+      ],
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 0% EU"
+      }
+    },
+    "75eaae26-98a4-4e1a-9d75-91bf2b7e7b11": {
+      "1": "BTW 0% non-EU",
+      "18": "4518b12f-2cdf-44cf-a6ad-ab185f7d2030",
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "2": [
+        {}
+      ],
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 0% non-EU"
+      }
+    },
+    "ad18e082-df57-44f9-8fd0-ab3c5275d230": {
+      "1": "BTW 0% verlegd",
+      "18": "3a97d8bd-ea09-4674-87d6-e61498e3292d",
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "2": [
+        {}
+      ],
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 0% verlegd"
+      }
+    },
+    "c6b298fa-f994-47ac-b6c0-3299fbac8306": {
+      "1": "BTW 0% vrijgesteld",
+      "18": "a0ac84a7-b379-4351-a0b4-5b836170e2d3",
+      "7": "6ae01b5d-70fd-42ab-9a4c-cd9ad76c5f71",
+      "2": [
+        {}
+      ],
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 0% vrijgesteld"
+      }
+    },
+    "33855cc4-964b-44d1-be27-cf268b0ad77d": {
+      "1": "BTW 21%",
+      "18": "69577f89-05e7-4855-8b9a-d841636fa15d",
+      "5": 2,
+      "4": 21.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "fc81db2c-54e6-4cc1-a34e-38cd374e104b",
+      "2": [
+        {}
+      ],
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 21%"
+      }
+    },
+    "93cdbadc-4a15-41ff-bf68-4ed927915680": {
+      "1": "BTW 21% EU",
+      "18": "9cc68957-2300-40e6-a219-7c2ce8f3769e",
+      "5": 2,
+      "4": 21.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "7d4b9447-8bba-48b8-ae2e-3f58bb921cbd",
+      "20": "81c7b060-bc5d-46d0-8000-999069d7b2cc",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 21% EU"
+      }
+    },
+    "3a57686a-7ce6-43e7-aa2a-dc5e98ad931b": {
+      "1": "BTW 21% non-EU",
+      "18": "fa6074ad-56fe-4a45-8d2a-592e259f9d24",
+      "5": 2,
+      "4": 21.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "ae8911a5-12a2-4e36-a9f7-1baf382ea13c",
+      "20": "108043fc-1c37-477d-b32c-63b7b0690f75",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 21% non-EU"
+      }
+    },
+    "ce2c6c96-4364-42a8-8cf3-8315d1a4b246": {
+      "1": "BTW 21% verlegd",
+      "18": "70238b59-21c6-4c7f-9834-0db8566ca656",
+      "5": 2,
+      "4": 21.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 21% verlegd"
+      }
+    },
+    "ad40e782-1f1c-486a-91a4-266e7001c8b3": {
+      "1": "BTW 6%",
+      "18": "cfd53d9e-46f4-41fd-83a9-c9a5ed12252b",
+      "5": 2,
+      "4": 6.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "57f036ff-97a9-4b61-a998-dc72407ce75d",
+      "2": [
+        {}
+      ],
+      "10": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 6%"
+      }
+    },
+    "1f681bc9-93fd-4e09-815f-2f1c6bc5044b": {
+      "1": "BTW 6% EU",
+      "18": "b23ed8bd-a5d8-48a5-ac76-3d3052670c14",
+      "5": 2,
+      "4": 6.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "7d4b9447-8bba-48b8-ae2e-3f58bb921cbd",
+      "20": "81c7b060-bc5d-46d0-8000-999069d7b2cc",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "10": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 6% EU"
+      }
+    },
+    "bddb4876-fd25-49bf-ac71-5365878268ef": {
+      "1": "BTW 6% non-EU",
+      "18": "d5b050a4-fe2f-4346-9b8c-1c97d47e842e",
+      "5": 2,
+      "4": 6.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "ae8911a5-12a2-4e36-a9f7-1baf382ea13c",
+      "20": "108043fc-1c37-477d-b32c-63b7b0690f75",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "10": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 6% non-EU"
+      }
+    },
+    "e5f20470-dffa-4453-a0a9-42a403c04e23": {
+      "1": "BTW 6% verlegd",
+      "18": "6daef94f-22bf-4390-896f-7bb3a1432d9d",
+      "5": 2,
+      "4": 6.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "10": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 6% verlegd"
+      }
+    },
+    "31dce658-cff1-4212-870b-5fd04cb83b1c": {
+      "1": "BTW 9%",
+      "18": "7e759940-4d2f-40e1-88f7-a19d04e8da15",
+      "5": 2,
+      "4": 9.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "fbd9872a-88ff-42e3-9989-128fa1686764",
+      "2": [
+        {}
+      ],
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 9%"
+      }
+    },
+    "4d895b0c-a40c-44ff-b441-9620c7619699": {
+      "1": "BTW 9% EU",
+      "18": "d9e35291-8956-4891-9e7a-ca35bacb502b",
+      "5": 2,
+      "4": 9.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "7d4b9447-8bba-48b8-ae2e-3f58bb921cbd",
+      "20": "81c7b060-bc5d-46d0-8000-999069d7b2cc",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 9% EU"
+      }
+    },
+    "815852ae-5a5d-4688-aa9b-0b06f3982ef2": {
+      "1": "BTW 9% non-EU",
+      "18": "0865745d-8902-44fb-91c9-94646e2cf634",
+      "5": 2,
+      "4": 9.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "ae8911a5-12a2-4e36-a9f7-1baf382ea13c",
+      "20": "108043fc-1c37-477d-b32c-63b7b0690f75",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 9% non-EU"
+      }
+    },
+    "dd28f171-7422-44a3-937a-432e8d2970ea": {
+      "1": "BTW 9% verlegd",
+      "18": "ee1d5b46-44ed-4e45-9a41-d7f6e17d52fb",
+      "5": 2,
+      "4": 9.0,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "2": [
+        {}
+      ],
+      "11": true,
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW 9% verlegd"
+      }
+    },
+    "9f2d06f9-0e16-4192-afa3-bff747910088": {
+      "1": "BTW privégebruik",
+      "18": "a90c6fdf-a034-42ca-a2bf-e3e8807e85b1",
+      "5": 1,
+      "7": "547beb7e-bccf-465f-97ed-b7b1b533fd81",
+      "19": "13d9c26e-f9c6-41cb-b653-91f21bd27628",
+      "2": [
+        {}
+      ],
+      "17": {
+        "9422cf3b-d783-42e2-ae4b-f80e4dd3f024": "BTW privégebruik"
+      }
+    }
+  },
+  "dcb382dc-a4e0-4354-a845-b7d647f610f7": {},
+  "26b9e4a5-ce10-4f30-94c7-23a1ca4428f9": {
+    "3ec1735c-4142-4ab1-9a68-a13fff7327fc": {
+      "1": "Abonnementen & Contributies",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "e434c82a-7c95-410c-9710-525ecdb877e1": {
+      "1": "Accountants & Administratiekosten",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "f72a2906-1051-4dfc-a401-a57f654b1c92": {
+      "1": "Afschrijving Gebouwen & Terreinen",
+      "3": "296a2291-ec85-41bc-a37a-799f78519844",
+      "10": 3
+    },
+    "6959e76f-6633-4b03-8ae5-64661f3811e0": {
+      "1": "Afschrijving Goodwill",
+      "3": "296a2291-ec85-41bc-a37a-799f78519844",
+      "10": 1
+    },
+    "3b01acd0-509d-467a-8045-78cc7ee28d9d": {
+      "1": "Afschrijving Machines & Installaties",
+      "3": "296a2291-ec85-41bc-a37a-799f78519844",
+      "10": 4
+    },
+    "74799983-def3-45eb-8c7a-13b5e5cc16be": {
+      "1": "Afschrijving Overige Immateriële Vaste Activa",
+      "3": "296a2291-ec85-41bc-a37a-799f78519844",
+      "10": 2
+    },
+    "c8a97139-c0ec-4e55-b97f-f552ad6f2e08": {
+      "1": "Afschrijving Overige Materiële Vaste Activa",
+      "3": "296a2291-ec85-41bc-a37a-799f78519844",
+      "10": 5
+    },
+    "70aa167e-c42e-4df3-842f-a5446439b582": {
+      "1": "Assurantie Gebouwen & Terreinen",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    },
+    "edf14548-f085-421e-968e-cc2693c71d5d": {
+      "1": "Autokosten",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "5818d389-e107-40a2-bfd6-6a2b0e10e84a": {
+      "1": "Autoverzekering",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "9614e66f-fbb5-494b-95ea-b24a3fbd70c2": {
+      "1": "Bankkosten",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "37299be0-e4c7-445e-b318-be3113fa739a": {
+      "1": "Betaalde rente",
+      "3": "a75b2637-5d9b-476c-bbb4-aa40ac6d69d2"
+    },
+    "85e11234-a6fb-458d-9e2e-a38f972978db": {
+      "1": "Betalingsverschillen",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "4df80a3e-8c90-4c96-8bf9-595b47a78ab4": {
+      "1": "Bewaking & Beveiliging",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    },
+    "01a96210-6bc3-405a-b52b-af7775dcb775": {
+      "1": "Boetes & Bekeuringen",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "9b2e7d3a-8c50-4795-8eb6-334946007894": {
+      "1": "Brandstof",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "6844af9a-640a-4e31-8405-8312666b34c3": {
+      "1": "BTW over Privé-gebruik Auto",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "69f819cc-b168-4298-8a0b-0485f14c7c50": {
+      "1": "Computerapparatuur",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "1e191304-40ca-48dd-802d-cdd0e5d348d4": {
+      "1": "Donaties & Giften",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "6cbf27dc-f3d1-4538-af30-a696cec6647f": {
+      "1": "Drukwerk en kantoorartikelen",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "9fb3596f-2926-4d7d-81ca-5be5ac9a29eb": {
+      "1": "Energie & Water",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    },
+    "b8254799-079b-4dbf-8b49-6ced5d28da7b": {
+      "1": "Entertainment",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "86334e20-eb88-4240-821c-17eee7e7a467": {
+      "1": "Gereedschappen",
+      "3": "70cbd056-07fc-480f-95b6-630a4789d081"
+    },
+    "e3b252fc-d34d-4b4d-ad21-5777e9fae8fc": {
+      "1": "Hotel & Verblijfkosten",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "cd2e5cda-96fc-4c0f-a720-14e11020b89e": {
+      "1": "Huur Gebouwen & Terreinen",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    },
+    "c6f149cf-100d-4174-a5d5-6b20587fc533": {
+      "1": "Inhuur Derden (ZZP-ers)",
+      "3": "bf757529-119b-40b2-ab11-14204eb94b56"
+    },
+    "19a1f5ca-d125-4963-97b9-0d3255abeb30": {
+      "1": "Internetkosten",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "709cab57-5512-437d-b6ff-fcaad8789617": {
+      "1": "Juridische & Advieskosten",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "8f7823d0-01ce-46a7-b421-b94399ea1e2f": {
+      "1": "Juridische kosten",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "b92642cf-5d6f-44b0-8604-25d8fdb462c1": {
+      "1": "Kleine Aanschaffingen",
+      "3": "70cbd056-07fc-480f-95b6-630a4789d081"
+    },
+    "25a1cbba-a2f2-405f-8f94-3df789936ca5": {
+      "1": "Kosten Automatisering",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "0ba16e6a-cb39-4c6a-9a87-6e76537824d7": {
+      "1": "Kosten Website",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "cb4cc9d4-f613-40ff-930e-f52f77dddb6d": {
+      "1": "Machinehuur",
+      "3": "70cbd056-07fc-480f-95b6-630a4789d081"
+    },
+    "fce2d9a6-c915-4b4b-b8b8-d34a8fd25649": {
+      "1": "Machineverzekering",
+      "3": "70cbd056-07fc-480f-95b6-630a4789d081"
+    },
+    "52793a93-5be6-4181-a3bb-f037d4dc5f2c": {
+      "1": "Motorrijtuigenbelasting",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "186138fa-1858-4438-b71d-914931b652bd": {
+      "1": "Onderhoud Gebouwen & Terreinen",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    },
+    "601bd9e1-6deb-4cbf-bfa9-330f072bdf82": {
+      "1": "Oninbare Vorderingen",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "692ed928-1eaa-4f10-a395-4b326a5151df": {
+      "1": "Ontvangen rente",
+      "3": "a75b2637-5d9b-476c-bbb4-aa40ac6d69d2"
+    },
+    "88ec2d97-5c73-40bc-ad03-1de1bf95d477": {
+      "1": "Openbaar Vervoer & Vliegtickets",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "a66dd721-3dae-4c61-b8bc-2ce45c65acc4": {
+      "1": "Overige Algemene Kosten",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "45e65977-0309-46d6-867b-66f1611290f2": {
+      "1": "Overige Auto & Reiskosten",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "2bc44a1f-04f1-467e-917a-0be0436583ae": {
+      "1": "Overige Huisvestingskosten",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    },
+    "b605e345-31e1-4d5c-adc6-10afdde02609": {
+      "1": "Parkeerkosten",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "660dd9c0-8a40-45cd-bfe7-da735cf67f55": {
+      "1": "Portikosten",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "6150455c-5ff4-49ce-bdde-663226c8b2af": {
+      "1": "Privé-gebruik Auto",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "bded5a3f-cd88-4511-8432-4cc9241c75dc": {
+      "1": "Reclame, Advertentie & Promotie",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "07354d3f-4343-4881-9841-b23aa8888334": {
+      "1": "Relatiegeschenken",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "8d335430-d8b1-408e-97e8-5de27da142fc": {
+      "1": "Reparatie & Onderhoud Auto",
+      "3": "fd42ed34-2b88-4be1-ac91-5dde508a0233"
+    },
+    "cc433403-2de4-465f-883d-90f47c13923d": {
+      "1": "Reparatie & Onderhoud Machines",
+      "3": "70cbd056-07fc-480f-95b6-630a4789d081"
+    },
+    "c20e567c-46bc-438b-8f91-a7135ea829da": {
+      "1": "Reparaties en onderhoud kantoorinventaris",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "99bc555b-7add-4859-bcda-6eaf685561cc": {
+      "1": "Representatiekosten",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "90613bb6-3194-4820-b305-621859b2ac5e": {
+      "1": "Schoonmaakkkosten",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    },
+    "ace76953-8aa7-4b51-a25d-d3694d9edbd0": {
+      "1": "Sponsoring",
+      "3": "2f780fe1-2551-4579-8da7-cc7518d56bce"
+    },
+    "8ded606e-43ce-41c6-a94c-a00685d99bb1": {
+      "1": "Telefoon",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "b2cc2b52-c551-404e-90f5-5cdcb602df44": {
+      "1": "Uitbesteed Werk",
+      "3": "bf757529-119b-40b2-ab11-14204eb94b56"
+    },
+    "d20db9d8-c1db-47f1-99dd-148f153c2015": {
+      "1": "Verkopen",
+      "3": "7e2b1d5f-33f4-49d8-a213-ba45ffaad0b5"
+    },
+    "687d6319-3a47-468f-9060-318f9c5e4f16": {
+      "1": "Verzekeringen Algemeen",
+      "3": "d420c575-c9d3-46f6-85cc-cdecb1859087"
+    },
+    "36a148d2-16ad-4146-baa3-e808d3367885": {
+      "1": "Vrachtkosten Inkomende Goederen",
+      "3": "3f8c1158-6bfe-46c0-86d3-2eab18fbc885"
+    },
+    "11adc239-0625-489f-b307-9837369711ad": {
+      "1": "Waardeverandering Voorraad",
+      "3": "35491b41-9ec5-4585-8fd0-729ba7d9ea93"
+    },
+    "4086920c-a7c7-4d07-96a2-b9400e9a6dab": {
+      "1": "Zakelijke Belastingen & Heffingen",
+      "3": "7342b718-9223-42c6-9bb6-89cc7ec8cdba"
+    }
+  },
+  "5770616c-0e01-46ca-a172-f7042275da6c": {
+    "296a2291-ec85-41bc-a37a-799f78519844": {
+      "1": "Afschrijvingen",
+      "6": 2,
+      "3": "9f0a7f3b-4d04-416a-aa4f-2e8591b08b9a",
+      "5": 2
+    },
+    "d420c575-c9d3-46f6-85cc-cdecb1859087": {
+      "1": "Algemene Kosten",
+      "6": 2,
+      "3": "67b9c817-7ce4-4336-9601-c18091e06f62",
+      "5": 5
+    },
+    "fd42ed34-2b88-4be1-ac91-5dde508a0233": {
+      "1": "Auto & Reiskosten",
+      "6": 2,
+      "3": "67b9c817-7ce4-4336-9601-c18091e06f62",
+      "5": 1
+    },
+    "95ad5f60-443c-4fcb-8fc3-452149ebcd14": {
+      "1": "Bijzondere Baten & Lasten",
+      "6": 2,
+      "3": "9f0a7f3b-4d04-416a-aa4f-2e8591b08b9a",
+      "5": 5
+    },
+    "a4911d05-b820-4417-953e-6ce3fdda235f": {
+      "1": "Brutolonen & Salarissen",
+      "6": 2,
+      "3": "b76b292d-7737-437d-9c93-23e934f99464",
+      "5": 1
+    },
+    "a75b2637-5d9b-476c-bbb4-aa40ac6d69d2": {
+      "1": "Financiële Baten & Lasten",
+      "6": 2,
+      "3": "9f0a7f3b-4d04-416a-aa4f-2e8591b08b9a",
+      "5": 5
+    },
+    "f59b0568-1225-4607-b529-672b39b7ef90": {
+      "1": "Grond & Hulpstoffen",
+      "6": 2,
+      "3": "a6cb4095-f2e7-4da3-8897-b38b160d55c7",
+      "5": 2
+    },
+    "7342b718-9223-42c6-9bb6-89cc7ec8cdba": {
+      "1": "Huisvestingskosten",
+      "6": 2,
+      "3": "67b9c817-7ce4-4336-9601-c18091e06f62",
+      "5": 2
+    },
+    "a6cb4095-f2e7-4da3-8897-b38b160d55c7": {
+      "1": "Inkoopkosten",
+      "6": 2,
+      "5": 2
+    },
+    "35491b41-9ec5-4585-8fd0-729ba7d9ea93": {
+      "1": "Kostprijs Verkopen",
+      "6": 2,
+      "3": "a6cb4095-f2e7-4da3-8897-b38b160d55c7",
+      "5": 1
+    },
+    "24aea477-3450-4ab2-a8c2-a1a6048b6e01": {
+      "1": "Omzet",
+      "6": 2,
+      "3": "7e2b1d5f-33f4-49d8-a213-ba45ffaad0b5"
+    },
+    "70cbd056-07fc-480f-95b6-630a4789d081": {
+      "1": "Onderhoud Machines & Vaste Activa",
+      "6": 2,
+      "3": "67b9c817-7ce4-4336-9601-c18091e06f62",
+      "5": 3
+    },
+    "7e2b1d5f-33f4-49d8-a213-ba45ffaad0b5": {
+      "1": "Opbrengsten / Omzet",
+      "5": 1
+    },
+    "67b9c817-7ce4-4336-9601-c18091e06f62": {
+      "1": "Overige Bedrijfskosten",
+      "6": 2,
+      "3": "9f0a7f3b-4d04-416a-aa4f-2e8591b08b9a",
+      "5": 3
+    },
+    "b9f03245-dc47-47c4-9e16-15a4edf2011a": {
+      "1": "Overige Opbrengsten",
+      "6": 2,
+      "3": "7e2b1d5f-33f4-49d8-a213-ba45ffaad0b5",
+      "5": 2
+    },
+    "1451821c-10b5-4573-9c32-7823a47e9fa5": {
+      "1": "Overige Personeelskosten",
+      "6": 2,
+      "3": "b76b292d-7737-437d-9c93-23e934f99464",
+      "5": 4
+    },
+    "88d16c07-5364-4260-aae2-b1143669406b": {
+      "1": "Pensioenlasten",
+      "6": 2,
+      "3": "b76b292d-7737-437d-9c93-23e934f99464",
+      "5": 3
+    },
+    "b76b292d-7737-437d-9c93-23e934f99464": {
+      "1": "Personeelskosten",
+      "6": 2,
+      "3": "9f0a7f3b-4d04-416a-aa4f-2e8591b08b9a",
+      "5": 1
+    },
+    "668057f6-0065-4e3f-ae91-9c401c8fcd32": {
+      "1": "Sociale Lasten",
+      "6": 2,
+      "3": "b76b292d-7737-437d-9c93-23e934f99464",
+      "5": 2
+    },
+    "bf757529-119b-40b2-ab11-14204eb94b56": {
+      "1": "Uitbesteed Werk",
+      "6": 2,
+      "3": "a6cb4095-f2e7-4da3-8897-b38b160d55c7",
+      "5": 4
+    },
+    "9f0a7f3b-4d04-416a-aa4f-2e8591b08b9a": {
+      "1": "Uitgaven",
+      "6": 1,
+      "5": 4
+    },
+    "2f780fe1-2551-4579-8da7-cc7518d56bce": {
+      "1": "Verkoopkosten",
+      "6": 2,
+      "3": "67b9c817-7ce4-4336-9601-c18091e06f62",
+      "5": 4
+    },
+    "3f8c1158-6bfe-46c0-86d3-2eab18fbc885": {
+      "1": "Vrachtkosten Inkomende goederen",
+      "6": 2,
+      "3": "a6cb4095-f2e7-4da3-8897-b38b160d55c7",
+      "5": 3
+    }
+  },
+  "9601ce49-6058-4dac-9405-82f35005ea90": {
+    "315d371a-683e-4309-9508-495091da861a": {
+      "1": "Brutowinst",
+      "3": 3
+    }
+  },
+  "6ef13e42-ad89-4d42-9480-546e0c04a411": {
+    "547beb7e-bccf-465f-97ed-b7b1b533fd81": {
+      "1": "Af te dragen BTW",
+      "3": "6495d9b8-990b-4ec7-890b-c7eaa19703d0"
+    }
+  },
+  "c03d1921-7a45-4eda-8742-a2d9082dcf4f": {
+    "518e80ee-5ed8-4444-87e1-4e21532d0aec": {
+      "1": "Af te dragen Loonheffing, Soc. Lasten & Pensioen",
+      "3": "8044a224-72c0-432a-a624-d64e00470e5f",
+      "4": 3
+    },
+    "aeec5ba3-6df6-4517-a27d-08135085806e": {
+      "1": "Effecten",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 5
+    },
+    "fd570603-b2e7-4a84-b7aa-5e2ca3c7a0bb": {
+      "1": "Handelscrediteuren",
+      "3": "8044a224-72c0-432a-a624-d64e00470e5f",
+      "4": 1
+    },
+    "4137b641-88f3-459f-bfc0-3293b9091afa": {
+      "1": "Immateriële Vaste Activa",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 3
+    },
+    "d4c61cce-50d2-4377-b512-baa4aa49b4ef": {
+      "1": "Liquide Middelen",
+      "3": "1e79d4ab-2760-4731-b215-206ca29629d8",
+      "4": 3
+    },
+    "ecaa510d-1bb1-4633-a7d5-031d5e973d78": {
+      "1": "Materiële Vaste Activa",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 4
+    },
+    "edd29b69-a49f-438b-84d7-829cb2870f73": {
+      "1": "Nog Te Betalen Kosten",
+      "3": "8044a224-72c0-432a-a624-d64e00470e5f",
+      "4": 5
+    },
+    "6495d9b8-990b-4ec7-890b-c7eaa19703d0": {
+      "1": "Omzetbelasting",
+      "3": "8044a224-72c0-432a-a624-d64e00470e5f",
+      "4": 2
+    },
+    "47287d66-a7ca-4cdc-82ed-347f50159f1d": {
+      "1": "Overige kortlopende schulden",
+      "3": "8044a224-72c0-432a-a624-d64e00470e5f",
+      "4": 6
+    },
+    "2e6b880c-e8ed-40b4-9cc9-64a94b5cd31c": {
+      "1": "Overlopende Activa",
+      "3": "1e79d4ab-2760-4731-b215-206ca29629d8",
+      "4": 4
+    },
+    "17cc8792-e57b-4d12-be74-8c1bba0fae56": {
+      "1": "Reserveringen",
+      "3": "8044a224-72c0-432a-a624-d64e00470e5f",
+      "4": 7
+    },
+    "625d6611-62f1-4faa-a1f0-e4f5a16249e4": {
+      "1": "Schulden aan Financiële Instellingen",
+      "3": "8044a224-72c0-432a-a624-d64e00470e5f",
+      "4": 4
+    },
+    "8044a224-72c0-432a-a624-d64e00470e5f": {
+      "1": "Schulden op Korte Termijn",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc",
+      "4": 2
+    },
+    "5d8f6998-3ae7-4d92-917f-4c9d745390f8": {
+      "1": "Schulden op Lange Termijn",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc",
+      "4": 1
+    },
+    "1e79d4ab-2760-4731-b215-206ca29629d8": {
+      "1": "Vlottende Activa",
+      "3": "4c05c221-ca57-4c7c-be62-115669302ed4",
+      "4": 6
+    },
+    "f6e23eb3-7aa6-4c67-bd50-73e485e497a9": {
+      "1": "Voorraden",
+      "3": "1e79d4ab-2760-4731-b215-206ca29629d8",
+      "4": 1
+    },
+    "42dd50ff-00a2-45ac-8abe-92a6dc08e074": {
+      "1": "Voorzieningen",
+      "3": "ed5a19f6-12c5-45cc-b4b7-4e79f7ef50bc",
+      "4": 3
+    },
+    "df790889-e3fa-419d-a357-a200c7bdd009": {
+      "1": "Vorderingen",
+      "3": "1e79d4ab-2760-4731-b215-206ca29629d8",
+      "4": 2
+    }
+  },
+  "ab02f6ab-c91c-4fc2-b979-66a6682c200e": {},
+  "0444eb18-6fc5-4d1f-be8b-c114da01832c": {},
+  "73af4c68-c347-4088-8846-758f1e7bc5bb": {},
+  "3de1fae6-48ea-4901-8e1b-507483bfc4f3": {},
+  "1ccb2c74-e9ed-4642-9687-bdf9f3403f3b": {},
+  "ad4c002b-f4ea-4bf5-85cc-f65dd4398794": {},
+  "f361339b-932a-4436-b56e-a337c1587c72": {
+    "2bd9b3a8-299c-441a-8b38-1e7775b6fe55": {
+      "1": "Opnames"
+    },
+    "1d1f5652-a135-405d-8f54-89ae3cd1e4d7": {
+      "1": "Stortingen"
+    },
+    "e94ab8da-69e7-47ad-bbd0-5b36656260e1": {
+      "1": "Winstverdeling"
+    }
+  }
+}
