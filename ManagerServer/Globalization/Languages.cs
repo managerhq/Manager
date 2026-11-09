@@ -11,18 +11,28 @@ namespace ManagerServer.Globalization
     {
         private static LanguageWithCode[] languages;
 
+        private static string GetDirectory()
+        {
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Translations");
+        }
+
         public static LanguageWithCode[] GetLanguages()
         {
             if (languages == null)
             {
-                var dict = new Dictionary<string, Language>();
-                var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Translations.json");
-                if (File.Exists(path))
+                var list = new List<LanguageWithCode>();
+                var directory = GetDirectory();
+                if (Directory.Exists(directory))
                 {
-                    dict = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Language>>(File.ReadAllText(path)) ?? new Dictionary<string, Language>();
+                    foreach (var path in Directory.EnumerateFiles(directory, "*.json"))
+                    {
+                        var language = ReadNames(path);
+                        if (language == null) continue;
+                        list.Add(new LanguageWithCode() { Code = Path.GetFileNameWithoutExtension(path), EnglishName = language.EnglishName, NativeName = language.NativeName });
+                    }
                 }
-                if (!dict.ContainsKey("en")) dict.Add("en", new Language() { EnglishName = "English", NativeName = "English" });
-                languages = dict.Select(x => new LanguageWithCode() { Code = x.Key, EnglishName = x.Value.EnglishName, NativeName = x.Value.NativeName }).ToArray();
+                if (!list.Any(x => x.Code == "en")) list.Add(new LanguageWithCode() { Code = "en", EnglishName = "English", NativeName = "English" });
+                languages = list.ToArray();
             }
             return languages;
         }
@@ -66,39 +76,71 @@ namespace ManagerServer.Globalization
                 if (ManagerServer.Globalization.Strings.translations.ContainsKey(code))
                 {
                     Strings.CurrentLanguage.Value = code;
+                    return;
                 }
-                else
+
+                // `code` arrives from request parameters, so it must never be allowed to form a path
+                // of its own. Only codes we actually enumerated from the directory get that far.
+                if (!GetLanguages().Any(x => x.Code == code)) return;
+
+                var language = ReadLanguage(Path.Combine(GetDirectory(), code + ".json"));
+                if (language?.Strings == null) return;
+
+                ManagerServer.Globalization.Strings.translations[code] = language.Strings.ToFrozenDictionary();
+                Strings.CurrentLanguage.Value = code;
+            }
+        }
+
+        // Reads only the name properties, stopping before `strings` so that listing the available
+        // languages never parses the translations themselves.
+        private static Language ReadNames(string path)
+        {
+            try
+            {
+                using (var stream = File.OpenRead(path))
+                using (var text = new StreamReader(stream))
+                using (var reader = new JsonTextReader(text))
                 {
-                    var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Translations.json");
-                    if (File.Exists(path))
+                    var language = new Language();
+                    while (reader.Read())
                     {
-                        using (var fs = File.OpenRead(path))
+                        if (reader.TokenType != JsonToken.PropertyName) continue;
+                        switch (reader.Value as string)
                         {
-                            using (var s = new StreamReader(fs))
-                            {
-                                using (var reader = new JsonTextReader(s))
-                                {
-                                    while (reader.Read())
-                                    {
-                                        if (reader.TokenType == JsonToken.PropertyName)
-                                        {
-                                            if (reader.Value as string == code)
-                                            {
-                                                reader.Read();
-                                                var serializer = new JsonSerializer();
-                                                var language = serializer.Deserialize<LanguageWithStrings>(reader);
-                                                ManagerServer.Globalization.Strings.translations.Add(code, language.Strings.ToFrozenDictionary());
-                                                Strings.CurrentLanguage.Value = code;
-                                                return;
-                                            }
-                                            reader.Skip();
-                                        }
-                                    }
-                                }
-                            }
+                            case "englishName":
+                                language.EnglishName = reader.ReadAsString();
+                                break;
+                            case "nativeName":
+                                language.NativeName = reader.ReadAsString();
+                                break;
+                            case "strings":
+                                return language;
+                            default:
+                                reader.Skip();
+                                break;
                         }
                     }
+                    return language;
                 }
+            }
+            catch (JsonException)
+            {
+                return null;
+            }
+            catch (IOException)
+            {
+                return null;
+            }
+        }
+
+        private static LanguageWithStrings ReadLanguage(string path)
+        {
+            if (!File.Exists(path)) return null;
+            using (var stream = File.OpenRead(path))
+            using (var text = new StreamReader(stream))
+            using (var reader = new JsonTextReader(text))
+            {
+                return new JsonSerializer().Deserialize<LanguageWithStrings>(reader);
             }
         }
 

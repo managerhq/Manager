@@ -1,1 +1,0 @@
-curl -L --fail https://www.manager.io/api/extensions.json > Assets/Extensions.json

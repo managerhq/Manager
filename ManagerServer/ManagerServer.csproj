@@ -72,7 +72,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\*">
+    <None Update="Assets\**\*">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

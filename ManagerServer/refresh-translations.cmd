@@ -1,1 +1,0 @@
-curl -L --fail https://www.manager.io/api/translations.json > Assets/Translations.json
