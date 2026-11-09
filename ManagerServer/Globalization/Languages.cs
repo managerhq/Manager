@@ -3,6 +3,7 @@ using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
 
 namespace ManagerServer.Globalization
@@ -11,25 +12,18 @@ namespace ManagerServer.Globalization
     {
         private static LanguageWithCode[] languages;
 
-        private static string GetDirectory()
-        {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Translations");
-        }
-
         public static LanguageWithCode[] GetLanguages()
         {
             if (languages == null)
             {
                 var list = new List<LanguageWithCode>();
-                var directory = GetDirectory();
-                if (Directory.Exists(directory))
+                foreach (var file in EmbeddedAssets.GetDirectory("Translations"))
                 {
-                    foreach (var path in Directory.EnumerateFiles(directory, "*.json"))
-                    {
-                        var language = ReadNames(path);
-                        if (language == null) continue;
-                        list.Add(new LanguageWithCode() { Code = Path.GetFileNameWithoutExtension(path), EnglishName = language.EnglishName, NativeName = language.NativeName });
-                    }
+                    if (file.IsDirectory) continue;
+                    if (!file.Name.EndsWith(".json", StringComparison.OrdinalIgnoreCase)) continue;
+                    var language = ReadNames(file);
+                    if (language == null) continue;
+                    list.Add(new LanguageWithCode() { Code = Path.GetFileNameWithoutExtension(file.Name), EnglishName = language.EnglishName, NativeName = language.NativeName });
                 }
                 if (!list.Any(x => x.Code == "en")) list.Add(new LanguageWithCode() { Code = "en", EnglishName = "English", NativeName = "English" });
                 languages = list.ToArray();
@@ -80,10 +74,10 @@ namespace ManagerServer.Globalization
                 }
 
                 // `code` arrives from request parameters, so it must never be allowed to form a path
-                // of its own. Only codes we actually enumerated from the directory get that far.
+                // of its own. Only codes we actually enumerated from the manifest get that far.
                 if (!GetLanguages().Any(x => x.Code == code)) return;
 
-                var language = ReadLanguage(Path.Combine(GetDirectory(), code + ".json"));
+                var language = ReadLanguage(EmbeddedAssets.GetFile("Translations/" + code + ".json"));
                 if (language?.Strings == null) return;
 
                 ManagerServer.Globalization.Strings.translations[code] = language.Strings.ToFrozenDictionary();
@@ -93,11 +87,11 @@ namespace ManagerServer.Globalization
 
         // Reads only the name properties, stopping before `strings` so that listing the available
         // languages never parses the translations themselves.
-        private static Language ReadNames(string path)
+        private static Language ReadNames(IFileInfo file)
         {
             try
             {
-                using (var stream = File.OpenRead(path))
+                using (var stream = file.CreateReadStream())
                 using (var text = new StreamReader(stream))
                 using (var reader = new JsonTextReader(text))
                 {
@@ -133,10 +127,10 @@ namespace ManagerServer.Globalization
             }
         }
 
-        private static LanguageWithStrings ReadLanguage(string path)
+        private static LanguageWithStrings ReadLanguage(IFileInfo file)
         {
-            if (!File.Exists(path)) return null;
-            using (var stream = File.OpenRead(path))
+            if (!file.Exists) return null;
+            using (var stream = file.CreateReadStream())
             using (var text = new StreamReader(stream))
             using (var reader = new JsonTextReader(text))
             {

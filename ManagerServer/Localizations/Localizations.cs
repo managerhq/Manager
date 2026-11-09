@@ -26,10 +26,16 @@ namespace ManagerServer.Localizations
 #endif
                 var jsonSettings = new JsonSerializerSettings();
                 jsonSettings.ContractResolver = new CustomContractResolver();
-                var localizationsJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Localizations.json");
-                if (File.Exists(localizationsJson))
+                var localizationsJson = EmbeddedAssets.GetFile("Localizations.json");
+                if (localizationsJson.Exists)
                 {
-                    var source = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Dictionary<Guid, Dictionary<Guid, object>>>>(File.ReadAllText(localizationsJson));
+                    string json;
+                    using (var stream = localizationsJson.CreateReadStream())
+                    using (var reader = new StreamReader(stream))
+                    {
+                        json = reader.ReadToEnd();
+                    }
+                    var source = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Dictionary<Guid, Dictionary<Guid, object>>>>(json);
 
                     foreach (var e in source)
                     {

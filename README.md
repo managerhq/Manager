@@ -155,7 +155,7 @@ dotnet publish ManagerServer.csproj --configuration Release --runtime win-x64 --
 
 Releases are published for `win-x64`, `win-arm64`, `linux-x64`, `linux-arm64`, `osx-x64` and `osx-arm64`.
 
-`Assets/Translations/` holds one file per language, named by language code (`Assets/Translations/de.json`), each with that language's display names and its translated strings. Languages are discovered from the directory listing, so adding a language means adding a file.
+`Assets/Translations/` holds one file per language, named by language code (`Assets/Translations/de.json`), each with that language's display names and its translated strings. The build embeds them, along with `Assets/Localizations.json`, into the executable, and languages are discovered from that embedded listing — so adding a language means adding a file and rebuilding.
 
 `Assets/Translations/` and `Assets/Extensions.json` are committed, so a normal build does not touch the network.
 

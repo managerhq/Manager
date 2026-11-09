@@ -51,6 +51,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Extensions.json" />
+    <None Remove="Assets\Localizations.json" />
+    <None Remove="Assets\Translations\**\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Extensions.json" />
+    <EmbeddedResource Include="Assets\Localizations.json" />
+    <EmbeddedResource Include="Assets\Translations\**\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.109.3" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
     <PackageReference Include="CsvHelper" Version="34.0.0" />
@@ -69,12 +81,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="protobuf-net" Version="3.4.40" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.18.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Assets\**\*">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

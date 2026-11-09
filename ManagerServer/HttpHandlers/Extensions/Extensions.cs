@@ -26,11 +26,13 @@ namespace ManagerServer.HttpHandlers.Extensions
         static Extensions()
         {
             // External directory entries (e-invoicing portals etc.) and any other manually-curated
-            // names live on disk so they can be edited without rebuilding.
-            var file = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Extensions.json");
-            if (System.IO.File.Exists(file))
+            // names are embedded in the assembly, so adding one is a code change like any other.
+            var file = EmbeddedAssets.GetFile("Extensions.json");
+            if (file.Exists)
             {
-                var external = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entry>>(System.IO.File.ReadAllText(file));
+                using var stream = file.CreateReadStream();
+                using var reader = new StreamReader(stream);
+                var external = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entry>>(reader.ReadToEnd());
                 if (external != null) Entries.AddRange(external);
             }
 

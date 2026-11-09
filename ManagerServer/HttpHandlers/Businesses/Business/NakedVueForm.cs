@@ -1752,12 +1752,24 @@ namespace ManagerServer.HttpHandlers.Businesses.Business
             }
         }
 
+        // The number formats offered in settings. A closed set, so it lives here rather than in a
+        // file that has to ship next to the executable.
+        private static readonly ManagerServer.Model.DateAndNumberFormat.NumberFormatParts[] numberFormats = new[]
+        {
+            new ManagerServer.Model.DateAndNumberFormat.NumberFormatParts() { DecimalSeparator = ".", GroupSeparator = ",", GroupSizes = new[] { 3 } },
+            new ManagerServer.Model.DateAndNumberFormat.NumberFormatParts() { DecimalSeparator = ",", GroupSeparator = ".", GroupSizes = new[] { 3 } },
+            new ManagerServer.Model.DateAndNumberFormat.NumberFormatParts() { DecimalSeparator = ",", GroupSeparator = " ", GroupSizes = new[] { 3 } },
+            new ManagerServer.Model.DateAndNumberFormat.NumberFormatParts() { DecimalSeparator = ".", GroupSeparator = ",", GroupSizes = new[] { 3, 2 } },
+            new ManagerServer.Model.DateAndNumberFormat.NumberFormatParts() { DecimalSeparator = "/", GroupSeparator = ",", GroupSizes = new[] { 3 } },
+            new ManagerServer.Model.DateAndNumberFormat.NumberFormatParts() { DecimalSeparator = ".", GroupSeparator = ",", GroupSizes = new[] { 3, 0 } },
+        };
+
         private void VSelectNumberFormat(MemberInfo field)
         {
             using (Div()) using (Select(style: "width: 150px", @class: "form-select", v_model: field.Name))
             {
                 var current = System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat;
-                var formats = Newtonsoft.Json.JsonConvert.DeserializeObject<ManagerServer.Model.DateAndNumberFormat.NumberFormatParts[]>(System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Formats.json")));
+                var formats = numberFormats;
                 if (Languages.IsRightToLeft())
                 {
                     formats = formats.Where(x => x.GroupSeparator != " ").ToArray();

@@ -334,14 +334,9 @@ namespace ManagerServer.HttpHandlers
 
                                 if (currentUser.Type == UserType.Administrator)
                                 {
-                                    var showUsersTab = true;
-                                    if (Edition.IsDesktop)
-                                    {
-                                        if (!File.Exists(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Users.html")))
-                                        {
-                                            showUsersTab = false;
-                                        }
-                                    }
+                                    // The desktop Users tab carries nothing but the cloud upsell, so a
+                                    // whitelabel build has no reason to show it.
+                                    var showUsersTab = !(Edition.IsDesktop && Whitelabel.IsEnabled);
 
                                     if (showUsersTab)
                                     {
@@ -364,7 +359,7 @@ namespace ManagerServer.HttpHandlers
 
                                 if (currentUser.Type == UserType.Administrator)
                                 {
-                                    if (!string.IsNullOrWhiteSpace(Support.Support.Path))
+                                    if (!Whitelabel.IsEnabled)
                                     {
                                         using (A(href: new Support.Support().ToUrl(), @class: $"navbar-item {(support ? "active" : null)}"))
                                         {
