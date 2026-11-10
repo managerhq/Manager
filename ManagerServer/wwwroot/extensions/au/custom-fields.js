@@ -259,7 +259,7 @@
     async function refresh() {
       const business = currentBusiness();
       if (!business) { container.innerHTML = noBusinessMessage(); return; }
-      container.innerHTML = `<div class="status">Loading…</div>`;
+      container.innerHTML = `<div class="status loading">Loading…</div>`;
       try {
         currentModel = (await getJson(`/api4/business-details?business=${encodeURIComponent(business)}`)) || {};
       } catch (err) {
@@ -278,7 +278,7 @@
         ${intro}
         <form class="cf-form cf-business-form">
           ${fieldsHtml}
-          <div class="cf-actions"><button type="submit" class="primary">Save</button></div>
+          <div class="cf-actions"><button type="submit" class="primary">Save business details</button></div>
         </form>`;
       container.querySelector("form").addEventListener("submit", onSave);
     }
@@ -299,8 +299,8 @@
         flash(btn, "ok", "Saved");
       } catch (err) {
         console.error(err);
-        flash(btn, "err", "Failed — retry");
-        alert(err.message);
+        flash(btn, "err", "Not saved");
+        showError("Your changes were not saved.", err.message);
       }
     }
 
@@ -316,7 +316,7 @@
     async function refresh() {
       const business = currentBusiness();
       if (!business) { container.innerHTML = noBusinessMessage(); return; }
-      container.innerHTML = `<div class="status">Loading suppliers…</div>`;
+      container.innerHTML = `<div class="status loading">Loading suppliers…</div>`;
       let data;
       try {
         data = await getJson(`/api4/supplier-batch?business=${encodeURIComponent(business)}&pageSize=2000`);
@@ -332,7 +332,7 @@
 
     function render() {
       if (cache.length === 0) {
-        container.innerHTML = `<div class="status">No suppliers found for this business.</div>`;
+        container.innerHTML = `<div class="status">This business has no suppliers yet. Add them in Manager under Suppliers.</div>`;
         return;
       }
       const rows = cache.map((s, idx) => {
@@ -342,7 +342,7 @@
         return `<tr data-key="${escapeAttr(s.key)}" data-idx="${idx}">
           <td><strong>${escapeText(s.value.name || "(unnamed)")}</strong>${s.value.code ? `<div class="muted">${escapeText(s.value.code)}</div>` : ""}</td>
           ${fieldCells}
-          <td><button class="secondary" data-action="save-supplier">Save</button></td>
+          <td><button type="button" class="secondary small" data-action="save-supplier">Save</button></td>
         </tr>`;
       }).join("");
       const headers = SUPPLIER_FIELDS.map(f => `<th>${escapeText(f.label)}</th>`).join("");
@@ -381,8 +381,8 @@
         flash(btn, "ok", "Saved");
       } catch (err) {
         console.error(err);
-        flash(btn, "err", "Failed");
-        alert(err.message);
+        flash(btn, "err", "Not saved");
+        showError("That row was not saved.", err.message);
       }
     }
 
@@ -402,7 +402,7 @@
     async function refresh() {
       const business = currentBusiness();
       if (!business) { container.innerHTML = noBusinessMessage(); return; }
-      container.innerHTML = `<div class="status">Loading employees…</div>`;
+      container.innerHTML = `<div class="status loading">Loading employees…</div>`;
       let data;
       try {
         data = await getJson(`/api4/employee-batch?business=${encodeURIComponent(business)}&pageSize=2000`);
@@ -455,13 +455,13 @@
       if (!host) return;
       if (!currentKey) {
         host.innerHTML = opts.followSelectId
-          ? `<div class="status">Select an employee in the form above to edit their STP fields here.</div>`
+          ? `<div class="status">Select an employee on the Report tab to edit their STP fields here.</div>`
           : "";
         return;
       }
       const employee = cache.find(emp => emp.key === currentKey);
       if (!employee) {
-        host.innerHTML = `<div class="status">Employee not loaded — click the panel header to reload.</div>`;
+        host.innerHTML = `<div class="status">That employee is no longer in this business. Choose another one.</div>`;
         return;
       }
       const employeeName = employee.value.name || "(unnamed)";
@@ -501,8 +501,8 @@
         flash(btn, "ok", "Saved");
       } catch (err) {
         console.error(err);
-        flash(btn, "err", "Failed — retry");
-        alert(err.message);
+        flash(btn, "err", "Not saved");
+        showError("Your changes were not saved.", err.message);
       }
     }
 
@@ -537,7 +537,7 @@
     async function refresh() {
       const business = currentBusiness();
       if (!business) { container.innerHTML = noBusinessMessage(); return; }
-      container.innerHTML = `<div class="status">Loading payslip items…</div>`;
+      container.innerHTML = `<div class="status loading">Loading payslip items…</div>`;
       try {
         const results = await Promise.all(PAYSLIP_ITEM_TYPES.map(t =>
           getJson(`/api4/${t.endpointBase}-batch?business=${encodeURIComponent(business)}&pageSize=2000`)
@@ -570,7 +570,7 @@
       const items = caches[type.key] || [];
       const heading = `<h3 class="cf-payslip-heading">${escapeText(type.label)}</h3>`;
       if (items.length === 0) {
-        return `${heading}<div class="status">No ${type.label.toLowerCase()} items in this business.</div>`;
+        return `${heading}<div class="status">This business has no ${type.label.toLowerCase()} items yet.</div>`;
       }
       const optionsHtml = ["", ...type.categories.map(c => c.id)].map(id => {
         if (!id) return `<option value="">— none —</option>`;
@@ -591,7 +591,7 @@
         return `<tr data-type="${type.key}" data-key="${escapeAttr(it.key)}" data-idx="${idx}">
           <td><strong>${escapeText(it.value.name || "(unnamed)")}</strong>${it.value.inactive ? ` <span class="muted">(inactive)</span>` : ""}</td>
           <td><select data-role="category">${opts2}</select></td>
-          <td><button class="secondary" data-action="save-payslip-item">Save</button></td>
+          <td><button type="button" class="secondary small" data-action="save-payslip-item">Save</button></td>
         </tr>`;
       }).join("");
       return `${heading}
@@ -624,8 +624,8 @@
         flash(btn, "ok", "Saved");
       } catch (err) {
         console.error(err);
-        flash(btn, "err", "Failed");
-        alert(err.message);
+        flash(btn, "err", "Not saved");
+        showError("That row was not saved.", err.message);
       }
     }
 

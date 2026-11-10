@@ -11,13 +11,27 @@
 //   exportCsv    - fills textarea[name="content"] with CSV. app.js then adds a
 //                  Download CSV button named by csvFilename.
 //
-// A report with nothing to say here needs no entry: BAS and TPAR render as the generic
-// table, on their own page and in the country index alike.
+//   description  - one line under the report's name in the country index, saying what
+//                  the report is for.
+//
+// BAS and TPAR carry only a description: they render as the generic table, on their
+// own page and in the country index alike.
 
 const REPORT_VIEWS = {
 
+  // ---- Business Activity Statement ----------------------------------------
+  "11acbfe1-0d24-4161-b366-fe905f2bcfd9": {
+    description: "GST on sales and purchases and PAYG tax withheld, by month or quarter.",
+  },
+
+  // ---- Taxable Payments Annual Report -------------------------------------
+  "c4a0ccf7-9171-4e8e-b390-97f7052b1479": {
+    description: "Payments made to each supplier marked Include in TPAR.",
+  },
+
   // ---- PAYG payment summary — individual non-business ---------------------
   "92b38154-38fc-479a-a296-2019f656d1e2": {
+    description: "One employee’s payments and tax withheld for a financial year, laid out like the ATO form.",
     // Form-style renderer mirroring the layout of the official ATO paper form
     // (NAT 0046) rather than the generic table the shared renderer produces.
     render: function (report, data, business, period) {
@@ -68,7 +82,7 @@ const REPORT_VIEWS = {
       const totalTax = cellAmount(payee["Total tax withheld"], 0);
 
       const html = `
-        <div class="report-actions"><button type="button" class="primary" id="printReport">Print</button></div>
+        <div class="report-actions"><button type="button" class="secondary" id="printReport">Print</button></div>
         <div id="printable-content" class="payg-form">
 
           <div class="payg-banner">
@@ -88,8 +102,8 @@ const REPORT_VIEWS = {
                 ${textField("Payee's name", cellText(payee["Name"]))}
               </div>
               <div class="payg-row cols-2">
-                ${textField("Period of payment &mdash; day / month / year (from)", fmtFormDate(period.from))}
-                ${textField("Period of payment &mdash; day / month / year (to)", fmtFormDate(period.to))}
+                ${textField("Period of payment — day / month / year (from)", fmtFormDate(period.from))}
+                ${textField("Period of payment — day / month / year (to)", fmtFormDate(period.to))}
               </div>
             </div>
           </div>
@@ -117,7 +131,7 @@ const REPORT_VIEWS = {
                 ${amountField("E", cellAmount(payee["Lump Sum Payment E"]))}
               </div>
               <div class="payg-row cols-2">
-                ${amountField("W &mdash; return to work payment", cellAmount(payee["Lump Sum Payment W"]))}
+                ${amountField("W — return to work payment", cellAmount(payee["Lump Sum Payment W"]))}
               </div>
             </div>
           </div>
@@ -146,6 +160,7 @@ const REPORT_VIEWS = {
 
   // ---- Single Touch Payroll Worksheet (Phase 2) ---------------------------
   "07332ba3-3e82-4dc1-9451-1350f5d84e24": {
+    description: "Pay, tax and super for each employee, with a CSV in the ATO worksheet layout.",
     hideZeroRows: true,
     csvFilename: "Single Touch Payroll Worksheet (Phase 2).csv",
 

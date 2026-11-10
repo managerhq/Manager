@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<h1>Australia</h1>
-
 <!-- The one business the page is working on. Kept as a hidden <select> because app.js and
      custom-fields.js both read #business.value to scope their API calls; the user picks it
      from the list below, not from this control. -->
@@ -17,33 +15,31 @@
 
 <!-- Screen 1 — pick a business. -->
 <div id="business-picker">
-  <p class="lead">Compliance reports for Australian businesses — BAS, Single Touch Payroll, PAYG payment summaries and TPAR — plus the GST codes, custom fields and reporting categories those reports read.</p>
+  <h1>Australia</h1>
+  <p class="lead">Run the BAS, Single Touch Payroll, PAYG payment summary and TPAR reports for a business, and set up the GST codes and details those reports read.</p>
 
   <div class="picker-head">
-    <h2>Select a business</h2>
-    <input type="search" id="business-search" placeholder="Search businesses…" autocomplete="off" hidden>
+    <h2>Choose a business<span class="picker-count" id="business-count"></span></h2>
+    <input type="search" id="business-search" placeholder="Search businesses" aria-label="Search businesses" autocomplete="off" hidden>
   </div>
-  <div id="business-list"><div class="status">Loading businesses…</div></div>
+  <div id="business-list" aria-live="polite"><div class="status loading">Loading businesses…</div></div>
 </div>
 
 <!-- Screen 2 — work inside the selected business. Leaving is the only way to change business,
-     so every tab below is unambiguously scoped to the name shown in the bar. -->
+     so every tab below is unambiguously scoped to the name shown in the heading. -->
 <div id="business-workspace" hidden>
   <div class="workspace-bar">
-    <div class="workspace-business">
-      <span class="workspace-label">Business</span>
-      <span class="workspace-name" id="current-business"></span>
-    </div>
-    <button type="button" class="secondary" id="closeBusiness">Close business</button>
+    <button type="button" class="back" id="closeBusiness"><span class="runner-back-arrow" aria-hidden="true">←</span> <span>All businesses</span></button>
+    <h1 class="workspace-name" id="current-business"></h1>
   </div>
 
-  <div class="tabs">
-    <button type="button" class="tab active" data-view="reports">Reports</button>
-    <button type="button" class="tab" data-view="setup">Tax codes</button>
-    <button type="button" class="tab" data-view="business">Business details</button>
-    <button type="button" class="tab" data-view="suppliers">Suppliers</button>
-    <button type="button" class="tab" data-view="employees">Employees</button>
-    <button type="button" class="tab" data-view="payslip-items">Payslip items</button>
+  <div class="tabs" role="tablist" aria-label="Business sections">
+    <button type="button" class="tab active" role="tab" aria-selected="true" data-view="reports">Reports</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" data-view="setup">Tax codes</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" data-view="business">Business details</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" data-view="suppliers">Suppliers</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" data-view="employees">Employees</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" data-view="payslip-items">Payslip items</button>
   </div>
 
   <!-- Reports tab. Screen 1 lists what this country ships; screen 2 runs one of them
@@ -51,23 +47,23 @@
        its definition is posted with the request. -->
   <div id="reports-view">
     <div id="report-list-screen">
-      <p class="muted">Run any of these reports against the selected business.</p>
       <div id="report-list" data-country-slug="au"></div>
     </div>
 
     <div id="report-runner-screen" hidden>
       <div class="runner-bar">
-        <button type="button" class="secondary" id="back-to-reports"><span class="runner-back-arrow" aria-hidden="true">←</span> <span>All reports</span></button>
-        <span class="runner-title" id="runner-title"></span>
+        <button type="button" class="back" id="back-to-reports"><span class="runner-back-arrow" aria-hidden="true">←</span> <span>All reports</span></button>
+        <h2 class="runner-title" id="runner-title"></h2>
       </div>
       <div id="report-runner"></div>
     </div>
   </div>
 
   <div id="setup-view" hidden>
-    <p class="muted">Australia ships a standard set of tax codes already linked to the reporting categories the reports use. Create any that are missing, or attach the categories to a code this business already has.</p>
+    <p class="muted">Australia's standard GST codes come already linked to the reporting categories the BAS reads. Create any that are missing, or link the categories to a code this business already has.</p>
     <div class="setup-actions">
-      <button type="button" id="refreshSetup" class="secondary">Reload</button>
+      <div class="setup-summary" id="setupSummary" aria-live="polite"></div>
+      <button type="button" id="refreshSetup" class="secondary small">Reload</button>
     </div>
     <div id="setupOutput"></div>
   </div>

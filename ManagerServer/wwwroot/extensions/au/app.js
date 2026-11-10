@@ -27,6 +27,24 @@ function formatDisplayDate(s) {
   return d.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
 }
 
+// A single action failed (a save, a create). Says so over the page without blocking it;
+// stays until dismissed, because the text is usually a server message worth reading.
+function showError(title, detail) {
+  let host = document.querySelector(".toast-host");
+  if (!host) {
+    host = document.createElement("div");
+    host.className = "toast-host";
+    host.setAttribute("role", "alert");
+    document.body.appendChild(host);
+  }
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.innerHTML = `<div class="toast-text"><span class="toast-title">${escapeText(title)}</span>${detail ? escapeText(detail) : ""}</div>`
+    + `<button type="button" class="toast-close">Dismiss</button>`;
+  toast.querySelector(".toast-close").addEventListener("click", () => toast.remove());
+  host.appendChild(toast);
+}
+
 // Report pages always run within a business context (parent iframe sets window.MANAGER_BUSINESS,
 // or the URL carries ?business=NAME for bookmarked/direct access). The Business dropdown and
 // the back-to-country link are noise in that mode, so they are hidden on any page that has the
@@ -107,7 +125,11 @@ const indexViews = document.querySelectorAll('[id$="-view"]');
 let setupLoaded = false; // has the Tax codes tab fetched for the current business yet?
 
 function activateTab(name) {
-  for (const tab of indexTabs) tab.classList.toggle("active", tab.dataset.view === name);
+  for (const tab of indexTabs) {
+    const active = tab.dataset.view === name;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", String(active));
+  }
   for (const view of indexViews) view.hidden = view.id !== `${name}-view`;
   // Tax codes needs a round-trip to diagnose each template against the business — now that a
   // business is always selected here, do it on first open instead of making the user ask.
@@ -128,19 +150,22 @@ if (businessList && businessSelect) {
   const searchInput = document.getElementById("business-search");
   const currentBusinessLabel = document.getElementById("current-business");
   const closeButton = document.getElementById("closeBusiness");
+  const countLabel = document.getElementById("business-count");
   let names = [];
 
   function renderBusinessList() {
     const query = (searchInput.value || "").trim().toLowerCase();
     const matches = query ? names.filter(n => n.toLowerCase().includes(query)) : names;
+    if (countLabel) countLabel.textContent = names.length > 1 ? String(names.length) : "";
     if (matches.length === 0) {
-      businessList.innerHTML = `<div class="status">${query ? "No business matches that name." : "No businesses found. Create one in Manager first."}</div>`;
+      businessList.innerHTML = `<div class="status">${query
+        ? `No business is called “${escapeText(searchInput.value.trim())}”. Check the spelling or clear the search.`
+        : "There are no businesses yet. Add one in Manager, then reopen this extension."}</div>`;
       return;
     }
     businessList.innerHTML = `<div class="business-items">` + matches.map(n =>
       `<button type="button" class="business-item" data-name="${escapeAttr(n)}">
         <span class="business-item-name">${escapeText(n)}</span>
-        <span class="business-item-go" aria-hidden="true">&rarr;</span>
       </button>`).join("") + `</div>`;
   }
 
@@ -150,6 +175,7 @@ if (businessList && businessSelect) {
     workspace.hidden = false;
     setSelectedBusiness(name);
     activateTab("reports");
+    window.scrollTo(0, 0);
   }
 
   function closeBusiness() {
@@ -176,7 +202,7 @@ if (businessList && businessSelect) {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       data = await res.json();
     } catch (err) {
-      businessList.innerHTML = `<div class="error">Could not load the list of businesses (${escapeText(err.message)}).</div>`;
+      businessList.innerHTML = `<div class="error">The list of businesses did not load (${escapeText(err.message)}). Close this panel and open it again to retry.</div>`;
       return;
     }
     names = (data.businesses || []).map(b => b.name).sort((a, b) => a.localeCompare(b));
@@ -325,14 +351,16 @@ function initReportRunner(report, root) {
 
   reportControls.addEventListener("submit", async (e) => {
     e.preventDefault();
-    output.innerHTML = '<div class="status">Loading…</div>';
+    output.innerHTML = '<div class="status loading">Generating report…</div>';
 
     const business = businessSelect.value;
-    if (!business) { output.innerHTML = `<div class="error">Please select a business.</div>`; return; }
+    if (!business) { output.innerHTML = `<div class="error">Select a business first.</div>`; return; }
     const period = computePeriod();
-    if (!period.from || !period.to) { output.innerHTML = `<div class="error">Please choose a valid period.</div>`; return; }
+    if (!period.from || !period.to) { output.innerHTML = `<div class="error">Enter both a from date and a to date.</div>`; return; }
+    if (period.from > period.to) { output.innerHTML = `<div class="error">The from date is after the to date.</div>`; return; }
     if (employeeSelect && !employeeSelect.value) {
-      output.innerHTML = `<div class="error">Please select an employee.</div>`;
+      output.innerHTML = `<div class="error">Select an employee to generate this report for.</div>`;
+      employeeSelect.focus();
       return;
     }
 
@@ -413,7 +441,7 @@ function renderReport(report, data, business, period, ctx) {
   // The container id "printable-content" is what legacy customScript bodies (from Assets/Localizations)
   // probe via document.getElementById to scrape numeric cells for CSV export.
   let html = `
-    <div class="report-actions"><button type="button" class="primary" id="printReport">Print</button></div>
+    <div class="report-actions"><button type="button" class="secondary" id="printReport">Print</button></div>
     <div id="printable-content">
       <div class="report-header">
         <div class="business-name">${escapeText(business)}</div>
@@ -456,8 +484,7 @@ function renderReport(report, data, business, period, ctx) {
       const filename = view.csvFilename || report.csvFilename || window.EXPORT_CSV_FILENAME || (report.name.replace(/\s+/g, "_") + ".csv");
       const downloadBtn = document.createElement("button");
       downloadBtn.type = "button";
-      downloadBtn.className = "primary";
-      downloadBtn.style.marginLeft = "8px";
+      downloadBtn.className = "secondary";
       downloadBtn.textContent = "Download CSV";
       downloadBtn.addEventListener("click", () => downloadText(filename, contentEl.value));
       output.querySelector(".report-actions").appendChild(downloadBtn);
@@ -593,18 +620,18 @@ if (reportList && typeof REPORTS !== "undefined") {
   }
 
   function renderReportTable() {
+    // Each report is one row, and the whole row opens it.
     const business = businessSelect.value;
-    let html = `<table>
-      <thead><tr><th>Report</th><th>Action</th></tr></thead><tbody>`;
+    let html = `<ul class="report-items">`;
     for (let i = 0; i < REPORTS.length; i++) {
       const r = REPORTS[i];
-      const viewAction = canRun
-        ? `<button class="primary" data-action="view" data-idx="${i}"${business ? "" : " disabled"}>View</button>`
-        : "";
-      html += `<tr><td><strong>${escapeText(r.name)}</strong></td>`
-            + `<td>${viewAction}</td></tr>`;
+      const description = reportView(r).description;
+      html += `<li><button type="button" class="report-item" data-action="view" data-idx="${i}"${canRun && business ? "" : " disabled"}>`
+            + `<span class="report-item-text"><span class="report-item-name">${escapeText(r.name)}</span>`
+            + (description ? `<span class="report-item-desc">${escapeText(description)}</span>` : "")
+            + `</span></button></li>`;
     }
-    html += `</tbody></table>`;
+    html += `</ul>`;
     reportList.innerHTML = html;
 
     for (const btn of reportList.querySelectorAll('button[data-action="view"]')) {
@@ -635,14 +662,14 @@ if (reportList && typeof REPORTS !== "undefined") {
     runnerTitle.textContent = report.name;
     listScreen.hidden = true;
     runnerScreen.hidden = false;
-    runnerHost.innerHTML = `<div class="status">Loading…</div>`;
+    runnerHost.innerHTML = `<div class="status loading">Loading…</div>`;
 
     let form;
     try {
       form = await loadReportForm(report);
     } catch (err) {
       if (token !== openToken) return;
-      runnerHost.innerHTML = `<div class="error">Could not load this report's form (${escapeText(err.message)}).</div>`;
+      runnerHost.innerHTML = `<div class="error">This report's options did not load (${escapeText(err.message)}). Go back to all reports and open it again.</div>`;
       return;
     }
     if (token !== openToken) return;
@@ -691,6 +718,7 @@ if (setupView) {
   if (businessSelect) businessSelect.addEventListener("change", () => {
     setupLoaded = false;
     document.getElementById("setupOutput").innerHTML = "";
+    setSetupSummary("");
   });
 
   // If this country has no tax-code templates, hide the Tax codes tab.
@@ -702,23 +730,29 @@ if (setupView) {
 
 let existingTaxCodes = [];
 
+function setSetupSummary(html) {
+  const el = document.getElementById("setupSummary");
+  if (el) el.innerHTML = html;
+}
+
 async function loadSetup() {
   const business = businessSelect.value;
   const output = document.getElementById("setupOutput");
-  if (!business) { output.innerHTML = `<div class="error">Please select a business.</div>`; return; }
-  output.innerHTML = `<div class="status">Loading tax codes…</div>`;
+  if (!business) { output.innerHTML = `<div class="error">Select a business first.</div>`; return; }
+  setSetupSummary("");
+  output.innerHTML = `<div class="status loading">Checking this business's tax codes…</div>`;
   let response;
   try {
     response = await fetch(`/api4/tax-code-batch?business=${encodeURIComponent(business)}&pageSize=500`, {
       credentials: "include",
     });
   } catch (err) {
-    output.innerHTML = `<div class="error">Network error: ${err.message}</div>`;
+    output.innerHTML = `<div class="error">The tax codes did not load (${escapeText(err.message)}). Choose Reload to try again.</div>`;
     return;
   }
   if (!response.ok) {
     const text = await response.text();
-    output.innerHTML = `<div class="error">Request failed (${response.status}):\n${text}</div>`;
+    output.innerHTML = `<div class="error">The tax codes did not load (${response.status}). Choose Reload to try again.\n${escapeText(text)}</div>`;
     return;
   }
   const data = await response.json();
@@ -752,33 +786,44 @@ function diagnose(template) {
 
 function renderSetup() {
   const output = document.getElementById("setupOutput");
+  let ready = 0;
   const rows = TAX_CODE_TEMPLATES.map((tpl, idx) => {
     const { state, existing } = diagnose(tpl);
     const rateText = tpl.TaxRate === 1 ? "100%" : (tpl.Rate ? `${tpl.Rate}%` : (tpl.TaxRate === 0 ? "0%" : "—"));
     const rcText = tpl.ReverseCharged ? "Yes" : "";
+    // Only worth naming the business's own code when it is not simply the same name again.
+    const existingName = existing ? (existing.value.name || "(unnamed)") : "";
+    const linked = existing && existingName.trim().toLowerCase() !== (tpl.Name || "").trim().toLowerCase()
+      ? `<span class="setup-linked">Matches “${escapeText(existingName)}”</span>` : "";
 
-    let badge, action;
+    // A code that is ready needs nothing done, so its action cell stays empty.
+    let badge, action = "";
     if (state === "ok") {
-      badge = `<span class="badge ok">Configured</span> <span class="muted">→ ${escapeText(existing.value.name || "(unnamed)")}</span>`;
-      action = `<button class="secondary" disabled>OK</button>`;
+      ready++;
+      badge = `<span class="badge ok">Ready</span>${linked}`;
     } else if (state === "update") {
-      badge = `<span class="badge update">Reporting categories not linked</span> <span class="muted">→ ${escapeText(existing.value.name || "(unnamed)")}</span>`;
-      action = `<button class="secondary" data-action="update" data-idx="${idx}" data-key="${escapeAttr(existing.key)}">Update existing</button>`;
+      badge = `<span class="badge update">Categories not linked</span>${linked}`;
+      action = `<button class="secondary small" data-action="update" data-idx="${idx}" data-key="${escapeAttr(existing.key)}">Link categories</button>`;
     } else {
-      badge = `<span class="badge missing">Not present</span>`;
-      action = `<button class="secondary" data-action="create" data-idx="${idx}">Create</button>`;
+      badge = `<span class="badge missing">Not in this business</span>`;
+      action = `<button class="secondary small" data-action="create" data-idx="${idx}">Create</button>`;
     }
     return `<tr>
       <td><strong>${escapeText(tpl.Name)}</strong>${tpl.Label ? `<div class="muted">${escapeText(tpl.Label)}</div>` : ""}</td>
-      <td>${rateText}</td>
+      <td class="num">${rateText}</td>
       <td>${rcText}</td>
       <td>${badge}</td>
       <td>${action}</td>
     </tr>`;
   }).join("");
 
+  const total = TAX_CODE_TEMPLATES.length;
+  setSetupSummary(ready === total
+    ? `<strong>All ${total} tax codes are ready.</strong>`
+    : `<strong>${ready} of ${total}</strong> tax codes are ready.`);
+
   output.innerHTML = `<table>
-    <thead><tr><th>Tax code</th><th>Rate</th><th>Reverse charged</th><th>Status</th><th>Action</th></tr></thead>
+    <thead><tr><th>Tax code</th><th class="num">Rate</th><th>Reverse charged</th><th>Status</th><th><span aria-hidden="true"></span></th></tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
 
@@ -793,7 +838,7 @@ async function onSetupAction(btn) {
   const action = btn.dataset.action;
   const template = TAX_CODE_TEMPLATES[idx];
   btn.disabled = true;
-  btn.textContent = action === "create" ? "Creating…" : "Updating…";
+  btn.textContent = action === "create" ? "Creating…" : "Linking…";
   try {
     if (action === "create") {
       const res = await fetch("/api4/tax-code", {
@@ -823,7 +868,7 @@ async function onSetupAction(btn) {
     await loadSetup();
   } catch (err) {
     btn.disabled = false;
-    btn.textContent = action === "create" ? "Create" : "Update existing";
-    alert(`Failed: ${err.message}`);
+    btn.textContent = action === "create" ? "Create" : "Link categories";
+    showError(action === "create" ? `${template.Name} was not created.` : `${template.Name} was not updated.`, err.message);
   }
 }

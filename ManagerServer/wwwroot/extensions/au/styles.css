@@ -1,248 +1,324 @@
-:root { color-scheme: light; }
+/* Australia extension.
+   The page opens inside Manager (a slide-in panel), so it borrows Manager's own palette —
+   neutral greys with sky as the one accent — rather than bringing a second look with it.
+   Colour outside that range means status and nothing else. */
+:root {
+  color-scheme: light;
+  --ink: #262626;
+  --ink-soft: #525252;
+  --ink-faint: #737373;
+  --line: #e5e5e5;
+  --line-strong: #d4d4d4;
+  --surface: #fafafa;
+  --surface-sunk: #f5f5f5;
+  --accent: #0369a1;
+  --accent-strong: #075985;
+  --accent-wash: #f0f9ff;
+  --ok: #166534;      --ok-wash: #dcfce7;
+  --warn: #92400e;    --warn-wash: #fef3c7;
+  --danger: #b91c1c;  --danger-wash: #fee2e2;  --danger-line: #fecaca;
+  --radius: 6px;
+  --control-height: 34px;
+}
+
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-       margin: 0; padding: 24px; background: #fff; color: #111827; font-size: 14px; }
-h1 { margin: 0 0 12px; font-size: 20px; font-weight: 700; }
 
-.page-nav { margin-bottom: 8px; font-size: 13px; }
-.page-nav a { color: #6b7280; text-decoration: none; }
-.page-nav a:hover { color: #2563eb; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+       margin: 0; padding: 28px 32px 48px; background: #fff; color: var(--ink);
+       font-size: 14px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+/* One measure for every screen, anchored to the panel's leading edge. */
+body > * { max-width: 960px; }
 
-ul.report-list { list-style: none; padding: 0; margin: 0; max-width: 720px; }
-ul.report-list li { border-bottom: 1px solid #f3f4f6; }
-ul.report-list li:last-child { border-bottom: 0; }
-ul.report-list a { display: block; padding: 12px 8px; color: #111827; text-decoration: none; font-weight: 500; }
-ul.report-list a:hover { background: #f9fafb; color: #2563eb; }
+h1 { margin: 0 0 8px; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
+h2 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.3; }
+p { margin: 0 0 16px; }
+a { color: var(--accent); }
 
-.tabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
-.tab { padding: 8px 16px; border: 0; background: transparent; cursor: pointer; font-size: 14px; font-weight: 500; color: #6b7280;
-       border-bottom: 2px solid transparent; margin-bottom: -1px; }
-.tab:hover { color: #111827; }
-.tab.active { color: #2563eb; border-bottom-color: #2563eb; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-.business-bar { padding: 12px 16px; margin-bottom: 16px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px;
-                display: flex; align-items: end; gap: 12px; }
-.business-bar label { display: flex; flex-direction: column; font-size: 12px; color: #6b7280; gap: 4px; flex: 1; max-width: 320px; }
-.business-bar select { padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; background: #fff; }
+/* ---- Text helpers ---------------------------------------------------------- */
 
-form#reportControls { display: flex; flex-wrap: wrap; gap: 12px; align-items: end;
-                      padding: 16px; margin-bottom: 16px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; }
-form#reportControls label { display: flex; flex-direction: column; font-size: 12px; color: #6b7280; gap: 4px; }
-form#reportControls input, form#reportControls select { padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; background: #fff; }
+.lead { max-width: 62ch; margin: 0 0 28px; color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+.muted { color: var(--ink-faint); font-size: 13px; }
+p.muted { max-width: 68ch; margin: 0 0 16px; color: var(--ink-soft); line-height: 1.5; }
+td .muted, td div.muted { font-size: 12px; }
 
-button.primary { padding: 7px 16px; border: 0; border-radius: 4px; background: #2563eb; color: #fff; font-weight: 600; cursor: pointer; font-size: 14px; }
-button.primary:hover { background: #1d4ed8; }
-button.primary:disabled { background: #9ca3af; cursor: not-allowed; }
-button.secondary { padding: 5px 10px; border: 1px solid #d1d5db; border-radius: 4px; background: #fff; color: #111827; cursor: pointer; font-size: 13px; }
-button.secondary:hover { background: #f3f4f6; }
-button.secondary:disabled { color: #9ca3af; cursor: not-allowed; }
+/* ---- Controls -------------------------------------------------------------- */
 
-#reportOutput, #setupOutput { max-width: 1100px; }
-#reportOutput h2 { font-size: 16px; margin: 0 0 12px; }
-#reportOutput table, #setupOutput table, #report-list table { width: 100%; border-collapse: collapse; }
-#reportOutput th, #reportOutput td,
-#setupOutput th, #setupOutput td,
-#report-list th, #report-list td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
-#reportOutput td { white-space: pre-line; }
-#reportOutput th, #setupOutput th, #report-list th { background: #f9fafb; text-align: left; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
-/* Action trails the report name, which takes whatever width is left. */
-#report-list th:not(:first-child), #report-list td:not(:first-child) { width: 1%; white-space: nowrap; }
-#reportOutput td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-#reportOutput td.num a { color: #2563eb; text-decoration: none; }
-#reportOutput td.num a:hover { text-decoration: underline; }
+input, select, textarea, button { font: inherit; color: inherit; }
 
-.report-actions { margin-bottom: 16px; }
-.report-header { text-align: center; margin: 0 0 24px; }
-.report-header .business-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-.report-header .report-title  { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
-.report-header .report-period { font-size: 14px; color: #374151; }
-.report-header .report-basis  { font-size: 13px; color: #6b7280; margin-top: 2px; }
-#reportOutput tbody.group > tr:first-child th { background: #f3f4f6; color: #111827; font-size: 13px; text-transform: none; letter-spacing: 0; padding-top: 12px; }
+input[type="text"], input[type="search"], input[type="date"], input:not([type]), select {
+  height: var(--control-height); padding: 0 10px; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: #fff; color: var(--ink); font-size: 14px; min-width: 0;
+  transition: border-color 120ms, box-shadow 120ms; }
+select { padding-inline-end: 6px; }
+input:hover, select:hover { border-color: #a3a3a3; }
+input:focus, select:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.18); }
+input::placeholder { color: #a3a3a3; }
 
-@media print {
-  body { padding: 0; }
-  h1, .tabs, .business-bar, form#reportControls, .report-actions, #setup-view, .status, .error,
-  .workspace-bar, .runner-bar { display: none !important; }
-  #reportOutput { max-width: none; }
-  #reportOutput th { color: #111827; background: transparent; text-transform: none; letter-spacing: 0; font-size: 14px; }
-  #reportOutput td.num a { color: inherit; text-decoration: none; }
-  #reportOutput table { page-break-inside: auto; }
-  #reportOutput tr    { page-break-inside: avoid; page-break-after: auto; }
+button { cursor: pointer; }
+button.primary, button.secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: var(--control-height); padding: 0 14px; border-radius: var(--radius);
+  font-size: 14px; font-weight: 600; white-space: nowrap;
+  transition: background-color 120ms, border-color 120ms, color 120ms; }
+button.primary { border: 1px solid var(--accent); background: var(--accent); color: #fff; }
+button.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+button.secondary { border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font-weight: 500; }
+button.secondary:hover { background: var(--surface-sunk); border-color: #a3a3a3; }
+button.primary:disabled, button.secondary:disabled { cursor: not-allowed; opacity: 0.55; }
+button.small { height: 28px; padding: 0 10px; font-size: 13px; }
+
+/* Save buttons report their own outcome for a moment (see flash() in custom-fields.js). */
+button.save-ok, button.save-ok:disabled  { background: var(--ok-wash); color: var(--ok); border-color: #86efac; opacity: 1; }
+button.save-err, button.save-err:disabled { background: var(--danger-wash); color: var(--danger); border-color: var(--danger-line); opacity: 1; }
+
+/* ---- Messages -------------------------------------------------------------- */
+
+/* .status is a plain notice: something is loading, or there is nothing to show yet. */
+.status { padding: 14px 16px; margin-bottom: 12px; border: 1px dashed var(--line-strong); border-radius: var(--radius);
+          background: var(--surface); color: var(--ink-soft); }
+.status.loading { display: flex; align-items: center; gap: 10px; border-style: solid; border-color: var(--line); }
+.status.loading::before { content: ""; flex: none; width: 14px; height: 14px; border-radius: 50%;
+                          border: 2px solid var(--line-strong); border-top-color: var(--accent);
+                          animation: spin 0.7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .status.loading::before { animation: none; }
+  * { transition: none !important; }
 }
 
-.status { padding: 12px; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 4px; margin-bottom: 12px; }
-.error { padding: 12px; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 4px; color: #991b1b; margin-bottom: 12px; white-space: pre-wrap; }
-.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
-.badge.ok      { background: #d1fae5; color: #065f46; }
-.badge.update  { background: #fef3c7; color: #92400e; }
-.badge.missing { background: #fee2e2; color: #991b1b; }
-.muted { color: #6b7280; font-size: 12px; }
-.setup-actions { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; }
+.error { padding: 12px 16px; margin-bottom: 12px; border: 1px solid var(--danger-line); border-inline-start-width: 3px;
+         border-inline-start-color: var(--danger); border-radius: var(--radius);
+         background: #fef2f2; color: #7f1d1d; white-space: pre-wrap; overflow-wrap: anywhere; }
 
-/* Country index, screen 1 — business list */
-#business-picker { max-width: 720px; }
-#business-picker .lead { line-height: 1.55; margin: 0 0 24px; color: #374151; }
-.picker-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-.picker-head h2 { margin: 0; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
-#business-search { padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; background: #fff; width: 220px; }
-.business-items { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
-.business-item { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px;
-                 padding: 12px 14px; border: 0; border-top: 1px solid #f3f4f6; background: #fff;
-                 font: inherit; text-align: left; cursor: pointer; }
+/* Failures of a single action (a save, a create) — shown over the page, dismissed by hand. */
+.toast-host { position: fixed; inset-inline: 16px; bottom: 16px; z-index: 10; max-width: none;
+              display: flex; flex-direction: column; align-items: flex-end; gap: 8px; pointer-events: none; }
+.toast { pointer-events: auto; display: flex; align-items: flex-start; gap: 12px; width: min(440px, 100%);
+         padding: 12px 14px; border-radius: 8px; background: #fff; color: #7f1d1d;
+         border: 1px solid var(--danger-line); border-inline-start: 3px solid var(--danger);
+         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+.toast-text { flex: 1; min-width: 0; overflow-wrap: anywhere; max-height: 9em; overflow-y: auto; }
+.toast-title { display: block; font-weight: 600; color: var(--danger); }
+.toast-close { flex: none; border: 0; background: transparent; color: var(--ink-faint); font-size: 13px; font-weight: 600;
+               padding: 2px 4px; border-radius: 4px; }
+.toast-close:hover { color: var(--ink); }
+
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 2px 9px; border-radius: 999px;
+         font-size: 12px; font-weight: 600; white-space: nowrap; }
+.badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge.ok      { background: var(--ok-wash); color: var(--ok); }
+.badge.update  { background: var(--warn-wash); color: var(--warn); }
+.badge.missing { background: var(--surface-sunk); color: var(--ink-soft); }
+
+/* ---- Tabs ------------------------------------------------------------------ */
+
+/* Tab text starts on the same edge as the heading above it; the underline spans the word. */
+.tabs { display: flex; gap: 24px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+.tab { padding: 9px 0; border: 0; background: transparent; font-size: 14px; font-weight: 500; color: var(--ink-soft);
+       border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; border-radius: 2px; }
+.tab:hover { color: var(--ink); border-bottom-color: var(--line-strong); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+
+/* ---- Tables ---------------------------------------------------------------- */
+
+#setupOutput table, .cf-table { width: 100%; border-collapse: collapse; }
+#setupOutput th, #setupOutput td, .cf-table th, .cf-table td {
+  padding: 9px 12px; vertical-align: middle; text-align: start; border-bottom: 1px solid var(--line); }
+#setupOutput thead th, .cf-table thead th {
+  padding-block: 8px; font-size: 12px; font-weight: 600; color: var(--ink-faint);
+  border-bottom-color: var(--line-strong); white-space: nowrap; }
+#setupOutput tbody tr:hover, .cf-table tbody tr:hover { background: var(--surface); }
+#setupOutput td.num, #setupOutput th.num { text-align: end; font-variant-numeric: tabular-nums; }
+/* Trailing action column hugs its button. */
+#setupOutput th:last-child, #setupOutput td:last-child,
+.cf-table th:last-child, .cf-table td:last-child { width: 1%; white-space: nowrap; text-align: end; }
+.cf-table input, .cf-table select { width: 100%; min-width: 140px; }
+/* Same name column in every table, so stacked tables line up with each other. */
+.cf-table th:first-child, .cf-table td:first-child { width: 34%; }
+.cf-table td strong, #setupOutput td strong { font-weight: 600; }
+
+/* ---- Row lists (businesses, reports) ---------------------------------------- */
+
+.business-items, .report-items { margin: 0; padding: 0; list-style: none;
+                                 border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+.report-items > li + li { border-top: 1px solid var(--line); }
+.business-item, .report-item {
+  display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 12px 16px; border: 0; background: #fff; text-align: start; }
+.business-item { border-top: 1px solid var(--line); }
 .business-item:first-child { border-top: 0; }
-.business-item:hover { background: #f9fafb; }
-.business-item:focus-visible { outline: 2px solid #2563eb; outline-offset: -2px; }
-.business-item-name { font-weight: 600; color: #111827; }
-.business-item-go { color: #d1d5db; }
-.business-item:hover .business-item-go { color: #2563eb; }
-/* The arrow points at the row's destination, so it follows the writing direction. */
-[dir="rtl"] .business-item-go { transform: scaleX(-1); }
+.business-item:hover, .report-item:hover:not(:disabled) { background: var(--accent-wash); }
+.business-item:focus-visible, .report-item:focus-visible { outline-offset: -2px; }
+.business-item-name, .report-item-name { font-weight: 600; color: var(--ink); }
+.report-item { padding-block: 14px; }
+.report-item:disabled { cursor: not-allowed; opacity: 0.55; }
+.report-item-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.report-item-desc { color: var(--ink-soft); font-size: 13px; }
+/* Chevron: says the row leads somewhere, and follows the writing direction. */
+.business-item::after, .report-item::after {
+  content: ""; flex: none; width: 7px; height: 7px; margin-inline-end: 4px;
+  border-top: 1.5px solid #a3a3a3; border-right: 1.5px solid #a3a3a3; transform: rotate(45deg);
+  transition: transform 120ms, border-color 120ms; }
+.business-item:hover::after, .report-item:hover:not(:disabled)::after { border-color: var(--accent); transform: translateX(2px) rotate(45deg); }
+[dir="rtl"] .business-item::after, [dir="rtl"] .report-item::after { transform: rotate(-135deg); }
+[dir="rtl"] .business-item:hover::after, [dir="rtl"] .report-item:hover:not(:disabled)::after { transform: translateX(-2px) rotate(-135deg); }
 
-/* Country index, screen 2 — the selected business */
-.workspace-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px;
-                 padding: 10px 14px; margin-bottom: 16px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; }
-.workspace-business { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
-.workspace-label { font-size: 11px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
-.workspace-name { font-size: 15px; font-weight: 600; color: #111827; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-#reports-view, #setup-view { max-width: 1100px; }
-#report-list-screen > p, #setup-view > p { max-width: 720px; margin: 0 0 16px; line-height: 1.5; }
+/* ---- Screen 1 — pick a business ---------------------------------------------- */
 
-/* Custom-field setup tabs (Business / Suppliers / Employees) */
-#business-view, #suppliers-view, #employees-view { max-width: 1100px; }
-.cf-form { padding: 16px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; }
-.cf-field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #6b7280; margin-bottom: 12px; }
-.cf-field > span { font-weight: 500; }
-.cf-field input, .cf-field select { padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; background: #fff; color: #111827; }
-.cf-field small { margin-top: 2px; }
-.cf-actions { margin-top: 12px; }
-.cf-group { border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 16px; margin: 0 0 12px; }
-.cf-group legend { font-weight: 600; color: #111827; padding: 0 6px; font-size: 13px; }
-.cf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 16px; }
-.cf-picker { margin-bottom: 16px; max-width: 360px; }
-.cf-picker label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #6b7280; }
-.cf-picker select { padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; background: #fff; }
-.cf-table { width: 100%; border-collapse: collapse; }
-.cf-table th, .cf-table td { padding: 6px 10px; vertical-align: middle; border-bottom: 1px solid #f3f4f6; text-align: left; }
-.cf-table th { background: #f9fafb; font-weight: 600; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
-.cf-table input, .cf-table select { padding: 5px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; background: #fff; width: 100%; }
-.save-ok  { background: #d1fae5 !important; color: #065f46 !important; border-color: #6ee7b7 !important; }
-.save-err { background: #fee2e2 !important; color: #991b1b !important; border-color: #fca5a5 !important; }
+#business-picker { max-width: 640px; }
+.picker-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; min-height: var(--control-height); }
+.picker-count { color: var(--ink-faint); font-weight: 400; font-size: 13px; margin-inline-start: 6px; }
+#business-search { width: 240px; }
 
-@media (max-width: 720px) {
-  /* Suppliers table is wide — let the row scroll horizontally rather than collapsing controls.
-     Matches the project rule from CLAUDE memory: scroll the row, not the page. */
-  #suppliers-view, .cf-table-wrap { overflow-x: auto; }
-  /* Same for the tax-code table, whose badge + button columns stop being readable
-     once the browser starts squeezing them. */
-  #setupOutput { overflow-x: auto; }
-  #setupOutput table { min-width: 560px; }
-  /* Same rule for the workspace tab strip, which is too wide for a phone-width iframe. */
-  .tabs { overflow-x: auto; scrollbar-width: none; }
-  .tabs::-webkit-scrollbar { display: none; }
-  .tab { white-space: nowrap; }
-  .picker-head { flex-direction: column; align-items: stretch; }
-  #business-search { width: 100%; }
-}
+/* ---- Screen 2 — the selected business ------------------------------------------ */
 
-/* Per-report tab strip (injected above #reportControls) and the panes that
-   appear when a setup tab is active. The .tabs / .tab styling is shared with
-   the index page. Panes max-width matches #reportOutput so the layout is stable
-   as the user switches between Report and a setup tab. */
-.cf-report-tabs { margin-bottom: 16px; }
-.cf-tab-pane { max-width: 1100px; }
-.cf-employee-heading { margin: 0 0 10px; color: #374151; font-size: 13px; }
-.cf-employee-heading strong { color: #111827; }
-.cf-payslip-heading { font-size: 13px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin: 16px 0 8px; }
-.cf-payslip-heading:first-child { margin-top: 0; }
-
-@media print { .cf-report-tabs, .cf-tab-pane { display: none !important; } }
-
-/* Reports tab, screen 2 — one report running inside the index. The form and output
-   are built by app.js and carry the same ids as a per-report page, so everything
-   under form#reportControls / #reportOutput above styles them unchanged. */
-.runner-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.runner-title { font-size: 15px; font-weight: 600; color: #111827; }
-/* The arrow points back to the list, so it follows the writing direction. */
+.workspace-bar { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 16px; }
+.workspace-name { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25;
+                  max-width: 100%; overflow-wrap: anywhere; }
+/* Back links: quiet, text-only, with an arrow that follows the writing direction. */
+button.back { display: inline-flex; align-items: center; gap: 6px; padding: 2px 0; border: 0; background: transparent;
+              color: var(--ink-soft); font-size: 13px; font-weight: 500; border-radius: 4px; }
+button.back:hover { color: var(--accent); }
 .runner-back-arrow { display: inline-block; }
 [dir="rtl"] .runner-back-arrow { transform: scaleX(-1); }
 
-/* PAYG payment summary form. Lives here rather than in the report page because the
-   same renderer (report-views.js) draws it on the page and inside the index runner. */
-.payg-form {
-  max-width: 820px;
-  margin: 0 auto;
-  color: #000;
-  font-family: Arial, Helvetica, sans-serif;
+.setup-actions { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 12px; min-height: var(--control-height); }
+.setup-summary { color: var(--ink-soft); }
+.setup-summary strong { color: var(--ink); font-weight: 600; }
+.setup-linked { display: block; margin-top: 3px; color: var(--ink-faint); font-size: 12px; }
+
+/* ---- Report runner ------------------------------------------------------------- */
+
+.runner-bar { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 14px; }
+.runner-title { margin: 0; font-size: 17px; font-weight: 600; color: var(--ink); }
+
+/* Per-report pages still carry their own nav and business bar; app.js hides both there. */
+.page-nav { margin-bottom: 8px; font-size: 13px; }
+.page-nav a { color: var(--ink-soft); text-decoration: none; }
+.page-nav a:hover { color: var(--accent); }
+.business-bar { margin-bottom: 16px; }
+
+form#reportControls { display: flex; flex-wrap: wrap; gap: 12px 14px; align-items: flex-end;
+                      padding: 14px 16px; margin-bottom: 20px; background: var(--surface);
+                      border: 1px solid var(--line); border-radius: 8px; }
+form#reportControls label, .business-bar label, .cf-picker label {
+  display: flex; flex-direction: column; gap: 5px; font-size: 13px; font-weight: 500; color: var(--ink-soft); }
+form#reportControls select, form#reportControls input { min-width: 130px; }
+form#reportControls button[type="submit"] { margin-inline-start: auto; }
+
+.report-actions { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 12px; }
+
+/* The generated report sits on a sheet: what is on screen is what Print hands the printer. */
+#printable-content { padding: 40px 44px 44px; background: #fff; border: 1px solid var(--line); border-radius: 4px;
+                     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px -12px rgba(0, 0, 0, 0.12); }
+.report-header { text-align: center; margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.report-header .business-name { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 2px; }
+.report-header .report-title  { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.report-header .report-period { font-size: 13px; color: var(--ink-soft); }
+.report-header .report-basis  { font-size: 13px; color: var(--ink-faint); margin-top: 2px; }
+
+#reportOutput table { width: 100%; border-collapse: collapse; }
+#reportOutput th, #reportOutput td { padding: 7px 10px; vertical-align: top; text-align: start; border-bottom: 1px solid #f0f0f0; }
+#reportOutput td { white-space: pre-line; }
+/* Section headings inside the report body. */
+#reportOutput th { padding-top: 20px; font-size: 13px; font-weight: 700; color: var(--ink); border-bottom: 1px solid var(--ink); }
+#reportOutput tbody:first-child > tr:first-child > th { padding-top: 0; }
+/* Values, text or number, share the trailing edge. */
+#reportOutput td:not(:first-child) { text-align: end; }
+#reportOutput td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+#reportOutput td.num a { color: var(--accent); text-decoration: none; }
+#reportOutput td.num a:hover { text-decoration: underline; }
+/* A supplier / employee block opens with its name on a tinted band. */
+#reportOutput tbody.group > tr:first-child th { padding: 9px 10px; background: var(--surface-sunk); border-bottom: 0; font-size: 14px; }
+#reportOutput tbody.group::before { content: ""; display: table-row; height: 20px; }
+
+/* ---- Setup tabs (business details, suppliers, employees, payslip items) --------- */
+
+.cf-form { max-width: 720px; }
+.cf-business-form { max-width: 420px; }
+.cf-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; font-size: 13px; color: var(--ink-soft); }
+.cf-field > span { font-weight: 500; }
+.cf-field small { margin-top: 1px; font-size: 12px; line-height: 1.4; }
+.cf-actions { margin-top: 20px; }
+.cf-group { min-width: 0; margin: 0 0 20px; padding: 0 0 6px; border: 0; border-bottom: 1px solid var(--line); }
+.cf-group legend { padding: 0; margin-bottom: 12px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.cf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0 20px; align-items: start; }
+.cf-picker { margin-bottom: 24px; max-width: 320px; }
+.cf-employee-heading { margin: 0 0 16px; color: var(--ink-soft); }
+.cf-employee-heading strong { color: var(--ink); font-weight: 600; }
+.cf-payslip-heading { margin: 28px 0 6px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.cf-payslip-heading:first-of-type { margin-top: 8px; }
+.cf-table-wrap { margin-bottom: 8px; }
+
+/* Per-report tab strip (injected above #reportControls on a report's own page). */
+.cf-report-tabs { margin-bottom: 20px; }
+
+@media (max-width: 720px) {
+  body { padding: 20px 16px 40px; }
+  /* Wide tables and the tab strip scroll inside their own row; the page itself never does. */
+  .cf-table-wrap, #setupOutput { overflow-x: auto; }
+  #setupOutput table, .cf-table { min-width: 560px; }
+  .tabs { overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .picker-head { flex-direction: column; align-items: stretch; }
+  #business-search { width: 100%; }
+  form#reportControls label { flex: 1 1 140px; }
+  form#reportControls button[type="submit"] { margin-inline-start: 0; flex: 1 1 100%; }
+  #printable-content { padding: 24px 16px; }
+  #reportOutput { overflow-x: auto; }
 }
-.payg-banner {
-  background: #2b3e64;
-  color: #fff;
-  padding: 14px 18px;
-  border-radius: 4px 4px 0 0;
-}
-.payg-banner .payg-title { font-size: 20px; font-weight: 700; letter-spacing: 0.01em; }
+
+/* ---- PAYG payment summary ---------------------------------------------------------
+   Lives here rather than in the report page because the same renderer (report-views.js)
+   draws it on the page and inside the index runner. It follows the ATO's paper form
+   (NAT 0046), so it keeps the form's own navy rather than the page accent. */
+.payg-form { max-width: 820px; margin: 0 auto; color: #000; }
+.payg-banner { background: #2b3e64; color: #fff; padding: 16px 20px; border-radius: 4px 4px 0 0; }
+.payg-banner .payg-title { font-size: 19px; font-weight: 700; letter-spacing: -0.005em; }
 .payg-banner .payg-subtitle { font-size: 13px; margin-top: 4px; opacity: 0.85; }
-.payg-notice {
-  font-size: 11px;
-  color: #444;
-  padding: 8px 14px;
-  border: 1px solid #cbd5e1;
-  border-top: 0;
-  background: #f8fafc;
-  line-height: 1.45;
-}
-.payg-section { margin-top: 14px; border: 1px solid #cbd5e1; border-radius: 4px; background: #fff; }
-.payg-section-title {
-  font-size: 12px;
-  font-weight: 700;
-  background: #e2e8f0;
-  padding: 6px 12px;
-  border-bottom: 1px solid #cbd5e1;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-.payg-section-body { padding: 12px; display: grid; gap: 10px; }
-.payg-row { display: grid; gap: 10px; }
+.payg-notice { font-size: 12px; color: #444; padding: 9px 20px; border: 1px solid #cbd5e1; border-top: 0;
+               background: #f8fafc; line-height: 1.45; }
+.payg-section { margin-top: 16px; border: 1px solid #cbd5e1; border-radius: 4px; background: #fff; }
+.payg-section-title { font-size: 13px; font-weight: 700; color: #1e293b; background: #e2e8f0; padding: 7px 14px;
+                      border-bottom: 1px solid #cbd5e1; }
+.payg-section-body { padding: 14px; display: grid; gap: 12px; }
+.payg-row { display: grid; gap: 12px; }
 .payg-row.cols-1 { grid-template-columns: 1fr; }
 .payg-row.cols-2 { grid-template-columns: 1fr 1fr; }
 .payg-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .payg-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
-.payg-field { display: flex; flex-direction: column; }
-.payg-field > label {
-  font-size: 10px;
-  font-weight: 600;
-  color: #475569;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 3px;
-}
-.payg-value {
-  border: 1px solid #94a3b8;
-  background: #f8fafc;
-  padding: 7px 10px;
-  min-height: 30px;
-  font-size: 14px;
-  font-variant-numeric: tabular-nums;
-}
+.payg-field { display: flex; flex-direction: column; justify-content: flex-end; }
+.payg-field > label { font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 4px; }
+.payg-value { border: 1px solid #94a3b8; background: #f8fafc; padding: 7px 10px; min-height: 34px;
+              font-size: 14px; font-variant-numeric: tabular-nums; }
 .payg-value.num { text-align: right; }
 .payg-value.empty { color: #94a3b8; }
-.payg-totalbox {
-  border: 2px solid #1e293b;
-  background: #fff;
-  padding: 10px 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-}
-.payg-totalbox .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.payg-totalbox { border: 2px solid #1e293b; background: #fff; padding: 12px 14px; display: flex;
+                 justify-content: space-between; align-items: baseline; gap: 12px; }
+.payg-totalbox .label { font-size: 13px; font-weight: 700; }
 .payg-totalbox .amount { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.payg-subhead { font-size: 12px; font-weight: 700; margin: 4px 0 -2px; color: #1e293b; }
+.payg-subhead { font-size: 13px; font-weight: 700; margin: 4px 0 -4px; color: #1e293b; }
+@media (max-width: 720px) {
+  .payg-row.cols-2, .payg-row.cols-3 { grid-template-columns: 1fr; }
+  .payg-row.cols-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- Print: the sheet, and nothing around it ---------------------------------------- */
 
 @media print {
+  body { padding: 0; }
+  body > * { max-width: none; }
+  h1, .tabs, .business-bar, .page-nav, form#reportControls, .report-actions, #setup-view, .status, .error,
+  .workspace-bar, .runner-bar, .toast-host, .cf-tab-pane { display: none !important; }
+  #printable-content { padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+  #reportOutput td.num a { color: inherit; text-decoration: none; }
+  #reportOutput table { page-break-inside: auto; }
+  #reportOutput tr    { page-break-inside: avoid; page-break-after: auto; }
+  #reportOutput tbody.group > tr:first-child th, .payg-banner, .payg-section-title {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .payg-form { max-width: none; }
-  .payg-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .payg-section-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .payg-value { background: #fff; }
 }
