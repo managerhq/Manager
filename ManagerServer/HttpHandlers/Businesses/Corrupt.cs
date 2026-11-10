@@ -82,6 +82,12 @@ namespace ManagerServer.HttpHandlers.Businesses
 
         protected override async Task InnerPost()
         {
+            if (!ApplicationData.Businesses.Exists(Business) || !this.GetCurrentUserPermissions(Business).FullAccess)
+            {
+                Response.StatusCode = 403;
+                return;
+            }
+
             await ApplicationData.Businesses.Repair(Business, ApplicationData.Trash);
 
             Response.Redirect(new Businesses().ToUrl());
