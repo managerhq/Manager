@@ -25,32 +25,23 @@ namespace ManagerServer.HttpHandlers.Extensions
 
         static Extensions()
         {
-            // External directory entries (e-invoicing portals etc.) and any other manually-curated
-            // names are embedded in the assembly, so adding one is a code change like any other.
-            var file = EmbeddedAssets.GetFile("Extensions.json");
-            if (file.Exists)
-            {
-                using var stream = file.CreateReadStream();
-                using var reader = new StreamReader(stream);
-                var external = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entry>>(reader.ReadToEnd());
-                if (external != null) Entries.AddRange(external);
-            }
-
-            // Local country extensions live under wwwroot/extensions and are embedded in the
-            // assembly. Their index file is the source of truth for those entries.
+            // The directory is a single index living next to the extensions it lists. Entries either
+            // point at a local folder under wwwroot/extensions or at an external site (e-invoicing
+            // portals etc.). wwwroot is embedded in the assembly, so adding either is a code change
+            // like any other.
             try
             {
                 var provider = new ManifestEmbeddedFileProvider(typeof(Extensions).Assembly, "wwwroot");
-                var localIndex = provider.GetFileInfo("extensions/extensions.json");
-                if (localIndex.Exists)
+                var index = provider.GetFileInfo("extensions/extensions.json");
+                if (index.Exists)
                 {
-                    using var stream = localIndex.CreateReadStream();
+                    using var stream = index.CreateReadStream();
                     using var reader = new StreamReader(stream);
-                    var local = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entry>>(reader.ReadToEnd());
-                    if (local != null) Entries.AddRange(local);
+                    var entries = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entry>>(reader.ReadToEnd());
+                    if (entries != null) Entries.AddRange(entries);
                 }
             }
-            catch { /* embedded resource missing — fall back to the on-disk file alone */ }
+            catch { /* embedded resource missing — the directory is simply empty */ }
         }
 
         protected override Task InnerGet()

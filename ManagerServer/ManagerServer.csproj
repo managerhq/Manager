@@ -51,13 +51,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Extensions.json" />
     <None Remove="Assets\Localizations\**\*.json" />
     <None Remove="Assets\Translations\**\*.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Assets\Extensions.json" />
     <EmbeddedResource Include="Assets\Localizations\**\*.json" />
     <EmbeddedResource Include="Assets\Translations\**\*.json" />
   </ItemGroup>
