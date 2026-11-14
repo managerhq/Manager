@@ -5,7 +5,7 @@
   { "language": "", "region": "", "name": "Community Extensions", "url": "https://extensions.alfabase.com" },
 
   { "language": "", "region": "Australia", "name": "BAS, payroll & GST codes", "url": "/extensions/au/index.html" },
-  { "language": "", "region": "Australia", "name": "Aussie Bank Feeds", "url": "https://aussiebankfeeds.com" },
+  { "language": "", "region": "Australia", "name": "Aussie Bank Feeds", "url": "https://www.aussiebankfeeds.com" },
   { "language": "", "region": "Bahrain", "name": "VAT returns & VAT codes", "url": "/extensions/bh/index.html" },
   { "language": "ar", "region": "مملكة البحرين", "name": "إقرار ضريبة القيمة المضافة ورموزها", "url": "/extensions/bh/index.html?lang=ar" },
   { "language": "", "region": "Egypt", "name": "Egypt eInvoice", "url": "https://egyptextension.azurewebsites.net/" },
