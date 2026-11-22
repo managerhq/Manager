@@ -17,6 +17,7 @@ namespace ManagerServer.Api.Businesses.Business
             {
                 throw new BadRequestException($"Request body is missing a '{nameof(Value)}' property containing the {typeof(T).Name} to update.");
             }
+            EnsureKeyWritable<T>(GetApplicationData().Businesses.Get(Business), Key, delete: false);
             Value.Key = Key;
             var user = Context.GetManagerUser();
             GetApplicationData().Businesses.Process(Business, Value, user.Username);

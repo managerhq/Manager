@@ -89,6 +89,36 @@ namespace ManagerServer.Api.Businesses.Business
             return null;
         }
 
+        // Route permissions only cover the route's own module, so a key sent to a typed endpoint must
+        // point at an object of that type. Otherwise a user with access to one module could replace or
+        // delete any object in the business (other modules, settings singletons, user permissions).
+        protected void EnsureKeyWritable<TObject>(Database database, Guid key, bool delete) where TObject : Model.Object
+        {
+            var typeKey = Model.Object.GetGuidByType(typeof(TObject));
+            if (key != typeKey && Model.Object.GetTypeByGuid(key) != null)
+            {
+                throw new BadRequestException($"Key '{key}' is reserved and cannot be used for {typeof(TObject).Name}.");
+            }
+
+            var existing = key == Guid.Empty ? null : database.SingleOrDefault(key);
+            if (existing != null && existing.GetType() != typeof(TObject))
+            {
+                throw new BadRequestException($"Key '{key}' does not belong to a {typeof(TObject).Name}.");
+            }
+
+            var permissionNamespace = GetPermissionNamespace();
+            if (permissionNamespace == null) return;
+
+            var allowed = delete ? UserPermissions.CanDelete(permissionNamespace)
+                : existing == null ? UserPermissions.CanCreate(permissionNamespace)
+                : UserPermissions.CanUpdate(permissionNamespace);
+            if (!allowed)
+            {
+                var user = Context.GetManagerUser();
+                throw new ForbiddenException($"User '{user.Username}' lacks the required permission to {(delete ? "delete" : existing == null ? "create" : "update")} {typeof(TObject).Name} on business '{Business}'.");
+            }
+        }
+
         private bool HasVerbPermission(UserPermissions permissions, string @namespace)
         {
             var name = GetType().Name;

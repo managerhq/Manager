@@ -11,6 +11,7 @@ namespace ManagerServer.Api.Businesses.Business
 
         public override bool AuthorizedHandle()
         {
+            EnsureKeyWritable<T>(GetApplicationData().Businesses.Get(Business), Key, delete: true);
             var user = Context.GetManagerUser();
             GetApplicationData().Businesses.Process(Business, Key, user.Username);
             return true;

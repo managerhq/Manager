@@ -647,8 +647,24 @@ function postContentAndReturnDecimal(owner, url, setterFunction) {
             }
         }
 
+        // The form's permission covers objects of type T only, so the key being saved must not point at another type.
+        private bool IsKeyOfOtherType()
+        {
+            if (!Key.HasValue) return false;
+            if (Key.Value != ManagerServer.Model.Object.GetGuidByType(typeof(T)) && ManagerServer.Model.Object.GetTypeByGuid(Key.Value) != null) return true;
+            var existing = ApplicationData.Businesses.Get(Business).SingleOrDefault(Key.Value);
+            return existing != null && existing.GetType() != typeof(T);
+        }
+
         public override async Task Put()
         {
+            if (IsKeyOfOtherType())
+            {
+                Response.StatusCode = 400;
+                await Response.WriteAsync("The key does not belong to this kind of object.");
+                return;
+            }
+
             var userPermissions = GetCurrentUserPermissions(Business);
 
             if (Key.HasValue)
@@ -698,6 +714,13 @@ function postContentAndReturnDecimal(owner, url, setterFunction) {
             }
 
             Response.ContentType = "text/plain; charset=utf-8"; // Ajax expects XML response. This will prevent that.
+
+            if (IsKeyOfOtherType())
+            {
+                Response.StatusCode = 400;
+                await Response.WriteAsync("The key does not belong to this kind of object.");
+                return;
+            }
 
             var userPermissions = GetCurrentUserPermissions(Business);
 
