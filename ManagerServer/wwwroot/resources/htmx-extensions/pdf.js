@@ -147,3 +147,28 @@ async function convertRelativeImagesToDataURI(doc) {
         }
     }));
 }
+
+// Lets an embedded extension (custom button iframe) obtain the same PDF that the
+// in-app PDF button produces for the current view, so documents rendered with a
+// custom theme stay identical. Acknowledges immediately with { type: "pdf-pending", requestId }
+// (so extensions can tell an unsupported host from a slow render), then replies with
+// { type: "pdf-response", requestId, body: Blob, error }.
+window.addEventListener("message", async (event) => {
+    const { data } = event;
+    if (data?.type !== "pdf-request" || !event.source) return;
+
+    const { requestId } = data;
+    event.source.postMessage({ type: "pdf-pending", requestId }, event.origin);
+
+    let body = null;
+    let error = null;
+
+    try {
+        if (!document.getElementById('iframeView')) throw new Error("This page has no printable view.");
+        body = await getBlob();
+    } catch (err) {
+        error = err?.message ?? String(err);
+    }
+
+    event.source.postMessage({ type: "pdf-response", requestId, body, error }, event.origin);
+});
