@@ -24,10 +24,14 @@ namespace ManagerServer.Api.Businesses.Business
         {
             var business = ApplicationData.Instance.Businesses.Get(Business);
             var output = business.OfType<T>();
-            if (Keys != null && Keys.Length > 0) output.Where(x => Keys.Contains(x.Key)).ToArray();
+            if (Keys != null && Keys.Length > 0) output = output.Where(x => Keys.Contains(x.Key)).ToArray();
+
+            // Filter first, then page: Skip and PageSize count matching items,
+            // so a page shorter than PageSize means there are no more.
+            output = Filter(output);
+            var total = output.Length;
             if (Skip.HasValue) output = output.Skip(Skip.Value).ToArray();
             output = output.Take(PageSize ?? 50).ToArray();
-            output = Filter(output);
 
             var items = output
                 .Select(obj => new Item<T>(
@@ -50,7 +54,7 @@ namespace ManagerServer.Api.Businesses.Business
                 ["create"] = Hyperlinks.ForAction<TPost>(),
             };
 
-            return new BusinessObjectsResource<T>(Links: links, Actions: actions, Items: items);
+            return new BusinessObjectsResource<T>(Links: links, Actions: actions, Items: items, Total: total);
         }
 
         public virtual T[] Filter(T[] objects)
