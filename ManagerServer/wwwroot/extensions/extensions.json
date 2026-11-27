@@ -3,6 +3,8 @@
   { "language": "", "region": "", "name": "Replicator", "url": "/extensions/replicator/index.html" },
   { "language": "", "region": "", "name": "Custom Themes", "url": "https://www.manager.io/extensions/custom-themes/index.html" },
   { "language": "", "region": "", "name": "Community Extensions", "url": "https://extensions.alfabase.com" },
+  { "language": "", "region": "United Arab Emirates", "name": "eInvoices.ae", "url": "https://app.einvoices.ae" },
+  { "language": "ar", "region": "الإمارات العربية المتحدة", "name": "eInvoices.ae", "url": "https://app.einvoices.ae/?lang=ar" },
 
   { "language": "", "region": "Australia", "name": "BAS, payroll & GST codes", "url": "/extensions/au/index.html" },
   { "language": "", "region": "Australia", "name": "Aussie Bank Feeds", "url": "https://app.aussiebankfeeds.com" },
