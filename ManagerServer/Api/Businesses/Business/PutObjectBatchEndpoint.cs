@@ -18,6 +18,12 @@ namespace ManagerServer.Api.Businesses.Business
                 throw new BadRequestException($"Request body is missing a '{nameof(Values)}' property containing the {typeof(T).Name} batch to update.");
             }            
 
+            var database = GetApplicationData().Businesses.Get(Business);
+            foreach (var e in Values)
+            {
+                EnsureKeyWritable<T>(database, e.Key, delete: e.Value == null);
+            }
+
             var actions = new List<ApplicationData.Action>();
             foreach (var e in Values)
             {

@@ -130,6 +130,14 @@ namespace ManagerServer.HttpHandlers.Api2
                                     if (userPermissions.CanDelete(handlerType.Namespace))
                                     {
                                         var key = path.Substring(1).Split('/').Last().ToGuid();
+                                        if (!KeyFitsType(business, key, objectType, out _))
+                                        {
+                                            Response.StatusCode = 404;
+                                            var error = new JObject();
+                                            error["error"] = "Not found";
+                                            Write(error.ToString());
+                                            return;
+                                        }
                                         ApplicationData.Businesses.Process(business, key, "API");
                                         Response.StatusCode = 204;
                                         return;
@@ -149,6 +157,22 @@ namespace ManagerServer.HttpHandlers.Api2
                                     if (userPermissions.CanUpdate(handlerType.Namespace))
                                     {
                                         var key = path.Substring(1).Split('/').Last().ToGuid();
+                                        if (!KeyFitsType(business, key, objectType, out var existing))
+                                        {
+                                            Response.StatusCode = 404;
+                                            var error = new JObject();
+                                            error["error"] = "Not found";
+                                            Write(error.ToString());
+                                            return;
+                                        }
+                                        if (existing == null && !userPermissions.CanCreate(handlerType.Namespace))
+                                        {
+                                            Response.StatusCode = 401;
+                                            var error = new JObject();
+                                            error["error"] = "User does not have user pemissions to create this resource";
+                                            Write(error.ToString());
+                                            return;
+                                        }
                                         var rawRequestBody = await new StreamReader(Request.Body).ReadToEndAsync();
                                         var o = JsonConvert.DeserializeObject(rawRequestBody, objectType) as ManagerServer.Model.Object;
                                         o.Key = key;
@@ -332,6 +356,17 @@ namespace ManagerServer.HttpHandlers.Api2
             unauthorizedError["error"] = "Unauthorized";
             Write(unauthorizedError.ToString());
             return;
+        }
+
+        // The route's permission covers objects of its own type only, so a key written or deleted
+        // through it must be free or hold an object of that type, and must not be another type's key.
+        private bool KeyFitsType(string business, Guid key, Type objectType, out ManagerServer.Model.Object existing)
+        {
+            existing = null;
+            if (key != ManagerServer.Model.Object.GetGuidByType(objectType) && ManagerServer.Model.Object.GetTypeByGuid(key) != null) return false;
+            if (key == Guid.Empty) return true;
+            existing = ApplicationData.Businesses.Get(business).SingleOrDefault(key);
+            return existing == null || existing.GetType() == objectType;
         }
 
         private string Serialize(object o)
